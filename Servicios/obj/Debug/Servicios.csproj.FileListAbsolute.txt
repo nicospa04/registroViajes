@@ -1,0 +1,9 @@
+C:\Users\Navegador\Desktop\RegistroViajes\Servicios\bin\Debug\Servicios.dll
+C:\Users\Navegador\Desktop\RegistroViajes\Servicios\bin\Debug\Servicios.pdb
+C:\Users\Navegador\Desktop\RegistroViajes\Servicios\bin\Debug\BE.dll
+C:\Users\Navegador\Desktop\RegistroViajes\Servicios\bin\Debug\BE.pdb
+C:\Users\Navegador\Desktop\RegistroViajes\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\Users\Navegador\Desktop\RegistroViajes\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Navegador\Desktop\RegistroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
+C:\Users\Navegador\Desktop\RegistroViajes\Servicios\obj\Debug\Servicios.dll
+C:\Users\Navegador\Desktop\RegistroViajes\Servicios\obj\Debug\Servicios.pdb

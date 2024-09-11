@@ -1,0 +1,11 @@
+C:\Users\Navegador\Desktop\RegistroViajes\DAL\bin\Debug\DAL.dll
+C:\Users\Navegador\Desktop\RegistroViajes\DAL\bin\Debug\DAL.pdb
+C:\Users\Navegador\Desktop\RegistroViajes\DAL\bin\Debug\BE.dll
+C:\Users\Navegador\Desktop\RegistroViajes\DAL\bin\Debug\Servicios.dll
+C:\Users\Navegador\Desktop\RegistroViajes\DAL\bin\Debug\BE.pdb
+C:\Users\Navegador\Desktop\RegistroViajes\DAL\bin\Debug\Servicios.pdb
+C:\Users\Navegador\Desktop\RegistroViajes\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Navegador\Desktop\RegistroViajes\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Navegador\Desktop\RegistroViajes\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\Navegador\Desktop\RegistroViajes\DAL\obj\Debug\DAL.dll
+C:\Users\Navegador\Desktop\RegistroViajes\DAL\obj\Debug\DAL.pdb
