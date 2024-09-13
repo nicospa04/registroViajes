@@ -76,12 +76,14 @@ namespace DAL
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Empresa (" +
                     "id_empresa INT PRIMARY KEY IDENTITY(1,1)," +
                     "nombre VARCHAR(100) NOT NULL," +
-                    "descripcion TEXT);");
+                    "descripcion TEXT," +
+                    "porcentaje_extra FLOAT);");
 
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Destino (" +
                     "id_destino INT PRIMARY KEY IDENTITY(1,1)," +
                     "nombre VARCHAR(100) NOT NULL," +
-                    "descripcion TEXT);");
+                    "descripcion TEXT," +
+                    "precio_base FLOAT);");
 
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Paquete (" +
                     "id_paquete INT PRIMARY KEY IDENTITY(1,1)," +
