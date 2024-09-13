@@ -13,39 +13,49 @@ namespace DAL
         BaseDeDatos db { get; }
 
 
-        //List<BE.Destino> leerDestino()
-        //{
-        //    List<BE.Destino> destinos = new List<BE.Destino>();
+        public List<BE.Destino> leerDestino()
+        {
+            List<BE.Destino> list = new List<BE.Destino>();
+
+            DAL.BaseDeDatos bd;
+
+            string sqlQuery = "select * FROM Destino";
+
+            try
+            {
+                bool result = db.Conectar();
+                if (!result) throw new Exception("Error al conectarse a la base de datos");
+
+                SqlCommand command = new SqlCommand(sqlQuery, db.Connection);
 
 
-        //    string query = "USE SistemaViajes; SELECT * FROM Destino";
+                SqlDataReader lector = command.ExecuteReader();
+
+                while (lector.Read())
+                {
+                    BE.Destino objeto = new BE.Destino(lector.GetInt32(0), lector.GetString(1), lector.GetString(2);
+
+                    list.Add(objeto);
+                }
+
+                lector.Close();
+
+                bool result2 = db.Desconectar();
+
+                if (!result2) throw new Exception("Error al desconectarse de la base de datos");
 
 
-        //    using (SqlConnection connection = db.ObtenerConexion())
-        //    {
-        //        SqlCommand command = new SqlCommand(query, connection);
-        //        connection.Open();
+                return list;
 
-        //        using (SqlDataReader reader = command.ExecuteReader())
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                BE.Destino destino = new BE.Destino
-        //                {
-        //                    id_destino = reader.GetInt32(0),
-        //                    nombre = reader.GetString(1),
-        //                    descripcion = reader.GetString(2)
-        //                };
-        //                destinos.Add(destino);
-        //            }
-        //        }
-        //    }
+            } catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                return null;
 
+            }
 
-
-        //    return new List<BE.Destino>();
-        //}
-
+        }
+        
         void actualizarDestino(BE.Destino destino)
         {
             string query = "USE SistemaViajes;" +

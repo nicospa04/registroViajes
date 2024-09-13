@@ -11,27 +11,31 @@ namespace DAL
     public class BaseDeDatos
     {
 
-        static string dataSource = "090L3PC16-80598";
-        static string dbName = "SistemaViajes";
-        static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
+        public static string dataSource = "090L3PC16-80598";
+        public static string dbName = "SistemaViajes";
+        public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
         public SqlConnection Connection = new SqlConnection(conexionMaster);
         public SqlCommand Command = new SqlCommand();
 
-        public void Conectar()
+        public bool Conectar()
         {
             if (Connection.State == ConnectionState.Closed)
             {
                 Connection.Open();
+                return true;
             }
+            return false;
         }
 
-        public void Desconectar()
+        public bool Desconectar()
         {
             if (Connection.State == ConnectionState.Open)
             {
                 Connection.Close();
+                return true;
             }
+            return false;
         }
 
         public bool ejecutarQuery(string query)
