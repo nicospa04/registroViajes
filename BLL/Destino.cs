@@ -16,22 +16,22 @@ namespace BLL
         {
 
             DAL.Destino destino = new DAL.Destino();
-            return destino.leerDestino();
+            return destino.leerEntidades();
         }
 
         public bool crearEntidad(BE.Destino obj)
         {
-            return destino.crearDestino();
+            return destino.crearEntidad(obj);
         }
 
         public bool eliminarEntidad(BE.Destino obj)
         {
-            throw new NotImplementedException();
+            return destino.eliminarEntidad(obj);
         }
 
         public bool actualizarEntidad(BE.Destino obj)
         {
-            throw new NotImplementedException();
+           return destino.actualizarEntidad(obj);
         }
     }
 }

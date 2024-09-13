@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -8,12 +9,12 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Destino
+    public class Destino : ICrud<BE.Destino>
     {
-        BaseDeDatos db { get; }
+        public BaseDeDatos db { get; }
 
 
-        public List<BE.Destino> leerDestino()
+        public List<BE.Destino> leerEntidades()
         {
             List<BE.Destino> list = new List<BE.Destino>();
 
@@ -38,8 +39,8 @@ namespace DAL
                             int id = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
                             string nombre = !lector.IsDBNull(1) ? lector.GetString(1) : string.Empty;
                             string descripcion = !lector.IsDBNull(2) ? lector.GetString(2) : string.Empty;
-
-                            BE.Destino objeto = new BE.Destino(id, nombre, descripcion);
+                            float precio_base = !lector.IsDBNull(3) ? lector.GetFloat(3) : 1;
+                            BE.Destino objeto = new BE.Destino(id, nombre, descripcion, precio_base);
 
                             list.Add(objeto);
                         }
@@ -60,31 +61,12 @@ namespace DAL
             }
         }
 
-
-        void actualizarDestino(BE.Destino destino)
+        public bool crearEntidad(BE.Destino obj)
         {
             string query = "USE SistemaViajes;" +
-                "GO" +
-                "UPDATE Destino" +
-                $"SET nombre = '{destino.nombre}', descripcion = '{destino.descripcion}'" +
-                $"WHERE id_destino = {destino.id_destino}";
-
-            try
-            {
-                db.ejecutarQuery(query);
-            }
-            catch(Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-            }
-        }
-
-       public bool crearDestino(BE.Destino destino)
-        {
-            string query = "USE SistemaViajes;" +
-                "INSERT INTO Destino (nombre, descripcion)" +
-                "VALUES" +
-                $"('{destino.nombre}','{destino.descripcion}');";
+                 "INSERT INTO Destino (nombre, descripcion)" +
+                 "VALUES" +
+                 $"('{obj.nombre}','{obj.descripcion}');";
 
             try
             {
@@ -100,20 +82,46 @@ namespace DAL
             }
         }
 
-        void eliminarDestino(int id)
+        public bool eliminarEntidad(BE.Destino obj)
         {
             string query = "USE SistemaViajes; GO" +
-                $"DELETE FROM Destino WHERE id_destino = {id}";
+               $"DELETE FROM Destino WHERE id_destino = {obj.id_destino}";
 
             try
             {
-                db.ejecutarQuery(query);
+                bool resultado = db.ejecutarQuery(query);
+                if (!resultado) throw new Exception("Error al eliminar destino");
+                return true;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return false;
             }
 
+        }
+
+        public bool actualizarEntidad(BE.Destino obj)
+        {
+            string query = "USE SistemaViajes;" +
+                            "GO" +
+                            "UPDATE Destino" +
+            $"SET nombre = '{obj.nombre}', descripcion = '{obj.descripcion}', precio_base = {obj.precio_base}" +
+            $"WHERE id_destino = {obj.id_destino}";
+
+            try
+            {
+                bool resultado = db.ejecutarQuery(query);
+                if (!resultado) throw new Exception("Error al actualizar destino");
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return false;
+            }
         }
     }
 }
