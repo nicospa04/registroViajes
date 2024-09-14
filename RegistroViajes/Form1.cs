@@ -19,8 +19,7 @@ namespace RegistroViajes
             InitializeComponent();
             BaseDeDatos bd = new BaseDeDatos();
             bd.scriptInicio();
-            DAL.Destino destino = new DAL.Destino();
-            destino.leerDestino();
+            
             
         }
 

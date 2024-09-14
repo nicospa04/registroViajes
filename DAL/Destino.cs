@@ -84,7 +84,7 @@ namespace DAL
 
         public bool eliminarEntidad(BE.Destino obj)
         {
-            string query = "USE SistemaViajes; GO" +
+            string query = "USE SistemaViajes;" +
                $"DELETE FROM Destino WHERE id_destino = {obj.id_destino}";
 
             try
@@ -105,7 +105,7 @@ namespace DAL
         public bool actualizarEntidad(BE.Destino obj)
         {
             string query = "USE SistemaViajes;" +
-                            "GO" +
+                             
                             "UPDATE Destino" +
             $"SET nombre = '{obj.nombre}', descripcion = '{obj.descripcion}', precio_base = {obj.precio_base}" +
             $"WHERE id_destino = {obj.id_destino}";

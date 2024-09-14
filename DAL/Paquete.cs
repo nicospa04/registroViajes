@@ -13,7 +13,24 @@ namespace DAL
 
         public bool actualizarEntidad(BE.Paquete obj)
         {
-            throw new NotImplementedException();
+            string query = "USE SistemaViajes;" +
+
+                                       "UPDATE Paquete" +
+                       $"SET nombre = '{obj.nombre}', descripcion = '{obj.descripcion}', precio_base = {obj.precio_base}" +
+                       $"WHERE id_paquete = {obj.id_paquete}";
+
+            try
+            {
+                bool resultado = db.ejecutarQuery(query);
+                if (!resultado) throw new Exception("Error al actualizar destino");
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return false;
+            }
         }
 
         public bool crearEntidad(BE.Paquete obj)
@@ -39,7 +56,7 @@ namespace DAL
 
         public bool eliminarEntidad(BE.Paquete obj)
         {
-            string query = "USE SistemaViajes; GO" +
+            string query = "USE SistemaViajes;" +
                          $"DELETE FROM Paquete WHERE id_paquete = {obj.id_paquete}";
 
             try

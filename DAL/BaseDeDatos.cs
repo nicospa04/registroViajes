@@ -11,7 +11,7 @@ namespace DAL
     public class BaseDeDatos
     {
 
-        public static string dataSource = "090L3PC16-80598";
+        public static string dataSource = "DESKTOP-4V5CTVV";
         public static string dbName = "SistemaViajes";
         public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
