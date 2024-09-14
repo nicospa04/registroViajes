@@ -6,28 +6,30 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Paquete: IEntidad<Paquete>
+    public class Paquete: IEntidad<BE.Paquete>
     {
          
+        DAL.Paquete dal = new DAL.Paquete();
 
-        public List<Paquete> leerEntidades()
+
+        public List<BE.Paquete> leerEntidades()
         {
-            throw new NotImplementedException();
+            return dal.leerEntidades();
         }
 
-        public bool crearEntidad(Paquete obj)
+        public bool crearEntidad(BE.Paquete obj)
         {
-            throw new NotImplementedException();
+            return dal.crearEntidad(obj);
         }
 
-        public bool eliminarEntidad(Paquete obj)
+        public bool eliminarEntidad(BE.Paquete obj)
         {
-            throw new NotImplementedException();
+            return dal.eliminarEntidad(obj);
         }
 
-        public bool actualizarEntidad(Paquete obj)
+        public bool actualizarEntidad(BE.Paquete obj)
         {
-            throw new NotImplementedException();
+            return dal.actualizarEntidad(obj);
         }
     }
 }
