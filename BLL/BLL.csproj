@@ -43,7 +43,6 @@
   <ItemGroup>
     <Compile Include="Destino.cs" />
     <Compile Include="Empresa.cs" />
-    <Compile Include="FechasDisponibles.cs" />
     <Compile Include="IEntidad.cs" />
     <Compile Include="Paquete.cs" />
     <Compile Include="Usuario.cs" />

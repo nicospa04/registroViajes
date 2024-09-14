@@ -20,6 +20,7 @@ namespace RegistroViajes
             BaseDeDatos bd = new BaseDeDatos();
             bd.scriptInicio();
             
+            
         }
 
         private void Form1_Load(object sender, EventArgs e)
