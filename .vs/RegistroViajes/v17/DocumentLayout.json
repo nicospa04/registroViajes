@@ -1,17 +1,17 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Navegador\\Desktop\\registroViajes\\",
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\navegador\\desktop\\registroviajes\\dal\\paquete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\valentin facultad uai\\desarrollo y arquitectura de software\\git\\registroviajes\\dal\\paquete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\paquete.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\navegador\\desktop\\registroviajes\\dal\\destino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\dal\\destino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\destino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\navegador\\desktop\\registroviajes\\dal\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\dal\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -28,11 +28,11 @@
               "$type": "Document",
               "DocumentIndex": 0,
               "Title": "Paquete.cs",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Paquete.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\DAL\\Paquete.cs",
               "RelativeDocumentMoniker": "DAL\\Paquete.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Paquete.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\DAL\\Paquete.cs",
               "RelativeToolTip": "DAL\\Paquete.cs",
-              "ViewState": "AQIAAAoAAAAAAAAAAAAUwBQAAAAxAAAA",
+              "ViewState": "AQIAAAoAAAAAAAAAAAAywBQAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-09-13T15:25:02.908Z",
               "EditorCaption": ""
@@ -41,27 +41,25 @@
               "$type": "Document",
               "DocumentIndex": 1,
               "Title": "Destino.cs",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Destino.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\DAL\\Destino.cs",
               "RelativeDocumentMoniker": "DAL\\Destino.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Destino.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\DAL\\Destino.cs",
               "RelativeToolTip": "DAL\\Destino.cs",
               "ViewState": "AQIAAEIAAAAAAAAAAAAAAFEAAAANAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T14:58:19.706Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-13T14:58:19.706Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Empresa.cs",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Empresa.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\DAL\\Empresa.cs",
               "RelativeDocumentMoniker": "DAL\\Empresa.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Empresa.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\DAL\\Empresa.cs",
               "RelativeToolTip": "DAL\\Empresa.cs",
               "ViewState": "AQIAAFMAAAAAAAAAAAAIwGEAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-13T14:49:28.259Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-09-13T14:49:28.259Z"
             }
           ]
         }
