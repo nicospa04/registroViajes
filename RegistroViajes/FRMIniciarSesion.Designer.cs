@@ -57,6 +57,7 @@ namespace RegistroViajes
             this.btniniciar.TabIndex = 22;
             this.btniniciar.Text = "Iniciar";
             this.btniniciar.UseVisualStyleBackColor = true;
+            this.btniniciar.Click += new System.EventHandler(this.btniniciar_Click);
             // 
             // txtcontraseña
             // 

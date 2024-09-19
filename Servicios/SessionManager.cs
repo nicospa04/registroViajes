@@ -24,13 +24,27 @@ namespace Servicios
 
         public static void IniciarSesion(Usuario userNuevo)
         {
-            if(SessionManager==null)
-            _user = userNuevo;
+            if (Instancia == null)
+            {
+                Instancia = new SessionManager();
+                _user = userNuevo;
+            }
+            else
+            {
+                throw new Exception(message: "Sesion ya Iniciada");
+            }
         }
 
         public void CerrarSesion()
         {
-            _user = null;
+            if (Instancia != null)
+            {
+                _user = null;
+            }
+            else
+            {
+                throw new Exception(message: "Sesion no Iniciada");
+            }
         }
 
     }

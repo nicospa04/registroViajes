@@ -6,31 +6,32 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Viaje : IEntidad<BE.Viaje>
+    public class BLLUsuario: IEntidad<BE.Usuario>
     {
 
-        DAL.Viaje dal = new DAL.Viaje();
+        DAL.Usuario dal = new DAL.Usuario();    
 
 
-        public List<BE.Viaje> leerEntidades()
+        public List<BE.Usuario> leerEntidades()
         {
+
             return dal.leerEntidades();
+
         }
 
-        public bool crearEntidad(BE.Viaje obj)
+        public bool crearEntidad(BE.Usuario obj)
         {
             return dal.crearEntidad(obj);
         }
 
-        public bool eliminarEntidad(BE.Viaje obj)
+        public bool eliminarEntidad(BE.Usuario obj)
         {
             return dal.eliminarEntidad(obj);
         }
 
-        public bool actualizarEntidad(BE.Viaje obj)
+        public bool actualizarEntidad(BE.Usuario obj)
         {
             return dal.actualizarEntidad(obj);
         }
     }
-
 }
