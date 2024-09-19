@@ -20,3 +20,7 @@ C:\Users\nicol\OneDrive\Escritorio\RegistroViajes\DAL\obj\Debug\DAL.csproj.CoreC
 C:\Users\nicol\OneDrive\Escritorio\RegistroViajes\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\nicol\OneDrive\Escritorio\RegistroViajes\DAL\obj\Debug\DAL.dll
 C:\Users\nicol\OneDrive\Escritorio\RegistroViajes\DAL\obj\Debug\DAL.pdb
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\DAL\obj\Debug\DAL.dll
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\DAL\obj\Debug\DAL.pdb

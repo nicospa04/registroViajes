@@ -103,6 +103,9 @@
     <EmbeddedResource Include="FRMModificarViaje.resx">
       <DependentUpon>FRMModificarViaje.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FRMPaquetes.resx">
+      <DependentUpon>FRMPaquetes.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FRMReservarViaje.resx">
       <DependentUpon>FRMReservarViaje.cs</DependentUpon>
     </EmbeddedResource>

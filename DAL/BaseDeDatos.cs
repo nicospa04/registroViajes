@@ -10,8 +10,9 @@ namespace DAL
 {
     public class BaseDeDatos
     {
+        
 
-        public static string dataSource = "DESKTOP-4V5CTVV";
+        public static string dataSource = "HP_Victoria\\SQLEXPRESS";
         public static string dbName = "SistemaViajes";
         public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
@@ -144,9 +145,9 @@ namespace DAL
             // Insertar datos en la tabla Paquete
             ejecutarQuery("USE SistemaViajes; INSERT INTO Paquete (id_destino, precio_base, cupo_personas, nombre, descripcion, fecha_inicio, fecha_vuelta) " +
                 "VALUES " +
-                "(1, 1500.00, 20, 'Romance en París', 'Paquete especial para parejas, incluye visitas guiadas y cenas románticas.', '2024-09-01', '2024-09-10')," +
-                "(2, 2000.00, 15, 'Nueva York Express', 'Paquete para conocer lo esencial de Nueva York en 5 días.', '2024-10-05', '2024-10-12')," +
-                "(3, 1200.00, 25, 'Aventura en Bariloche', 'Paquete de aventura que incluye excursiones, caminatas y deportes de invierno.', '2024-12-20', '2024-12-30');");
+                "(1, 1500.00, 2, 'Romance en París', 'Paquete especial para parejas, incluye visitas guiadas y cenas románticas.', '2024-09-01', '2024-09-10')," +
+                "(2, 2000.00, 4, 'Nueva York Express', 'Paquete para conocer lo esencial de Nueva York en 5 días.', '2024-10-05', '2024-10-12')," +
+                "(3, 1200.00, 5, 'Aventura en Bariloche', 'Paquete de aventura que incluye excursiones, caminatas y deportes de invierno.', '2024-12-20', '2024-12-30');");
 
             // Nota: La tabla FechasDisponibles ha sido eliminada o modificada, por lo que se omite su inserción.
 

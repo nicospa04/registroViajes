@@ -92,14 +92,14 @@
             // iniciarSesionToolStripMenuItem
             // 
             this.iniciarSesionToolStripMenuItem.Name = "iniciarSesionToolStripMenuItem";
-            this.iniciarSesionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.iniciarSesionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.iniciarSesionToolStripMenuItem.Text = "Iniciar Sesion";
             this.iniciarSesionToolStripMenuItem.Click += new System.EventHandler(this.iniciarSesionToolStripMenuItem_Click);
             // 
             // cerraarSesionToolStripMenuItem
             // 
             this.cerraarSesionToolStripMenuItem.Name = "cerraarSesionToolStripMenuItem";
-            this.cerraarSesionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerraarSesionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.cerraarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             // 
             // iconMenuItem2
@@ -122,25 +122,25 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
             this.toolStripMenuItem1.Text = "Reservar";
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
             this.toolStripMenuItem2.Text = "Modificar";
             // 
             // cancelarToolStripMenuItem
             // 
             this.cancelarToolStripMenuItem.Name = "cancelarToolStripMenuItem";
-            this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.cancelarToolStripMenuItem.Text = "Cancelar";
             // 
             // verViajesRealizadosToolStripMenuItem
             // 
             this.verViajesRealizadosToolStripMenuItem.Name = "verViajesRealizadosToolStripMenuItem";
-            this.verViajesRealizadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verViajesRealizadosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.verViajesRealizadosToolStripMenuItem.Text = "Ver viajes realizados";
             // 
             // iconMenuItem3
@@ -185,13 +185,13 @@
             // toolStripMenuItem3
             // 
             this.toolStripMenuItem3.Name = "toolStripMenuItem3";
-            this.toolStripMenuItem3.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem3.Size = new System.Drawing.Size(115, 22);
             this.toolStripMenuItem3.Text = "Ingles";
             // 
             // toolStripMenuItem4
             // 
             this.toolStripMenuItem4.Name = "toolStripMenuItem4";
-            this.toolStripMenuItem4.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem4.Size = new System.Drawing.Size(115, 22);
             this.toolStripMenuItem4.Text = "Español";
             // 
             // iconMenuItem6
@@ -205,6 +205,7 @@
             this.iconMenuItem6.Size = new System.Drawing.Size(42, 49);
             this.iconMenuItem6.Text = "Salir";
             this.iconMenuItem6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconMenuItem6.Click += new System.EventHandler(this.iconMenuItem6_Click);
             // 
             // menuStrip2
             // 
@@ -216,6 +217,7 @@
             this.menuStrip2.Size = new System.Drawing.Size(847, 68);
             this.menuStrip2.TabIndex = 4;
             this.menuStrip2.Text = "menuStrip2";
+            this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
             // 
             // Form1
             // 

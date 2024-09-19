@@ -7,3 +7,7 @@ C:\Users\Navegador\Desktop\RegistroViajes\Servicios\obj\Debug\Servicios.csproj.C
 C:\Users\Navegador\Desktop\RegistroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
 C:\Users\Navegador\Desktop\RegistroViajes\Servicios\obj\Debug\Servicios.dll
 C:\Users\Navegador\Desktop\RegistroViajes\Servicios\obj\Debug\Servicios.pdb
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\Servicios\obj\Debug\Servicios.dll
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\Servicios\obj\Debug\Servicios.pdb

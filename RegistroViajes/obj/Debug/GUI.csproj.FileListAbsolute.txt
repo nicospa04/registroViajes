@@ -36,3 +36,28 @@ C:\Users\nicol\OneDrive\Escritorio\RegistroViajes\RegistroViajes\bin\Debug\BLL.p
 C:\Users\nicol\OneDrive\Escritorio\RegistroViajes\RegistroViajes\bin\Debug\DAL.pdb
 C:\Users\nicol\OneDrive\Escritorio\RegistroViajes\RegistroViajes\bin\Debug\Servicios.pdb
 C:\Users\nicol\OneDrive\Escritorio\RegistroViajes\RegistroViajes\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\bin\Debug\RegistroViajes.exe.config
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\bin\Debug\RegistroViajes.exe
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\bin\Debug\RegistroViajes.pdb
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\bin\Debug\BE.dll
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\bin\Debug\BLL.dll
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\bin\Debug\DAL.dll
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\bin\Debug\Servicios.dll
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\bin\Debug\BE.pdb
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\bin\Debug\BLL.pdb
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\bin\Debug\DAL.pdb
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\bin\Debug\Servicios.pdb
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.Form1.resources
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCancelarViaje.resources
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMIniciarSesion.resources
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMModificarViaje.resources
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMPaquetes.resources
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMReservarViaje.resources
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.Properties.Resources.resources
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.CopyComplete
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.exe
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.pdb

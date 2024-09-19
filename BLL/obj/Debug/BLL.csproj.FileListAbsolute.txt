@@ -24,3 +24,7 @@ C:\Users\nicol\OneDrive\Escritorio\RegistroViajes\BLL\obj\Debug\BLL.csproj.CoreC
 C:\Users\nicol\OneDrive\Escritorio\RegistroViajes\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\nicol\OneDrive\Escritorio\RegistroViajes\BLL\obj\Debug\BLL.dll
 C:\Users\nicol\OneDrive\Escritorio\RegistroViajes\BLL\obj\Debug\BLL.pdb
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\BLL\obj\Debug\BLL.dll
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\BLL\obj\Debug\BLL.pdb
