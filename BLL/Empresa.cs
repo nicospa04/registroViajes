@@ -6,27 +6,30 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Empresa: IEntidad<Empresa>
+    public class Empresa: IEntidad<BE.Empresa>
     {
        
-        public List<Empresa> leerEntidades()
+
+        DAL.Empresa dal = new DAL.Empresa();
+
+        public List<BE.Empresa> leerEntidades()
         {
-            throw new NotImplementedException();
+            return dal.leerEntidades();
         }
 
-        public bool crearEntidad(Empresa obj)
+        public bool crearEntidad(BE.Empresa obj)
         {
-            throw new NotImplementedException();
+            return dal.crearEntidad(obj);
         }
 
-        public bool eliminarEntidad(Empresa obj)
+        public bool eliminarEntidad(BE.Empresa obj)
         {
-            throw new NotImplementedException();
+            return dal.eliminarEntidad(obj);
         }
 
-        public bool actualizarEntidad(Empresa obj)
+        public bool actualizarEntidad(BE.Empresa obj)
         {
-            throw new NotImplementedException();
+            return dal.actualizarEntidad(obj);
         }
     }
 }

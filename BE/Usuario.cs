@@ -8,15 +8,15 @@ namespace BE
 {
     public class Usuario
     {
-        int id_usuario { get; set; }
-        string dni { get; set; }
+        public int id_usuario { get; set; }
+        public string dni { get; set; }
         public string nombre { get; set; }
-        string apellido { get; set; }
-        string telefono { get; set; }
-        string mail { get; set; }
-        string contraseña {  get; set; }
-        DateTime fechaNacimiento { get; set; }
-        string rol {  get; set; }
+        public string apellido { get; set; }
+        public string telefono { get; set; }
+        public string mail { get; set; }
+        public string contraseña {  get; set; }
+        public DateTime fechaNacimiento { get; set; }
+        public string rol {  get; set; }
 
         public Usuario(int id, string dni, string nombre, string apellido, string telefono, string mail, string contraseña, DateTime fechaNacimiento, string rol)
         {

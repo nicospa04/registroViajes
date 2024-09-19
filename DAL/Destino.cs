@@ -1,4 +1,5 @@
-﻿using System;
+﻿using BE;
+using System;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
@@ -8,73 +9,119 @@ using System.Threading.Tasks;
 
 namespace DAL
 {
-    public class Destino
+    public class Destino : ICrud<BE.Destino>
     {
-        BaseDeDatos db { get; }
+        public BaseDeDatos db { get; }
 
 
-        //List<BE.Destino> leerDestino()
-        //{
-        //    List<BE.Destino> destinos = new List<BE.Destino>();
+        public List<BE.Destino> leerEntidades()
+        {
+            List<BE.Destino> list = new List<BE.Destino>();
 
+            // Crear e inicializar la instancia de la base de datos
+            DAL.BaseDeDatos db = new DAL.BaseDeDatos();
 
-        //    string query = "USE SistemaViajes; SELECT * FROM Destino";
+            // Especificar las columnas necesarias en lugar de usar *
+            string sqlQuery = "USE SistemaViajes; SELECT * FROM Destino";
 
+            try
+            {
+                bool result = db.Conectar();
+                if (!result) throw new Exception("Error al conectarse a la base de datos");
 
-        //    using (SqlConnection connection = db.ObtenerConexion())
-        //    {
-        //        SqlCommand command = new SqlCommand(query, connection);
-        //        connection.Open();
+                using (SqlCommand command = new SqlCommand(sqlQuery, db.Connection))
+                {
+                    using (SqlDataReader lector = command.ExecuteReader())
+                    {
+                        while (lector.Read())
+                        {
+                            // Manejar posibles valores nulos
+                            int id = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
+                            string nombre = !lector.IsDBNull(1) ? lector.GetString(1) : string.Empty;
+                            string descripcion = !lector.IsDBNull(2) ? lector.GetString(2) : string.Empty;
+                            float precio_base = !lector.IsDBNull(3) ? lector.GetFloat(3) : 1;
+                            BE.Destino objeto = new BE.Destino(id, nombre, descripcion, precio_base);
 
-        //        using (SqlDataReader reader = command.ExecuteReader())
-        //        {
-        //            while (reader.Read())
-        //            {
-        //                BE.Destino destino = new BE.Destino
-        //                {
-        //                    id_destino = reader.GetInt32(0),
-        //                    nombre = reader.GetString(1),
-        //                    descripcion = reader.GetString(2)
-        //                };
-        //                destinos.Add(destino);
-        //            }
-        //        }
-        //    }
+                            list.Add(objeto);
+                        }
+                    }
+                }
 
+                bool result2 = db.Desconectar();
+                if (!result2) throw new Exception("Error al desconectarse de la base de datos");
 
+                return list;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                // Asegurarse de que la conexión se cierre en caso de error
+                db.Desconectar();
+                return null;
+            }
+        }
 
-        //    return new List<BE.Destino>();
-        //}
-
-        void actualizarDestino(BE.Destino destino)
+        public bool crearEntidad(BE.Destino obj)
         {
             string query = "USE SistemaViajes;" +
-                "GO" +
-                "UPDATE Destino" +
-                $"SET nombre = '{destino.nombre}', descripcion = '{destino.descripcion}'" +
-                $"WHERE id_destino = {destino.id_destino}";
+                 "INSERT INTO Destino (nombre, descripcion)" +
+                 "VALUES" +
+                 $"('{obj.nombre}','{obj.descripcion}');";
 
-            db.ejecutarQuery(query);
+            try
+            {
+                bool result = db.ejecutarQuery(query);
+                if (!result) throw new Exception("Error al crear destino");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return false;
+            }
         }
 
-       public void crearDestino(BE.Destino destino)
+        public bool eliminarEntidad(BE.Destino obj)
         {
-            string query = "USE SistemaViajes;GO" +
-                "INSERT INTO Destino (nombre, descripcion)" +
-                "VALUES" +
-                $"('{destino.nombre}', '{destino.descripcion}');";
+            string query = "USE SistemaViajes;" +
+               $"DELETE FROM Destino WHERE id_destino = {obj.id_destino}";
 
-            db.ejecutarQuery(query);
+            try
+            {
+                bool resultado = db.ejecutarQuery(query);
+                if (!resultado) throw new Exception("Error al eliminar destino");
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return false;
+            }
+
         }
 
-        void eliminarDestino(int id)
+        public bool actualizarEntidad(BE.Destino obj)
         {
-            string query = "USE SistemaViajes; GO" +
-                $"DELETE FROM Destino WHERE id_destino = {id}";
+            string query = "USE SistemaViajes;" +
+                             
+                            "UPDATE Destino" +
+            $"SET nombre = '{obj.nombre}', descripcion = '{obj.descripcion}', precio_base = {obj.precio_base}" +
+            $"WHERE id_destino = {obj.id_destino}";
 
-            db.ejecutarQuery(query);
-
-
+            try
+            {
+                bool resultado = db.ejecutarQuery(query);
+                if (!resultado) throw new Exception("Error al actualizar destino");
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return false;
+            }
         }
     }
 }
