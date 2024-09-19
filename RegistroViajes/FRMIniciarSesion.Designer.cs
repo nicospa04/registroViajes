@@ -98,7 +98,7 @@ namespace RegistroViajes
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 128;
-            this.iconPictureBox1.Location = new System.Drawing.Point(53, 102);
+            this.iconPictureBox1.Location = new System.Drawing.Point(49, 74);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(128, 134);
             this.iconPictureBox1.TabIndex = 17;
@@ -108,9 +108,9 @@ namespace RegistroViajes
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(-3, -4);
+            this.label1.Location = new System.Drawing.Point(-3, -12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 344);
+            this.label1.Size = new System.Drawing.Size(227, 352);
             this.label1.TabIndex = 16;
             this.label1.Text = "label1";
             // 
