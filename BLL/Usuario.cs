@@ -6,27 +6,32 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Usuario: IEntidad<Usuario>
+    public class Usuario: IEntidad<BE.Usuario>
     {
 
-        public List<Usuario> leerEntidades()
+        DAL.Usuario dal = new DAL.Usuario();    
+
+
+        public List<BE.Usuario> leerEntidades()
         {
-            throw new NotImplementedException();
+
+            return dal.leerEntidades();
+
         }
 
-        public bool crearEntidad(Usuario obj)
+        public bool crearEntidad(BE.Usuario obj)
         {
-            throw new NotImplementedException();
+            return dal.crearEntidad(obj);
         }
 
-        public bool eliminarEntidad(Usuario obj)
+        public bool eliminarEntidad(BE.Usuario obj)
         {
-            throw new NotImplementedException();
+            return dal.eliminarEntidad(obj);
         }
 
-        public bool actualizarEntidad(Usuario obj)
+        public bool actualizarEntidad(BE.Usuario obj)
         {
-            throw new NotImplementedException();
+            return dal.actualizarEntidad(obj);
         }
     }
 }

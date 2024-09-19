@@ -7,28 +7,31 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Destino: IEntidad<Destino>
+    public class Destino: IEntidad<BE.Destino>
     {
-        
+        DAL.Destino destino = new DAL.Destino();
 
-        public List<Destino> leerEntidades()
+
+        public List<BE.Destino> leerEntidades()
         {
-            throw new NotImplementedException();
+
+            DAL.Destino destino = new DAL.Destino();
+            return destino.leerEntidades();
         }
 
-        public bool crearEntidad(Destino obj)
+        public bool crearEntidad(BE.Destino obj)
         {
-            throw new NotImplementedException();
+            return destino.crearEntidad(obj);
         }
 
-        public bool eliminarEntidad(Destino obj)
+        public bool eliminarEntidad(BE.Destino obj)
         {
-            throw new NotImplementedException();
+            return destino.eliminarEntidad(obj);
         }
 
-        public bool actualizarEntidad(Destino obj)
+        public bool actualizarEntidad(BE.Destino obj)
         {
-            throw new NotImplementedException();
+           return destino.actualizarEntidad(obj);
         }
     }
 }
