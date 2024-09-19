@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Servicios
 {
-    public class LogIn
+    class SessionManager
     {
-
     }
 }
