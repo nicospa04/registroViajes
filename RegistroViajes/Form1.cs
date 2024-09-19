@@ -14,6 +14,9 @@ namespace RegistroViajes
 {
     public partial class Form1 : Form
     {
+        
+
+
         public Form1()
         {
             InitializeComponent();
@@ -26,6 +29,31 @@ namespace RegistroViajes
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void cerraarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cancelarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void iniciarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }
