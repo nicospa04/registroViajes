@@ -31,8 +31,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
-            this.iniciarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cerraarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.iconMenuItem7 = new FontAwesome.Sharp.IconMenuItem();
+            this.cerrarSesionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iconMenuItem2 = new FontAwesome.Sharp.IconMenuItem();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
@@ -70,15 +70,15 @@
             this.iconMenuItem6});
             this.menuStrip1.Location = new System.Drawing.Point(0, 68);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(847, 53);
+            this.menuStrip1.Size = new System.Drawing.Size(912, 53);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
             // iconMenuItem1
             // 
             this.iconMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iniciarSesionToolStripMenuItem,
-            this.cerraarSesionToolStripMenuItem});
+            this.iconMenuItem7,
+            this.cerrarSesionToolStripMenuItem});
             this.iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.User;
             this.iconMenuItem1.IconColor = System.Drawing.Color.Black;
             this.iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -89,18 +89,21 @@
             this.iconMenuItem1.Text = "Sesion";
             this.iconMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
-            // iniciarSesionToolStripMenuItem
+            // iconMenuItem7
             // 
-            this.iniciarSesionToolStripMenuItem.Name = "iniciarSesionToolStripMenuItem";
-            this.iniciarSesionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.iniciarSesionToolStripMenuItem.Text = "Iniciar Sesion";
-            this.iniciarSesionToolStripMenuItem.Click += new System.EventHandler(this.iniciarSesionToolStripMenuItem_Click);
+            this.iconMenuItem7.IconChar = FontAwesome.Sharp.IconChar.None;
+            this.iconMenuItem7.IconColor = System.Drawing.Color.Black;
+            this.iconMenuItem7.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            this.iconMenuItem7.Name = "iconMenuItem7";
+            this.iconMenuItem7.Size = new System.Drawing.Size(143, 22);
+            this.iconMenuItem7.Text = "Iniciar Sesion";
+            this.iconMenuItem7.Click += new System.EventHandler(this.iconMenuItem7_Click);
             // 
-            // cerraarSesionToolStripMenuItem
+            // cerrarSesionToolStripMenuItem
             // 
-            this.cerraarSesionToolStripMenuItem.Name = "cerraarSesionToolStripMenuItem";
-            this.cerraarSesionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
-            this.cerraarSesionToolStripMenuItem.Text = "Cerrar Sesion";
+            this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             // 
             // iconMenuItem2
             // 
@@ -122,25 +125,28 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "Reservar";
+            this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "Modificar";
+            this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click_1);
             // 
             // cancelarToolStripMenuItem
             // 
             this.cancelarToolStripMenuItem.Name = "cancelarToolStripMenuItem";
-            this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cancelarToolStripMenuItem.Text = "Cancelar";
+            this.cancelarToolStripMenuItem.Click += new System.EventHandler(this.cancelarToolStripMenuItem_Click_1);
             // 
             // verViajesRealizadosToolStripMenuItem
             // 
             this.verViajesRealizadosToolStripMenuItem.Name = "verViajesRealizadosToolStripMenuItem";
-            this.verViajesRealizadosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.verViajesRealizadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verViajesRealizadosToolStripMenuItem.Text = "Ver viajes realizados";
             // 
             // iconMenuItem3
@@ -154,6 +160,7 @@
             this.iconMenuItem3.Size = new System.Drawing.Size(67, 49);
             this.iconMenuItem3.Text = "Paquetes";
             this.iconMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconMenuItem3.Click += new System.EventHandler(this.iconMenuItem3_Click);
             // 
             // iconMenuItem4
             // 
@@ -214,7 +221,7 @@
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip2.Size = new System.Drawing.Size(847, 68);
+            this.menuStrip2.Size = new System.Drawing.Size(912, 68);
             this.menuStrip2.TabIndex = 4;
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
@@ -223,11 +230,10 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(847, 454);
+            this.ClientSize = new System.Drawing.Size(912, 453);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
-            this.IsMdiContainer = true;
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -243,8 +249,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
-        private System.Windows.Forms.ToolStripMenuItem iniciarSesionToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cerraarSesionToolStripMenuItem;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
@@ -257,6 +261,8 @@
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem4;
         private FontAwesome.Sharp.IconMenuItem iconMenuItem6;
         private System.Windows.Forms.MenuStrip menuStrip2;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem7;
+        private System.Windows.Forms.ToolStripMenuItem cerrarSesionToolStripMenuItem;
     }
 }
 

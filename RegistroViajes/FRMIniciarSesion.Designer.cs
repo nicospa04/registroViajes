@@ -42,40 +42,40 @@ namespace RegistroViajes
             // 
             // btncancelar
             // 
-            this.btncancelar.Location = new System.Drawing.Point(342, 212);
+            this.btncancelar.Location = new System.Drawing.Point(448, 313);
             this.btncancelar.Name = "btncancelar";
-            this.btncancelar.Size = new System.Drawing.Size(75, 23);
+            this.btncancelar.Size = new System.Drawing.Size(91, 42);
             this.btncancelar.TabIndex = 23;
             this.btncancelar.Text = "Cancelar";
             this.btncancelar.UseVisualStyleBackColor = true;
             // 
             // btniniciar
             // 
-            this.btniniciar.Location = new System.Drawing.Point(253, 212);
+            this.btniniciar.Location = new System.Drawing.Point(327, 313);
             this.btniniciar.Name = "btniniciar";
-            this.btniniciar.Size = new System.Drawing.Size(75, 23);
+            this.btniniciar.Size = new System.Drawing.Size(92, 42);
             this.btniniciar.TabIndex = 22;
             this.btniniciar.Text = "Iniciar";
             this.btniniciar.UseVisualStyleBackColor = true;
             // 
             // txtcontraseña
             // 
-            this.txtcontraseña.Location = new System.Drawing.Point(318, 115);
+            this.txtcontraseña.Location = new System.Drawing.Point(448, 269);
             this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.Size = new System.Drawing.Size(100, 20);
+            this.txtcontraseña.Size = new System.Drawing.Size(91, 20);
             this.txtcontraseña.TabIndex = 21;
             // 
             // txtusuario
             // 
-            this.txtusuario.Location = new System.Drawing.Point(318, 67);
+            this.txtusuario.Location = new System.Drawing.Point(448, 243);
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(100, 20);
+            this.txtusuario.Size = new System.Drawing.Size(91, 20);
             this.txtusuario.TabIndex = 20;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(250, 122);
+            this.label3.Location = new System.Drawing.Point(333, 276);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 19;
@@ -84,7 +84,7 @@ namespace RegistroViajes
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(250, 74);
+            this.label2.Location = new System.Drawing.Point(342, 250);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(43, 13);
             this.label2.TabIndex = 18;
@@ -98,7 +98,7 @@ namespace RegistroViajes
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconPictureBox1.IconSize = 128;
-            this.iconPictureBox1.Location = new System.Drawing.Point(49, 74);
+            this.iconPictureBox1.Location = new System.Drawing.Point(67, 221);
             this.iconPictureBox1.Name = "iconPictureBox1";
             this.iconPictureBox1.Size = new System.Drawing.Size(128, 134);
             this.iconPictureBox1.TabIndex = 17;
@@ -108,9 +108,9 @@ namespace RegistroViajes
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(-3, -12);
+            this.label1.Location = new System.Drawing.Point(-6, -8);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(227, 352);
+            this.label1.Size = new System.Drawing.Size(302, 496);
             this.label1.TabIndex = 16;
             this.label1.Text = "label1";
             // 
@@ -118,7 +118,7 @@ namespace RegistroViajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(446, 306);
+            this.ClientSize = new System.Drawing.Size(616, 432);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btniniciar);
             this.Controls.Add(this.txtcontraseña);

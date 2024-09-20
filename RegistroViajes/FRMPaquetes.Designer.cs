@@ -55,7 +55,7 @@ namespace RegistroViajes
             this.iconButton1.IconColor = System.Drawing.Color.Black;
             this.iconButton1.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButton1.Location = new System.Drawing.Point(27, 202);
+            this.iconButton1.Location = new System.Drawing.Point(29, 234);
             this.iconButton1.Name = "iconButton1";
             this.iconButton1.Size = new System.Drawing.Size(214, 211);
             this.iconButton1.TabIndex = 0;
@@ -70,7 +70,7 @@ namespace RegistroViajes
             this.iconButton2.IconColor = System.Drawing.Color.Black;
             this.iconButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButton2.Location = new System.Drawing.Point(292, 202);
+            this.iconButton2.Location = new System.Drawing.Point(294, 234);
             this.iconButton2.Name = "iconButton2";
             this.iconButton2.Size = new System.Drawing.Size(203, 211);
             this.iconButton2.TabIndex = 1;
@@ -85,7 +85,7 @@ namespace RegistroViajes
             this.iconButton3.IconColor = System.Drawing.Color.Black;
             this.iconButton3.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconButton3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.iconButton3.Location = new System.Drawing.Point(558, 202);
+            this.iconButton3.Location = new System.Drawing.Point(560, 234);
             this.iconButton3.Name = "iconButton3";
             this.iconButton3.Size = new System.Drawing.Size(208, 211);
             this.iconButton3.TabIndex = 2;
@@ -99,7 +99,7 @@ namespace RegistroViajes
             this.label1.BackColor = System.Drawing.Color.Silver;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label1.Location = new System.Drawing.Point(201, 61);
+            this.label1.Location = new System.Drawing.Point(195, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(419, 55);
             this.label1.TabIndex = 3;
@@ -108,24 +108,24 @@ namespace RegistroViajes
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label2.Location = new System.Drawing.Point(-4, -11);
+            this.label2.Location = new System.Drawing.Point(-6, -16);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(814, 193);
+            this.label2.Size = new System.Drawing.Size(814, 232);
             this.label2.TabIndex = 4;
             this.label2.Text = "label2";
             // 
             // label3
             // 
             this.label3.BackColor = System.Drawing.Color.Silver;
-            this.label3.Location = new System.Drawing.Point(60, 21);
+            this.label3.Location = new System.Drawing.Point(139, 118);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(686, 140);
+            this.label3.Size = new System.Drawing.Size(545, 88);
             this.label3.TabIndex = 5;
             // 
             // label4
             // 
             this.label4.BackColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(43, 264);
+            this.label4.Location = new System.Drawing.Point(45, 296);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(175, 52);
             this.label4.TabIndex = 6;
@@ -136,7 +136,7 @@ namespace RegistroViajes
             // 
             this.label5.BackColor = System.Drawing.Color.White;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(135, 320);
+            this.label5.Location = new System.Drawing.Point(137, 352);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(83, 24);
             this.label5.TabIndex = 7;
@@ -145,7 +145,7 @@ namespace RegistroViajes
             // label6
             // 
             this.label6.BackColor = System.Drawing.Color.White;
-            this.label6.Location = new System.Drawing.Point(43, 329);
+            this.label6.Location = new System.Drawing.Point(45, 361);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 15);
             this.label6.TabIndex = 8;
@@ -155,7 +155,7 @@ namespace RegistroViajes
             // 
             this.label7.BackColor = System.Drawing.Color.Gray;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(85, 365);
+            this.label7.Location = new System.Drawing.Point(87, 397);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(83, 38);
             this.label7.TabIndex = 9;
@@ -164,7 +164,7 @@ namespace RegistroViajes
             // label8
             // 
             this.label8.BackColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(307, 264);
+            this.label8.Location = new System.Drawing.Point(309, 296);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(175, 52);
             this.label8.TabIndex = 10;
@@ -174,7 +174,7 @@ namespace RegistroViajes
             // label9
             // 
             this.label9.BackColor = System.Drawing.Color.White;
-            this.label9.Location = new System.Drawing.Point(307, 324);
+            this.label9.Location = new System.Drawing.Point(309, 356);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(66, 15);
             this.label9.TabIndex = 11;
@@ -184,7 +184,7 @@ namespace RegistroViajes
             // 
             this.label10.BackColor = System.Drawing.Color.White;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(405, 316);
+            this.label10.Location = new System.Drawing.Point(407, 348);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(77, 24);
             this.label10.TabIndex = 12;
@@ -194,7 +194,7 @@ namespace RegistroViajes
             // 
             this.label11.BackColor = System.Drawing.Color.Gray;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(354, 365);
+            this.label11.Location = new System.Drawing.Point(356, 397);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(83, 38);
             this.label11.TabIndex = 13;
@@ -203,7 +203,7 @@ namespace RegistroViajes
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.White;
-            this.label12.Location = new System.Drawing.Point(571, 264);
+            this.label12.Location = new System.Drawing.Point(573, 296);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(175, 52);
             this.label12.TabIndex = 14;
@@ -214,7 +214,7 @@ namespace RegistroViajes
             // 
             this.label13.BackColor = System.Drawing.Color.Gray;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(623, 365);
+            this.label13.Location = new System.Drawing.Point(625, 397);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(83, 38);
             this.label13.TabIndex = 15;
@@ -223,7 +223,7 @@ namespace RegistroViajes
             // label14
             // 
             this.label14.BackColor = System.Drawing.Color.White;
-            this.label14.Location = new System.Drawing.Point(571, 324);
+            this.label14.Location = new System.Drawing.Point(573, 356);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(66, 15);
             this.label14.TabIndex = 16;
@@ -233,7 +233,7 @@ namespace RegistroViajes
             // 
             this.label15.BackColor = System.Drawing.Color.White;
             this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(669, 316);
+            this.label15.Location = new System.Drawing.Point(671, 348);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(77, 24);
             this.label15.TabIndex = 17;
@@ -243,7 +243,7 @@ namespace RegistroViajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(805, 457);
             this.Controls.Add(this.label15);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label13);
