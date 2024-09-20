@@ -4,3 +4,9 @@ C:\Users\Navegador\Desktop\RegistroViajes\BE\obj\Debug\BE.csproj.AssemblyReferen
 C:\Users\Navegador\Desktop\RegistroViajes\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 C:\Users\Navegador\Desktop\RegistroViajes\BE\obj\Debug\BE.dll
 C:\Users\Navegador\Desktop\RegistroViajes\BE\obj\Debug\BE.pdb
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\BE\bin\Debug\BE.dll
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\BE\bin\Debug\BE.pdb
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\BE\obj\Debug\BE.dll
+C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\BE\obj\Debug\BE.pdb

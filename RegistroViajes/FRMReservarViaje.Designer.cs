@@ -67,7 +67,7 @@ namespace RegistroViajes
             // label12
             // 
             this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(133, 394);
+            this.label12.Location = new System.Drawing.Point(139, 416);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(13, 13);
             this.label12.TabIndex = 51;
@@ -76,7 +76,7 @@ namespace RegistroViajes
             // label11
             // 
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(9, 20);
+            this.label11.Location = new System.Drawing.Point(12, 123);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(140, 28);
             this.label11.TabIndex = 50;
@@ -85,35 +85,35 @@ namespace RegistroViajes
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(382, 49);
+            this.dataGridView1.Location = new System.Drawing.Point(345, 113);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(623, 371);
+            this.dataGridView1.Size = new System.Drawing.Size(669, 371);
             this.dataGridView1.TabIndex = 48;
             // 
             // dateTimePicker2
             // 
-            this.dateTimePicker2.Location = new System.Drawing.Point(119, 285);
+            this.dateTimePicker2.Location = new System.Drawing.Point(119, 326);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker2.TabIndex = 47;
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(119, 320);
+            this.dateTimePicker1.Location = new System.Drawing.Point(119, 354);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
             this.dateTimePicker1.TabIndex = 46;
             // 
             // numericUpDown2
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(120, 216);
+            this.numericUpDown2.Location = new System.Drawing.Point(121, 274);
             this.numericUpDown2.Name = "numericUpDown2";
             this.numericUpDown2.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown2.TabIndex = 45;
             // 
             // numericUpDown1
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(119, 251);
+            this.numericUpDown1.Location = new System.Drawing.Point(121, 300);
             this.numericUpDown1.Name = "numericUpDown1";
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 44;
@@ -121,7 +121,7 @@ namespace RegistroViajes
             // comboBox4
             // 
             this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(119, 135);
+            this.comboBox4.Location = new System.Drawing.Point(121, 220);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 21);
             this.comboBox4.TabIndex = 43;
@@ -129,7 +129,7 @@ namespace RegistroViajes
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(119, 178);
+            this.comboBox2.Location = new System.Drawing.Point(121, 247);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
             this.comboBox2.TabIndex = 42;
@@ -137,14 +137,14 @@ namespace RegistroViajes
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(119, 96);
+            this.comboBox1.Location = new System.Drawing.Point(121, 191);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 41;
             // 
             // textBox1
             // 
-            this.textBox1.Location = new System.Drawing.Point(119, 60);
+            this.textBox1.Location = new System.Drawing.Point(122, 163);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(100, 20);
             this.textBox1.TabIndex = 40;
@@ -206,7 +206,7 @@ namespace RegistroViajes
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(11, 385);
+            this.label3.Location = new System.Drawing.Point(12, 407);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(126, 35);
             this.label3.TabIndex = 33;
@@ -232,26 +232,27 @@ namespace RegistroViajes
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(198, 382);
+            this.button1.Location = new System.Drawing.Point(195, 403);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 36);
+            this.button1.Size = new System.Drawing.Size(95, 26);
             this.button1.TabIndex = 30;
             this.button1.Text = "Reservar";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label10
             // 
             this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label10.Location = new System.Drawing.Point(325, -22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(727, 474);
+            this.label10.Size = new System.Drawing.Size(744, 603);
             this.label10.TabIndex = 49;
             this.label10.Text = "label10";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(13, 292);
+            this.label13.Location = new System.Drawing.Point(14, 333);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(64, 13);
             this.label13.TabIndex = 59;
@@ -260,7 +261,7 @@ namespace RegistroViajes
             // label14
             // 
             this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(13, 327);
+            this.label14.Location = new System.Drawing.Point(16, 361);
             this.label14.Name = "label14";
             this.label14.Size = new System.Drawing.Size(69, 13);
             this.label14.TabIndex = 58;
@@ -269,7 +270,7 @@ namespace RegistroViajes
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(13, 104);
+            this.label15.Location = new System.Drawing.Point(16, 199);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(48, 13);
             this.label15.TabIndex = 57;
@@ -278,7 +279,7 @@ namespace RegistroViajes
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(13, 143);
+            this.label16.Location = new System.Drawing.Point(16, 228);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(43, 13);
             this.label16.TabIndex = 56;
@@ -287,7 +288,7 @@ namespace RegistroViajes
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(13, 186);
+            this.label17.Location = new System.Drawing.Point(16, 255);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(58, 13);
             this.label17.TabIndex = 55;
@@ -296,7 +297,7 @@ namespace RegistroViajes
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(13, 223);
+            this.label18.Location = new System.Drawing.Point(14, 281);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(92, 13);
             this.label18.TabIndex = 54;
@@ -305,7 +306,7 @@ namespace RegistroViajes
             // label19
             // 
             this.label19.AutoSize = true;
-            this.label19.Location = new System.Drawing.Point(13, 258);
+            this.label19.Location = new System.Drawing.Point(14, 307);
             this.label19.Name = "label19";
             this.label19.Size = new System.Drawing.Size(101, 13);
             this.label19.TabIndex = 53;
@@ -314,7 +315,7 @@ namespace RegistroViajes
             // label20
             // 
             this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(13, 67);
+            this.label20.Location = new System.Drawing.Point(16, 170);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(36, 13);
             this.label20.TabIndex = 52;
@@ -324,7 +325,7 @@ namespace RegistroViajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1046, 450);
+            this.ClientSize = new System.Drawing.Size(1041, 511);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
