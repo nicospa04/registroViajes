@@ -18,6 +18,10 @@ namespace BLL
             return dal.leerEntidades();
 
         }
+        public BE.Usuario recuperarUsuario(string email, string contraseña)
+        {
+            return dal.recuperarUsuario(email, contraseña);
+        }
 
         public bool crearEntidad(BE.Usuario obj)
         {

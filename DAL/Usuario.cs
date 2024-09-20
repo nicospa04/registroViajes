@@ -11,7 +11,12 @@ namespace DAL
     {
 
         BaseDeDatos db { get; }
- 
+        PasswordHasher hasher { get; set; }
+
+       public Usuario()
+        {
+            hasher = new PasswordHasher();
+        }
 
         public List<BE.Usuario> leerEntidades()
         {
@@ -42,10 +47,11 @@ namespace DAL
                             string apellido = !lector.IsDBNull(4) ? lector.GetString(4) : string.Empty;
                             string telefono = !lector.IsDBNull(5) ? lector.GetString(5) : string.Empty;
                             string email = !lector.IsDBNull(6) ? lector.GetString(6) : "";
-                            DateTime fecha_nacimiento = !lector.IsDBNull(7) ? lector.GetDateTime(6) : DateTime.Now;
-                            string rol = !lector.IsDBNull(8) ? lector.GetString(5) : string.Empty;
+                            DateTime fecha_nacimiento = !lector.IsDBNull(7) ? lector.GetDateTime(7) : DateTime.Now;
+                            string rol = !lector.IsDBNull(8) ? lector.GetString(8) : string.Empty;
+                            string salt = !lector.IsDBNull(9) ? lector.GetString(9) : string.Empty;
 
-                            BE.Usuario usuario = new BE.Usuario(id_usuario, dni, nombre, apellido, telefono, email, contraseña, fecha_nacimiento, rol);
+                            BE.Usuario usuario = new BE.Usuario(id_usuario, dni, nombre, apellido, telefono, email, contraseña, fecha_nacimiento, rol, salt);
 
                             list.Add(usuario);
                         }
@@ -68,10 +74,13 @@ namespace DAL
 
         public bool crearEntidad(BE.Usuario obj)
         {
+            string salt;
+            string hashedPassword = hasher.HashPassword(obj.contraseña, out salt);
+
             string query = "USE SistemaViajes;" +
-                "INSERT INTO Usuario (dni, nombre, contraseña, apellido, telefono, email, fecha_nacimiento, rol)" +
+                "INSERT INTO Usuario (dni, nombre, contraseña, apellido, telefono, email, fecha_nacimiento, rol, salt)" +
                 "VALUES" +
-                $"('{obj.dni}','{obj.nombre}', '{obj.contraseña}', '{obj.apellido}', '{obj.telefono}', '{obj.mail}', '{obj.fechaNacimiento.ToString()}', '{obj.rol}');";
+                $"('{obj.dni}','{obj.nombre}', '{hashedPassword}', '{obj.apellido}', '{obj.telefono}', '{obj.mail}', '{obj.fechaNacimiento.ToString()}', '{obj.rol}', '{salt}');";
 
             try
             {
@@ -127,5 +136,66 @@ namespace DAL
                 return false;
             }
         }
+
+        public BE.Usuario recuperarUsuario(string email, string contraseña)
+        {
+            // Crear e inicializar la instancia de la base de datos
+            DAL.BaseDeDatos db = new DAL.BaseDeDatos();
+
+            // Consulta SQL solo para obtener el salt y el hash
+            string sqlQuery = "USE SistemaViajes; SELECT id_usuario, dni, nombre, apellido, telefono, email, fecha_nacimiento, rol, contraseña, salt FROM Usuario WHERE email = @Email";
+
+            try
+            {
+                bool result = db.Conectar();
+                if (!result) throw new Exception("Error al conectarse a la base de datos");
+
+                using (SqlCommand command = new SqlCommand(sqlQuery, db.Connection))
+                {
+                    // Uso de parámetros para prevenir inyecciones SQL
+                    command.Parameters.AddWithValue("@Email", email);
+
+                    using (SqlDataReader lector = command.ExecuteReader())
+                    {
+                        if (lector.Read()) // Si encontramos un usuario con el email
+                        {
+                            // Manejar posibles valores nulos
+                            int id_usuario = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
+                            string dni = !lector.IsDBNull(1) ? lector.GetString(1) : "";
+                            string nombre = !lector.IsDBNull(2) ? lector.GetString(2) : "";
+                            string hashAlmacenado = !lector.IsDBNull(3) ? lector.GetString(3) : "";
+                            string apellido = !lector.IsDBNull(4) ? lector.GetString(4) : string.Empty;
+                            string telefono = !lector.IsDBNull(5) ? lector.GetString(5) : string.Empty;
+                            string email_db = !lector.IsDBNull(6) ? lector.GetString(6) : "";
+                            DateTime fecha_nacimiento = !lector.IsDBNull(7) ? lector.GetDateTime(7) : DateTime.Now;
+                            string rol = !lector.IsDBNull(7) ? lector.GetString(8) : string.Empty;
+
+                            // Recuperar el hash y el salt almacenados
+                            string saltAlmacenado = !lector.IsDBNull(9) ? lector.GetString(9) : "";
+
+                            // Verificar la contraseña ingresada
+                            bool esContraseñaValida = hasher.VerifyPassword(contraseña, saltAlmacenado, hashAlmacenado);
+
+                            if (esContraseñaValida)
+                            {
+                                // Crear y retornar el objeto Usuario
+                                BE.Usuario usuario = new BE.Usuario(id_usuario, dni, nombre, apellido, telefono, email_db, contraseña, fecha_nacimiento, rol, saltAlmacenado);
+                                return usuario; // Retorna el usuario si la contraseña es válida
+                            }
+                        }
+                    }
+                }
+
+                db.Desconectar();
+                return null; // Si no se encontró ningún usuario o la contraseña es incorrecta, devuelve null
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return null; // Devuelve null en caso de error
+            }
+        }
+
     }
 }

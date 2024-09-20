@@ -12,7 +12,7 @@ namespace DAL
     {
         
 
-        public static string dataSource = "HP_Victoria\\SQLEXPRESS";
+        public static string dataSource = "090L3PC16-80598";
         public static string dbName = "SistemaViajes";
         public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
@@ -72,7 +72,8 @@ namespace DAL
                     "telefono VARCHAR(20)," +
                     "email VARCHAR(100) NOT NULL," +
                     "fecha_nacimiento DATE," +
-                    "rol VARCHAR(50));");
+                    "rol VARCHAR(50)," +
+                    "salt VARCHAR(50);");
 
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Empresa (" +
                     "id_empresa INT PRIMARY KEY IDENTITY(1,1)," +
@@ -123,11 +124,11 @@ namespace DAL
         void scriptDatos()
         {
             // Insertar datos en la tabla Usuario
-            ejecutarQuery("USE SistemaViajes; INSERT INTO Usuario (dni, nombre, apellido, contraseña, telefono, email, fecha_nacimiento, rol) " +
+            ejecutarQuery("USE SistemaViajes; INSERT INTO Usuario (dni, nombre, apellido, contraseña, telefono, email, fecha_nacimiento, rol, salt) " +
                 "VALUES " +
-                "('12345678', 'Juan', 'Pérez', 'abc1', '555-1234', 'juan.perez@example.com', '1985-04-23', 'cliente')," +
-                "('87654321', 'María', 'González', 'abc2', '555-5678', 'maria.gonzalez@example.com', '1990-09-12', 'cliente')," +
-                "('13579111', 'Carlos', 'Martínez', 'abc3', '555-6789', 'carlos.martinez@example.com', '1978-02-15', 'administrador');");
+                "('12345678', 'Juan', 'Pérez', 'abc1', '555-1234', 'juan.perez@example.com', '1985-04-23', 'cliente', '12345')," +
+                "('87654321', 'María', 'González', 'abc2', '555-5678', 'maria.gonzalez@example.com', '1990-09-12', 'cliente', '12345')," +
+                "('13579111', 'Carlos', 'Martínez', 'abc3', '555-6789', 'carlos.martinez@example.com', '1978-02-15', 'administrador', '12345');");
 
             // Insertar datos en la tabla Empresa
             ejecutarQuery("USE SistemaViajes; INSERT INTO Empresa (nombre, descripcion, porcentaje_extra) " +

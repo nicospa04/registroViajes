@@ -61,3 +61,9 @@ C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\de
 C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.CopyComplete
 C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.exe
 C:\Users\mavru\OneDrive - UNIVERSIDAD ABIERTA INTERAMERICANA\UAI segundo año\desarrollo y arq de software\clonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.pdb
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCancelarViaje.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMIniciarSesion.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMModificarViaje.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMPaquetes.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMReservarViaje.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\bin\Debug\FontAwesome.Sharp.dll

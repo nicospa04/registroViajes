@@ -22,15 +22,15 @@ namespace RegistroViajes
 
         private void btniniciar_Click(object sender, EventArgs e)
         {
-            Usuario user = txtusuario.Text && txtcontraseña.Text;
-            if(user != null)
-            {
-                SessionManager.ObtenerInstancia().IniciarSesion(user);
-            }
-            else
-            {
+            //Usuario user = txtusuario.Text && txtcontraseña.Text;
+            //if(user != null)
+            //{
+            //    SessionManager.ObtenerInstancia().IniciarSesion(user);
+            //}
+            //else
+            //{
 
-            }
+            //}
         }
     }
 }
