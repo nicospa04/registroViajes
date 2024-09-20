@@ -9,20 +9,20 @@ namespace Servicios
 {
     public sealed class SessionManager
     {
-    //    private static SessionManager Instancia = null;
-    //    private static Usuario _user;
-    //    private SessionManager() { }
+        private static SessionManager Instancia = null;
+        private static Usuario _user;
+        private SessionManager() { }
 
-    //    public static SessionManager ObtenerInstancia()
-    //    {
-    //        if (Instancia == null)
-    //        {
-    //            Instancia = new SessionManager();
-    //        }
-    //        return Instancia;
-    //    }
+        public static SessionManager ObtenerInstancia()
+        {
+            if (Instancia == null)
+            {
+                Instancia = new SessionManager();
+            }
+            return Instancia;
+        }
 
-        public static void IniciarSesion(Usuario userNuevo)
+        public void IniciarSesion(Usuario userNuevo)
         {
             if (Instancia == null)
             {
@@ -33,6 +33,7 @@ namespace Servicios
             {
                 throw new Exception(message: "Sesion ya Iniciada");
             }
+            //_user = userNuevo;
         }
 
         public void CerrarSesion()
@@ -45,7 +46,17 @@ namespace Servicios
             {
                 throw new Exception(message: "Sesion no Iniciada");
             }
+            //_user = null;
         }
 
+        public Usuario Usuario
+        {
+            get { return _user; }
+        }
+
+        public static Usuario Obtenerdatosuser()
+        {
+            return _user;
+        }
     }
 }

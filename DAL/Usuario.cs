@@ -11,7 +11,7 @@ namespace DAL
     {
 
         BaseDeDatos db { get; }
- 
+        
 
         public List<BE.Usuario> leerEntidades()
         {
