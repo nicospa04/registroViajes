@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace BLL
 {
-    public class Destino: IEntidad<BE.Destino>
+    public class BLLDestino: IEntidad<BE.Destino>
     {
         DAL.Destino destino = new DAL.Destino();
 

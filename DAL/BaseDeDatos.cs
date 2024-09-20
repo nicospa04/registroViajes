@@ -10,8 +10,9 @@ namespace DAL
 {
     public class BaseDeDatos
     {
+        
 
-        public static string dataSource = "DESKTOP-4V5CTVV";
+        public static string dataSource = "090L3PC16-80598";
         public static string dbName = "SistemaViajes";
         public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
@@ -71,7 +72,8 @@ namespace DAL
                     "telefono VARCHAR(20)," +
                     "email VARCHAR(100) NOT NULL," +
                     "fecha_nacimiento DATE," +
-                    "rol VARCHAR(50));");
+                    "rol VARCHAR(50)," +
+                    "salt VARCHAR(50));");
 
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Empresa (" +
                     "id_empresa INT PRIMARY KEY IDENTITY(1,1)," +
@@ -115,18 +117,33 @@ namespace DAL
              
 
 
-                scriptDatos();
+               scriptDatos();
             }
         }
 
         void scriptDatos()
         {
-            // Insertar datos en la tabla Usuario
-            ejecutarQuery("USE SistemaViajes; INSERT INTO Usuario (dni, nombre, apellido, contraseña, telefono, email, fecha_nacimiento, rol) " +
+            // Instancia del PasswordHasher
+            PasswordHasher hasher = new PasswordHasher();
+
+            // Generar salt y hash para el usuario Juan
+            string saltJuan;
+            string hashJuan = hasher.HashPassword("abc1", out saltJuan);
+
+            // Generar salt y hash para el usuario María
+            string saltMaria;
+            string hashMaria = hasher.HashPassword("abc2", out saltMaria);
+
+            // Generar salt y hash para el usuario Carlos
+            string saltCarlos;
+            string hashCarlos = hasher.HashPassword("abc3", out saltCarlos);
+
+            // Insertar datos en la tabla Usuario con salt y contraseña hasheada
+            ejecutarQuery($"USE SistemaViajes; INSERT INTO Usuario (dni, nombre, apellido, contraseña, telefono, email, fecha_nacimiento, rol, salt) " +
                 "VALUES " +
-                "('12345678', 'Juan', 'Pérez', 'abc1', '555-1234', 'juan.perez@example.com', '1985-04-23', 'cliente')," +
-                "('87654321', 'María', 'González', 'abc2', '555-5678', 'maria.gonzalez@example.com', '1990-09-12', 'cliente')," +
-                "('13579111', 'Carlos', 'Martínez', 'abc3', '555-6789', 'carlos.martinez@example.com', '1978-02-15', 'administrador');");
+                $"('12345678', 'Juan', 'Pérez', '{hashJuan}', '555-1234', 'juan.perez@example.com', '1985-04-23', 'cliente', '{saltJuan}')," +
+                $"('87654321', 'María', 'González', '{hashMaria}', '555-5678', 'maria.gonzalez@example.com', '1990-09-12', 'cliente', '{saltMaria}')," +
+                $"('13579111', 'Carlos', 'Martínez', '{hashCarlos}', '555-6789', 'carlos.martinez@example.com', '1978-02-15', 'administrador', '{saltCarlos}');");
 
             // Insertar datos en la tabla Empresa
             ejecutarQuery("USE SistemaViajes; INSERT INTO Empresa (nombre, descripcion, porcentaje_extra) " +
@@ -144,11 +161,9 @@ namespace DAL
             // Insertar datos en la tabla Paquete
             ejecutarQuery("USE SistemaViajes; INSERT INTO Paquete (id_destino, precio_base, cupo_personas, nombre, descripcion, fecha_inicio, fecha_vuelta) " +
                 "VALUES " +
-                "(1, 1500.00, 20, 'Romance en París', 'Paquete especial para parejas, incluye visitas guiadas y cenas románticas.', '2024-09-01', '2024-09-10')," +
-                "(2, 2000.00, 15, 'Nueva York Express', 'Paquete para conocer lo esencial de Nueva York en 5 días.', '2024-10-05', '2024-10-12')," +
-                "(3, 1200.00, 25, 'Aventura en Bariloche', 'Paquete de aventura que incluye excursiones, caminatas y deportes de invierno.', '2024-12-20', '2024-12-30');");
-
-            // Nota: La tabla FechasDisponibles ha sido eliminada o modificada, por lo que se omite su inserción.
+                "(1, 1500.00, 2, 'Romance en París', 'Paquete especial para parejas, incluye visitas guiadas y cenas románticas.', '2024-09-01', '2024-09-10')," +
+                "(2, 2000.00, 4, 'Nueva York Express', 'Paquete para conocer lo esencial de Nueva York en 5 días.', '2024-10-05', '2024-10-12')," +
+                "(3, 1200.00, 5, 'Aventura en Bariloche', 'Paquete de aventura que incluye excursiones, caminatas y deportes de invierno.', '2024-12-20', '2024-12-30');");
 
             // Insertar datos en la tabla Viaje
             ejecutarQuery("USE SistemaViajes; INSERT INTO Viaje (id_usuario, id_empresa, id_destino, transporte, cant_adulto, cant_niños, costo, fecha_inicio, fecha_vuelta) " +
@@ -157,6 +172,7 @@ namespace DAL
                 "(2, 2, 2, 'Avión', 1, 1, 4000.00, '2024-10-05', '2024-10-12')," +
                 "(1, 2, 3, 'Bus', 2, 2, 2400.00, '2024-12-20', '2024-12-30');");
         }
+
 
 
 
