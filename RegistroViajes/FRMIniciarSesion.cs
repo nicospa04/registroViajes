@@ -20,17 +20,38 @@ namespace RegistroViajes
             InitializeComponent();
         }
 
+        BLLUsuario BLLUser = new BLLUsuario();
+
         private void btniniciar_Click(object sender, EventArgs e)
         {
-            //Usuario user = txtusuario.Text && txtcontraseña.Text;
-            //if(user != null)
-            //{
-            //    SessionManager.ObtenerInstancia().IniciarSesion(user);
-            //}
-            //else
-            //{
+            if (txtusuario.Text == string.Empty || txtcontraseña.Text == string.Empty)
+            {
+                MessageBox.Show("Complete los campos");
+                return;
+            }
 
-            //}
+            if (SessionManager.ObtenerInstancia().Usuario != null)
+            {
+                MessageBox.Show("Ya hay una sesión activa.");
+                return;
+            }
+
+            Usuario user = BLLUser.recuperarUsuario(txtusuario.Text.Trim(),txtcontraseña.Text.Trim());
+            if(user == null)
+            {
+                MessageBox.Show("Usuario No Encontrado");
+                return;
+            }
+            if (user != null)
+            {
+                MessageBox.Show("Sesion Iniciada Correctamente");
+                SessionManager.ObtenerInstancia().IniciarSesion(user);
+            }
+        }
+
+        private void btncancelar_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

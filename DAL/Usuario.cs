@@ -164,11 +164,11 @@ namespace DAL
                             string dni = !lector.IsDBNull(1) ? lector.GetString(1) : "";
                             string nombre = !lector.IsDBNull(2) ? lector.GetString(2) : "";
                             string hashAlmacenado = !lector.IsDBNull(3) ? lector.GetString(3) : "";
-                            string apellido = !lector.IsDBNull(4) ? lector.GetString(4) : string.Empty;
-                            string telefono = !lector.IsDBNull(5) ? lector.GetString(5) : string.Empty;
-                            string email_db = !lector.IsDBNull(6) ? lector.GetString(6) : "";
+                            string apellido = !lector.IsDBNull(3) ? lector.GetString(3) : string.Empty;
+                            string telefono = !lector.IsDBNull(4) ? lector.GetString(4) : string.Empty;
+                            string email_db = !lector.IsDBNull(5) ? lector.GetString(5) : "";
                             DateTime fecha_nacimiento = !lector.IsDBNull(7) ? lector.GetDateTime(7) : DateTime.Now;
-                            string rol = !lector.IsDBNull(7) ? lector.GetString(8) : string.Empty;
+                            string rol = !lector.IsDBNull(8) ? lector.GetString(8) : string.Empty;
 
                             // Recuperar el hash y el salt almacenados
                             string saltAlmacenado = !lector.IsDBNull(9) ? lector.GetString(9) : "";
