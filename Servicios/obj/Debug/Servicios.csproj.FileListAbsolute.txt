@@ -16,3 +16,12 @@ C:\Users\Navegador\Desktop\registroViajes\Servicios\obj\Debug\Servicios.csproj.C
 C:\Users\Navegador\Desktop\registroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
 C:\Users\Navegador\Desktop\registroViajes\Servicios\obj\Debug\Servicios.dll
 C:\Users\Navegador\Desktop\registroViajes\Servicios\obj\Debug\Servicios.pdb
+C:\vicky\CLonado\registroViajes\Servicios\bin\Debug\Servicios.dll
+C:\vicky\CLonado\registroViajes\Servicios\bin\Debug\Servicios.pdb
+C:\vicky\CLonado\registroViajes\Servicios\bin\Debug\BE.dll
+C:\vicky\CLonado\registroViajes\Servicios\bin\Debug\BE.pdb
+C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
+C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.dll
+C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.pdb

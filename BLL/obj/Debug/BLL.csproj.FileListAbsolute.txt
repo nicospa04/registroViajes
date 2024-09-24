@@ -37,3 +37,16 @@ C:\Users\Navegador\Desktop\registroViajes\BLL\obj\Debug\BLL.csproj.CoreCompileIn
 C:\Users\Navegador\Desktop\registroViajes\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\Navegador\Desktop\registroViajes\BLL\obj\Debug\BLL.dll
 C:\Users\Navegador\Desktop\registroViajes\BLL\obj\Debug\BLL.pdb
+C:\vicky\CLonado\registroViajes\BLL\bin\Debug\BLL.dll
+C:\vicky\CLonado\registroViajes\BLL\bin\Debug\BLL.pdb
+C:\vicky\CLonado\registroViajes\BLL\bin\Debug\BE.dll
+C:\vicky\CLonado\registroViajes\BLL\bin\Debug\DAL.dll
+C:\vicky\CLonado\registroViajes\BLL\bin\Debug\Servicios.dll
+C:\vicky\CLonado\registroViajes\BLL\bin\Debug\BE.pdb
+C:\vicky\CLonado\registroViajes\BLL\bin\Debug\DAL.pdb
+C:\vicky\CLonado\registroViajes\BLL\bin\Debug\Servicios.pdb
+C:\vicky\CLonado\registroViajes\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\vicky\CLonado\registroViajes\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\vicky\CLonado\registroViajes\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\vicky\CLonado\registroViajes\BLL\obj\Debug\BLL.dll
+C:\vicky\CLonado\registroViajes\BLL\obj\Debug\BLL.pdb

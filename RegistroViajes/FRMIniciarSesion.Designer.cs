@@ -37,6 +37,7 @@ namespace RegistroViajes
             this.label2 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnRegistrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@ namespace RegistroViajes
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(91, 42);
             this.btncancelar.TabIndex = 23;
-            this.btncancelar.Text = "Cancelar";
+            this.btncancelar.Text = "Salir";
             this.btncancelar.UseVisualStyleBackColor = true;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
@@ -56,7 +57,7 @@ namespace RegistroViajes
             this.btniniciar.Name = "btniniciar";
             this.btniniciar.Size = new System.Drawing.Size(92, 42);
             this.btniniciar.TabIndex = 22;
-            this.btniniciar.Text = "Iniciar";
+            this.btniniciar.Text = "Iniciar sesion";
             this.btniniciar.UseVisualStyleBackColor = true;
             this.btniniciar.Click += new System.EventHandler(this.btniniciar_Click);
             // 
@@ -64,14 +65,14 @@ namespace RegistroViajes
             // 
             this.txtcontraseña.Location = new System.Drawing.Point(448, 269);
             this.txtcontraseña.Name = "txtcontraseña";
-            this.txtcontraseña.Size = new System.Drawing.Size(91, 20);
+            this.txtcontraseña.Size = new System.Drawing.Size(137, 20);
             this.txtcontraseña.TabIndex = 21;
             // 
             // txtusuario
             // 
             this.txtusuario.Location = new System.Drawing.Point(448, 243);
             this.txtusuario.Name = "txtusuario";
-            this.txtusuario.Size = new System.Drawing.Size(91, 20);
+            this.txtusuario.Size = new System.Drawing.Size(137, 20);
             this.txtusuario.TabIndex = 20;
             // 
             // label3
@@ -88,9 +89,9 @@ namespace RegistroViajes
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(342, 250);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(43, 13);
+            this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 18;
-            this.label2.Text = "Usuario";
+            this.label2.Text = "Gmail";
             // 
             // iconPictureBox1
             // 
@@ -116,11 +117,22 @@ namespace RegistroViajes
             this.label1.TabIndex = 16;
             this.label1.Text = "label1";
             // 
+            // btnRegistrar
+            // 
+            this.btnRegistrar.Location = new System.Drawing.Point(389, 372);
+            this.btnRegistrar.Name = "btnRegistrar";
+            this.btnRegistrar.Size = new System.Drawing.Size(92, 22);
+            this.btnRegistrar.TabIndex = 24;
+            this.btnRegistrar.Text = "Registrarse";
+            this.btnRegistrar.UseVisualStyleBackColor = true;
+            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
+            // 
             // FRMIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(616, 432);
+            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btniniciar);
             this.Controls.Add(this.txtcontraseña);
@@ -147,5 +159,6 @@ namespace RegistroViajes
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button btnRegistrar;
     }
 }

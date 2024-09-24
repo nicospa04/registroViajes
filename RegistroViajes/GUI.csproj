@@ -83,6 +83,10 @@
     <Compile Include="FRMPaquetes.Designer.cs">
       <DependentUpon>FRMPaquetes.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMRegistrarCliente.cs" />
+    <Compile Include="FRMRegistrarCliente.Designer.cs">
+      <DependentUpon>FRMRegistrarCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMReservarViaje.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +109,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMPaquetes.resx">
       <DependentUpon>FRMPaquetes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMRegistrarCliente.resx">
+      <DependentUpon>FRMRegistrarCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMReservarViaje.resx">
       <DependentUpon>FRMReservarViaje.cs</DependentUpon>

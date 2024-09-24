@@ -31,3 +31,14 @@ C:\Users\Navegador\Desktop\registroViajes\DAL\obj\Debug\DAL.csproj.CoreCompileIn
 C:\Users\Navegador\Desktop\registroViajes\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\Users\Navegador\Desktop\registroViajes\DAL\obj\Debug\DAL.dll
 C:\Users\Navegador\Desktop\registroViajes\DAL\obj\Debug\DAL.pdb
+C:\vicky\CLonado\registroViajes\DAL\bin\Debug\DAL.dll
+C:\vicky\CLonado\registroViajes\DAL\bin\Debug\DAL.pdb
+C:\vicky\CLonado\registroViajes\DAL\bin\Debug\BE.dll
+C:\vicky\CLonado\registroViajes\DAL\bin\Debug\Servicios.dll
+C:\vicky\CLonado\registroViajes\DAL\bin\Debug\BE.pdb
+C:\vicky\CLonado\registroViajes\DAL\bin\Debug\Servicios.pdb
+C:\vicky\CLonado\registroViajes\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\vicky\CLonado\registroViajes\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\vicky\CLonado\registroViajes\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\vicky\CLonado\registroViajes\DAL\obj\Debug\DAL.dll
+C:\vicky\CLonado\registroViajes\DAL\obj\Debug\DAL.pdb
