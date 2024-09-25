@@ -38,10 +38,6 @@ namespace Servicios
             {
                 _user = null;
             }
-            else
-            {
-                throw new Exception(message: "Sesion no Iniciada");
-            }
             //_user = null;
         }
 

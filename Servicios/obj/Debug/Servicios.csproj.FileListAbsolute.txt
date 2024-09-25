@@ -25,3 +25,12 @@ C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.csproj.CoreCompile
 C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
 C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.dll
 C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\Servicios.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\Servicios.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\BE.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\BE.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\obj\Debug\Servicios.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\obj\Debug\Servicios.pdb

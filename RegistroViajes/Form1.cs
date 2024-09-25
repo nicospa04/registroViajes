@@ -9,6 +9,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using FontAwesome.Sharp;
+using BLL;
+using Servicios;
+
+
  
 
 namespace RegistroViajes
@@ -27,7 +31,7 @@ namespace RegistroViajes
             
             
         }
-
+        BLLUsuario BLLUser = new BLLUsuario();
         private void AbrirForm(Form formu)
         {
 
@@ -114,6 +118,21 @@ namespace RegistroViajes
         private void cancelarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             AbrirForm(new FRMCancelarViaje());
+        }
+
+        private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (SessionManager.ObtenerInstancia().Usuario == null)
+            {
+                MessageBox.Show("Sesion no Iniciada");
+                return;
+            }
+            if (SessionManager.ObtenerInstancia().Usuario != null)
+            {
+                SessionManager.ObtenerInstancia().CerrarSesion();
+                MessageBox.Show("Sesión Cerrada");
+                return;
+            }
         }
     }
 }

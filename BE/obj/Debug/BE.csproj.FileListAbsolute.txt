@@ -10,3 +10,9 @@ C:\Users\Navegador\Desktop\registroViajes\BE\obj\Debug\BE.csproj.AssemblyReferen
 C:\Users\Navegador\Desktop\registroViajes\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
 C:\Users\Navegador\Desktop\registroViajes\BE\obj\Debug\BE.dll
 C:\Users\Navegador\Desktop\registroViajes\BE\obj\Debug\BE.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BE\bin\Debug\BE.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BE\bin\Debug\BE.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BE\obj\Debug\BE.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BE\obj\Debug\BE.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BE\obj\Debug\BE.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BE\obj\Debug\BE.pdb

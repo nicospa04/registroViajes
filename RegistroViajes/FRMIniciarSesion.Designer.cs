@@ -47,7 +47,7 @@ namespace RegistroViajes
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(91, 42);
             this.btncancelar.TabIndex = 23;
-            this.btncancelar.Text = "Salir";
+            this.btncancelar.Text = "Cerrar Sesion";
             this.btncancelar.UseVisualStyleBackColor = true;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 

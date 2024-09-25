@@ -93,3 +93,29 @@ C:\vicky\CLonado\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.CoreCompileI
 C:\vicky\CLonado\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.Up2Date
 C:\vicky\CLonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.exe
 C:\vicky\CLonado\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\RegistroViajes.exe.config
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\RegistroViajes.exe
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\RegistroViajes.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\BE.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\BLL.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\DAL.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\FontAwesome.Sharp.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\Servicios.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\BE.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\BLL.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\DAL.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\Servicios.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.Form1.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCancelarViaje.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMIniciarSesion.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMModificarViaje.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMPaquetes.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMRegistrarCliente.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMReservarViaje.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.Properties.Resources.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.GenerateResource.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.Up2Date
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.exe
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.pdb

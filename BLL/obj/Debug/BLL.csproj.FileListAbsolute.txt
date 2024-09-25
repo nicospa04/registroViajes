@@ -50,3 +50,16 @@ C:\vicky\CLonado\registroViajes\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
 C:\vicky\CLonado\registroViajes\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\vicky\CLonado\registroViajes\BLL\obj\Debug\BLL.dll
 C:\vicky\CLonado\registroViajes\BLL\obj\Debug\BLL.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\BLL.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\BLL.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\BE.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\DAL.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\Servicios.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\BE.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\DAL.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\Servicios.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\obj\Debug\BLL.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\obj\Debug\BLL.pdb

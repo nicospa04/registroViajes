@@ -12,7 +12,7 @@ namespace DAL
     {
         
 
-        public static string dataSource = "090L3PC16-80598";
+        public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
         public static string dbName = "SistemaViajes";
         public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
@@ -113,8 +113,6 @@ namespace DAL
                     "FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)," +
                     "FOREIGN KEY (id_empresa) REFERENCES Empresa(id_empresa)," +
                     "FOREIGN KEY (id_destino) REFERENCES Destino(id_destino));");
-
-             
 
 
                scriptDatos();

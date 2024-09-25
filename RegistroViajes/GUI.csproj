@@ -83,7 +83,9 @@
     <Compile Include="FRMPaquetes.Designer.cs">
       <DependentUpon>FRMPaquetes.cs</DependentUpon>
     </Compile>
-    <Compile Include="FRMRegistrarCliente.cs" />
+    <Compile Include="FRMRegistrarCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="FRMRegistrarCliente.Designer.cs">
       <DependentUpon>FRMRegistrarCliente.cs</DependentUpon>
     </Compile>

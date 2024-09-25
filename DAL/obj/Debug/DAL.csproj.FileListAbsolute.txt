@@ -42,3 +42,14 @@ C:\vicky\CLonado\registroViajes\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
 C:\vicky\CLonado\registroViajes\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\vicky\CLonado\registroViajes\DAL\obj\Debug\DAL.dll
 C:\vicky\CLonado\registroViajes\DAL\obj\Debug\DAL.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\bin\Debug\DAL.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\bin\Debug\DAL.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\bin\Debug\BE.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\bin\Debug\Servicios.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\bin\Debug\BE.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\bin\Debug\Servicios.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\obj\Debug\DAL.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\obj\Debug\DAL.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\obj\Debug\DAL.csproj.Up2Date
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\obj\Debug\DAL.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\obj\Debug\DAL.pdb

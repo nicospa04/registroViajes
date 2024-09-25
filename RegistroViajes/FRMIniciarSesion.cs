@@ -19,9 +19,7 @@ namespace RegistroViajes
         {
             InitializeComponent();
         }
-
         BLLUsuario BLLUser = new BLLUsuario();
-
         private void btniniciar_Click(object sender, EventArgs e)
         
         {
@@ -47,19 +45,29 @@ namespace RegistroViajes
             {
                 MessageBox.Show("Sesion Iniciada Correctamente");
                 SessionManager.ObtenerInstancia().IniciarSesion(user);
+                Close();
             }
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
-            Close();
+            if (SessionManager.ObtenerInstancia().Usuario == null)
+            {
+                MessageBox.Show("Sesion no Iniciada");
+                return;
+            }
+            if (SessionManager.ObtenerInstancia().Usuario != null)
+            {
+                SessionManager.ObtenerInstancia().CerrarSesion();
+                MessageBox.Show("Sesión Cerrada");
+                return;
+            }
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
             FRMRegistrarCliente fRMRegistrarCliente = new FRMRegistrarCliente();
             fRMRegistrarCliente.ShowDialog();
-
         }
     }
 }
