@@ -32,8 +32,8 @@ namespace RegistroViajes
 
         private void btnIniciar_Click(object sender, EventArgs e)
         {
-            Usuario user = new Usuario(/*falta id*/int.Parse(dni.Text),name.Text,ap.Text,tel.Text,gmail.Text,pass.Text,fechnac.Value,rol.SelectedItem.ToString()/*falta salt*/);
-            BLLUser.crearEntidad(user);
+            //Usuario user = new Usuario(/*falta id*/int.Parse(dni.Text), name.Text, ap.Text, tel.Text, gmail.Text, pass.Text, fechnac.Value, rol.SelectedItem.ToString()/*falta salt*/);
+            //BLLUser.crearEntidad(user);
         }
     }
 }

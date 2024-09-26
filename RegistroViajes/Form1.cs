@@ -34,11 +34,9 @@ namespace RegistroViajes
         BLLUsuario BLLUser = new BLLUsuario();
         private void AbrirForm(Form formu)
         {
-
             if(formactivo!=null)
             {
                 formactivo.Close();
-
             }
             formactivo = formu;
             formu.TopLevel = false;
