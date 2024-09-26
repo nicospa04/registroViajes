@@ -43,17 +43,17 @@ namespace RegistroViajes
             // 
             // btncancelar
             // 
-            this.btncancelar.Location = new System.Drawing.Point(448, 313);
+            this.btncancelar.Location = new System.Drawing.Point(784, 347);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(91, 42);
             this.btncancelar.TabIndex = 23;
-            this.btncancelar.Text = "Cerrar Sesion";
+            this.btncancelar.Text = "Volver";
             this.btncancelar.UseVisualStyleBackColor = true;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
             // 
             // btniniciar
             // 
-            this.btniniciar.Location = new System.Drawing.Point(327, 313);
+            this.btniniciar.Location = new System.Drawing.Point(580, 347);
             this.btniniciar.Name = "btniniciar";
             this.btniniciar.Size = new System.Drawing.Size(92, 42);
             this.btniniciar.TabIndex = 22;
@@ -63,14 +63,14 @@ namespace RegistroViajes
             // 
             // txtcontraseña
             // 
-            this.txtcontraseña.Location = new System.Drawing.Point(448, 269);
+            this.txtcontraseña.Location = new System.Drawing.Point(703, 270);
             this.txtcontraseña.Name = "txtcontraseña";
             this.txtcontraseña.Size = new System.Drawing.Size(137, 20);
             this.txtcontraseña.TabIndex = 21;
             // 
             // txtusuario
             // 
-            this.txtusuario.Location = new System.Drawing.Point(448, 243);
+            this.txtusuario.Location = new System.Drawing.Point(703, 230);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(137, 20);
             this.txtusuario.TabIndex = 20;
@@ -78,19 +78,21 @@ namespace RegistroViajes
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(333, 276);
+            this.label3.Location = new System.Drawing.Point(595, 273);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(61, 13);
             this.label3.TabIndex = 19;
+            this.label3.Tag = "tagPass";
             this.label3.Text = "Contraseña";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(342, 250);
+            this.label2.Location = new System.Drawing.Point(595, 233);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(33, 13);
             this.label2.TabIndex = 18;
+            this.label2.Tag = "tagGmail";
             this.label2.Text = "Gmail";
             // 
             // iconPictureBox1
@@ -100,10 +102,10 @@ namespace RegistroViajes
             this.iconPictureBox1.IconChar = FontAwesome.Sharp.IconChar.PlaneUp;
             this.iconPictureBox1.IconColor = System.Drawing.SystemColors.ControlText;
             this.iconPictureBox1.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            this.iconPictureBox1.IconSize = 128;
-            this.iconPictureBox1.Location = new System.Drawing.Point(67, 221);
+            this.iconPictureBox1.IconSize = 224;
+            this.iconPictureBox1.Location = new System.Drawing.Point(78, 233);
             this.iconPictureBox1.Name = "iconPictureBox1";
-            this.iconPictureBox1.Size = new System.Drawing.Size(128, 134);
+            this.iconPictureBox1.Size = new System.Drawing.Size(224, 227);
             this.iconPictureBox1.TabIndex = 17;
             this.iconPictureBox1.TabStop = false;
             // 
@@ -111,17 +113,17 @@ namespace RegistroViajes
             // 
             this.label1.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.label1.Location = new System.Drawing.Point(-6, -8);
+            this.label1.Location = new System.Drawing.Point(-3, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(302, 496);
+            this.label1.Size = new System.Drawing.Size(407, 496);
             this.label1.TabIndex = 16;
             this.label1.Text = "label1";
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(389, 372);
+            this.btnRegistrar.Location = new System.Drawing.Point(667, 439);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(92, 22);
+            this.btnRegistrar.Size = new System.Drawing.Size(122, 30);
             this.btnRegistrar.TabIndex = 24;
             this.btnRegistrar.Text = "Registrarse";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -131,7 +133,7 @@ namespace RegistroViajes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(616, 432);
+            this.ClientSize = new System.Drawing.Size(953, 528);
             this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btniniciar);
@@ -142,7 +144,9 @@ namespace RegistroViajes
             this.Controls.Add(this.iconPictureBox1);
             this.Controls.Add(this.label1);
             this.Name = "FRMIniciarSesion";
+            this.Tag = "tagFRMIniciarSesion";
             this.Text = "FRMIniciarSesion";
+            this.Load += new System.EventHandler(this.FRMIniciarSesion_Load);
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();

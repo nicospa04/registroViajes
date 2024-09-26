@@ -13,11 +13,12 @@ using BE;
 
 namespace RegistroViajes
 {
-    public partial class FRMIniciarSesion : Form
+    public partial class FRMIniciarSesion : Form, IObserver
     {
         public FRMIniciarSesion()
         {
             InitializeComponent();
+            Lenguaje.ObtenerInstancia().Agregar(this);
         }
         BLLUsuario BLLUser = new BLLUsuario();
         private static Form formactivo = null;
@@ -37,6 +38,10 @@ namespace RegistroViajes
             this.Controls.Add(formu);
             formu.Show();
 
+        }
+        public void ActualizarIdioma()
+        {
+            Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
         }
         private void btniniciar_Click(object sender, EventArgs e)
         
@@ -69,26 +74,18 @@ namespace RegistroViajes
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
-            if (SessionManager.ObtenerInstancia().Usuario == null)
-            {
-                MessageBox.Show("Sesion no Iniciada");
-                return;
-            }
-            if (SessionManager.ObtenerInstancia().Usuario != null)
-            {
-                SessionManager.ObtenerInstancia().CerrarSesion();
-                MessageBox.Show("Sesión Cerrada");
-                return;
-            }
+            Close();
         }
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            //Close();
-            AbrirForm(new FRMRegistrarCliente());
-            Close();
-            //FRMRegistrarCliente fRMRegistrarCliente = new FRMRegistrarCliente();
-            //fRMRegistrarCliente.ShowDialog();
+            FRMRegistrarCliente fRMRegistrarCliente = new FRMRegistrarCliente();
+            fRMRegistrarCliente.ShowDialog();
+        }
+
+        private void FRMIniciarSesion_Load(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
         }
     }
 }

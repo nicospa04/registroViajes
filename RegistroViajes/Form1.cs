@@ -17,20 +17,18 @@ using Servicios;
 
 namespace RegistroViajes
 {
-    public partial class Form1 : Form
+    public partial class Form1 : Form, IObserver
     {
-        
         private static Form formactivo = null;
-
 
         public Form1()
         {
             InitializeComponent();
             BaseDeDatos bd = new BaseDeDatos();
             bd.scriptInicio();
-            
-            
+            Lenguaje.ObtenerInstancia().Agregar(this);
         }
+
         BLLUsuario BLLUser = new BLLUsuario();
         private void AbrirForm(Form formu)
         {
@@ -42,10 +40,8 @@ namespace RegistroViajes
             formu.TopLevel = false;
             formu.FormBorderStyle = FormBorderStyle.None;
             formu.Dock = DockStyle.Fill;
-            
             this.Controls.Add(formu);
             formu.Show();
-
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -131,6 +127,16 @@ namespace RegistroViajes
                 MessageBox.Show("Sesión Cerrada");
                 return;
             }
+        }
+
+        public void ActualizarIdioma()
+        {
+            Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
+        }
+        private void iconMenuItem5_Click(object sender, EventArgs e)
+        {
+            FRMCambiarIdioma fRM = new FRMCambiarIdioma();
+            fRM.ShowDialog();
         }
     }
 }
