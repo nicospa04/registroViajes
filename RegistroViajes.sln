@@ -16,8 +16,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Elementos de la solución", "Elementos de la solución", "{80406B2F-86CE-46B8-86E7-5140460E5BF2}"
 	ProjectSection(SolutionItems) = preProject
 		.gitignore = .gitignore
-		Español.json = Español.json
 		Inglés.json = Inglés.json
+		..\..\..\NAVEGA~1\AppData\Local\Temp\Rar$DRa12260.069\registroViajes\RegistroViajes\bin\Debug\Espanol.json = ..\..\..\NAVEGA~1\AppData\Local\Temp\Rar$DRa12260.069\registroViajes\RegistroViajes\bin\Debug\Espanol.json
 	EndProjectSection
 EndProject
 Global
