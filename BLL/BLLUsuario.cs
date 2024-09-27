@@ -37,5 +37,17 @@ namespace BLL
         {
             return dal.actualizarEntidad(obj);
         }
+
+        public string recuperarIdioma(BE.Usuario obj)
+        {
+            return dal.recuperarIdioma(obj.id_usuario.ToString());
+        }
+
+        public bool modificarIdioma(BE.Usuario obj, string nuevoIdioma)
+        {
+            bool result = dal.modificarIdioma(obj, nuevoIdioma);
+            return result;
+        }
+
     }
 }

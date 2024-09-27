@@ -35,7 +35,7 @@ namespace BE
             this.idioma = idioma;
         }
 
-        public Usuario(string dni, string nombre, string apellido, string telefono, string mail, string contraseña, DateTime fechaNacimiento, string rol, string salt, string idioma)
+        public Usuario(string dni, string nombre, string apellido, string telefono, string mail, string contraseña, DateTime fechaNacimiento, string rol, string idioma)
         {
             this.dni = dni;
             this.nombre = nombre;
@@ -45,7 +45,6 @@ namespace BE
             this.contraseña = contraseña;
             this.fechaNacimiento = fechaNacimiento;
             this.id_familia = rol;
-            this.salt = salt;
             this.idioma = idioma;
         }
 

@@ -64,12 +64,13 @@ namespace RegistroViajes
                 MessageBox.Show("Usuario No Encontrado");
                 return;
             }
-            if (user != null)
-            {
+      
                 MessageBox.Show("Sesion Iniciada Correctamente");
                 SessionManager.ObtenerInstancia().IniciarSesion(user);
+                BLLUsuario bLLUsuario = new BLLUsuario();
+                Lenguaje.ObtenerInstancia().IdiomaActual = bLLUsuario.recuperarIdioma(user);
                 Close();
-            }
+            
         }
 
         private void btncancelar_Click(object sender, EventArgs e)

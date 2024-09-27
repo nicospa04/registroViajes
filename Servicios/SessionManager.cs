@@ -11,6 +11,7 @@ namespace Servicios
     {
         private static SessionManager Instancia = null;
         private static Usuario _user;
+        private static bool inicióSesion = false;
         private SessionManager() { }
 
         public static SessionManager ObtenerInstancia()
@@ -27,16 +28,23 @@ namespace Servicios
             if (Instancia != null)
             {
                 _user = userNuevo;
+                inicióSesion = true;
                 return;
             }
-       
+
         }
+
+        public static bool verificarInicioSesion (){
+            return inicióSesion;
+        }
+
 
         public void CerrarSesion()
         {
             if (Instancia != null)
             {
                 _user = null;
+                inicióSesion = false;
             }
             //_user = null;
         }

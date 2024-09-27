@@ -48,10 +48,10 @@ namespace DAL
                             string telefono = !lector.IsDBNull(5) ? lector.GetString(5) : string.Empty;
                             string email = !lector.IsDBNull(6) ? lector.GetString(6) : "";
                             DateTime fecha_nacimiento = !lector.IsDBNull(7) ? lector.GetDateTime(7) : DateTime.Now;
-                            string rol = !lector.IsDBNull(8) ? lector.GetString(8) : string.Empty;
                             string salt = !lector.IsDBNull(9) ? lector.GetString(9) : string.Empty;
-
-                            BE.Usuario usuario = new BE.Usuario(id_usuario, dni, nombre, apellido, telefono, email, contraseña, fecha_nacimiento, rol, salt);
+                            string idioma = !lector.IsDBNull(10) ? lector.GetString(10) : string.Empty;
+                            string id_familia = !lector.IsDBNull(11) ? lector.GetString(11) : string.Empty;
+                            BE.Usuario usuario = new BE.Usuario(id_usuario, dni, nombre, apellido, telefono, email, contraseña, fecha_nacimiento, id_familia, salt, idioma);
 
                             list.Add(usuario);
                         }
@@ -78,9 +78,9 @@ namespace DAL
             string hashedPassword = hasher.HashPassword(obj.contraseña, out salt);
 
             string query = "USE SistemaViajes;" +
-                "INSERT INTO Usuario (dni, nombre, contraseña, apellido, telefono, email, fecha_nacimiento, rol, salt)" +
+                "INSERT INTO Usuario (dni, nombre, contraseña, apellido, telefono, email, fecha_nacimiento, id_familia, salt, idioma)" +
                 "VALUES" +
-                $"('{obj.dni}','{obj.nombre}', '{hashedPassword}', '{obj.apellido}', '{obj.telefono}', '{obj.mail}', '{obj.fechaNacimiento.ToString()}', '{obj.rol}', '{salt}');";
+                $"('{obj.dni}','{obj.nombre}', '{hashedPassword}', '{obj.apellido}', '{obj.telefono}', '{obj.mail}', '{obj.fechaNacimiento.ToString()}', '{obj.id_familia}', '{salt}', '{obj.idioma}');";
 
             try
             {
@@ -120,7 +120,7 @@ namespace DAL
             string query = "USE SistemaViajes;" +
                            
                            "UPDATE Usuario" +
-           $"SET nombre = '{obj.nombre}', contraseña = '{obj.contraseña}', rol = {obj.rol}" +
+           $"SET nombre = '{obj.nombre}', contraseña = '{obj.contraseña}', id_familia = {obj.id_familia}" +
            $"WHERE id_usuario = {obj.id_usuario}";
 
             try
@@ -206,7 +206,7 @@ namespace DAL
             DAL.BaseDeDatos db = new DAL.BaseDeDatos();
 
             // Consulta SQL solo para obtener el salt y el hash
-            string sqlQuery = "USE SistemaViajes; SELECT id_usuario, dni, nombre, apellido, telefono, email, fecha_nacimiento, rol, contraseña, salt FROM Usuario WHERE email = @Email";
+            string sqlQuery = "USE SistemaViajes; SELECT * FROM Usuario WHERE email = @Email";
 
             try
             {
@@ -231,8 +231,8 @@ namespace DAL
                             string telefono = !lector.IsDBNull(4) ? lector.GetString(4) : string.Empty;
                             string email_db = !lector.IsDBNull(5) ? lector.GetString(5) : "";
                             DateTime fecha_nacimiento = !lector.IsDBNull(6) ? lector.GetDateTime(6) : DateTime.Now;
-                            string rol = !lector.IsDBNull(7) ? lector.GetString(7) : string.Empty;
-
+                            string id_familia = !lector.IsDBNull(7) ? lector.GetString(7) : string.Empty;
+                            string idioma = !lector.IsDBNull(10) ? lector.GetString(10) : string.Empty;
                             // Recuperar el hash y el salt almacenados
                             string saltAlmacenado = !lector.IsDBNull(9) ? lector.GetString(9) : "";
 
@@ -242,7 +242,7 @@ namespace DAL
                             if (esContraseñaValida)
                             {
                                 // Crear y retornar el objeto Usuario
-                              BE.Usuario usuario = new BE.Usuario(id_usuario, dni, nombre, apellido, telefono, email_db, contraseña, fecha_nacimiento, rol, saltAlmacenado);
+                              BE.Usuario usuario = new BE.Usuario(id_usuario, dni, nombre, apellido, telefono, email_db, contraseña, fecha_nacimiento, id_familia, saltAlmacenado, idioma);
                               return usuario; // Retorna el usuario si la contraseña es válida
                             }
                         }

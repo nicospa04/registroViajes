@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BLL;
+
 //using iTextSharp.text.xml;
 using Servicios;
 
@@ -26,10 +28,21 @@ namespace RegistroViajes
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (box.Text != "")
+            
+            if(box.Text == "")
             {
-                Lenguaje.ObtenerInstancia().IdiomaActual = box.Text;
+                return;
             }
+            
+                Lenguaje.ObtenerInstancia().IdiomaActual = box.Text;
+
+            if (SessionManager.verificarInicioSesion())
+            {
+                BE.Usuario user = SessionManager.Obtenerdatosuser();
+                BLLUsuario bll = new BLLUsuario();
+                bll.modificarIdioma(user, box.Text);
+            }
+
 
             MessageBox.Show("Se cambió el idioma correctamente a: " + box.Text);
 
