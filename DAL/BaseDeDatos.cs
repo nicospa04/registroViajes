@@ -10,8 +10,6 @@ namespace DAL
 {
     public class BaseDeDatos
     {
-        
-
         public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
         public static string dbName = "SistemaViajes";
         public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
@@ -63,6 +61,11 @@ namespace DAL
             // Crear las tablas dentro de la base de datos SistemaViajes
             if (bdCreada)
             {
+                ejecutarQuery("USE SistemaViajes; CREATE TABLE Familia (" +
+                    "id_familia INT PRIMARY KEY," +
+                    "descripcion VARCHAR(50)" +
+                    ");");
+
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Usuario (" +
                     "id_usuario INT PRIMARY KEY IDENTITY(1,1)," +
                     "dni VARCHAR(20) NOT NULL," +
@@ -72,20 +75,38 @@ namespace DAL
                     "telefono VARCHAR(20)," +
                     "email VARCHAR(100) NOT NULL," +
                     "fecha_nacimiento DATE," +
-                    "rol VARCHAR(50)," +
-                    "salt VARCHAR(50));");
+                    "id_familia INT," +
+                    "salt VARCHAR(50)," +
+                    "idioma VARCHAR(50)," +
+                    "FOREIGN KEY (id_familia) REFERENCES Familia(id_familia)" +
+                    ");");
+
+                ejecutarQuery("USE SistemaViajes; CREATE TABLE Patente (" +
+                    "id_patente INT PRIMARY KEY IDENTITY(1,1)," +
+                    "descripcion VARCHAR(50)" +
+                    ");");
+
+                ejecutarQuery("USE SistemaViajes; CREATE TABLE Permisos (" +
+                    "id_permiso INT PRIMARY KEY IDENTITY(1,1)," +
+                    "id_familia INT," +
+                    "id_patente INT," +
+                    "FOREIGN KEY (id_familia) REFERENCES Familia(id_familia)," +
+                    "FOREIGN KEY (id_patente) REFERENCES Patente(id_patente)" +
+                    ");");
 
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Empresa (" +
                     "id_empresa INT PRIMARY KEY IDENTITY(1,1)," +
                     "nombre VARCHAR(100) NOT NULL," +
                     "descripcion TEXT," +
-                    "porcentaje_extra FLOAT);");
+                    "porcentaje_extra FLOAT" +
+                    ");");
 
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Destino (" +
                     "id_destino INT PRIMARY KEY IDENTITY(1,1)," +
                     "nombre VARCHAR(100) NOT NULL," +
                     "descripcion TEXT," +
-                    "precio_base FLOAT);");
+                    "precio_base FLOAT" +
+                    ");");
 
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Paquete (" +
                     "id_paquete INT PRIMARY KEY IDENTITY(1,1)," +
@@ -96,8 +117,8 @@ namespace DAL
                     "descripcion TEXT," +
                     "fecha_inicio DATE NOT NULL," +
                     "fecha_vuelta DATE NOT NULL," +
-                    "FOREIGN KEY (id_destino) REFERENCES Destino(id_destino));");
-
+                    "FOREIGN KEY (id_destino) REFERENCES Destino(id_destino)" +
+                    ");");
 
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Viaje (" +
                     "id_viaje INT PRIMARY KEY IDENTITY(1,1)," +
@@ -112,10 +133,10 @@ namespace DAL
                     "fecha_vuelta DATE NOT NULL," +
                     "FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)," +
                     "FOREIGN KEY (id_empresa) REFERENCES Empresa(id_empresa)," +
-                    "FOREIGN KEY (id_destino) REFERENCES Destino(id_destino));");
+                    "FOREIGN KEY (id_destino) REFERENCES Destino(id_destino)" +
+                    ");");
 
-
-               scriptDatos();
+                scriptDatos();
             }
         }
 
@@ -136,12 +157,18 @@ namespace DAL
             string saltCarlos;
             string hashCarlos = hasher.HashPassword("abc3", out saltCarlos);
 
+            // Insertar datos en la tabla Familia
+            ejecutarQuery("USE SistemaViajes; INSERT INTO Familia (id_familia, descripcion) VALUES " +
+                "(1, 'Usuario normal del sistema, cliente')," +
+                "(2, 'Super usuario, empleado')," +
+                "(3, 'Administrador, administrador');");
+
             // Insertar datos en la tabla Usuario con salt y contraseña hasheada
-            ejecutarQuery($"USE SistemaViajes; INSERT INTO Usuario (dni, nombre, apellido, contraseña, telefono, email, fecha_nacimiento, rol, salt) " +
+            ejecutarQuery($"USE SistemaViajes; INSERT INTO Usuario (dni, nombre, apellido, contraseña, telefono, email, fecha_nacimiento, id_familia, salt, idioma) " +
                 "VALUES " +
-                $"('12345678', 'Juan', 'Pérez', '{hashJuan}', '555-1234', 'juan.perez@example.com', '1985-04-23', 'cliente', '{saltJuan}')," +
-                $"('87654321', 'María', 'González', '{hashMaria}', '555-5678', 'maria.gonzalez@example.com', '1990-09-12', 'cliente', '{saltMaria}')," +
-                $"('13579111', 'Carlos', 'Martínez', '{hashCarlos}', '555-6789', 'carlos.martinez@example.com', '1978-02-15', 'administrador', '{saltCarlos}');");
+                $"('12345678', 'Juan', 'Pérez', '{hashJuan}', '555-1234', 'juan.perez@example.com', '1985-04-23', 1, '{saltJuan}', 'ES')," +
+                $"('87654321', 'María', 'González', '{hashMaria}', '555-5678', 'maria.gonzalez@example.com', '1990-09-12', 1, '{saltMaria}', 'ES')," +
+                $"('13579111', 'Carlos', 'Martínez', '{hashCarlos}', '555-6789', 'carlos.martinez@example.com', '1978-02-15', 3, '{saltCarlos}', 'EN');");
 
             // Insertar datos en la tabla Empresa
             ejecutarQuery("USE SistemaViajes; INSERT INTO Empresa (nombre, descripcion, porcentaje_extra) " +
@@ -170,12 +197,5 @@ namespace DAL
                 "(2, 2, 2, 'Avión', 1, 1, 4000.00, '2024-10-05', '2024-10-12')," +
                 "(1, 2, 3, 'Bus', 2, 2, 2400.00, '2024-12-20', '2024-12-30');");
         }
-
-
-
-
-
-
-
     }
 }
