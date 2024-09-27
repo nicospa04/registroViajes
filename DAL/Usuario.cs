@@ -137,6 +137,69 @@ namespace DAL
             }
         }
 
+        public string recuperarIdioma(string id_usuario)
+        {
+            // Crear e inicializar la instancia de la base de datos
+            DAL.BaseDeDatos db = new DAL.BaseDeDatos();
+
+            // Consulta SQL solo para obtener el salt y el hash
+            string sqlQuery =$"USE SistemaViajes; SELECT idioma FROM Usuario WHERE id_usuario = {id_usuario}";
+
+            try
+            {
+                bool result = db.Conectar();
+                if (!result) throw new Exception("Error al conectarse a la base de datos");
+
+                using (SqlCommand command = new SqlCommand(sqlQuery, db.Connection))
+                {
+                    // Uso de parámetros para prevenir inyecciones SQL
+             
+
+                    using (SqlDataReader lector = command.ExecuteReader())
+                    {
+                        if (lector.Read()) // Si encontramos un usuario con el email
+                        {
+                            // Manejar posibles valores nulos
+                            string idioma = !lector.IsDBNull(0) ? lector.GetString(0) : "ES";
+                           
+                            return idioma;
+                        }
+                    }
+                }
+
+                db.Desconectar();
+                return "ES"; // Si no se encontró ningún usuario o la contraseña es incorrecta, devuelve null
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return null; // Devuelve null en caso de error
+            }
+        }
+        public bool modificarIdioma(BE.Usuario user, string idiomaNuevo)
+        {
+            string query = "USE SistemaViajes;" +
+
+                           "UPDATE Usuario" +
+           $"SET idioma = '{idiomaNuevo.ToUpper()}'"+
+           $"WHERE id_usuario = {user.id_usuario}";
+
+            try
+            {
+                bool resultado = db.ejecutarQuery(query);
+                if (!resultado) throw new Exception("Error al actualizar idioma");
+                return resultado;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return false;
+            }
+        }
+
+
         public BE.Usuario recuperarUsuario(string email, string contraseña)
         {
             // Crear e inicializar la instancia de la base de datos
