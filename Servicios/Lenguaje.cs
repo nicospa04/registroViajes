@@ -60,7 +60,10 @@ namespace Servicios
 
         public void CargarIdioma()
         {
-            var NombreArchivo = $"{idiomaActual}.json";
+            string idioma = idiomaActual == "ES" ? "Español" : "Inglés";
+
+
+            var NombreArchivo = $"{idioma}.json";
             var jsonString = File.ReadAllText(NombreArchivo);
             Diccionario = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonString);
         }

@@ -15,8 +15,12 @@ namespace DAL
 
        public Usuario()
         {
+            db = new BaseDeDatos();
             hasher = new PasswordHasher();
         }
+
+
+
 
         public List<BE.Usuario> leerEntidades()
         {
@@ -49,8 +53,8 @@ namespace DAL
                             string email = !lector.IsDBNull(6) ? lector.GetString(6) : "";
                             DateTime fecha_nacimiento = !lector.IsDBNull(7) ? lector.GetDateTime(7) : DateTime.Now;
                             string salt = !lector.IsDBNull(9) ? lector.GetString(9) : string.Empty;
-                            string idioma = !lector.IsDBNull(10) ? lector.GetString(10) : string.Empty;
-                            string id_familia = !lector.IsDBNull(11) ? lector.GetString(11) : string.Empty;
+                            string idioma = !lector.IsDBNull(8) ? lector.GetString(8) : string.Empty;
+                            int id_familia = !lector.IsDBNull(10) ? lector.GetInt32(10) : 0;
                             BE.Usuario usuario = new BE.Usuario(id_usuario, dni, nombre, apellido, telefono, email, contraseña, fecha_nacimiento, id_familia, salt, idioma);
 
                             list.Add(usuario);
@@ -179,10 +183,13 @@ namespace DAL
         }
         public bool modificarIdioma(BE.Usuario user, string idiomaNuevo)
         {
-            string query = "USE SistemaViajes;" +
 
-                           "UPDATE Usuario" +
-           $"SET idioma = '{idiomaNuevo.ToUpper()}'"+
+            string idioma = idiomaNuevo == "Español" ? "ES" : "EN";
+
+
+            string query = "USE SistemaViajes; " +
+                           "UPDATE Usuario " +
+           $"SET idioma = '{idioma}' "+
            $"WHERE id_usuario = {user.id_usuario}";
 
             try
@@ -226,12 +233,12 @@ namespace DAL
                             int id_usuario = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
                             string dni = !lector.IsDBNull(1) ? lector.GetString(1) : "";
                             string nombre = !lector.IsDBNull(2) ? lector.GetString(2) : "";
-                            string hashAlmacenado = !lector.IsDBNull(8) ? lector.GetString(8) : "";
-                            string apellido = !lector.IsDBNull(3) ? lector.GetString(3) : string.Empty;
-                            string telefono = !lector.IsDBNull(4) ? lector.GetString(4) : string.Empty;
-                            string email_db = !lector.IsDBNull(5) ? lector.GetString(5) : "";
-                            DateTime fecha_nacimiento = !lector.IsDBNull(6) ? lector.GetDateTime(6) : DateTime.Now;
-                            string id_familia = !lector.IsDBNull(7) ? lector.GetString(7) : string.Empty;
+                            string hashAlmacenado = !lector.IsDBNull(3) ? lector.GetString(3) : "";
+                            string apellido = !lector.IsDBNull(4) ? lector.GetString(4) : string.Empty;
+                            string telefono = !lector.IsDBNull(5) ? lector.GetString(5) : string.Empty;
+                            string email_db = !lector.IsDBNull(6) ? lector.GetString(6) : "";
+                            DateTime fecha_nacimiento = !lector.IsDBNull(7) ? lector.GetDateTime(7) : DateTime.Now;
+                            int id_familia = !lector.IsDBNull(8) ? lector.GetInt32(8) : 0;
                             string idioma = !lector.IsDBNull(10) ? lector.GetString(10) : string.Empty;
                             // Recuperar el hash y el salt almacenados
                             string saltAlmacenado = !lector.IsDBNull(9) ? lector.GetString(9) : "";
