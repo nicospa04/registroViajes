@@ -27,6 +27,7 @@ namespace RegistroViajes
             BaseDeDatos bd = new BaseDeDatos();
             bd.scriptInicio();
             Lenguaje.ObtenerInstancia().Agregar(this);
+            Lenguaje.ObtenerInstancia().IdiomaActual = "Español";
         }
 
         BLLUsuario BLLUser = new BLLUsuario();
