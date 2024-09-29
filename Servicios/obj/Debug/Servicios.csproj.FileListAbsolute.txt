@@ -16,3 +16,90 @@ C:\Users\Navegador\Desktop\registroViajes\Servicios\obj\Debug\Servicios.csproj.C
 C:\Users\Navegador\Desktop\registroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
 C:\Users\Navegador\Desktop\registroViajes\Servicios\obj\Debug\Servicios.dll
 C:\Users\Navegador\Desktop\registroViajes\Servicios\obj\Debug\Servicios.pdb
+C:\vicky\CLonado\registroViajes\Servicios\bin\Debug\Servicios.dll
+C:\vicky\CLonado\registroViajes\Servicios\bin\Debug\Servicios.pdb
+C:\vicky\CLonado\registroViajes\Servicios\bin\Debug\BE.dll
+C:\vicky\CLonado\registroViajes\Servicios\bin\Debug\BE.pdb
+C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
+C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.dll
+C:\vicky\CLonado\registroViajes\Servicios\obj\Debug\Servicios.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\Servicios.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\Servicios.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\BE.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\BE.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\obj\Debug\Servicios.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\obj\Debug\Servicios.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\Servicios.dll.config
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Buffers.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Memory.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Text.Json.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.ValueTuple.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\BE.dll.config
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Buffers.xml
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Memory.xml
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Text.Json.xml
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\System.ValueTuple.xml
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\Servicios.dll.config
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Buffers.dll
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Memory.dll
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Text.Json.dll
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.ValueTuple.dll
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\BE.dll.config
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Buffers.xml
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Memory.xml
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Text.Json.xml
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\System.ValueTuple.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\Servicios.dll.config
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\Servicios.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\Servicios.pdb
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\BE.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Buffers.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Memory.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Text.Json.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.ValueTuple.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\BE.pdb
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\BE.dll.config
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Buffers.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Memory.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Text.Json.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\System.ValueTuple.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\obj\Debug\Servicios.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\obj\Debug\Servicios.pdb

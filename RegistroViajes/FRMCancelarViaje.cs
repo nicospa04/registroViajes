@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Servicios;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,11 +11,21 @@ using System.Windows.Forms;
 
 namespace RegistroViajes
 {
-    public partial class FRMCancelarViaje : Form
+    public partial class FRMCancelarViaje : Form, IObserver
     {
         public FRMCancelarViaje()
         {
             InitializeComponent();
+            Lenguaje.ObtenerInstancia().Agregar(this);
+        }
+        public void ActualizarIdioma()
+        {
+            Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
+        }
+
+        private void FRMCancelarViaje_Load(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
         }
     }
 }

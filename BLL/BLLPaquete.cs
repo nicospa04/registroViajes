@@ -8,8 +8,13 @@ namespace BLL
 {
     public class BLLPaquete: IEntidad<BE.Paquete>
     {
-         
-        DAL.Paquete dal = new DAL.Paquete();
+
+        DAL.Paquete dal;
+
+        public BLLPaquete()
+        {
+            dal = new DAL.Paquete();
+        }
 
 
         public List<BE.Paquete> leerEntidades()
@@ -17,17 +22,17 @@ namespace BLL
             return dal.leerEntidades();
         }
 
-        public bool crearEntidad(BE.Paquete obj)
+        public Servicios.Resultado<BE.Paquete> crearEntidad(BE.Paquete obj)
         {
             return dal.crearEntidad(obj);
         }
 
-        public bool eliminarEntidad(BE.Paquete obj)
+        public Servicios.Resultado<BE.Paquete> eliminarEntidad(BE.Paquete obj)
         {
             return dal.eliminarEntidad(obj);
         }
 
-        public bool actualizarEntidad(BE.Paquete obj)
+        public Servicios.Resultado<BE.Paquete> actualizarEntidad(BE.Paquete obj)
         {
             return dal.actualizarEntidad(obj);
         }

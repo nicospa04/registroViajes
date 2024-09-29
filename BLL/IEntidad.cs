@@ -10,11 +10,11 @@ namespace BLL
     {
          List<T> leerEntidades();
 
-        bool crearEntidad(T obj);
+        Servicios.Resultado<T> crearEntidad(T obj);
 
-        bool eliminarEntidad(T obj);
+        Servicios.Resultado<T> eliminarEntidad(T obj);
 
-        bool actualizarEntidad(T obj);
+        Servicios.Resultado<T> actualizarEntidad(T obj);
 
 
     }

@@ -13,15 +13,36 @@ using BE;
 
 namespace RegistroViajes
 {
-    public partial class FRMIniciarSesion : Form
+    public partial class FRMIniciarSesion : Form, IObserver
     {
         public FRMIniciarSesion()
         {
             InitializeComponent();
+            Lenguaje.ObtenerInstancia().Agregar(this);
         }
-
         BLLUsuario BLLUser = new BLLUsuario();
+        private static Form formactivo = null;
+        private void AbrirForm(Form formu)
+        {
 
+            if (formactivo != null)
+            {
+                formactivo.Close();
+
+            }
+            formactivo = formu;
+            formu.TopLevel = false;
+            formu.FormBorderStyle = FormBorderStyle.None;
+            formu.Dock = DockStyle.Fill;
+
+            this.Controls.Add(formu);
+            formu.Show();
+
+        }
+        public void ActualizarIdioma()
+        {
+            Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
+        }
         private void btniniciar_Click(object sender, EventArgs e)
         
         {
@@ -37,22 +58,35 @@ namespace RegistroViajes
                 return;
             }
 
-            Usuario user = BLLUser.recuperarUsuario(txtusuario.Text.Trim(),txtcontraseña.Text.Trim());
-            if(user == null)
+            Servicios.Resultado<BE.Usuario> resultado = BLLUser.recuperarUsuario(txtusuario.Text.Trim(),txtcontraseña.Text.Trim());
+            if(!resultado.resultado)
             {
-                MessageBox.Show("Usuario No Encontrado");
+                MessageBox.Show(resultado.mensaje);
                 return;
             }
-            if (user != null)
-            {
+      
                 MessageBox.Show("Sesion Iniciada Correctamente");
-                SessionManager.ObtenerInstancia().IniciarSesion(user);
-            }
+                SessionManager.ObtenerInstancia().IniciarSesion(resultado.entidad);
+                BLLUsuario bLLUsuario = new BLLUsuario();
+                Lenguaje.ObtenerInstancia().IdiomaActual = BLLUser.recuperarIdioma(resultado.entidad);
+                Close();
+            
         }
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void btnRegistrar_Click(object sender, EventArgs e)
+        {
+            FRMRegistrarCliente fRMRegistrarCliente = new FRMRegistrarCliente();
+            fRMRegistrarCliente.ShowDialog();
+        }
+
+        private void FRMIniciarSesion_Load(object sender, EventArgs e)
+        {
+            ActualizarIdioma();
         }
     }
 }

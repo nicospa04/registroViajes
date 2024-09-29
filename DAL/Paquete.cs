@@ -18,10 +18,6 @@ namespace DAL
                                        "UPDATE Paquete" +
                        $"SET nombre = '{obj.nombre}', descripcion = '{obj.descripcion}', precio_base = {obj.precio_base}" +
                        $"WHERE id_paquete = {obj.id_paquete}";
-//<<<<<<< HEAD
-
-//=======
-//>>>>>>> efaa3dd5f6fa0f33ac9e8a33ba838602c2054dfc
             try
             {
                 bool resultado = db.ejecutarQuery(query);

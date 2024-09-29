@@ -16,10 +16,11 @@ namespace BE
         public string mail { get; set; }
         public string contraseña {  get; set; }
         public DateTime fechaNacimiento { get; set; }
-        public string rol {  get; set; }
+        public int id_familia {  get; set; }
         public string salt { get; set; }
+        public string idioma { get; set; }
 
-        public Usuario(int id, string dni, string nombre, string apellido, string telefono, string mail, string contraseña, DateTime fechaNacimiento, string rol, string salt)
+        public Usuario(int id, string dni, string nombre, string apellido, string telefono, string mail, string contraseña, DateTime fechaNacimiento, int id_familia, string salt, string idioma)
         {
             this.id_usuario = id;
             this.dni = dni;
@@ -29,11 +30,12 @@ namespace BE
             this.mail = mail;
             this.contraseña = contraseña;
             this.fechaNacimiento = fechaNacimiento;
-            this.rol = rol;
+            this.id_familia = id_familia;
             this.salt = salt;
+            this.idioma = idioma;
         }
 
-        public Usuario(string dni, string nombre, string apellido, string telefono, string mail, string contraseña, DateTime fechaNacimiento, string rol, string salt)
+        public Usuario(string dni, string nombre, string apellido, string telefono, string mail, string contraseña, DateTime fechaNacimiento, int rol, string idioma)
         {
             this.dni = dni;
             this.nombre = nombre;
@@ -42,8 +44,8 @@ namespace BE
             this.mail = mail;
             this.contraseña = contraseña;
             this.fechaNacimiento = fechaNacimiento;
-            this.rol = rol;
-            this.salt = salt;
+            this.id_familia = rol;
+            this.idioma = idioma;
         }
 
 
