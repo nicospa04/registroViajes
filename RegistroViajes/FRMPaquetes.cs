@@ -14,24 +14,27 @@ namespace RegistroViajes
 {
     public partial class FRMPaquetes : Form, IObserver
     {
+        List<BE.Paquete> paquetes = new List<BE.Paquete>();
+
+
+        BLLPaquete bll = new BLLPaquete();
+
+
         public FRMPaquetes()
         {
             InitializeComponent();
             Lenguaje.ObtenerInstancia().Agregar(this);
 
-            List<BE.Paquete> paquetes = new List<BE.Paquete>();
-
-
-            BLLPaquete bll = new BLLPaquete();
 
             paquetes = bll.leerEntidades();
-
 
             MostrarPrimeras3Ofertas(paquetes);
         }
         public void ActualizarIdioma()
         {
             Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
+            MostrarPrimeras3Ofertas(paquetes);
+
         }
 
 
@@ -61,6 +64,9 @@ namespace RegistroViajes
         private void FRMPaquetes_Load_1(object sender, EventArgs e)
         {
             ActualizarIdioma();
+            MostrarPrimeras3Ofertas(paquetes);
+
+
         }
 
         private void label2_Click(object sender, EventArgs e)
@@ -81,6 +87,12 @@ namespace RegistroViajes
         private void label7_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+            FRMMasPaquetes frm = new FRMMasPaquetes();
+            frm.Show();
         }
     }
 }

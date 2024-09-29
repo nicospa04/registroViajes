@@ -33,14 +33,17 @@ namespace RegistroViajes
             {
                 return;
             }
+
+
+            string idioma = box.Text == "Español" ? "ES" : "EN";
             
-                Lenguaje.ObtenerInstancia().IdiomaActual = box.Text;
+                Lenguaje.ObtenerInstancia().IdiomaActual = idioma;
 
             if (SessionManager.verificarInicioSesion())
             {
                 BE.Usuario user = SessionManager.Obtenerdatosuser();
                 BLLUsuario bll = new BLLUsuario();
-                bll.modificarIdioma(user, box.Text);
+                bll.modificarIdioma(user, idioma);
             }
 
 

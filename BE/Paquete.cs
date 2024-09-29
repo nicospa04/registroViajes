@@ -10,14 +10,14 @@ namespace BE
     {
         public int id_paquete {  get; set; }
         public int id_destino { get; set; }
-        public float precio_base { get; set; }
+        public decimal precio_base { get; set; }
         public int cupo_personas { get; set; }
         public string nombre { get; set; }
         public string descripcion { get; set; }
         public DateTime fecha_inicio { get; set; }
         public DateTime fecha_vuelta { get; set; }
 
-        public Paquete(int id_paquete ,int id_destino , float precio_base ,int cupo_personas ,string nombre ,string descripcion, DateTime fecha_inicio, DateTime fecha_vuelta)
+        public Paquete(int id_paquete ,int id_destino , decimal precio_base ,int cupo_personas ,string nombre ,string descripcion, DateTime fecha_inicio, DateTime fecha_vuelta)
         {
             this.id_paquete = id_paquete;
             this.id_destino = id_destino;
@@ -29,7 +29,7 @@ namespace BE
             this.fecha_inicio = fecha_inicio;
         }
 
-        public Paquete(int id_destino, float precio_base, int cupo_personas, string nombre, string descripcion, DateTime fecha_inicio, DateTime fecha_vuelta)
+        public Paquete(int id_destino, decimal precio_base, int cupo_personas, string nombre, string descripcion, DateTime fecha_inicio, DateTime fecha_vuelta)
         {
             this.id_destino = id_destino;
             this.precio_base = precio_base;

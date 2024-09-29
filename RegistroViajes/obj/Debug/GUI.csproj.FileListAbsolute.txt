@@ -245,3 +245,4 @@ C:\Users\nicol\OneDrive\Escritorio\registroViajes\RegistroViajes\bin\Debug\Syste
 C:\Users\nicol\OneDrive\Escritorio\registroViajes\RegistroViajes\bin\Debug\System.Text.Json.xml
 C:\Users\nicol\OneDrive\Escritorio\registroViajes\RegistroViajes\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\nicol\OneDrive\Escritorio\registroViajes\RegistroViajes\bin\Debug\System.ValueTuple.xml
+C:\Users\nicol\OneDrive\Escritorio\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMMasPaquetes.resources

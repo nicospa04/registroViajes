@@ -117,15 +117,16 @@ namespace DAL
                     {
                         while (lector.Read())
                         {
+                            
                             // Manejar posibles valores nulos
-                            int id_paquete = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
-                            int id_destino = !lector.IsDBNull(1) ? lector.GetInt32(1) : 0;
-                            float precio_base = !lector.IsDBNull(3) ? lector.GetFloat(3) : 0.0f;
-                            int cupo_personas = !lector.IsDBNull(3) ? lector.GetInt32(3) : 0;
-                            string nombre = !lector.IsDBNull(4) ? lector.GetString(4) : string.Empty;
-                            string descripcion = !lector.IsDBNull(5) ? lector.GetString(5) : string.Empty;
-                            DateTime fecha_inicio = !lector.IsDBNull(6) ? lector.GetDateTime(6) : DateTime.Now;
-                            DateTime fecha_vuelta = !lector.IsDBNull(7) ? lector.GetDateTime(6) : DateTime.Now;
+                            int id_paquete = !lector.IsDBNull(lector.GetOrdinal("id_paquete")) ? lector.GetInt32(lector.GetOrdinal("id_paquete")) : 0;
+                            int id_destino = !lector.IsDBNull(lector.GetOrdinal("id_destino")) ? lector.GetInt32(lector.GetOrdinal("id_destino")) : 0;
+                            decimal precio_base = !lector.IsDBNull(lector.GetOrdinal("precio_base")) ? lector.GetDecimal(lector.GetOrdinal("precio_base")) : 0;
+                            int cupo_personas = !lector.IsDBNull(lector.GetOrdinal("cupo_personas")) ? lector.GetInt32(lector.GetOrdinal("cupo_personas")) : 0;
+                            string nombre = !lector.IsDBNull(lector.GetOrdinal("nombre")) ? lector.GetString(lector.GetOrdinal("nombre")) : string.Empty;
+                            string descripcion = !lector.IsDBNull(lector.GetOrdinal("descripcion")) ? lector.GetString(lector.GetOrdinal("descripcion")) : string.Empty;
+                            DateTime fecha_inicio = !lector.IsDBNull(lector.GetOrdinal("fecha_inicio")) ? lector.GetDateTime(lector.GetOrdinal("fecha_inicio")) : DateTime.Now;
+                            DateTime fecha_vuelta = !lector.IsDBNull(lector.GetOrdinal("fecha_vuelta")) ? lector.GetDateTime(lector.GetOrdinal("fecha_vuelta")) : DateTime.Now;
 
 
                             BE.Paquete paquete = new BE.Paquete(id_paquete, id_destino, precio_base, cupo_personas, nombre, descripcion, fecha_inicio, fecha_vuelta);

@@ -283,6 +283,7 @@ namespace RegistroViajes
             this.label16.Size = new System.Drawing.Size(93, 20);
             this.label16.TabIndex = 21;
             this.label16.Text = "Mas ofertas";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // FRMPaquetes
             // 
