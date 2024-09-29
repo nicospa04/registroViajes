@@ -237,12 +237,12 @@ namespace DAL
         public bool modificarIdioma(BE.Usuario user, string idiomaNuevo)
         {
 
-            string idioma = idiomaNuevo == "Español" ? "ES" : "EN";
+            
 
 
             string query = "USE SistemaViajes; " +
                            "UPDATE Usuario " +
-           $"SET idioma = '{idioma}' "+
+           $"SET idioma = '{idiomaNuevo}' "+
            $"WHERE id_usuario = {user.id_usuario}";
 
             try
@@ -257,6 +257,49 @@ namespace DAL
                 db.Desconectar();
                 return false;
             }
+        }
+
+
+        public string encontrarNombreUsuarioPorID(string id)
+        {
+            string query = $"USE SistemaViajes; SELECT nombre FROM Usuario WHERE id_usuario = {id}";
+
+            // Crear e inicializar la instancia de la base de datos
+            DAL.BaseDeDatos db = new DAL.BaseDeDatos();
+
+            // Consulta SQL solo para obtener el salt y el hash
+            try
+            {
+                bool result = db.Conectar();
+                if (!result) throw new Exception("Error al conectarse a la base de datos");
+
+                using (SqlCommand command = new SqlCommand(query, db.Connection))
+                {
+                    // Uso de parámetros para prevenir inyecciones SQL
+
+
+                    using (SqlDataReader lector = command.ExecuteReader())
+                    {
+                        if (lector.Read()) // Si encontramos un usuario con el email
+                        {
+                            // Manejar posibles valores nulos
+                            string nombre = !lector.IsDBNull(0) ? lector.GetString(0) : "not found";
+
+                            return nombre;
+                        }
+                    }
+                }
+
+                db.Desconectar();
+                return "not found"; // Si no se encontró ningún usuario o la contraseña es incorrecta, devuelve null
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return null; // Devuelve null en caso de error
+            }
+
         }
 
 
