@@ -57,8 +57,13 @@ namespace DAL
             }
         }
 
-        public bool crearEntidad(BE.Empresa obj)
+        public Servicios.Resultado<BE.Empresa> crearEntidad(BE.Empresa obj)
         {
+
+            Servicios.Resultado < BE.Empresa > resultado = new Servicios.Resultado<BE.Empresa>();
+
+
+
             string query = "USE SistemaViajes;" +
                  "INSERT INTO Empresa (nombre, descripcion, porcentaje_extra)" +
                  "VALUES" +
@@ -68,18 +73,28 @@ namespace DAL
             {
                 bool result = db.ejecutarQuery(query);
                 if (!result) throw new Exception("Error al crear destino");
-                return true;
+                resultado.resultado = true;
+                resultado.mensaje = "Empresa creada con exito";
+                return resultado;
             }
             catch (Exception ex)
-            {
-                Console.WriteLine(ex.ToString());
-                db.Desconectar();
-                return false;
+            {   db.Desconectar();
+             
+                resultado.resultado = false;
+                resultado.mensaje = ex.Message;
+                return resultado;
+
+
             }
         }
 
-        public bool eliminarEntidad(BE.Empresa obj)
+        public Servicios.Resultado<BE.Empresa> eliminarEntidad(BE.Empresa obj)
         {
+
+
+            Servicios.Resultado < BE.Empresa > Resultado = new Servicios.Resultado<BE.Empresa>();
+
+
             string query = "USE SistemaViajes; GO" +
               $"DELETE FROM Empresa WHERE id_empresa = {obj.id_empresa}";
 
@@ -87,19 +102,29 @@ namespace DAL
             {
                 bool resultado = db.ejecutarQuery(query);
                 if (!resultado) throw new Exception("Error al eliminar destino");
-                return true;
+
+                Resultado.resultado = true;
+                Resultado.mensaje = "Empresa eliminada con éxito";
+                return Resultado;
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
                 db.Desconectar();
-                return false;
+
+                Resultado.resultado = false;
+                Resultado.mensaje = ex.Message;
+                return Resultado;
             }
 
         }
 
-        public bool actualizarEntidad(BE.Empresa obj)
+        public Servicios.Resultado<BE.Empresa> actualizarEntidad(BE.Empresa obj)
         {
+
+            Servicios.Resultado < BE.Empresa > Resultado = new Servicios.Resultado<BE.Empresa>();
+
+
             string query = "USE SistemaViajes;" +
                             "GO" +
                             "UPDATE Empresa" +
@@ -110,13 +135,21 @@ namespace DAL
             {
                 bool resultado = db.ejecutarQuery(query);
                 if (!resultado) throw new Exception("Error al actualizar destino");
-                return resultado;
+                
+                Resultado.resultado = true;
+                Resultado.mensaje = "Empresa actualizada con éxito";
+                return Resultado;
+
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
                 db.Desconectar();
-                return false;
+
+                Resultado.resultado = false;
+                Resultado.mensaje = ex.Message;
+                return Resultado;
+            
             }
         }
     }

@@ -19,17 +19,17 @@ namespace BLL
             return destino.leerEntidades();
         }
 
-        public bool crearEntidad(BE.Destino obj)
+        public Servicios.Resultado<BE.Destino> crearEntidad(BE.Destino obj)
         {
             return destino.crearEntidad(obj);
         }
 
-        public bool eliminarEntidad(BE.Destino obj)
+        public Servicios.Resultado<BE.Destino>  eliminarEntidad(BE.Destino obj)
         {
             return destino.eliminarEntidad(obj);
         }
 
-        public bool actualizarEntidad(BE.Destino obj)
+        public Servicios.Resultado<BE.Destino>  actualizarEntidad(BE.Destino obj)
         {
            return destino.actualizarEntidad(obj);
         }

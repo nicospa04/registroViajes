@@ -17,17 +17,17 @@ namespace BLL
             return dal.leerEntidades();
         }
 
-        public bool crearEntidad(BE.Viaje obj)
+        public Servicios.Resultado<BE.Viaje>  crearEntidad(BE.Viaje obj)
         {
             return dal.crearEntidad(obj);
         }
 
-        public bool eliminarEntidad(BE.Viaje obj)
+        public Servicios.Resultado<BE.Viaje>  eliminarEntidad(BE.Viaje obj)
         {
             return dal.eliminarEntidad(obj);
         }
 
-        public bool actualizarEntidad(BE.Viaje obj)
+        public Servicios.Resultado<BE.Viaje>  actualizarEntidad(BE.Viaje obj)
         {
             return dal.actualizarEntidad(obj);
         }

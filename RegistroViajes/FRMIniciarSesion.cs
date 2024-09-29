@@ -59,6 +59,7 @@ namespace RegistroViajes
             }
 
             Servicios.Resultado<BE.Usuario> resultado = BLLUser.recuperarUsuario(txtusuario.Text.Trim(),txtcontraseña.Text.Trim());
+            
             if(!resultado.resultado)
             {
                 MessageBox.Show(resultado.mensaje);

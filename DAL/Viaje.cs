@@ -11,13 +11,16 @@ namespace DAL
     {
         BaseDeDatos db { get; }
 
-        public bool actualizarEntidad(BE.Viaje obj)
+        public Servicios.Resultado<BE.Viaje> actualizarEntidad(BE.Viaje obj)
         {
             throw new NotImplementedException();
         }
 
-        public bool crearEntidad(BE.Viaje obj)
+        public Servicios.Resultado<BE.Viaje> crearEntidad(BE.Viaje obj)
         {
+
+            Servicios.Resultado < BE.Viaje > resultado = new Servicios.Resultado<BE.Viaje>();
+
             string query = "USE SistemaViajes;" +
                "INSERT INTO Viaje (id_usuario, id_empresa, id_destino, transporte, cant_adulto, cant_niños, costo, fecha_inicio, fecha_vuelta)" +
                "VALUES" +
@@ -27,18 +30,24 @@ namespace DAL
             {
                 bool result = db.ejecutarQuery(query);
                 if (!result) throw new Exception("Error al crear destino");
-                return true;
+                resultado.resultado = true;
+                resultado.mensaje = "Viaje creado con éxito";
+                return resultado;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                resultado.resultado = false;
+                resultado.mensaje = ex.Message;
                 db.Desconectar();
-                return false;
+                return resultado;
             }
         }
 
-        public bool eliminarEntidad(BE.Viaje obj)
+        public Servicios.Resultado<BE.Viaje> eliminarEntidad(BE.Viaje obj)
         {
+
+            Servicios.Resultado < BE.Viaje > Resultado = new Servicios.Resultado<BE.Viaje>();
+
             string query = "USE SistemaViajes;" +
                                    $"DELETE FROM Viaje WHERE id_viaje = {obj.id_viaje}";
 
@@ -46,13 +55,19 @@ namespace DAL
             {
                 bool resultado = db.ejecutarQuery(query);
                 if (!resultado) throw new Exception("Error al eliminar destino");
-                return true;
+                
+                Resultado.resultado = true;
+                Resultado.mensaje = "Viaje eliminado con éxito";
+                return Resultado;
+
+
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Resultado.resultado = false;
+                Resultado.mensaje = ex.Message;
                 db.Desconectar();
-                return false;
+                return Resultado;
             }
         }
 

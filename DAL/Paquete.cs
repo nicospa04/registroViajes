@@ -11,8 +11,12 @@ namespace DAL
     {
         BaseDeDatos db { get; }
 
-        public bool actualizarEntidad(BE.Paquete obj)
+        public Servicios.Resultado<BE.Paquete> actualizarEntidad(BE.Paquete obj)
         {
+
+            Servicios.Resultado < BE.Paquete > Resultado = new Servicios.Resultado<BE.Paquete>();
+
+
             string query = "USE SistemaViajes;" +
 
                                        "UPDATE Paquete" +
@@ -22,18 +26,26 @@ namespace DAL
             {
                 bool resultado = db.ejecutarQuery(query);
                 if (!resultado) throw new Exception("Error al actualizar destino");
-                return resultado;
+                Resultado.resultado = true;
+                Resultado.mensaje = "Paquete actualizado con éxito";
+                return Resultado;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Resultado.resultado = false;
+                Resultado.mensaje = ex.Message; 
+                
                 db.Desconectar();
-                return false;
+                return Resultado;
             }
         }
 
-        public bool crearEntidad(BE.Paquete obj)
+        public Servicios.Resultado<BE.Paquete> crearEntidad(BE.Paquete obj)
         {
+
+            Servicios.Resultado < BE.Paquete > resultado = new Servicios.Resultado<BE.Paquete>();
+
+
             string query = "USE SistemaViajes;" +
                 "INSERT INTO Paquete (nombre, descripcion)" +
                 "VALUES" +
@@ -43,18 +55,26 @@ namespace DAL
             {
                 bool result = db.ejecutarQuery(query);
                 if (!result) throw new Exception("Error al crear destino");
-                return true;
+                resultado.resultado = true;
+                resultado.mensaje = "Paquete creado con éxito";
+                return resultado;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                resultado.resultado = false;
+                resultado.mensaje = ex.Message;
+                
                 db.Desconectar();
-                return false;
+                return resultado;
             }
         }
 
-        public bool eliminarEntidad(BE.Paquete obj)
+        public Servicios.Resultado<BE.Paquete> eliminarEntidad(BE.Paquete obj)
         {
+
+            Servicios.Resultado < BE.Paquete > Resultado = new Servicios.Resultado<BE.Paquete>();
+
+
             string query = "USE SistemaViajes;" +
                          $"DELETE FROM Paquete WHERE id_paquete = {obj.id_paquete}";
 
@@ -62,13 +82,17 @@ namespace DAL
             {
                 bool resultado = db.ejecutarQuery(query);
                 if (!resultado) throw new Exception("Error al eliminar destino");
-                return true;
+                Resultado.resultado = true;
+                Resultado.mensaje = "Paquete eliminado con éxito";
+                return Resultado;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Resultado.resultado = false;
+                Resultado.mensaje = ex.Message;
+                
                 db.Desconectar();
-                return false;
+                return Resultado;
             }
         }
 
@@ -95,8 +119,8 @@ namespace DAL
                         {
                             // Manejar posibles valores nulos
                             int id_paquete = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
-                            int id_destino = !lector.IsDBNull(1) ? lector.GetInt32(0) : 0;
-                            float precio_base = !lector.IsDBNull(2) ? lector.GetFloat(2) : 0.0f;
+                            int id_destino = !lector.IsDBNull(1) ? lector.GetInt32(1) : 0;
+                            float precio_base = !lector.IsDBNull(3) ? lector.GetFloat(3) : 0.0f;
                             int cupo_personas = !lector.IsDBNull(3) ? lector.GetInt32(3) : 0;
                             string nombre = !lector.IsDBNull(4) ? lector.GetString(4) : string.Empty;
                             string descripcion = !lector.IsDBNull(5) ? lector.GetString(5) : string.Empty;

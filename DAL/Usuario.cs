@@ -136,8 +136,12 @@ namespace DAL
             return resultado;
         }
 
-        public bool eliminarEntidad(BE.Usuario obj)
+        public Servicios.Resultado<BE.Usuario> eliminarEntidad(BE.Usuario obj)
         {
+
+            Servicios.Resultado < BE.Usuario > Resultado = new Servicios.Resultado<BE.Usuario>();
+
+
             string query = "USE SistemaViajes;" +
                                    $"DELETE FROM Usuario WHERE id_usuario = {obj.id_usuario}";
 
@@ -145,18 +149,27 @@ namespace DAL
             {
                 bool resultado = db.ejecutarQuery(query);
                 if (!resultado) throw new Exception("Error al eliminar destino");
-                return true;
+                Resultado.resultado = true;
+                Resultado.mensaje = "Usuario eliminado con éxito";
+                return Resultado;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                Resultado.resultado = false;
+                Resultado.mensaje = ex.Message;
+                
                 db.Desconectar();
-                return false;
+                return Resultado;
             }
         }
 
-        public bool actualizarEntidad(BE.Usuario obj)
+        public Servicios.Resultado<BE.Usuario> actualizarEntidad(BE.Usuario obj)
         {
+
+
+            Servicios.Resultado < BE.Usuario > Resultado = new Servicios.Resultado<BE.Usuario>();
+
+
             string query = "USE SistemaViajes;" +
                            
                            "UPDATE Usuario" +
@@ -167,13 +180,17 @@ namespace DAL
             {
                 bool resultado = db.ejecutarQuery(query);
                 if (!resultado) throw new Exception("Error al actualizar destino");
-                return resultado;
+                Resultado.resultado = true;
+                Resultado.mensaje = "Usuario actualizado con éxito";
+                return Resultado;
             }
             catch (Exception ex)
             {
-                Console.WriteLine(ex.ToString());
+                
+                Resultado.resultado = false;
+                Resultado.mensaje = ex.Message;
                 db.Desconectar();
-                return false;
+                return Resultado;
             }
         }
 
