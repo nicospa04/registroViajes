@@ -99,6 +99,12 @@
     <Compile Include="FRMCancelarViaje.Designer.cs">
       <DependentUpon>FRMCancelarViaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMCancelarViajeCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMCancelarViajeCliente.Designer.cs">
+      <DependentUpon>FRMCancelarViajeCliente.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMIniciarSesion.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -139,6 +145,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMCancelarViaje.resx">
       <DependentUpon>FRMCancelarViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMCancelarViajeCliente.resx">
+      <DependentUpon>FRMCancelarViajeCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMIniciarSesion.resx">
       <DependentUpon>FRMIniciarSesion.cs</DependentUpon>

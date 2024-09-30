@@ -1,4 +1,5 @@
-﻿using Servicios;
+﻿using BLL;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -13,6 +14,7 @@ namespace RegistroViajes
 {
     public partial class FRMCancelarViaje : Form, IObserver
     {
+        BLL.BLLEmpresa bllEmpresa = new BLLEmpresa();
         public FRMCancelarViaje()
         {
             InitializeComponent();
@@ -21,12 +23,14 @@ namespace RegistroViajes
             List<BE.Viaje> viajes = new List<BE.Viaje>();
             BLL.BLLViaje bll = new BLL.BLLViaje();
             viajes = bll.leerEntidades();
-            dataGridView1.DataSource = viajes;
 
             DataGridViewTextBoxColumn nuevaColumna = new DataGridViewTextBoxColumn();
-            nuevaColumna.HeaderText = "Titular del viaje";
+            nuevaColumna.HeaderText = "Titular";
             nuevaColumna.Name = "Titular";
             dataGridView1.Columns.Add(nuevaColumna);
+            BLL.BLLEmpresa bllEmpresa = new BLL.BLLEmpresa();
+
+            dataGridView1.DataSource = viajes;
 
             DAL.Usuario dal = new DAL.Usuario();
 
@@ -36,10 +40,13 @@ namespace RegistroViajes
                 if (fila.DataBoundItem != null)
                 {
                     // Obtenemos el objeto asociado a la fila
-                    BE.Paquete paquete = (BE.Paquete)fila.DataBoundItem;
+                    BE.Viaje viaje = (BE.Viaje)fila.DataBoundItem;
+
+                    string id_usuario = viaje.id_usuario.ToString();
+
 
                     // Calculamos un valor basado en otras propiedades
-                    fila.Cells["columnaTotal"].Value = dal.encontrarNombreUsuarioPorID(fila.Cells["id_usuario"].ToString());
+                    fila.Cells["Titular"].Value = dal.encontrarNombreUsuarioPorID(id_usuario);
                 }
             }
 
@@ -49,6 +56,9 @@ namespace RegistroViajes
         {
             Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
         }
+
+
+
 
         private void FRMCancelarViaje_Load(object sender, EventArgs e)
         {
@@ -69,15 +79,117 @@ namespace RegistroViajes
                 DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
 
                 // Acceder a los valores de las celdas de esa fila
-                string titular = fila.Cells["Titular"].ToString(); 
-                string empresa = fila.Cells["empresa"].ToString();
-                string destino = fila.Cells["destino"].ToString();
-                string transporte = fila.Cells["transporte"].ToString();
-                int cant_niños = int.Parse(fila.Cells["cant_niños"].ToString());
-                int cant_adultos = int.Parse(fila.Cells["cant_adultos"].ToString());
-                DateTime fecha_inicio = DateTime.Parse(fila.Cells["fecha_inicio"].ToString());
-                DateTime fecha_fin = DateTime.Parse(fila.Cells["fecha_fin"].ToString());
+                string titular = fila.Cells["Titular"].ToString();
+                string empresa = "";
+                if (fila.Cells["id_empresa"] != null && fila.Cells["id_empresa"].Value != null)
+                {
+                    string idEmpresa = fila.Cells["id_empresa"].Value.ToString();
+                    empresa = bllEmpresa.devolverNombrePorId(idEmpresa);
+                }
+                string destino = fila.Cells["id_destino"].Value.ToString();
+                string transporte = fila.Cells["transporte"].Value.ToString();
+                int cant_niños = int.Parse(fila.Cells["cant_niños"].Value.ToString());
+                int cant_adultos = int.Parse(fila.Cells["cant_adulto"].Value.ToString());
+                DateTime fecha_inicio = DateTime.Parse(fila.Cells["fecha_inicio"].Value.ToString());
+                DateTime fecha_fin = DateTime.Parse(fila.Cells["fecha_vuelta"].Value.ToString());
+
+
+                textBox1.Text = titular;
+                textBox2.Text = empresa;
+                textBox3.Text = destino;
+                textBox4.Text = transporte;
+                numericUpDown2.Value = cant_niños;
+                numericUpDown1.Value = cant_adultos;
+                dateTimePicker2.Value = fecha_inicio;
+                dateTimePicker1.Value = fecha_fin;
+
+
             }
+        }
+
+        private void label11_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown2_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void numericUpDown1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox4_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

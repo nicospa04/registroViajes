@@ -31,5 +31,12 @@ namespace BLL
         {
             return dal.actualizarEntidad(obj);
         }
+
+        public string devolverNombrePorId(string id)
+        {
+            return dal.devolverNombrePorId(id);
+        }
+
+
     }
 }

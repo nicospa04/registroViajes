@@ -28,30 +28,11 @@ namespace RegistroViajes
 
             paquetes = bll.leerEntidades();
 
-            MostrarPrimeras3Ofertas(paquetes);
         }
         public void ActualizarIdioma()
         {
             Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
-            MostrarPrimeras3Ofertas(paquetes);
 
-        }
-
-
-        void MostrarPrimeras3Ofertas(List<BE.Paquete> paquetes)
-        {
-            iconButton1.Text = paquetes[0].nombre;
-            iconButton2.Text = paquetes[1].nombre;
-            iconButton3.Text = paquetes[2].nombre;
-            label4.Text = paquetes[0].descripcion;
-            label8.Text = paquetes[1].descripcion;
-            label12.Text = paquetes[2].descripcion;
-            label5.Text = $"${paquetes[0].precio_base.ToString()}";
-            label10.Text = $"${paquetes[1].precio_base.ToString()}";
-            label15.Text = $"${paquetes[2].precio_base.ToString()}";   
-            label6.Text = paquetes[0].cupo_personas.ToString();
-            label9.Text = paquetes[1].cupo_personas.ToString();
-            label14.Text = paquetes[2].cupo_personas.ToString();
         }
 
 
@@ -64,8 +45,7 @@ namespace RegistroViajes
         private void FRMPaquetes_Load_1(object sender, EventArgs e)
         {
             ActualizarIdioma();
-            MostrarPrimeras3Ofertas(paquetes);
-
+ 
 
         }
 

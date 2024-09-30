@@ -93,16 +93,16 @@ namespace DAL
                         while (lector.Read())
                         {
                             // Manejar posibles valores nulos
-                            int id_viaje = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
-                            int id_usuario= !lector.IsDBNull(1) ? lector.GetInt32(1) : 0;
-                            int id_empresa = !lector.IsDBNull(2) ? lector.GetInt32(2) : 0;
-                            int id_destino = !lector.IsDBNull(3) ? lector.GetInt32(3) : 0;
-                            string transporte = !lector.IsDBNull(4) ? lector.GetString(4) : string.Empty;
-                            int cant_adulto = !lector.IsDBNull(5) ? lector.GetInt32(5) : 0;
-                            int cant_niño = !lector.IsDBNull(6) ? lector.GetInt32(6) : 0;
-                            float costo = !lector.IsDBNull(7) ? lector.GetFloat(7) : 0;
-                            DateTime fecha_inicio = !lector.IsDBNull(8) ? lector.GetDateTime(8) : DateTime.Now;
-                            DateTime fecha_vuelta = !lector.IsDBNull(9) ? lector.GetDateTime(9) : DateTime.Now;
+                            int id_viaje = !lector.IsDBNull(lector.GetOrdinal("id_viaje")) ? lector.GetInt32(lector.GetOrdinal("id_viaje")) : 0;
+                            int id_usuario= !lector.IsDBNull(lector.GetOrdinal("id_usuario")) ? lector.GetInt32(lector.GetOrdinal("id_usuario")) : 0;
+                            int id_empresa = !lector.IsDBNull(lector.GetOrdinal("id_empresa")) ? lector.GetInt32(lector.GetOrdinal("id_empresa")) : 0;
+                            int id_destino = !lector.IsDBNull(lector.GetOrdinal("id_destino")) ? lector.GetInt32(lector.GetOrdinal("id_destino")) : 0;
+                            string transporte = !lector.IsDBNull(lector.GetOrdinal("transporte")) ? lector.GetString(lector.GetOrdinal("transporte")) : string.Empty;
+                            int cant_adulto = !lector.IsDBNull(lector.GetOrdinal("cant_adulto")) ? lector.GetInt32(lector.GetOrdinal("cant_adulto")) : 0;
+                            int cant_niño = !lector.IsDBNull(lector.GetOrdinal("cant_niños")) ? lector.GetInt32(lector.GetOrdinal("cant_niños")) : 0;
+                            decimal costo = !lector.IsDBNull(lector.GetOrdinal("costo")) ? lector.GetDecimal(lector.GetOrdinal("costo")) : 0;
+                            DateTime fecha_inicio = !lector.IsDBNull(lector.GetOrdinal("fecha_inicio")) ? lector.GetDateTime(lector.GetOrdinal("fecha_inicio")) : DateTime.Now;
+                            DateTime fecha_vuelta = !lector.IsDBNull(lector.GetOrdinal("fecha_vuelta")) ? lector.GetDateTime(lector.GetOrdinal("fecha_vuelta")) : DateTime.Now;
 
                             BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_destino, transporte, cant_adulto, cant_niño, costo, fecha_inicio, fecha_vuelta);
 
