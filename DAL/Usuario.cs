@@ -111,6 +111,7 @@ namespace DAL
                 resultado.resultado = false;
                 resultado.mensaje = ex.Message;
                 resultado.entidad = null;
+                return resultado;
             }
 
 
@@ -118,7 +119,7 @@ namespace DAL
             try
             {
                 bool result = db.ejecutarQuery(queryToCreateUser);
-                if (!result) throw new Exception("Error al usuario");
+                if (!result) throw new Exception("Error al registrar usuario");
 
                 resultado.resultado = true;
                 resultado.mensaje = "Usuario creado exitosamente";

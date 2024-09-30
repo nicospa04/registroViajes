@@ -58,6 +58,7 @@ namespace RegistroViajes
             BE.Usuario user = new BE.Usuario(dni,nombre,apellido,telefono,mail,contaseña,fechaNacimiento, familia,idioma);
 
             BLLUsuario bllUser = new BLLUsuario();
+
             Servicios.Resultado<BE.Usuario> resultado = bllUser.crearEntidad(user);
 
 
@@ -69,8 +70,6 @@ namespace RegistroViajes
             }
 
             MessageBox.Show(resultado.mensaje);
-
-
 
 
         }

@@ -91,8 +91,7 @@ namespace RegistroViajes
 
         private void label16_Click(object sender, EventArgs e)
         {
-            FRMMasPaquetes frm = new FRMMasPaquetes();
-            frm.Show();
+         
         }
     }
 }
