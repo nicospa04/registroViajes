@@ -20,6 +20,9 @@ namespace RegistroViajes
             InitializeComponent();
             Lenguaje.ObtenerInstancia().Agregar(this);
 
+ 
+
+
             List<BE.Viaje> viajes = new List<BE.Viaje>();
             BLL.BLLViaje bll = new BLL.BLLViaje();
             viajes = bll.leerEntidades();
@@ -49,9 +52,13 @@ namespace RegistroViajes
                     fila.Cells["Titular"].Value = dal.encontrarNombreUsuarioPorID(id_usuario);
                 }
             }
-
+        
 
         }
+
+
+
+
         public void ActualizarIdioma()
         {
             Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
@@ -79,7 +86,7 @@ namespace RegistroViajes
                 DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
 
                 // Acceder a los valores de las celdas de esa fila
-                string titular = fila.Cells["Titular"].ToString();
+                string titular = fila.Cells["Titular"].Value.ToString();
                 string empresa = "";
                 if (fila.Cells["id_empresa"] != null && fila.Cells["id_empresa"].Value != null)
                 {
@@ -190,6 +197,26 @@ namespace RegistroViajes
         private void textBox2_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void dataGridView1_DataBindingComplete(object sender, DataGridViewBindingCompleteEventArgs e)
+        {
+            DAL.Usuario dal = new DAL.Usuario();
+
+            foreach (DataGridViewRow fila in dataGridView1.Rows)
+            {
+                if (fila.DataBoundItem != null)
+                {
+                    BE.Viaje viaje = (BE.Viaje)fila.DataBoundItem;
+                    string id_usuario = viaje.id_usuario.ToString();
+
+                    // Asignar el nombre del usuario a la columna "Titular"
+                    fila.Cells["Titular"].Value = dal.encontrarNombreUsuarioPorID(id_usuario);
+                }
+            }
+
+            // Forzar actualización del control
+            dataGridView1.Refresh();
         }
     }
 }
