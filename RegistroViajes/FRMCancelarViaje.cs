@@ -14,6 +14,9 @@ namespace RegistroViajes
 {
     public partial class FRMCancelarViaje : Form, IObserver
     {
+        int id_viajeee;
+
+
         BLL.BLLEmpresa bllEmpresa = new BLLEmpresa();
         public FRMCancelarViaje()
         {
@@ -84,6 +87,9 @@ namespace RegistroViajes
             {
                 // Obtener la fila que fue clickeada
                 DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
+
+                id_viajeee = int.Parse(fila.Cells["id_viaje"].Value.ToString());
+
 
                 // Acceder a los valores de las celdas de esa fila
                 string titular = fila.Cells["Titular"].Value.ToString();
@@ -191,7 +197,17 @@ namespace RegistroViajes
 
         private void button1_Click(object sender, EventArgs e)
         {
+            BLLViaje bllviaje = new BLLViaje();
 
+            List<BE.Viaje> viajes = new List<BE.Viaje>();
+            viajes = bllviaje.leerEntidades();
+
+
+            BE.Viaje viaje = viajes.FirstOrDefault(x => x.id_viaje == id_viajeee);
+
+
+
+            bllviaje.eliminarEntidad(viaje);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

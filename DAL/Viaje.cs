@@ -11,6 +11,14 @@ namespace DAL
     {
         BaseDeDatos db { get; }
 
+        public Viaje()
+        {
+            db = new BaseDeDatos();
+        }
+
+
+
+
         public Servicios.Resultado<BE.Viaje> actualizarEntidad(BE.Viaje obj)
         {
             throw new NotImplementedException();
