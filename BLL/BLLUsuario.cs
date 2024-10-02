@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using DAL;
+using Servicios;
 
 namespace BLL
 {
@@ -54,6 +55,18 @@ namespace BLL
             bool result = dal.modificarIdioma(obj, nuevoIdioma);
             return result;
         }
+
+
+        public List <Permiso> obtenerPermisosUsuario(int id)
+        {
+            return dal.ObtenerPermisosUsuario(id);
+        }
+
+        public int obtenerIDUsuario(BE.Usuario user)
+        {
+            return dal.encontrarIdUsuarioPorUsuario(user);
+        }
+
 
     }
 }

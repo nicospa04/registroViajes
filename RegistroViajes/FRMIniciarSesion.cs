@@ -70,9 +70,21 @@ namespace RegistroViajes
                 SessionManager.ObtenerInstancia().IniciarSesion(resultado.entidad);
                 BLLUsuario bLLUsuario = new BLLUsuario();
                 Lenguaje.ObtenerInstancia().IdiomaActual = BLLUser.recuperarIdioma(resultado.entidad);
-                Close();
+
+                int id = bLLUsuario.obtenerIDUsuario(resultado.entidad);
+
+
+                List<Permiso> permisos = bLLUsuario.obtenerPermisosUsuario(id);
+
+          
+                inicioSesionCorrecto.Invoke(this, new EventArgs());
+
+            Close();
             
         }
+
+
+        public event EventHandler inicioSesionCorrecto;
 
         private void btncancelar_Click(object sender, EventArgs e)
         {
@@ -84,6 +96,8 @@ namespace RegistroViajes
             FRMRegistrarCliente fRMRegistrarCliente = new FRMRegistrarCliente();
             fRMRegistrarCliente.ShowDialog();
         }
+
+      
 
         private void FRMIniciarSesion_Load(object sender, EventArgs e)
         {

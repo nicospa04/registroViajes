@@ -25,7 +25,7 @@ namespace RegistroViajes
         {
             InitializeComponent();
             BaseDeDatos bd = new BaseDeDatos();
-          //  bd.scriptInicio();
+         //  bd.scriptInicio();
             Lenguaje.ObtenerInstancia().Agregar(this);
             Lenguaje.ObtenerInstancia().IdiomaActual = "Español";
         }
@@ -44,7 +44,18 @@ namespace RegistroViajes
             this.Controls.Add(formu);
             formu.Show();
         }
+        FormManager formManager = new FormManager();
+        private void AplicarPermisos(List<Permiso> permisos)
+        {
+            // Primero, oculta todos los formularios del MDI y menús
+            foreach (ToolStripMenuItem item in menuStrip1.Items)
+            {
+                formManager.HabilitarMenusPorPermisos(item, permisos);
+            }
 
+            // Después, recorre todos los formularios MDI y aplica los permisos recursivamente
+            formManager.HabilitarFormulariosRecursivos(this, permisos);
+        }
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -87,7 +98,14 @@ namespace RegistroViajes
 
         private void iconMenuItem7_Click(object sender, EventArgs e)
         {
-            AbrirForm(new FRMIniciarSesion());
+
+            BLLUsuario bll = new BLLUsuario();
+
+
+            List<Permiso> permisos = bll.obtenerPermisosUsuario(SessionManager.Obtenerdatosuser().id_usuario);
+
+            FRMIniciarSesion form = new FRMIniciarSesion();
+            form.inicioSesionCorrecto += AplicarPermisos(permisos);
         }
 
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)

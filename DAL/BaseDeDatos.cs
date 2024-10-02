@@ -10,7 +10,7 @@ namespace DAL
 {
     public class BaseDeDatos
     {
-        public static string dataSource = "DESKTOP-4V5CTVV";
+        public static string dataSource = "DESKTOP-TAPVU3E";
         public static string dbName = "SistemaViajes";
         public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
@@ -86,13 +86,13 @@ namespace DAL
                     "descripcion VARCHAR(50)" +
                     ");");
 
-                ejecutarQuery("USE SistemaViajes; CREATE TABLE Permisos (" +
-                    "id_permiso INT PRIMARY KEY IDENTITY(1,1)," +
-                    "id_familia INT," +
-                    "id_patente INT," +
-                    "FOREIGN KEY (id_familia) REFERENCES Familia(id_familia)," +
-                    "FOREIGN KEY (id_patente) REFERENCES Patente(id_patente)" +
-                    ");");
+                //ejecutarQuery("USE SistemaViajes; CREATE TABLE Permisos (" +
+                //    "id_permiso INT PRIMARY KEY IDENTITY(1,1)," +
+                //    "id_familia INT," +
+                //    "id_patente INT," +
+                //    "FOREIGN KEY (id_familia) REFERENCES Familia(id_familia)," +
+                //    "FOREIGN KEY (id_patente) REFERENCES Patente(id_patente)" +
+                //    ");");
 
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Empresa (" +
                     "id_empresa INT PRIMARY KEY IDENTITY(1,1)," +
@@ -134,6 +134,28 @@ namespace DAL
                     "FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)," +
                     "FOREIGN KEY (id_empresa) REFERENCES Empresa(id_empresa)," +
                     "FOREIGN KEY (id_destino) REFERENCES Destino(id_destino)" +
+                    ");");
+
+                ejecutarQuery("USE SistemaViajes; CREATE TABLE PermisosComp(" +
+                    "id_permiso INT PRIMARY KEY IDENTITY(1,1)," +
+                    "nombre NVARCHAR(100) NOT NULL," +
+                    "nombreformulario NVARCHAR(100) NULL," +
+                    "isperfil BIT NOT NULL DEFAULT 0" +
+                    ");");
+
+                ejecutarQuery("USE SistemaViajes; CREATE TABLE PermisoPermiso(" +
+                    "id_permisopadre INT NOT NULL," +
+                    "id_permisohijo INT NOT NULL," +
+                    "FOREIGN KEY(id_permisopadre) REFERENCES PermisosComp(id_permiso)," +
+                    "FOREIGN KEY(id_permisohijo) REFERENCES PermisosComp(id_permiso)" +
+                    ");");
+
+                ejecutarQuery("USE SistemaViajes; CREATE TABLE UsuarioPermiso(" +
+                    "id_usuario INT NOT NULL, " +
+                    "id_permiso INT NOT NULL, " +
+                    "FOREIGN KEY(id_usuario) REFERENCES Usuario(id_usuario)," +
+                    "FOREIGN KEY(id_permiso) REFERENCES PermisosComp(id_permiso)," +
+                    "PRIMARY KEY(id_usuario, id_permiso)" +
                     ");");
 
                 scriptDatos();
@@ -196,6 +218,26 @@ namespace DAL
                 "(1, 1, 1, 'Avión', 2, 0, 3000.00, '2024-09-01', '2024-09-10')," +
                 "(2, 2, 2, 'Avión', 1, 1, 4000.00, '2024-10-05', '2024-10-12')," +
                 "(1, 2, 3, 'Bus', 2, 2, 2400.00, '2024-12-20', '2024-12-30');");
+
+            // Inserta datos en la tabla PermisosComp
+            ejecutarQuery("USE SistemaViajes; INSERT INTO PermisosComp (nombre, nombreformulario, isperfil) " +
+                "VALUES" +
+                "('Cliente', 'FRMReservarViaje', 0), " +
+                "('Emp', 'FRMModificarViaje', 0), " +
+                "('Admin', 'FRMCambiarIdioma', 1);");
+
+            // Inserta datos en la tabla PermisoPermiso
+            ejecutarQuery("USE SistemaViajes; INSERT INTO PermisoPermiso (id_permisopadre, id_permisohijo) " +
+                "VALUES" +
+                "(3, 1), " +
+                "(3, 2);");
+
+            //inserta datos en tabla UsuarioPermiso
+            ejecutarQuery("USE SistemaViajes; INSERT INTO UsuarioPermiso (id_usuario, id_permiso)" +
+                "VALUES " +
+                "(3, 3), " +
+                "(2, 2), " +
+                "(1, 1);");
         }
     }
 }
