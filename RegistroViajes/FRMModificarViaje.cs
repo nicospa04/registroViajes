@@ -27,6 +27,9 @@ namespace RegistroViajes
             BLL.BLLViaje bll = new BLL.BLLViaje();
             viajes = bll.leerEntidades();
 
+            //BE.Viaje viaje = viajes.FirstOrDefault(viaje => id == viaje.id_usuario);
+
+
             DataGridViewTextBoxColumn nuevaColumna = new DataGridViewTextBoxColumn();
             nuevaColumna.HeaderText = "Titular";
             nuevaColumna.Name = "Titular";
@@ -128,6 +131,11 @@ namespace RegistroViajes
 
             // Forzar actualización del control
             dataGridView1.Refresh();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

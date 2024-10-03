@@ -41,12 +41,17 @@ namespace RegistroViajes
             formu.TopLevel = false;
             formu.FormBorderStyle = FormBorderStyle.None;
             formu.Dock = DockStyle.Fill;
+
             this.Controls.Add(formu);
             formu.Show();
         }
         FormManager formManager = new FormManager();
-        private void AplicarPermisos(List<Permiso> permisos)
+        private void AplicarPermisos(object sender, EventArgs e)
         {
+            BLLUsuario bll = new BLLUsuario();
+            List<Permiso> permisos = bll.obtenerPermisosUsuario(SessionManager.Obtenerdatosuser().id_usuario);
+
+
             // Primero, oculta todos los formularios del MDI y menús
             foreach (ToolStripMenuItem item in menuStrip1.Items)
             {
@@ -54,7 +59,7 @@ namespace RegistroViajes
             }
 
             // Después, recorre todos los formularios MDI y aplica los permisos recursivamente
-            formManager.HabilitarFormulariosRecursivos(this, permisos);
+            //formManager.HabilitarFormulariosRecursivos(this, permisos);
         }
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -99,13 +104,15 @@ namespace RegistroViajes
         private void iconMenuItem7_Click(object sender, EventArgs e)
         {
 
-            BLLUsuario bll = new BLLUsuario();
+            FRMIniciarSesion formu = new FRMIniciarSesion();
+            formu.TopLevel = false;
+            formu.FormBorderStyle = FormBorderStyle.None;
+            formu.Dock = DockStyle.Fill;
 
+            this.Controls.Add(formu);
 
-            List<Permiso> permisos = bll.obtenerPermisosUsuario(SessionManager.Obtenerdatosuser().id_usuario);
-
-            FRMIniciarSesion form = new FRMIniciarSesion();
-            form.inicioSesionCorrecto += AplicarPermisos(permisos);
+            formu.Show();
+            formu.inicioSesionCorrecto += AplicarPermisos;
         }
 
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
@@ -156,6 +163,16 @@ namespace RegistroViajes
         {
             FRMCambiarIdioma fRM = new FRMCambiarIdioma();
             fRM.ShowDialog();
+        }
+
+        private void iconMenuItem1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void verViajesRealizadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

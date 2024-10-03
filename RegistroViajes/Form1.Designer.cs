@@ -57,15 +57,18 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.label1.Font = new System.Drawing.Font("Calibri", 26.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(65, 9);
+            this.label1.Location = new System.Drawing.Point(98, 14);
+            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(174, 42);
+            this.label1.Size = new System.Drawing.Size(261, 64);
             this.label1.TabIndex = 5;
             this.label1.Text = "Viajes Fast";
             // 
             // menuStrip1
             // 
             this.menuStrip1.BackColor = System.Drawing.SystemColors.ScrollBar;
+            this.menuStrip1.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.iconMenuItem1,
             this.iconMenuItem2,
@@ -74,9 +77,9 @@
             this.registrosToolStripMenuItem,
             this.iconMenuItem5,
             this.iconMenuItem6});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 68);
+            this.menuStrip1.Location = new System.Drawing.Point(0, 105);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1021, 53);
+            this.menuStrip1.Size = new System.Drawing.Size(1532, 65);
             this.menuStrip1.TabIndex = 3;
             this.menuStrip1.Text = "menuStrip1";
             // 
@@ -91,9 +94,10 @@
             this.iconMenuItem1.IconSize = 30;
             this.iconMenuItem1.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItem1.Name = "iconMenuItem1";
-            this.iconMenuItem1.Size = new System.Drawing.Size(53, 49);
+            this.iconMenuItem1.Size = new System.Drawing.Size(80, 59);
             this.iconMenuItem1.Text = "Sesion";
             this.iconMenuItem1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
+            this.iconMenuItem1.Click += new System.EventHandler(this.iconMenuItem1_Click);
             // 
             // iconMenuItem7
             // 
@@ -101,14 +105,14 @@
             this.iconMenuItem7.IconColor = System.Drawing.Color.Black;
             this.iconMenuItem7.IconFont = FontAwesome.Sharp.IconFont.Auto;
             this.iconMenuItem7.Name = "iconMenuItem7";
-            this.iconMenuItem7.Size = new System.Drawing.Size(180, 22);
+            this.iconMenuItem7.Size = new System.Drawing.Size(270, 34);
             this.iconMenuItem7.Text = "Iniciar Sesion";
             this.iconMenuItem7.Click += new System.EventHandler(this.iconMenuItem7_Click);
             // 
             // cerrarSesionToolStripMenuItem
             // 
             this.cerrarSesionToolStripMenuItem.Name = "cerrarSesionToolStripMenuItem";
-            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cerrarSesionToolStripMenuItem.Size = new System.Drawing.Size(270, 34);
             this.cerrarSesionToolStripMenuItem.Text = "Cerrar Sesion";
             this.cerrarSesionToolStripMenuItem.Click += new System.EventHandler(this.cerrarSesionToolStripMenuItem_Click);
             // 
@@ -125,36 +129,37 @@
             this.iconMenuItem2.IconSize = 30;
             this.iconMenuItem2.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItem2.Name = "iconMenuItem2";
-            this.iconMenuItem2.Size = new System.Drawing.Size(49, 49);
+            this.iconMenuItem2.Size = new System.Drawing.Size(73, 59);
             this.iconMenuItem2.Text = "Viajes";
             this.iconMenuItem2.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(271, 34);
             this.toolStripMenuItem1.Text = "Reservar";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(271, 34);
             this.toolStripMenuItem2.Text = "Modificar";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click_1);
             // 
             // cancelarToolStripMenuItem
             // 
             this.cancelarToolStripMenuItem.Name = "cancelarToolStripMenuItem";
-            this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.cancelarToolStripMenuItem.Text = "Cancelar";
             this.cancelarToolStripMenuItem.Click += new System.EventHandler(this.cancelarToolStripMenuItem_Click_1);
             // 
             // verViajesRealizadosToolStripMenuItem
             // 
             this.verViajesRealizadosToolStripMenuItem.Name = "verViajesRealizadosToolStripMenuItem";
-            this.verViajesRealizadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verViajesRealizadosToolStripMenuItem.Size = new System.Drawing.Size(271, 34);
             this.verViajesRealizadosToolStripMenuItem.Text = "Ver viajes realizados";
+            this.verViajesRealizadosToolStripMenuItem.Click += new System.EventHandler(this.verViajesRealizadosToolStripMenuItem_Click);
             // 
             // iconMenuItem3
             // 
@@ -164,7 +169,7 @@
             this.iconMenuItem3.IconSize = 30;
             this.iconMenuItem3.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItem3.Name = "iconMenuItem3";
-            this.iconMenuItem3.Size = new System.Drawing.Size(67, 49);
+            this.iconMenuItem3.Size = new System.Drawing.Size(99, 59);
             this.iconMenuItem3.Text = "Paquetes";
             this.iconMenuItem3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconMenuItem3.Click += new System.EventHandler(this.iconMenuItem3_Click);
@@ -179,14 +184,14 @@
             this.iconMenuItem4.IconSize = 30;
             this.iconMenuItem4.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItem4.Name = "iconMenuItem4";
-            this.iconMenuItem4.Size = new System.Drawing.Size(95, 49);
+            this.iconMenuItem4.Size = new System.Drawing.Size(139, 59);
             this.iconMenuItem4.Text = "Configuracion";
             this.iconMenuItem4.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             // 
             // bitacoraToolStripMenuItem
             // 
             this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
-            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(177, 34);
             this.bitacoraToolStripMenuItem.Text = "Bitacora";
             // 
             // registrosToolStripMenuItem
@@ -197,31 +202,31 @@
             this.destinosToolStripMenuItem,
             this.paquetesToolStripMenuItem});
             this.registrosToolStripMenuItem.Name = "registrosToolStripMenuItem";
-            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(67, 49);
+            this.registrosToolStripMenuItem.Size = new System.Drawing.Size(101, 59);
             this.registrosToolStripMenuItem.Text = "Registros";
             // 
             // usuariosToolStripMenuItem
             // 
             this.usuariosToolStripMenuItem.Name = "usuariosToolStripMenuItem";
-            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.usuariosToolStripMenuItem.Size = new System.Drawing.Size(190, 34);
             this.usuariosToolStripMenuItem.Text = "Usuarios";
             // 
             // empresasToolStripMenuItem
             // 
             this.empresasToolStripMenuItem.Name = "empresasToolStripMenuItem";
-            this.empresasToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.empresasToolStripMenuItem.Size = new System.Drawing.Size(190, 34);
             this.empresasToolStripMenuItem.Text = "Empresas";
             // 
             // destinosToolStripMenuItem
             // 
             this.destinosToolStripMenuItem.Name = "destinosToolStripMenuItem";
-            this.destinosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.destinosToolStripMenuItem.Size = new System.Drawing.Size(190, 34);
             this.destinosToolStripMenuItem.Text = "Destinos";
             // 
             // paquetesToolStripMenuItem
             // 
             this.paquetesToolStripMenuItem.Name = "paquetesToolStripMenuItem";
-            this.paquetesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.paquetesToolStripMenuItem.Size = new System.Drawing.Size(190, 34);
             this.paquetesToolStripMenuItem.Text = "Paquetes";
             // 
             // iconMenuItem5
@@ -232,7 +237,7 @@
             this.iconMenuItem5.IconSize = 30;
             this.iconMenuItem5.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItem5.Name = "iconMenuItem5";
-            this.iconMenuItem5.Size = new System.Drawing.Size(56, 49);
+            this.iconMenuItem5.Size = new System.Drawing.Size(84, 59);
             this.iconMenuItem5.Text = "Idioma";
             this.iconMenuItem5.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconMenuItem5.Click += new System.EventHandler(this.iconMenuItem5_Click);
@@ -245,7 +250,7 @@
             this.iconMenuItem6.IconSize = 30;
             this.iconMenuItem6.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.iconMenuItem6.Name = "iconMenuItem6";
-            this.iconMenuItem6.Size = new System.Drawing.Size(42, 49);
+            this.iconMenuItem6.Size = new System.Drawing.Size(61, 59);
             this.iconMenuItem6.Text = "Salir";
             this.iconMenuItem6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconMenuItem6.Click += new System.EventHandler(this.iconMenuItem6_Click);
@@ -254,22 +259,25 @@
             // 
             this.menuStrip2.AutoSize = false;
             this.menuStrip2.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.menuStrip2.GripMargin = new System.Windows.Forms.Padding(2, 2, 0, 2);
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
             this.menuStrip2.Location = new System.Drawing.Point(0, 0);
             this.menuStrip2.Name = "menuStrip2";
             this.menuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip2.Size = new System.Drawing.Size(1021, 68);
+            this.menuStrip2.Size = new System.Drawing.Size(1532, 105);
             this.menuStrip2.TabIndex = 4;
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1021, 527);
+            this.ClientSize = new System.Drawing.Size(1532, 811);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.menuStrip2);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);

@@ -71,11 +71,7 @@ namespace RegistroViajes
                 BLLUsuario bLLUsuario = new BLLUsuario();
                 Lenguaje.ObtenerInstancia().IdiomaActual = BLLUser.recuperarIdioma(resultado.entidad);
 
-                int id = bLLUsuario.obtenerIDUsuario(resultado.entidad);
-
-
-                List<Permiso> permisos = bLLUsuario.obtenerPermisosUsuario(id);
-
+                
           
                 inicioSesionCorrecto.Invoke(this, new EventArgs());
 
