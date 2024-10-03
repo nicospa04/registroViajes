@@ -87,6 +87,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMBitacora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMBitacora.Designer.cs">
+      <DependentUpon>FRMBitacora.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMCambiarIdioma.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -135,10 +141,19 @@
     <Compile Include="FRMReservarViaje.Designer.cs">
       <DependentUpon>FRMReservarViaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMVerViajesRealizados.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMVerViajesRealizados.Designer.cs">
+      <DependentUpon>FRMVerViajesRealizados.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMBitacora.resx">
+      <DependentUpon>FRMBitacora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMCambiarIdioma.resx">
       <DependentUpon>FRMCambiarIdioma.cs</DependentUpon>
@@ -163,6 +178,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMReservarViaje.resx">
       <DependentUpon>FRMReservarViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMVerViajesRealizados.resx">
+      <DependentUpon>FRMVerViajesRealizados.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

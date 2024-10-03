@@ -25,7 +25,7 @@ namespace RegistroViajes
         {
             InitializeComponent();
             BaseDeDatos bd = new BaseDeDatos();
-         //  bd.scriptInicio();
+            bd.scriptInicio();
             Lenguaje.ObtenerInstancia().Agregar(this);
             Lenguaje.ObtenerInstancia().IdiomaActual = "Español";
         }
@@ -172,7 +172,7 @@ namespace RegistroViajes
 
         private void verViajesRealizadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AbrirForm(new FRMVerViajesRealizados());
         }
     }
 }

@@ -131,6 +131,57 @@ namespace DAL
                 db.Desconectar();
                 return null;
             }
+
+
+        }
+
+        public List<BE.Viaje> ObtenerViajesPorUsuarioId(int id_usuario)
+    {
+        // Lista que contendrá los viajes del usuario
+        List<BE.Viaje> listaViajes = new List<BE.Viaje>();
+
+            DAL.BaseDeDatos db = new DAL.BaseDeDatos();
+            
+            try
+            {
+                bool result = db.Conectar();
+                if (!result) throw new Exception("Error al conectarse a la base de datos");
+
+                
+                string query = "USE SistemaViajes; SELECT * FROM Viaje WHERE id_usuario = @id_usuario";
+
+                SqlCommand command = new SqlCommand(query, db.Connection);
+
+                // Asignar el parámetro id_usuario
+                command.Parameters.AddWithValue("@id_usuario", id_usuario);
+
+                // Ejecutar el comando y leer los resultados
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
+                {
+                   
+                    int  id_viaje = Convert.ToInt32(reader["id_viaje"]);
+                    int id_empresa = Convert.ToInt32(reader["id_empresa"]);
+                    int id_destino = Convert.ToInt32(reader["id_destino"]);
+                    string transporte = reader["transporte"].ToString();
+                    int cant_adulto = Convert.ToInt32(reader["cant_adulto"]);
+                    int cant_niños = Convert.ToInt32(reader["cant_niños"]);
+                    decimal costo = Convert.ToDecimal(reader["costo"]);
+                    DateTime fecha_inicio = Convert.ToDateTime(reader["fecha_inicio"]);
+                    DateTime fecha_vuelta = Convert.ToDateTime(reader["fecha_vuelta"]);
+                    BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_destino, transporte, cant_adulto, cant_niños, costo, fecha_inicio, fecha_vuelta);
+
+                   
+                    listaViajes.Add(viaje);
+                }
+
+                return listaViajes;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Error al obtener los viajes del usuario: " + ex.Message);
+            }
         }
     }
 }

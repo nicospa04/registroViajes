@@ -10,7 +10,7 @@ namespace DAL
 {
     public class BaseDeDatos
     {
-        public static string dataSource = "DESKTOP-TAPVU3E";
+        public static string dataSource = "HP_VICTORIA\\SQLEXPRESS";
         public static string dbName = "SistemaViajes";
         public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
