@@ -46,14 +46,14 @@ namespace RegistroViajes
             DateTime fechaNacimiento = fechnac.Value;
             int familia = 1;
 
-            if(dni.Length != 8 || nombre.Length < 6 || apellido.Length < 6 || telefono.Length < 8 || contaseña.Length < 6 || fechaNacimiento == DateTime.Now)
-            {
-                MessageBox.Show("Complete bien todos los campos");
-                return;
-            }
+            //if(dni.Length != 8 || nombre.Length < 15 || apellido.Length < 15 || telefono.Length < 12 || contaseña.Length < 6 /*|| fechaNacimiento == DateTime.Now*/)
+            //{
+            //    MessageBox.Show("Complete bien todos los campos");
+            //    return;
+            //}
 
 
-            string idioma = Lenguaje.ObtenerInstancia().IdiomaActual;
+            string idioma = "ES" /*Lenguaje.ObtenerInstancia().IdiomaActual*/;
 
             BE.Usuario user = new BE.Usuario(dni,nombre,apellido,telefono,mail,contaseña,fechaNacimiento, familia,idioma);
 

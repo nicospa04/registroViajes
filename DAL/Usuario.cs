@@ -1,6 +1,7 @@
 ﻿using Servicios;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -30,10 +31,10 @@ namespace DAL
 
                 // Consulta para obtener los permisos directos del usuario
                 string query = @"USE SistemaViajes;
-            SELECT P.nombre, P.nombreformulario, P.isperfil, P.id_permiso
-            FROM UsuarioPermiso UP
-            INNER JOIN PermisosComp P ON UP.id_permiso = P.id_permiso
-            WHERE UP.id_usuario = @idUsuario";
+                SELECT P.nombre, P.nombreformulario, P.isperfil, P.id_permiso
+                FROM UsuarioPermiso UP
+                INNER JOIN PermisosComp P ON UP.id_permiso = P.id_permiso
+                WHERE UP.id_usuario = @idUsuario";
 
                 SqlCommand cmd = new SqlCommand(query, db.Connection);
                 cmd.Parameters.AddWithValue("@idUsuario", idUsuario);
@@ -172,7 +173,7 @@ namespace DAL
         }
     
 
-    public List<BE.Usuario> leerEntidades()
+        public List<BE.Usuario> leerEntidades()
         {
             List<BE.Usuario> list = new List<BE.Usuario>();
 
@@ -228,11 +229,10 @@ namespace DAL
 
         public Servicios.Resultado<BE.Usuario> crearEntidad(BE.Usuario obj)
         {
+            bool resulta = db.Conectar();
+            if (!resulta) throw new Exception("Error al conectarse a la base de datos");
 
             Servicios.Resultado<BE.Usuario> resultado = new Servicios.Resultado<BE.Usuario>();
-
-
-
 
             string salt;
             string hashedPassword = hasher.HashPassword(obj.contraseña, out salt);
@@ -242,7 +242,7 @@ namespace DAL
                 "VALUES" +
                 $"('{obj.dni}','{obj.nombre}', '{hashedPassword}', '{obj.apellido}', '{obj.telefono}', '{obj.mail}', '{obj.fechaNacimiento.ToString("yyyy-MM-dd")}', '{obj.id_familia}', '{salt}', '{obj.idioma}');";
 
-            string queryToSearchUser = $"USE SistemasViajes; SELECT * FROM Usuario WHERE email = '{obj.mail}'";
+            string queryToSearchUser = $"USE SistemaViajes; SELECT * FROM Usuario WHERE email = '{obj.mail}'";
 
             try
             {
@@ -250,10 +250,10 @@ namespace DAL
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
-                    reader.Close(); 
+                    reader.Close();
                     throw new Exception("Ya existe un usuario con ese mail");
                 }
-                reader.Close(); 
+                reader.Close();
 
             }
             catch (Exception ex)
@@ -264,8 +264,6 @@ namespace DAL
                 return resultado;
             }
 
-
-
             try
             {
                 bool result = db.ejecutarQuery(queryToCreateUser);
@@ -274,7 +272,6 @@ namespace DAL
                 resultado.resultado = true;
                 resultado.mensaje = "Usuario creado exitosamente";
                 resultado.entidad = obj;
-                
             }
             catch (Exception ex)
             {
@@ -282,10 +279,27 @@ namespace DAL
                 resultado.mensaje = ex.Message;
                 resultado.entidad = null;
             }
-
+            finally
+            {
+                // Asegúrate de cerrar la conexión de forma segura
+                try
+                {
+                    if (db.Connection != null && db.Connection.State == ConnectionState.Open)
+                    {
+                        bool resulta2 = db.Desconectar();
+                        if (!resulta2) throw new Exception("Error al desconectarse de la base de datos");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    resultado.resultado = false;
+                    resultado.mensaje = "Error al desconectar la base de datos: " + ex.Message;
+                }
+            }
 
             return resultado;
         }
+
 
         public Servicios.Resultado<BE.Usuario> eliminarEntidad(BE.Usuario obj)
         {

@@ -1,12 +1,136 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\valentin facultad uai\\desarrollo y arquitectura de software\\git\\registroviajes\\dal\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\admin\\desktop\\valentin facultad uai\\desarrollo y arquitectura de software\\git\\registroviajes\\registroviajes\\frmregistrarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frmregistrarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\admin\\desktop\\valentin facultad uai\\desarrollo y arquitectura de software\\git\\registroviajes\\registroviajes\\frmregistrarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frmregistrarcliente.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\admin\\desktop\\valentin facultad uai\\desarrollo y arquitectura de software\\git\\registroviajes\\registroviajes\\frminiciarsesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frminiciarsesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\admin\\desktop\\valentin facultad uai\\desarrollo y arquitectura de software\\git\\registroviajes\\registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\admin\\desktop\\valentin facultad uai\\desarrollo y arquitectura de software\\git\\registroviajes\\registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\DAL\\Usuario.cs",
+              "RelativeDocumentMoniker": "DAL\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\DAL\\Usuario.cs",
+              "RelativeToolTip": "DAL\\Usuario.cs",
+              "ViewState": "AQIAANoAAAAAAAAAAADwvyoBAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T22:21:56.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "FRMRegistrarCliente.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\FRMRegistrarCliente.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\FRMRegistrarCliente.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\FRMRegistrarCliente.cs",
+              "RelativeToolTip": "RegistroViajes\\FRMRegistrarCliente.cs",
+              "ViewState": "AQIAACcAAAAAAAAAAADwvz0AAABMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T22:10:12.162Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FRMRegistrarCliente.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\FRMRegistrarCliente.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\FRMRegistrarCliente.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\FRMRegistrarCliente.cs [Dise\u00F1o]",
+              "RelativeToolTip": "RegistroViajes\\FRMRegistrarCliente.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T22:09:42.256Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FRMIniciarSesion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\FRMIniciarSesion.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\FRMIniciarSesion.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\FRMIniciarSesion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "RegistroViajes\\FRMIniciarSesion.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T21:37:49.604Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\Form1.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\Form1.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\Form1.cs",
+              "RelativeToolTip": "RegistroViajes\\Form1.cs",
+              "ViewState": "AQIAABwAAAAAAAAAAAAnwDEAAAAkAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T17:28:50.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\Form1.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\Form1.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "RegistroViajes\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T17:21:27.097Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BaseDeDatos.cs",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\DAL\\BaseDeDatos.cs",
+              "RelativeDocumentMoniker": "DAL\\BaseDeDatos.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\DAL\\BaseDeDatos.cs",
+              "RelativeToolTip": "DAL\\BaseDeDatos.cs",
+              "ViewState": "AQIAALQAAAAAAAAAAAAgwM4AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-09-25T20:27:06.442Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }
