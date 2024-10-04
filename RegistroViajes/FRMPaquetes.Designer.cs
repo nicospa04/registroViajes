@@ -87,7 +87,6 @@ namespace RegistroViajes
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Name = "FRMPaquetes";
-            this.Text = "FRMPaquetes";
             this.Load += new System.EventHandler(this.FRMPaquetes_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

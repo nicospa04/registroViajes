@@ -29,7 +29,7 @@ namespace RegistroViajes
             List<BE.Viaje> viajes = new List<BE.Viaje>();
             BLL.BLLViaje bll = new BLL.BLLViaje();
             viajes = bll.leerEntidades();
-
+            viajes = viajes.Where(viaje => viaje.id_usuario == SessionManager.Obtenerdatosuser().id_usuario && viaje.fecha_inicio > DateTime.Now).ToList();
             DataGridViewTextBoxColumn nuevaColumna = new DataGridViewTextBoxColumn();
             nuevaColumna.HeaderText = "Titular";
             nuevaColumna.Name = "Titular";
