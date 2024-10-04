@@ -35,7 +35,9 @@ namespace DAL
                             int id = !lector.IsDBNull(lector.GetOrdinal("id_empresa")) ? lector.GetInt32(lector.GetOrdinal("id_empresa")) : 0;
                             string nombre = !lector.IsDBNull(lector.GetOrdinal("nombre")) ? lector.GetString(lector.GetOrdinal("nombre")) : string.Empty;
                             string descripcion = !lector.IsDBNull(lector.GetOrdinal("descripcion")) ? lector.GetString(lector.GetOrdinal("descripcion")) : string.Empty;
-                            float porcentaje_extra = !lector.IsDBNull(lector.GetOrdinal("porcentaje_extra")) ? lector.GetFloat(lector.GetOrdinal("porcentaje_extra")) : 1;
+                            float porcentaje_extra = !lector.IsDBNull(lector.GetOrdinal("porcentaje_extra"))
+                                ? (float)lector.GetDouble(lector.GetOrdinal("porcentaje_extra"))
+                                : 1; 
                             BE.Empresa objeto = new BE.Empresa(id, nombre, descripcion, porcentaje_extra);
 
                             list.Add(objeto);

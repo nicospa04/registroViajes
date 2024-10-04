@@ -66,7 +66,7 @@ namespace RegistroViajes
             // lblprecio
             // 
             this.lblprecio.AutoSize = true;
-            this.lblprecio.Location = new System.Drawing.Point(178, 484);
+            this.lblprecio.Location = new System.Drawing.Point(136, 487);
             this.lblprecio.Name = "lblprecio";
             this.lblprecio.Size = new System.Drawing.Size(13, 13);
             this.lblprecio.TabIndex = 51;
@@ -125,6 +125,7 @@ namespace RegistroViajes
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(120, 21);
             this.comboBox2.TabIndex = 42;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
             // 
             // comboBox1
             // 
@@ -133,6 +134,7 @@ namespace RegistroViajes
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(120, 21);
             this.comboBox1.TabIndex = 41;
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // label9
             // 
@@ -217,7 +219,7 @@ namespace RegistroViajes
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(224, 471);
+            this.button1.Location = new System.Drawing.Point(235, 471);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 39);
             this.button1.TabIndex = 30;

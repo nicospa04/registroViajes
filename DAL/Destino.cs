@@ -37,9 +37,9 @@ namespace DAL
                         {
                             // Manejar posibles valores nulos
                             int id = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
-                            string nombre = !lector.IsDBNull(1) ? lector.GetString(1) : string.Empty;
-                            string descripcion = !lector.IsDBNull(2) ? lector.GetString(2) : string.Empty;
-                            float precio_base = !lector.IsDBNull(3) ? lector.GetFloat(3) : 1;
+                            string nombre = !lector.IsDBNull(lector.GetOrdinal("nombre")) ? lector.GetString(lector.GetOrdinal("nombre")) : string.Empty;
+                            string descripcion = !lector.IsDBNull(lector.GetOrdinal("descripcion")) ? lector.GetString(lector.GetOrdinal("descripcion")) : string.Empty;
+                            float precio_base = !lector.IsDBNull(lector.GetOrdinal("precio_base")) ? (float)lector.GetDouble(lector.GetOrdinal("precio_base")) : 1;
                             BE.Destino objeto = new BE.Destino(id, nombre, descripcion, precio_base);
 
                             list.Add(objeto);
