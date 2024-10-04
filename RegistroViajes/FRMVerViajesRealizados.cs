@@ -8,22 +8,27 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
+using Servicios;
 
 namespace RegistroViajes
 {
-    public partial class FRMVerViajesRealizados : Form
+    public partial class FRMVerViajesRealizados : Form, IObserver
     {
         List<BE.Viaje> viajes = new List<BE.Viaje>();
         public FRMVerViajesRealizados()
         {
             InitializeComponent();
+            Lenguaje.ObtenerInstancia().Agregar(this);
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }
-
+        public void ActualizarIdioma()
+        {
+            Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
+        }
         private void button1_Click(object sender, EventArgs e)
         {
 
@@ -74,7 +79,7 @@ namespace RegistroViajes
 
         private void FRMVerViajesRealizados_Load(object sender, EventArgs e)
         {
-
+            ActualizarIdioma();
         }
     }
 }
