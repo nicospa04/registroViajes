@@ -32,10 +32,10 @@ namespace DAL
                         while (lector.Read())
                         {
                             // Manejar posibles valores nulos
-                            int id = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
-                            string nombre = !lector.IsDBNull(1) ? lector.GetString(1) : string.Empty;
-                            string descripcion = !lector.IsDBNull(2) ? lector.GetString(2) : string.Empty;
-                            float porcentaje_extra = !lector.IsDBNull(3) ? lector.GetFloat(3) : 1;
+                            int id = !lector.IsDBNull(lector.GetOrdinal("id_empresa")) ? lector.GetInt32(lector.GetOrdinal("id_empresa")) : 0;
+                            string nombre = !lector.IsDBNull(lector.GetOrdinal("nombre")) ? lector.GetString(lector.GetOrdinal("nombre")) : string.Empty;
+                            string descripcion = !lector.IsDBNull(lector.GetOrdinal("descripcion")) ? lector.GetString(lector.GetOrdinal("descripcion")) : string.Empty;
+                            float porcentaje_extra = !lector.IsDBNull(lector.GetOrdinal("porcentaje_extra")) ? lector.GetFloat(lector.GetOrdinal("porcentaje_extra")) : 1;
                             BE.Empresa objeto = new BE.Empresa(id, nombre, descripcion, porcentaje_extra);
 
                             list.Add(objeto);

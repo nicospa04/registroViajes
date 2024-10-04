@@ -3,12 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\Navegador\\Desktop\\registroViajes\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\navegador\\desktop\\registroviajes\\registroviajes\\frmcancelarviaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frmcancelarviaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\navegador\\desktop\\registroviajes\\dal\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\navegador\\desktop\\registroviajes\\registroviajes\\frmcancelarviaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frmcancelarviaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|C:\\Users\\Navegador\\Desktop\\registroViajes\\dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\navegador\\desktop\\registroviajes\\dal\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\navegador\\desktop\\registroviajes\\dal\\destino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\destino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\navegador\\desktop\\registroviajes\\registroviajes\\frmreservarviaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frmreservarviaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ECFFDAFB-DD9F-4411-A506-68373134129E}|BE\\BE.csproj|c:\\users\\navegador\\desktop\\registroviajes\\be\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{ECFFDAFB-DD9F-4411-A506-68373134129E}|BE\\BE.csproj|solutionrelative:be\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\navegador\\desktop\\registroviajes\\registroviajes\\frmreservarviaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frmreservarviaje.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{D2E49E19-7C9A-45C5-A134-61B654EAA6B6}|BLL\\BLL.csproj|c:\\users\\navegador\\desktop\\registroviajes\\bll\\blltransporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{D2E49E19-7C9A-45C5-A134-61B654EAA6B6}|BLL\\BLL.csproj|solutionrelative:bll\\blltransporte.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|C:\\Users\\Navegador\\Desktop\\registroViajes\\registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|C:\\Users\\Navegador\\Desktop\\registroViajes\\registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\navegador\\desktop\\registroviajes\\registroviajes\\frmpaquetes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -23,36 +55,12 @@
       "RelativeMoniker": "D:0:0:{496B1F76-8DA0-4F5B-91AD-FA4FD0958F9B}|Servicios\\Servicios.csproj|solutionrelative:servicios\\formmanager.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|C:\\Users\\Navegador\\Desktop\\registroViajes\\dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\navegador\\desktop\\registroviajes\\dal\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\navegador\\desktop\\registroviajes\\registroviajes\\frmcambiaridioma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frmcambiaridioma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\navegador\\desktop\\registroviajes\\registroviajes\\frmcambiaridioma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frmcambiaridioma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|C:\\Users\\Navegador\\Desktop\\registroViajes\\registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|C:\\Users\\Navegador\\Desktop\\registroViajes\\registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\navegador\\desktop\\registroviajes\\dal\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\empresa.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\navegador\\desktop\\registroviajes\\dal\\destino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\destino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\navegador\\desktop\\registroviajes\\dal\\daleventos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -83,44 +91,134 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "FRMCancelarViaje.cs",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMCancelarViaje.cs",
-              "RelativeDocumentMoniker": "RegistroViajes\\FRMCancelarViaje.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMCancelarViaje.cs",
-              "RelativeToolTip": "RegistroViajes\\FRMCancelarViaje.cs",
-              "ViewState": "AgIAABUAAAAAAAAAAAAgwB8AAACbAAAAAAAAAA==",
+              "Title": "Empresa.cs",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Empresa.cs",
+              "RelativeDocumentMoniker": "DAL\\Empresa.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Empresa.cs",
+              "RelativeToolTip": "DAL\\Empresa.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAAADIAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T12:56:24.277Z",
+              "WhenOpened": "2024-10-04T13:50:42.486Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FRMCancelarViaje.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMCancelarViaje.cs",
-              "RelativeDocumentMoniker": "RegistroViajes\\FRMCancelarViaje.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMCancelarViaje.cs [Dise\u00F1o]",
-              "RelativeToolTip": "RegistroViajes\\FRMCancelarViaje.cs [Dise\u00F1o]",
+              "DocumentIndex": 6,
+              "Title": "FRMReservarViaje.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMReservarViaje.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\FRMReservarViaje.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMReservarViaje.cs [Dise\u00F1o]",
+              "RelativeToolTip": "RegistroViajes\\FRMReservarViaje.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T12:56:23.009Z",
+              "WhenOpened": "2024-10-04T13:07:16.758Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FRMPaquetes.cs",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMPaquetes.cs",
-              "RelativeDocumentMoniker": "RegistroViajes\\FRMPaquetes.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMPaquetes.cs",
-              "RelativeToolTip": "RegistroViajes\\FRMPaquetes.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAiwDYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "BaseDeDatos.cs",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\BaseDeDatos.cs",
+              "RelativeDocumentMoniker": "DAL\\BaseDeDatos.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\BaseDeDatos.cs",
+              "RelativeToolTip": "DAL\\BaseDeDatos.cs",
+              "ViewState": "AgIAALYAAAAAAAAAAAAuwMEAAABhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T12:47:21.399Z",
+              "WhenOpened": "2024-09-25T20:27:06.442Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "BLLTransporte.cs",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\BLL\\BLLTransporte.cs",
+              "RelativeDocumentMoniker": "BLL\\BLLTransporte.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\BLL\\BLLTransporte.cs",
+              "RelativeToolTip": "BLL\\BLLTransporte.cs",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAACgAAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T13:34:31.723Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form1.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\Form1.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\Form1.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\Form1.cs [Dise\u00F1o]",
+              "RelativeToolTip": "RegistroViajes\\Form1.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T17:21:27.097Z",
+              "EditorCaption": " [Dise\u00F1o]"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 2,
+              "Title": "Usuario.cs",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Usuario.cs",
+              "RelativeDocumentMoniker": "DAL\\Usuario.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Usuario.cs",
+              "RelativeToolTip": "DAL\\Usuario.cs",
+              "ViewState": "AgIAAAwCAAAAAAAAAAAswCcCAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T22:21:56.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "FRMReservarViaje.cs",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMReservarViaje.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\FRMReservarViaje.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMReservarViaje.cs",
+              "RelativeToolTip": "RegistroViajes\\FRMReservarViaje.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAWwFsAAABYAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T13:08:25.317Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Destino.cs",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Destino.cs",
+              "RelativeDocumentMoniker": "DAL\\Destino.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Destino.cs",
+              "RelativeToolTip": "DAL\\Destino.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T12:34:18.573Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Empresa.cs",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\BE\\Empresa.cs",
+              "RelativeDocumentMoniker": "BE\\Empresa.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\BE\\Empresa.cs",
+              "RelativeToolTip": "BE\\Empresa.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAswA0AAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T13:54:50.765Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Form1.cs",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\Form1.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\Form1.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\Form1.cs",
+              "RelativeToolTip": "RegistroViajes\\Form1.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAwwBsAAAAgAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-03T17:28:50.232Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "FRMPaquetes.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMPaquetes.cs",
               "RelativeDocumentMoniker": "RegistroViajes\\FRMPaquetes.cs",
@@ -132,7 +230,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 13,
               "Title": "FRMCambiarIdioma.cs",
               "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMCambiarIdioma.cs",
               "RelativeDocumentMoniker": "RegistroViajes\\FRMCambiarIdioma.cs",
@@ -145,7 +243,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 14,
               "Title": "FRMCambiarIdioma.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMCambiarIdioma.cs",
               "RelativeDocumentMoniker": "RegistroViajes\\FRMCambiarIdioma.cs",
@@ -157,7 +255,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
+              "DocumentIndex": 15,
               "Title": "DALEventos.cs",
               "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\DALEventos.cs",
               "RelativeDocumentMoniker": "DAL\\DALEventos.cs",
@@ -170,7 +268,20 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 11,
+              "Title": "FRMPaquetes.cs",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMPaquetes.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\FRMPaquetes.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMPaquetes.cs",
+              "RelativeToolTip": "RegistroViajes\\FRMPaquetes.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAiwDYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-04T12:47:21.399Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "FormManager.cs",
               "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\Servicios\\FormManager.cs",
               "RelativeDocumentMoniker": "Servicios\\FormManager.cs",
@@ -183,84 +294,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "BaseDeDatos.cs",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\BaseDeDatos.cs",
-              "RelativeDocumentMoniker": "DAL\\BaseDeDatos.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\BaseDeDatos.cs",
-              "RelativeToolTip": "DAL\\BaseDeDatos.cs",
-              "ViewState": "AgIAALoAAAAAAAAAAAAgwL4AAABhAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-09-25T20:27:06.442Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "Empresa.cs",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Empresa.cs",
-              "RelativeDocumentMoniker": "DAL\\Empresa.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Empresa.cs",
-              "RelativeToolTip": "DAL\\Empresa.cs",
-              "ViewState": "AgIAALEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T12:34:19.451Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Usuario.cs",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Usuario.cs",
-              "RelativeDocumentMoniker": "DAL\\Usuario.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Usuario.cs",
-              "RelativeToolTip": "DAL\\Usuario.cs",
-              "ViewState": "AgIAAJEBAAAAAAAAAAAswJEBAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T22:21:56.544Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "Destino.cs",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Destino.cs",
-              "RelativeDocumentMoniker": "DAL\\Destino.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\DAL\\Destino.cs",
-              "RelativeToolTip": "DAL\\Destino.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-04T12:34:18.573Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\Form1.cs",
-              "RelativeDocumentMoniker": "RegistroViajes\\Form1.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\Form1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "RegistroViajes\\Form1.cs [Dise\u00F1o]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T17:21:27.097Z",
-              "EditorCaption": " [Dise\u00F1o]"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Form1.cs",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\Form1.cs",
-              "RelativeDocumentMoniker": "RegistroViajes\\Form1.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\Form1.cs",
-              "RelativeToolTip": "RegistroViajes\\Form1.cs",
-              "ViewState": "AgIAABEAAAAAAAAAAAAiwBkAAAAiAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T17:28:50.232Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
+              "DocumentIndex": 17,
               "Title": "FRMRegistrarCliente.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMRegistrarCliente.cs",
               "RelativeDocumentMoniker": "RegistroViajes\\FRMRegistrarCliente.cs",
@@ -271,7 +305,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 16,
               "Title": "FRMRegistrarCliente.cs",
               "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMRegistrarCliente.cs",
               "RelativeDocumentMoniker": "RegistroViajes\\FRMRegistrarCliente.cs",
@@ -283,14 +317,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 16,
+              "DocumentIndex": 18,
               "Title": "FRMIniciarSesion.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMIniciarSesion.cs",
               "RelativeDocumentMoniker": "RegistroViajes\\FRMIniciarSesion.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\FRMIniciarSesion.cs [Dise\u00F1o]",
-              "RelativeToolTip": "..\\..\\..\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\FRMIniciarSesion.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\registroViajes\\RegistroViajes\\FRMIniciarSesion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "RegistroViajes\\FRMIniciarSesion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-03T21:37:49.604Z"
+              "WhenOpened": "2024-10-03T21:37:49.604Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

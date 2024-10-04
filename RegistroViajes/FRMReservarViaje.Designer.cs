@@ -36,10 +36,8 @@ namespace RegistroViajes
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -58,7 +56,8 @@ namespace RegistroViajes
             this.label17 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
-            this.label20 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
@@ -89,6 +88,7 @@ namespace RegistroViajes
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(637, 375);
             this.dataGridView1.TabIndex = 48;
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // dateTimePicker2
             // 
@@ -118,14 +118,6 @@ namespace RegistroViajes
             this.numericUpDown1.Size = new System.Drawing.Size(120, 20);
             this.numericUpDown1.TabIndex = 44;
             // 
-            // comboBox4
-            // 
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(199, 250);
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(120, 21);
-            this.comboBox4.TabIndex = 43;
-            // 
             // comboBox2
             // 
             this.comboBox2.FormattingEnabled = true;
@@ -141,13 +133,6 @@ namespace RegistroViajes
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(120, 21);
             this.comboBox1.TabIndex = 41;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(199, 178);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 40;
             // 
             // label9
             // 
@@ -248,6 +233,7 @@ namespace RegistroViajes
             this.label10.Size = new System.Drawing.Size(724, 603);
             this.label10.TabIndex = 49;
             this.label10.Text = "label10";
+            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // label13
             // 
@@ -312,20 +298,30 @@ namespace RegistroViajes
             this.label19.TabIndex = 53;
             this.label19.Text = "Cantidad de adultos";
             // 
-            // label20
+            // label12
             // 
-            this.label20.AutoSize = true;
-            this.label20.Location = new System.Drawing.Point(16, 181);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(36, 13);
-            this.label20.TabIndex = 52;
-            this.label20.Text = "Titular";
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label12.Location = new System.Drawing.Point(366, 104);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(88, 28);
+            this.label12.TabIndex = 60;
+            this.label12.Text = "Destinos";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(199, 253);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(120, 20);
+            this.textBox1.TabIndex = 61;
             // 
             // FRMReservarViaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 522);
+            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
             this.Controls.Add(this.label15);
@@ -333,7 +329,6 @@ namespace RegistroViajes
             this.Controls.Add(this.label17);
             this.Controls.Add(this.label18);
             this.Controls.Add(this.label19);
-            this.Controls.Add(this.label20);
             this.Controls.Add(this.lblprecio);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.dataGridView1);
@@ -341,10 +336,8 @@ namespace RegistroViajes
             this.Controls.Add(this.dateTimePicker1);
             this.Controls.Add(this.numericUpDown2);
             this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.comboBox4);
             this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
@@ -376,10 +369,8 @@ namespace RegistroViajes
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.NumericUpDown numericUpDown2;
         private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox4;
         private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;
@@ -398,6 +389,7 @@ namespace RegistroViajes
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }

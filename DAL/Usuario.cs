@@ -534,6 +534,7 @@ namespace DAL
                                 resultado.entidad = usuario;
                                 resultado.mensaje = "Inicio de sesión correcto";
 
+
                             }
                         }
                     }
@@ -547,6 +548,8 @@ namespace DAL
                 resultado.resultado = false;
                 resultado.mensaje = ex.Message;
                 resultado.entidad = null;
+                bool resulaaa = db.Desconectar();
+
                 return resultado;
             }
         }

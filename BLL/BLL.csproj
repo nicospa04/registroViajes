@@ -72,6 +72,7 @@
     <Compile Include="BLLDestino.cs" />
     <Compile Include="BLLEmpresa.cs" />
     <Compile Include="BLLEvento.cs" />
+    <Compile Include="BLLTransporte.cs" />
     <Compile Include="IEntidad.cs" />
     <Compile Include="BLLPaquete.cs" />
     <Compile Include="BLLUsuario.cs" />

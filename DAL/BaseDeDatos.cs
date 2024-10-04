@@ -158,6 +158,9 @@ namespace DAL
                     "PRIMARY KEY(id_usuario, id_permiso)" +
                     ");");
 
+                ejecutarQuery("USE SistemaViajes; CREATE TABLE Transporte(id_transporte INT PRIMARY KEY IDENTITY(1,1)," +
+                    "porcentaje_extra DECIMAL NOT NULL, nombre VARCHAR(100));");
+
                 scriptDatos();
             }
         }
@@ -295,6 +298,12 @@ namespace DAL
                 "(3, 3), " +
                 "(2, 2), " +
                 "(1, 1);");
+
+            ejecutarQuery("USE SistemaViajes; INSERT INTO Transporte (nombre, porcentaje_extra) " +
+                "VALUES " +
+                "('avion', 45)," + 
+                "('micro', 23)"
+            );
         }
     }
 }
