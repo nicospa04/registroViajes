@@ -247,3 +247,6 @@ C:\Users\nicol\OneDrive\Escritorio\registroViajes\RegistroViajes\bin\Debug\Syste
 C:\Users\nicol\OneDrive\Escritorio\registroViajes\RegistroViajes\bin\Debug\System.ValueTuple.xml
 C:\Users\nicol\OneDrive\Escritorio\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCancelarViajeCliente.resources
 C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCancelarViajeCliente.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMBitacora.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCancelarViajeCliente.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMVerViajesRealizados.resources

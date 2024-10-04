@@ -27,6 +27,7 @@ namespace RegistroViajes
 
 
             paquetes = bll.leerEntidades();
+            dataGridView1.DataSource = paquetes;
 
         }
         public void ActualizarIdioma()

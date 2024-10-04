@@ -41,54 +41,51 @@ namespace RegistroViajes
             this.label1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 30F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.SystemColors.InfoText;
-            this.label1.Location = new System.Drawing.Point(468, -3);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(332, 191);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(610, 85);
+            this.label1.Size = new System.Drawing.Size(407, 55);
             this.label1.TabIndex = 3;
             this.label1.Text = "Paquetes Disponibles";
             // 
             // label2
             // 
             this.label2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.label2.Location = new System.Drawing.Point(-9, -42);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(9, 173);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(1540, 134);
+            this.label2.Size = new System.Drawing.Size(1027, 87);
             this.label2.TabIndex = 4;
-            this.label2.Text = "label2";
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(36, 748);
+            this.label16.Location = new System.Drawing.Point(24, 486);
+            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(0, 20);
+            this.label16.Size = new System.Drawing.Size(0, 13);
             this.label16.TabIndex = 21;
             this.label16.Click += new System.EventHandler(this.label16_Click);
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 123);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 263);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
-            this.dataGridView1.Size = new System.Drawing.Size(1334, 620);
+            this.dataGridView1.Size = new System.Drawing.Size(889, 220);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // FRMPaquetes
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1370, 789);
+            this.ClientSize = new System.Drawing.Size(909, 487);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label16);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
-            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "FRMPaquetes";
             this.Text = "FRMPaquetes";
             this.Load += new System.EventHandler(this.FRMPaquetes_Load_1);
