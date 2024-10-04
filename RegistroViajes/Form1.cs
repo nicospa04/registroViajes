@@ -179,7 +179,7 @@ namespace RegistroViajes
 
         private void verViajesRealizadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            AbrirForm(new FRMVerViajesRealizados());
         }
 
         private void registrosToolStripMenuItem_Click(object sender, EventArgs e)

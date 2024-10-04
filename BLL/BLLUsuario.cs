@@ -67,6 +67,8 @@ namespace BLL
             return dal.encontrarIdUsuarioPorUsuario(user);
         }
 
+        
+
 
     }
 }

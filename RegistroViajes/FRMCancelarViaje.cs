@@ -52,7 +52,7 @@ namespace RegistroViajes
 
 
                     // Calculamos un valor basado en otras propiedades
-                    fila.Cells["Titular"].Value = dal.encontrarNombreUsuarioPorID(id_usuario);
+                    //fila.Cells["Titular"].Value = dal.encontrarNombreUsuarioPorID(id_usuario);
                 }
             }
         
