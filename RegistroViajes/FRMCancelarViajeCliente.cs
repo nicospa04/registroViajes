@@ -1,4 +1,5 @@
-﻿using Servicios;
+﻿using BLL;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -124,7 +125,17 @@ namespace RegistroViajes
 
         private void button1_Click(object sender, EventArgs e)
         {
+            BLLViaje bllviaje = new BLLViaje();
 
+            List<BE.Viaje> viajes = new List<BE.Viaje>();
+            viajes = bllviaje.leerEntidades();
+
+
+            BE.Viaje viaje = viajes.FirstOrDefault(x => x.id_viaje == id_viajeee);
+
+
+
+            bllviaje.eliminarEntidad(viaje);
         }
 
         private void label10_Click(object sender, EventArgs e)
@@ -135,6 +146,50 @@ namespace RegistroViajes
         private void FRMCancelarViajeCliente_Load(object sender, EventArgs e)
         {
 
+        }
+        int id_viajeee;
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+            BLLEmpresa bllEmpresa = new BLLEmpresa();
+
+            // Verificar si el clic fue en una celda válida
+            if (e.RowIndex >= 0)
+            {
+                // Obtener la fila que fue clickeada
+                DataGridViewRow fila = dataGridView1.Rows[e.RowIndex];
+
+                id_viajeee = int.Parse(fila.Cells["id_viaje"].Value.ToString());
+
+
+                // Acceder a los valores de las celdas de esa fila
+                string titular = fila.Cells["Titular"].Value.ToString();
+                string empresa = "";
+                if (fila.Cells["id_empresa"] != null && fila.Cells["id_empresa"].Value != null)
+                {
+                    string idEmpresa = fila.Cells["id_empresa"].Value.ToString();
+                    empresa = bllEmpresa.devolverNombrePorId(idEmpresa);
+                }
+                string destino = fila.Cells["id_destino"].Value.ToString();
+                string transporte = fila.Cells["transporte"].Value.ToString();
+                int cant_niños = int.Parse(fila.Cells["cant_niños"].Value.ToString());
+                int cant_adultos = int.Parse(fila.Cells["cant_adulto"].Value.ToString());
+                DateTime fecha_inicio = DateTime.Parse(fila.Cells["fecha_inicio"].Value.ToString());
+                DateTime fecha_fin = DateTime.Parse(fila.Cells["fecha_vuelta"].Value.ToString());
+
+
+                textBox1.Text = titular;
+                textBox2.Text = empresa;
+                textBox3.Text = destino;
+                textBox4.Text = transporte;
+                numericUpDown2.Value = cant_niños;
+                numericUpDown1.Value = cant_adultos;
+                dateTimePicker2.Value = fecha_inicio;
+                dateTimePicker1.Value = fecha_fin;
+
+
+            }
         }
     }
 }
