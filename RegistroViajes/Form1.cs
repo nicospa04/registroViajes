@@ -25,9 +25,10 @@ namespace RegistroViajes
         {
             InitializeComponent();
             BaseDeDatos bd = new BaseDeDatos();
-         //  bd.scriptInicio();
+            bd.scriptInicio();
             Lenguaje.ObtenerInstancia().Agregar(this);
             Lenguaje.ObtenerInstancia().IdiomaActual = "Español";
+            modifmenu();
         }
 
         BLLUsuario BLLUser = new BLLUsuario();
@@ -103,12 +104,10 @@ namespace RegistroViajes
 
         private void iconMenuItem7_Click(object sender, EventArgs e)
         {
-
             FRMIniciarSesion formu = new FRMIniciarSesion();
             formu.TopLevel = false;
             formu.FormBorderStyle = FormBorderStyle.None;
             formu.Dock = DockStyle.Fill;
-
             this.Controls.Add(formu);
 
             formu.Show();
@@ -142,20 +141,28 @@ namespace RegistroViajes
 
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (SessionManager.ObtenerInstancia().Usuario == null)
-            {
-                MessageBox.Show("Sesion no Iniciada");
-                return;
-            }
-            if (SessionManager.ObtenerInstancia().Usuario != null)
+            DialogResult result = MessageBox.Show("¿Estas seguro de Cerrar Sesión?", "Confirmar Cierre de Sesión", MessageBoxButtons.YesNo);
+            if(result == DialogResult.Yes)
             {
                 SessionManager.ObtenerInstancia().CerrarSesion();
-                MessageBox.Show("Sesión Cerrada");
-                return;
+                modifmenu();
             }
+            AbrirForm(new FRMIniciarSesion());
+        }
+        public void modifmenu() 
+        {
+            iconMenuItem1.Enabled = true;
+            iconMenuItem7.Enabled = true;
+            cerrarSesionToolStripMenuItem.Enabled = false;
+            iconMenuItem2.Enabled = false;
+            iconMenuItem3.Enabled = false;
+            iconMenuItem4.Enabled = false;
+            registrosToolStripMenuItem.Enabled = false;
+            iconMenuItem5.Enabled = true;
+            iconMenuItem6.Enabled = true;
         }
 
-        public void ActualizarIdioma()
+    public void ActualizarIdioma()
         {
             Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
         }
@@ -171,6 +178,21 @@ namespace RegistroViajes
         }
 
         private void verViajesRealizadosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void registrosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void empresasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }

@@ -10,7 +10,7 @@ namespace DAL
 {
     public class BaseDeDatos
     {
-        public static string dataSource = "DESKTOP-TAPVU3E";
+        public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
         public static string dbName = "SistemaViajes";
         public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
@@ -61,10 +61,10 @@ namespace DAL
             // Crear las tablas dentro de la base de datos SistemaViajes
             if (bdCreada)
             {
-                ejecutarQuery("USE SistemaViajes; CREATE TABLE Familia (" +
-                    "id_familia INT PRIMARY KEY," +
-                    "descripcion VARCHAR(50)" +
-                    ");");
+                //ejecutarQuery("USE SistemaViajes; CREATE TABLE Familia (" +
+                //    "id_familia INT PRIMARY KEY," +
+                //    "descripcion VARCHAR(50)" +
+                //    ");");
 
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Usuario (" +
                     "id_usuario INT PRIMARY KEY IDENTITY(1,1)," +
@@ -78,13 +78,13 @@ namespace DAL
                     "id_familia INT," +
                     "salt VARCHAR(50)," +
                     "idioma VARCHAR(50)," +
-                    "FOREIGN KEY (id_familia) REFERENCES Familia(id_familia)" +
+                    //"FOREIGN KEY (id_familia) REFERENCES Familia(id_familia)" +
                     ");");
 
-                ejecutarQuery("USE SistemaViajes; CREATE TABLE Patente (" +
-                    "id_patente INT PRIMARY KEY IDENTITY(1,1)," +
-                    "descripcion VARCHAR(50)" +
-                    ");");
+                //ejecutarQuery("USE SistemaViajes; CREATE TABLE Patente (" +
+                //    "id_patente INT PRIMARY KEY IDENTITY(1,1)," +
+                //    "descripcion VARCHAR(50)" +
+                //    ");");
 
                 //ejecutarQuery("USE SistemaViajes; CREATE TABLE Permisos (" +
                 //    "id_permiso INT PRIMARY KEY IDENTITY(1,1)," +
@@ -180,10 +180,10 @@ namespace DAL
             string hashCarlos = hasher.HashPassword("abc3", out saltCarlos);
 
             // Insertar datos en la tabla Familia
-            ejecutarQuery("USE SistemaViajes; INSERT INTO Familia (id_familia, descripcion) VALUES " +
-                "(1, 'Usuario normal del sistema, cliente')," +
-                "(2, 'Super usuario, empleado')," +
-                "(3, 'Administrador, administrador');");
+            //ejecutarQuery("USE SistemaViajes; INSERT INTO Familia (id_familia, descripcion) VALUES " +
+            //    "(1, 'Usuario normal del sistema, cliente')," +
+            //    "(2, 'Super usuario, empleado')," +
+            //    "(3, 'Administrador, administrador');");
 
             // Insertar datos en la tabla Usuario con salt y contraseña hasheada
             ejecutarQuery($"USE SistemaViajes; INSERT INTO Usuario (dni, nombre, apellido, contraseña, telefono, email, fecha_nacimiento, id_familia, salt, idioma) " +
@@ -213,7 +213,7 @@ namespace DAL
                 "(3, 1200.00, 5, 'Aventura en Bariloche', 'Paquete de aventura que incluye excursiones, caminatas y deportes de invierno.', '2024-12-20', '2024-12-30');");
 
             // Insertar datos en la tabla Viaje
-            ejecutarQuery("USE SistemaViajes; INSERT INTO Viaje (id_usuario, id_empresa, id_destino, transporte, cant_adulto, cant_niños, costo, fecha_inicio, fecha_vuelta) " +
+            ejecutarQuery("USE SistemaViajes; INSERT INTO [Viaje] (id_usuario, id_empresa, id_destino, transporte, cant_adulto, cant_niños, costo, fecha_inicio, fecha_vuelta) " +
                 "VALUES " +
                 "(1, 1, 1, 'Avión', 2, 0, 3000.00, '2024-09-01', '2024-09-10')," +
                 "(2, 2, 2, 'Avión', 1, 1, 4000.00, '2024-10-05', '2024-10-12')," +
@@ -222,15 +222,72 @@ namespace DAL
             // Inserta datos en la tabla PermisosComp
             ejecutarQuery("USE SistemaViajes; INSERT INTO PermisosComp (nombre, nombreformulario, isperfil) " +
                 "VALUES" +
-                "('Cliente', 'FRMReservarViaje', 0), " +
-                "('Emp', 'FRMModificarViaje', 0), " +
-                "('Admin', 'FRMCambiarIdioma', 1);");
+                "('Cliente', 'iconMenuItem2', 1), " +
+                "('Empleado', 'iconMenuItem2', 1), " +  
+                "('Admin', 'iconMenuItem2', 1), " +   
+                "('Viaje', 'toolStripMenuItem1', 0), " + 
+                "('Cancelar', 'cancelarToolStripMenuItem', 0), " +
+                "('Paquetes', 'iconMenuItem3', 0)," + 
+                "('ModificarViaje', 'toolStripMenuItem2', 0)," +
+                "('VerViajes', 'verViajesRealizadosToolStripMenuItem', 0)," + 
+                "('Reg', 'registrosToolStripMenuItem', 0)," + 
+                "('RegUser', 'usuariosToolStripMenuItem', 0)," + 
+                "('RegEmp', 'empresasToolStripMenuItem', 0)," +
+                "('RegDest', 'destinosToolStripMenuItem', 0)," + 
+                "('RegPaque', 'paquetesToolStripMenuItem', 0)," +
+                "('Sesion', 'iconMenuItem1', 0)," +
+                "('IniSes', 'iconMenuItem7', 0)," +
+                "('CerSes', 'cerrarSesionToolStripMenuItem', 0)," +
+                "('CamIdio', 'iconMenuItem5', 0)," +
+                "('Exit', 'iconMenuItem6', 0)," +
+                "('Config', 'iconMenuItem4', 0)," +
+                "('Bitacora', 'bitacoraToolStripMenuItem', 0);"); 
 
             // Inserta datos en la tabla PermisoPermiso
             ejecutarQuery("USE SistemaViajes; INSERT INTO PermisoPermiso (id_permisopadre, id_permisohijo) " +
                 "VALUES" +
                 "(3, 1), " +
-                "(3, 2);");
+                "(3, 2)," +
+                "(1, 1)," +
+                "(1, 4)," +
+                "(1, 5)," +
+                "(1, 6)," +
+                "(2, 7)," +
+                "(2, 8)," +
+                "(2, 2)," +
+                "(2, 9)," +
+                "(2, 10)," +
+                "(2, 11)," +
+                "(2, 12)," +
+                "(2, 13)," +
+                "(1, 14)," +
+                "(1, 15)," +
+                "(1, 16)," +
+                "(1, 17)," +
+                "(1, 18)," +
+                "(3, 3)," +
+                "(3, 4)," +
+                "(3, 5)," +
+                "(3, 6)," +
+                "(3, 7)," +
+                "(3, 8)," +
+                "(3, 9)," +
+                "(3, 10)," +
+                "(3, 11)," +
+                "(3, 12)," +
+                "(3, 13)," +
+                "(3, 14)," +
+                "(3, 15)," +
+                "(3, 16)," +
+                "(3, 17)," +
+                "(3, 18)," +
+                "(3, 19)," +
+                "(3, 20)," +
+                "(2, 14)," +
+                "(2, 15)," +
+                "(2, 16)," +
+                "(2, 18)," +
+                "(2, 17);");
 
             //inserta datos en tabla UsuarioPermiso
             ejecutarQuery("USE SistemaViajes; INSERT INTO UsuarioPermiso (id_usuario, id_permiso)" +
