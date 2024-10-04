@@ -250,3 +250,6 @@ C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Softwa
 C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMBitacora.resources
 C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCancelarViajeCliente.resources
 C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMVerViajesRealizados.resources
+C:\Users\Navegador\Desktop\vvg\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMBitacora.resources
+C:\Users\Navegador\Desktop\vvg\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCancelarViajeCliente.resources
+C:\Users\Navegador\Desktop\vvg\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMVerViajesRealizados.resources

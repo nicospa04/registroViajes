@@ -63,7 +63,7 @@ namespace RegistroViajes
 
         private void FRMCambiarIdioma_Load(object sender, EventArgs e)
         {
-
+            //ActualizarIdioma();
         }
     }
 }
