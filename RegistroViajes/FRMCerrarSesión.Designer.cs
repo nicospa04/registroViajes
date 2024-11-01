@@ -35,7 +35,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(100, 120);
+            this.button1.Location = new System.Drawing.Point(445, 308);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(93, 35);
             this.button1.TabIndex = 0;
@@ -45,17 +45,18 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(272, 120);
+            this.button2.Location = new System.Drawing.Point(617, 308);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(93, 35);
             this.button2.TabIndex = 1;
             this.button2.Text = "Volver";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(150, 65);
+            this.label1.Location = new System.Drawing.Point(495, 253);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(159, 13);
             this.label1.TabIndex = 2;
@@ -65,12 +66,14 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(480, 233);
+            this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
+            this.ClientSize = new System.Drawing.Size(895, 442);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "FRMCerrarSesión";
             this.Text = "FRMCerrarSesión";
+            this.Load += new System.EventHandler(this.FRMCerrarSesión_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

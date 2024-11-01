@@ -1,4 +1,5 @@
-﻿using Servicios;
+﻿using FontAwesome.Sharp;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,6 +37,28 @@ namespace RegistroViajes
                 e.Cancel = true;
                 Hide();
             }
+        }
+        //public void modifmenu()
+        //{
+        //    iconMenuItem1.Enabled = true;
+        //    iconMenuItem7.Enabled = true;
+        //    cerrarSesionToolStripMenuItem.Enabled = true;
+        //    iconMenuItem2.Enabled = false;
+        //    iconMenuItem3.Enabled = false;
+        //    iconMenuItem4.Enabled = false;
+        //    registrosToolStripMenuItem.Enabled = false;
+        //    iconMenuItem5.Enabled = true;
+        //    iconMenuItem6.Enabled = true;
+        //}
+
+        private void FRMCerrarSesión_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

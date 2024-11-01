@@ -10,7 +10,7 @@ namespace DAL
 {
     public class BaseDeDatos
     {
-        public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
+        public static string dataSource = "090L3PC17-79134";
         public static string dbName = "SistemaViajes";
         public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
@@ -161,6 +161,15 @@ namespace DAL
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE Transporte(id_transporte INT PRIMARY KEY IDENTITY(1,1)," +
                     "porcentaje_extra DECIMAL NOT NULL, nombre VARCHAR(100));");
 
+                ejecutarQuery("USE SistemaViajes; CREATE TABLE Bitacora (" +
+                    "id_bitacora INT PRIMARY KEY IDENTITY(1,1)," +
+                    "id_usuario INT NOT NULL," +
+                    "operacion VARCHAR(100)," +
+                    "fecha DATETIME," +
+                    "actor VARCHAR(100)," +
+                    "criticidad INT NOT NULL," +
+                    "FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)" +
+                    ");");
                 scriptDatos();
             }
         }
@@ -301,9 +310,12 @@ namespace DAL
 
             ejecutarQuery("USE SistemaViajes; INSERT INTO Transporte (nombre, porcentaje_extra) " +
                 "VALUES " +
-                "('avion', 45)," + 
-                "('micro', 23)"
-            );
+                "('avion', 45), " + 
+                "('micro', 23);");
+
+            ejecutarQuery("USE SistemaViajes; INSERT INTO Bitacora (id_usuario, operacion, fecha, actor, criticidad)" +
+                "VALUES " +
+                "(3, 'Logueo', 01/11/2024, 'Administrador', 4);");
         }
     }
 }

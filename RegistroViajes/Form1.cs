@@ -148,8 +148,7 @@ namespace RegistroViajes
             //    modifmenu();
             //}
             //AbrirForm(new FRMIniciarSesion());
-            FRMCerrarSesión fr= new FRMCerrarSesión();
-            fr.Show();
+            AbrirForm(new FRMCerrarSesión());
         }
         public void modifmenu() 
         {
