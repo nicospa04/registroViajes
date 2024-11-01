@@ -46,32 +46,25 @@ namespace RegistroViajes
             DateTime fechaNacimiento = fechnac.Value;
             int familia = 1;
 
+            //ALT "YA EXISTE UN USUARIO CON ESE DNI"
+            //ALT "NO DEJE LOS CAMPOS VACIOS"
+
             //if(dni.Length != 8 || nombre.Length < 15 || apellido.Length < 15 || telefono.Length < 12 || contaseña.Length < 6 /*|| fechaNacimiento == DateTime.Now*/)
             //{
             //    MessageBox.Show("Complete bien todos los campos");
             //    return;
             //}
-
-
-            string idioma = "ES" /*Lenguaje.ObtenerInstancia().IdiomaActual*/;
-
+            string idioma = "ES";
             BE.Usuario user = new BE.Usuario(dni,nombre,apellido,telefono,mail,contaseña,fechaNacimiento, familia,idioma);
-
             BLLUsuario bllUser = new BLLUsuario();
-
             Servicios.Resultado<BE.Usuario> resultado = bllUser.crearEntidad(user);
-
-
             //Si hubo un error al crear el usuario (manejar error en este cas):
             if (!resultado.resultado)
             {
                 MessageBox.Show(resultado.mensaje); 
                 return;
             }
-
             MessageBox.Show(resultado.mensaje);
-
-
         }
 
         private void FRMRegistrarCliente_Load(object sender, EventArgs e)

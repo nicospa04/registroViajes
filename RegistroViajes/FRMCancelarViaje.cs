@@ -198,15 +198,9 @@ namespace RegistroViajes
         private void button1_Click(object sender, EventArgs e)
         {
             BLLViaje bllviaje = new BLLViaje();
-
             List<BE.Viaje> viajes = new List<BE.Viaje>();
             viajes = bllviaje.leerEntidades();
-
-
             BE.Viaje viaje = viajes.FirstOrDefault(x => x.id_viaje == id_viajeee);
-
-
-
             bllviaje.eliminarEntidad(viaje);
         }
 

@@ -176,18 +176,14 @@ namespace DAL
         public List<BE.Usuario> leerEntidades()
         {
             List<BE.Usuario> list = new List<BE.Usuario>();
-
             // Crear e inicializar la instancia de la base de datos
             DAL.BaseDeDatos db = new DAL.BaseDeDatos();
-
             // Especificar las columnas necesarias en lugar de usar *
             string sqlQuery = "USE SistemaViajes; SELECT * FROM Usuario";
-
             try
             {
                 bool result = db.Conectar();
                 if (!result) throw new Exception("Error al conectarse a la base de datos");
-
                 using (SqlCommand command = new SqlCommand(sqlQuery, db.Connection))
                 {
                     using (SqlDataReader lector = command.ExecuteReader())
@@ -207,21 +203,17 @@ namespace DAL
                             string idioma = !lector.IsDBNull(8) ? lector.GetString(8) : string.Empty;
                             int id_familia = !lector.IsDBNull(10) ? lector.GetInt32(10) : 0;
                             BE.Usuario usuario = new BE.Usuario(id_usuario, dni, nombre, apellido, telefono, email, contraseña, fecha_nacimiento, id_familia, salt, idioma);
-
                             list.Add(usuario);
                         }
                     }
                 }
-
                 bool result2 = db.Desconectar();
                 if (!result2) throw new Exception("Error al desconectarse de la base de datos");
-
                 return list;
             }
             catch (Exception ex)
             {
                 Console.WriteLine(ex.ToString());
-                // Asegurarse de que la conexión se cierre en caso de error
                 db.Desconectar();
                 return null;
             }
@@ -303,13 +295,9 @@ namespace DAL
 
         public Servicios.Resultado<BE.Usuario> eliminarEntidad(BE.Usuario obj)
         {
-
             Servicios.Resultado < BE.Usuario > Resultado = new Servicios.Resultado<BE.Usuario>();
-
-
             string query = "USE SistemaViajes;" +
                                    $"DELETE FROM Usuario WHERE id_usuario = {obj.id_usuario}";
-
             try
             {
                 bool resultado = db.ejecutarQuery(query);
@@ -330,17 +318,11 @@ namespace DAL
 
         public Servicios.Resultado<BE.Usuario> actualizarEntidad(BE.Usuario obj)
         {
-
-
             Servicios.Resultado < BE.Usuario > Resultado = new Servicios.Resultado<BE.Usuario>();
-
-
-            string query = "USE SistemaViajes;" +
-                           
+            string query = "USE SistemaViajes;" +      
                            "UPDATE Usuario" +
            $"SET nombre = '{obj.nombre}', contraseña = '{obj.contraseña}', id_familia = {obj.id_familia}" +
            $"WHERE id_usuario = {obj.id_usuario}";
-
             try
             {
                 bool resultado = db.ejecutarQuery(query);
@@ -351,7 +333,6 @@ namespace DAL
             }
             catch (Exception ex)
             {
-                
                 Resultado.resultado = false;
                 Resultado.mensaje = ex.Message;
                 db.Desconectar();
@@ -470,33 +451,23 @@ namespace DAL
 
         public Servicios.Resultado<BE.Usuario> recuperarUsuario(string email, string contraseña)
         {
-
             Servicios.Resultado<BE.Usuario> resultado = new Servicios.Resultado<BE.Usuario>();
-
-                 
-
             // Consulta SQL solo para obtener el salt y el hash
             string sqlQuery = "USE SistemaViajes; SELECT * FROM Usuario WHERE email = @Email";
-
             try
             {
                 bool result = db.Conectar();
                 if (!result) throw new Exception("Error al conectarse a la base de datos");
-
                 using (SqlCommand command = new SqlCommand(sqlQuery, db.Connection))
                 {
                     // Uso de parámetros para prevenir inyecciones SQL
                     command.Parameters.AddWithValue("@Email", email);
-
                     using (SqlDataReader lector = command.ExecuteReader())
                     {
                         if (!lector.HasRows)
                         {
                             throw new Exception("No se encontró un usuario con ese mail");
                         }
-
-
-
                         if (lector.Read()) // Si encontramos un usuario con el email
                         {
                             // Manejar posibles valores nulos
@@ -512,36 +483,24 @@ namespace DAL
                             string idioma = !lector.IsDBNull(10) ? lector.GetString(10) : string.Empty;
                             // Recuperar el hash y el salt almacenados
                             string saltAlmacenado = !lector.IsDBNull(9) ? lector.GetString(9) : "";
-
                             // Verificar la contraseña ingresada
                             bool esContraseñaValida = hasher.VerifyPassword(contraseña, saltAlmacenado, hashAlmacenado);
-
                             if (!esContraseñaValida)
                             {
-                               
                                 throw new Exception("Contraseña incorrecta");
-                               
                             }
-
-
-
                             if (esContraseñaValida)
                             {
-                                
-                              BE.Usuario usuario = new BE.Usuario(id_usuario, dni, nombre, apellido, telefono, email_db, contraseña, fecha_nacimiento, id_familia, saltAlmacenado, idioma);
-                             
+                                BE.Usuario usuario = new BE.Usuario(id_usuario, dni, nombre, apellido, telefono, email_db, contraseña, fecha_nacimiento, id_familia, saltAlmacenado, idioma);
                                 resultado.resultado = true;
                                 resultado.entidad = usuario;
                                 resultado.mensaje = "Inicio de sesión correcto";
-
-
                             }
                         }
                     }
                 }
-
                 db.Desconectar();
-                return resultado; // Si no se encontró ningún usuario o la contraseña es incorrecta, devuelve null
+                return resultado;
             }
             catch (Exception ex)
             {
@@ -549,7 +508,6 @@ namespace DAL
                 resultado.mensaje = ex.Message;
                 resultado.entidad = null;
                 bool resulaaa = db.Desconectar();
-
                 return resultado;
             }
         }

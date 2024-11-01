@@ -51,7 +51,7 @@ namespace Servicios
 
         public Usuario Usuario
         {
-            get { return _user; }
+            get { return _user;}
         }
 
         public static Usuario Obtenerdatosuser()

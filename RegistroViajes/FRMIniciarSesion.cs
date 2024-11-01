@@ -68,11 +68,8 @@ namespace RegistroViajes
       
                 MessageBox.Show("Sesion Iniciada Correctamente");
                 SessionManager.ObtenerInstancia().IniciarSesion(resultado.entidad);
-                BLLUsuario bLLUsuario = new BLLUsuario();
+                //BLLUsuario bLLUsuario = new BLLUsuario();
                 Lenguaje.ObtenerInstancia().IdiomaActual = BLLUser.recuperarIdioma(resultado.entidad);
-
-                
-          
                 inicioSesionCorrecto.Invoke(this, new EventArgs());
 
             Close();

@@ -82,25 +82,20 @@ namespace DAL
         public List<BE.Viaje> leerEntidades()
         {
             List<BE.Viaje> list = new List<BE.Viaje>();
-
             // Crear e inicializar la instancia de la base de datos
             DAL.BaseDeDatos db = new DAL.BaseDeDatos();
-
             // Especificar las columnas necesarias en lugar de usar *
             string sqlQuery = "USE SistemaViajes; SELECT * FROM Viaje";
-
             try
             {
                 bool result = db.Conectar();
                 if (!result) throw new Exception("Error al conectarse a la base de datos");
-
                 using (SqlCommand command = new SqlCommand(sqlQuery, db.Connection))
                 {
                     using (SqlDataReader lector = command.ExecuteReader())
                     {
                         while (lector.Read())
                         {
-                            // Manejar posibles valores nulos
                             int id_viaje = !lector.IsDBNull(lector.GetOrdinal("id_viaje")) ? lector.GetInt32(lector.GetOrdinal("id_viaje")) : 0;
                             int id_usuario= !lector.IsDBNull(lector.GetOrdinal("id_usuario")) ? lector.GetInt32(lector.GetOrdinal("id_usuario")) : 0;
                             int id_empresa = !lector.IsDBNull(lector.GetOrdinal("id_empresa")) ? lector.GetInt32(lector.GetOrdinal("id_empresa")) : 0;
@@ -111,17 +106,13 @@ namespace DAL
                             decimal costo = !lector.IsDBNull(lector.GetOrdinal("costo")) ? lector.GetDecimal(lector.GetOrdinal("costo")) : 0;
                             DateTime fecha_inicio = !lector.IsDBNull(lector.GetOrdinal("fecha_inicio")) ? lector.GetDateTime(lector.GetOrdinal("fecha_inicio")) : DateTime.Now;
                             DateTime fecha_vuelta = !lector.IsDBNull(lector.GetOrdinal("fecha_vuelta")) ? lector.GetDateTime(lector.GetOrdinal("fecha_vuelta")) : DateTime.Now;
-
                             BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_destino, transporte, cant_adulto, cant_niño, costo, fecha_inicio, fecha_vuelta);
-
                             list.Add(viaje);
                         }
                     }
                 }
-
                 bool result2 = db.Desconectar();
                 if (!result2) throw new Exception("Error al desconectarse de la base de datos");
-
                 return list;
             }
             catch (Exception ex)
@@ -131,36 +122,22 @@ namespace DAL
                 db.Desconectar();
                 return null;
             }
-
-
         }
 
         public List<BE.Viaje> ObtenerViajesPorUsuarioId(int id_usuario)
-    {
-        // Lista que contendrá los viajes del usuario
-        List<BE.Viaje> listaViajes = new List<BE.Viaje>();
-
+        {
+            List<BE.Viaje> listaViajes = new List<BE.Viaje>();
             DAL.BaseDeDatos db = new DAL.BaseDeDatos();
-            
             try
             {
                 bool result = db.Conectar();
-                if (!result) throw new Exception("Error al conectarse a la base de datos");
-
-                
+                if (!result) throw new Exception("Error al conectarse a la base de datos"); 
                 string query = "USE SistemaViajes; SELECT * FROM Viaje WHERE id_usuario = @id_usuario";
-
                 SqlCommand command = new SqlCommand(query, db.Connection);
-
-                // Asignar el parámetro id_usuario
                 command.Parameters.AddWithValue("@id_usuario", id_usuario);
-
-                // Ejecutar el comando y leer los resultados
                 SqlDataReader reader = command.ExecuteReader();
-
                 while (reader.Read())
                 {
-                   
                     int  id_viaje = Convert.ToInt32(reader["id_viaje"]);
                     int id_empresa = Convert.ToInt32(reader["id_empresa"]);
                     int id_destino = Convert.ToInt32(reader["id_destino"]);
@@ -171,11 +148,8 @@ namespace DAL
                     DateTime fecha_inicio = Convert.ToDateTime(reader["fecha_inicio"]);
                     DateTime fecha_vuelta = Convert.ToDateTime(reader["fecha_vuelta"]);
                     BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_destino, transporte, cant_adulto, cant_niños, costo, fecha_inicio, fecha_vuelta);
-
-                   
                     listaViajes.Add(viaje);
                 }
-
                 return listaViajes;
             }
             catch (Exception ex)

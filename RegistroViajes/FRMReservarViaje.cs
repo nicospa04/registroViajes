@@ -61,10 +61,10 @@ namespace RegistroViajes
 
             var empresas = bll.leerEntidades();
 
-            id_empresaa = empresas.FirstOrDefault(e => e.nombre == comboBox1.SelectedItem.ToString()).id_empresa;
+            id_empresaa = empresas.FirstOrDefault(a => a.nombre == comboBox1.SelectedItem.ToString()).id_empresa;
 
 
-            BE.Viaje viaje = new BE.Viaje(SessionManager.Obtenerdatosuser().id_usuario, )
+            //BE.Viaje viaje = new BE.Viaje(SessionManager.Obtenerdatosuser().id_usuario, );
 
 
 

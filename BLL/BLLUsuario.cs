@@ -11,16 +11,11 @@ namespace BLL
 {
     public class BLLUsuario: IEntidad<BE.Usuario>
     {
-
         DAL.Usuario dal;
-       
-
         public BLLUsuario()
         {
             dal = new DAL.Usuario();    
         }
-
-
         public List<BE.Usuario> leerEntidades()
         {
             return dal.leerEntidades();
@@ -29,39 +24,31 @@ namespace BLL
         {
             return dal.recuperarUsuario(email, contraseña);
         }
-
         public Servicios.Resultado<BE.Usuario> crearEntidad(BE.Usuario obj)
         {
             return dal.crearEntidad(obj);
         }
-
         public Servicios.Resultado<BE.Usuario> eliminarEntidad (BE.Usuario obj)
         {
             return dal.eliminarEntidad(obj);
         }
-
         public Servicios.Resultado<BE.Usuario> actualizarEntidad(BE.Usuario obj)
         {
             return dal.actualizarEntidad(obj);
         }
-
         public string recuperarIdioma(BE.Usuario obj)
         {
             return dal.recuperarIdioma(obj.id_usuario.ToString());
         }
-
         public bool modificarIdioma(BE.Usuario obj, string nuevoIdioma)
         {
             bool result = dal.modificarIdioma(obj, nuevoIdioma);
             return result;
         }
-
-
         public List <Permiso> obtenerPermisosUsuario(int id)
         {
             return dal.ObtenerPermisosUsuario(id);
         }
-
         public int obtenerIDUsuario(BE.Usuario user)
         {
             return dal.encontrarIdUsuarioPorUsuario(user);

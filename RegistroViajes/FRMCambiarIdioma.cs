@@ -31,13 +31,13 @@ namespace RegistroViajes
             
             if(box.Text == "")
             {
+                MessageBox.Show("Complete el Campo");
                 return;
             }
 
-
             string idioma = box.Text == "Español" ? "ES" : "EN";
             
-                Lenguaje.ObtenerInstancia().IdiomaActual = idioma;
+            Lenguaje.ObtenerInstancia().IdiomaActual = idioma;
 
             if (SessionManager.verificarInicioSesion())
             {
