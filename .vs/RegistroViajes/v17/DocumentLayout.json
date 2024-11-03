@@ -1,18 +1,10 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\",
+  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{80406B2F-86CE-46B8-86E7-5140460E5BF2}|Elementos de la soluci\u00F3n{80406B2F-86CE-46B8-86E7-5140460E5BF2}|C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\Espa\u00F1ol.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{80406B2F-86CE-46B8-86E7-5140460E5BF2}|Elementos de la soluci\u00F3n{80406B2F-86CE-46B8-86E7-5140460E5BF2}|solutionrelative:Espa\u00F1ol.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{80406B2F-86CE-46B8-86E7-5140460E5BF2}|Elementos de la soluci\u00F3n{80406B2F-86CE-46B8-86E7-5140460E5BF2}|C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\Ingl\u00E9s.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{80406B2F-86CE-46B8-86E7-5140460E5BF2}|Elementos de la soluci\u00F3n{80406B2F-86CE-46B8-86E7-5140460E5BF2}|solutionrelative:Ingl\u00E9s.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\navegador\\desktop\\vvg\\registroviajes\\registroviajes\\frmcerrarsesi\u00F3n.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frmcerrarsesi\u00F3n.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\admin\\desktop\\valentin facultad uai\\desarrollo y arquitectura de software\\git\\registroviajes\\registroviajes\\frmcambiaridioma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frmcambiaridioma.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     }
   ],
   "DocumentGroupContainers": [
@@ -27,39 +19,13 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Espa\u00F1ol.json",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\Espa\u00F1ol.json",
-              "RelativeDocumentMoniker": "Espa\u00F1ol.json",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\Espa\u00F1ol.json",
-              "RelativeToolTip": "Espa\u00F1ol.json",
-              "ViewState": "AgIAADkAAAAAAAAAAAAAAEgAAAAkAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-01T15:21:07.448Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Ingl\u00E9s.json",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\Ingl\u00E9s.json",
-              "RelativeDocumentMoniker": "Ingl\u00E9s.json",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\Ingl\u00E9s.json",
-              "RelativeToolTip": "Ingl\u00E9s.json",
-              "ViewState": "AgIAAEEAAAAAAAAAAAAowFAAAAAfAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-11-01T15:18:59.808Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "FRMCerrarSesi\u00F3n.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\RegistroViajes\\FRMCerrarSesi\u00F3n.cs",
-              "RelativeDocumentMoniker": "RegistroViajes\\FRMCerrarSesi\u00F3n.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\RegistroViajes\\FRMCerrarSesi\u00F3n.cs [Dise\u00F1o]",
-              "RelativeToolTip": "RegistroViajes\\FRMCerrarSesi\u00F3n.cs [Dise\u00F1o]",
+              "Title": "FRMCambiarIdioma.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\FRMCambiarIdioma.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\FRMCambiarIdioma.cs",
+              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\RegistroViajes\\FRMCambiarIdioma.cs [Dise\u00F1o]",
+              "RelativeToolTip": "RegistroViajes\\FRMCambiarIdioma.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-01T15:17:12.627Z",
+              "WhenOpened": "2024-11-03T14:32:14.151Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]
