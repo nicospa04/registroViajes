@@ -1,4 +1,7 @@
-﻿using Servicios;
+﻿using BE;
+using BLL;
+using DAL;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,6 +20,10 @@ namespace RegistroViajes
         {
             InitializeComponent();
             Lenguaje.ObtenerInstancia().Agregar(this);
+            List<BEBitacora> bitacora = new List<BEBitacora>();
+            BLLBitacora bllbita = new BLLBitacora();
+            bitacora = bllbita.leerEntidades();
+            dataGridView1.DataSource = bitacora;
         }
         public void ActualizarIdioma()
         {
@@ -26,7 +33,6 @@ namespace RegistroViajes
         {
             //ALT "complete los campos".
         }
-
         private void FRMBitacora_Load(object sender, EventArgs e)
         {
             ActualizarIdioma();

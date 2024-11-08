@@ -448,7 +448,6 @@ namespace DAL
 
         }
 
-
         public Servicios.Resultado<BE.Usuario> recuperarUsuario(string email, string contraseña)
         {
             Servicios.Resultado<BE.Usuario> resultado = new Servicios.Resultado<BE.Usuario>();

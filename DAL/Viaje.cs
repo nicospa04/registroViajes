@@ -16,9 +16,6 @@ namespace DAL
             db = new BaseDeDatos();
         }
 
-
-
-
         public Servicios.Resultado<BE.Viaje> actualizarEntidad(BE.Viaje obj)
         {
             throw new NotImplementedException();

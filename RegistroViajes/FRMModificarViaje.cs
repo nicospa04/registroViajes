@@ -18,38 +18,26 @@ namespace RegistroViajes
         {
             InitializeComponent();
             Lenguaje.ObtenerInstancia().Agregar(this);
-
             BLL.BLLEmpresa bllEmpresa = new BLLEmpresa();
-
-
-
             List<BE.Viaje> viajes = new List<BE.Viaje>();
             BLL.BLLViaje bll = new BLL.BLLViaje();
             viajes = bll.leerEntidades();
 
             //BE.Viaje viaje = viajes.FirstOrDefault(viaje => id == viaje.id_usuario);
 
-
             DataGridViewTextBoxColumn nuevaColumna = new DataGridViewTextBoxColumn();
             nuevaColumna.HeaderText = "Titular";
             nuevaColumna.Name = "Titular";
             dataGridView1.Columns.Add(nuevaColumna);
- 
             dataGridView1.DataSource = viajes;
-
             DAL.Usuario dal = new DAL.Usuario();
-
-
             foreach (DataGridViewRow fila in dataGridView1.Rows)
             {
                 if (fila.DataBoundItem != null)
                 {
                     // Obtenemos el objeto asociado a la fila
                     BE.Viaje viaje = (BE.Viaje)fila.DataBoundItem;
-
                     string id_usuario = viaje.id_usuario.ToString();
-
-
                     // Calculamos un valor basado en otras propiedades
                     fila.Cells["Titular"].Value = dal.encontrarNombreUsuarioPorID(id_usuario);
                 }
@@ -73,11 +61,7 @@ namespace RegistroViajes
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
             BLL.BLLEmpresa bllEmpresa = new BLLEmpresa();
-
-
-
             // Verificar si el clic fue en una celda válida
             if (e.RowIndex >= 0)
             {

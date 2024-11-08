@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitacora.cs" />
     <Compile Include="FormHelper.cs" />
     <Compile Include="FormManager.cs" />
     <Compile Include="ISubjetc.cs" />

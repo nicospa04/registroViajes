@@ -12,7 +12,7 @@ namespace BE
         public int id_usuario { get; set; }
         public int id_empresa { get; set; }
         public int id_destino { get; set; }
-         public string transporte { get; set; }
+        public string transporte { get; set; }
         public int cant_adulto { get; set; }
         public int cant_niños { get; set; }
         public decimal costo { get; set; }
@@ -25,7 +25,7 @@ namespace BE
             this.id_usuario = id_usuario;
             this.id_empresa = id_empresa;
             this.id_destino = id_destino;
-             this.transporte = transporte;
+            this.transporte = transporte;
             this.cant_adulto = cant_adulto;
             this.cant_niños = cant_niños;
             this.costo = costo;

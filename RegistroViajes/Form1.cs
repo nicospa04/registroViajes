@@ -197,5 +197,10 @@ namespace RegistroViajes
         {
 
         }
+
+        private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new FRMBitacora());
+        }
     }
 }

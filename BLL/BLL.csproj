@@ -69,6 +69,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BLLBitacora.cs" />
     <Compile Include="BLLDestino.cs" />
     <Compile Include="BLLEmpresa.cs" />
     <Compile Include="BLLEvento.cs" />
