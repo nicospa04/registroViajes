@@ -257,3 +257,4 @@ C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Softwa
 C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMVerViajesRealizados.resources
 C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCerrarSesión.resources
 C:\Users\Navegador\Desktop\vvg\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCerrarSesión.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCerrarSesión.resources

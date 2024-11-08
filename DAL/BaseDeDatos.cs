@@ -10,7 +10,7 @@ namespace DAL
     {
         public class BaseDeDatos
         {
-            public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
+            public static string dataSource = "090L3PC16-80598";
             public static string dbName = "SistemaViajes";
             public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
@@ -115,13 +115,19 @@ namespace DAL
                         "PRIMARY KEY(id_usuario, id_permiso)" +
                         ");");
 
+                ejecutarQuery("USE SistemaViajes; CREATE TABLE tipo_transporte(" +
+                    "id_tipo_transporte INT PRIMARY KEY IDENTITY (1,1)," +
+                    "nombre VARCHAR(100));");
+
+
                     ejecutarQuery("USE SistemaViajes; CREATE TABLE Transporte" +
                         "(id_transporte INT PRIMARY KEY IDENTITY(1,1)," +
                         "porcentaje_extra DECIMAL NOT NULL, " +
                         "modelo VARCHAR(100), " +
-                        "tipo VARCHAR(100), " +
+                        "id_tipo_transporte INT, " +
                         "id_empresa INT NOT NULL, " +
-                        "FOREIGN KEY (id_empresa) REFERENCES Empresa(id_empresa));");
+                        "FOREIGN KEY (id_empresa) REFERENCES Empresa(id_empresa)," +
+                        "FOREIGN KEY (id_tipo_transporte) REFERENCES tipo_transporte(id_tipo_transporte));");
 
                     ejecutarQuery("USE SistemaViajes; CREATE TABLE Bitacora (" +
                         "id_bitacora INT PRIMARY KEY IDENTITY(1,1)," +
@@ -222,8 +228,17 @@ namespace DAL
                     "('Nueva York', 'La ciudad que nunca duerme, llena de rascacielos y vida urbana.', 1200.00)," +
                     "('Bariloche', 'Destino turístico en la Patagonia argentina, famoso por sus paisajes naturales.', 800.00);");
 
-                // Insertar datos en la tabla Fecha (trayectos específicos)
-                ejecutarQuery("USE SistemaViajes; INSERT INTO Fecha (id_empresa, id_lugar_origen, id_lugar_destino, id_transporte, fecha_ida, fecha_vuelta, categoria_tipo) " +
+            ejecutarQuery("USE SistemaViajes; INSERT INTO tipo_transporte(nombre) " +
+                "VALUES ('avion'),('bus'),('barco');");
+
+            ejecutarQuery("USE SistemaViajes; INSERT INTO Transporte (porcentaje_extra, modelo, id_tipo_transporte, id_empresa) " +
+      "VALUES " +
+      "(1.15, 'Boeing 747', 1, 1)," +    // 1 = Avión
+      "(1.25, 'Crucero Marítimo', 3, 2)," + // 3 = Barco
+      "(1.10, 'Colectivo de Turismo', 2, 1);"); // 2 = Bus
+
+            // Insertar datos en la tabla Fecha (trayectos específicos)
+            ejecutarQuery("USE SistemaViajes; INSERT INTO Fecha (id_empresa, id_lugar_origen, id_lugar_destino, id_transporte, fecha_ida, fecha_vuelta, categoria_tipo) " +
                     "VALUES " +
                     "(1, 1, 2, 1, '2024-09-01 10:00:00', '2024-09-10 18:00:00', 'Avión')," +
                     "(2, 3, 2, 2, '2024-10-05 08:00:00', '2024-10-12 20:00:00', 'Avión')," +
@@ -340,5 +355,5 @@ namespace DAL
 
         }
     }
-}
+
     
