@@ -45,10 +45,8 @@ namespace RegistroViajes
                     {
                         v.id_viaje,
                         v.id_empresa,
-                        v.id_destino,
+                        v.id_fecha,
                         v.transporte,
-                        v.cant_adulto,
-                        v.cant_niños,
                         v.costo,
                         v.fecha_inicio,
                         v.fecha_vuelta

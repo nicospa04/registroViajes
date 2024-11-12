@@ -37,7 +37,6 @@ namespace RegistroViajes
             this.label2 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnRegistrar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -119,22 +118,11 @@ namespace RegistroViajes
             this.label1.TabIndex = 16;
             this.label1.Text = "label1";
             // 
-            // btnRegistrar
-            // 
-            this.btnRegistrar.Location = new System.Drawing.Point(667, 439);
-            this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(122, 30);
-            this.btnRegistrar.TabIndex = 24;
-            this.btnRegistrar.Text = "Registrarse";
-            this.btnRegistrar.UseVisualStyleBackColor = true;
-            this.btnRegistrar.Click += new System.EventHandler(this.btnRegistrar_Click);
-            // 
             // FRMIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 528);
-            this.Controls.Add(this.btnRegistrar);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btniniciar);
             this.Controls.Add(this.txtcontraseña);
@@ -163,6 +151,5 @@ namespace RegistroViajes
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button btnRegistrar;
     }
 }

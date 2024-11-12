@@ -1,24 +1,22 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Data;
-using System.Linq;
-using System.Text;
 using System.Text.Json;
 using System.Windows.Forms;
-using System.Threading.Tasks;
 
 namespace Servicios
 {
     public class Lenguaje : ISubjetc
     {
         private List<IObserver> ListaForms = new List<IObserver>();
-        private Dictionary<string, string> Diccionario;
+        private Dictionary<string, string> Diccionario = new Dictionary<string, string>(); // Inicializa con un diccionario vacío
         private string idiomaActual;
         private static Lenguaje instance;
 
+        // Constructor privado para patrón Singleton
         private Lenguaje() { }
 
+        // Método para obtener la instancia única de Lenguaje
         public static Lenguaje ObtenerInstancia()
         {
             if (instance == null)
@@ -28,14 +26,18 @@ namespace Servicios
             return instance;
         }
 
+        // Métodos para agregar y quitar observadores
         public void Agregar(IObserver observer)
         {
             ListaForms.Add(observer);
         }
+
         public void Quitar(IObserver observer)
         {
             ListaForms.Remove(observer);
         }
+
+        // Notificación a los observadores para actualizar el idioma
         public void Notificar()
         {
             foreach (IObserver observer in ListaForms)
@@ -44,6 +46,7 @@ namespace Servicios
             }
         }
 
+        // Propiedad para establecer y obtener el idioma actual
         public string IdiomaActual
         {
             get
@@ -58,42 +61,60 @@ namespace Servicios
             }
         }
 
+        // Método para cargar el archivo de idioma
         public void CargarIdioma()
         {
-            string idioma = idiomaActual == "ES" ? "Español" : "Inglés";
+            try
+            {
+                // Determina el archivo JSON de acuerdo al idioma
+                string idioma = idiomaActual == "ES" ? "Español" : "Inglés";
+                var NombreArchivo = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, $"{idioma}.json");
 
+                // Verifica si el archivo existe
+                if (!File.Exists(NombreArchivo))
+                {
+                    Console.WriteLine($"El archivo de idioma '{NombreArchivo}' no existe.");
+                    Diccionario = new Dictionary<string, string>(); // Evita errores posteriores
+                    return;
+                }
 
-            var NombreArchivo = $"{idioma}.json";
-            var jsonString = File.ReadAllText(NombreArchivo);
-            Diccionario = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonString);
+                // Lee el contenido del archivo JSON y deserializa
+                var jsonString = File.ReadAllText(NombreArchivo);
+                Diccionario = JsonSerializer.Deserialize<Dictionary<string, string>>(jsonString) ?? new Dictionary<string, string>();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al cargar el archivo de idioma: {ex.Message}");
+                Diccionario = new Dictionary<string, string>(); // Inicializa un diccionario vacío para evitar errores
+            }
         }
 
+        // Método para obtener el texto traducido
         public string ObtenerTexto(string key)
         {
-            return Diccionario.ContainsKey(key) ? Diccionario[key] : key;
+            return Diccionario != null && Diccionario.ContainsKey(key) ? Diccionario[key] : key;
         }
+
+        // Método para cambiar el idioma de todos los controles en un formulario
         public void CambiarIdiomaControles(Control frm)
         {
             try
             {
-                frm.Text = Lenguaje.ObtenerInstancia().ObtenerTexto(frm.Name + ".Text");
+                frm.Text = ObtenerTexto(frm.Name + ".Text");
 
                 foreach (Control c in frm.Controls)
                 {
                     if (c is Button || c is Label)
                     {
-                        c.Text = ObtenerInstancia().ObtenerTexto(frm.Name + "." + c.Name);
+                        c.Text = ObtenerTexto(frm.Name + "." + c.Name);
                     }
 
                     if (c is MenuStrip m)
                     {
                         foreach (ToolStripMenuItem item in m.Items)
                         {
-                            if (item is ToolStripMenuItem toolStripMenuItem)
-                            {
-                                item.Text = ObtenerInstancia().ObtenerTexto(frm.Name + "." + item.Name);
-                                CambiarIdiomaMenuStrip(toolStripMenuItem.DropDownItems, frm);
-                            }
+                            item.Text = ObtenerTexto(frm.Name + "." + item.Name);
+                            CambiarIdiomaMenuStrip(item.DropDownItems, frm);
                         }
                     }
 
@@ -103,39 +124,30 @@ namespace Servicios
                     }
                 }
             }
-            catch (Exception) { };
+            catch (Exception ex)
+            {
+                Console.WriteLine($"Error al cambiar el idioma de los controles: {ex.Message}");
+            }
         }
 
+        // Método recursivo para cambiar el idioma de los elementos de un menú
         private void CambiarIdiomaMenuStrip(ToolStripItemCollection items, Control frm)
         {
             foreach (ToolStripItem item in items)
             {
                 if (item is ToolStripMenuItem item1)
                 {
-                    item.Text = ObtenerInstancia().ObtenerTexto(frm.Name + "." + item.Name);
-
+                    item.Text = ObtenerTexto(frm.Name + "." + item.Name);
                     CambiarIdiomaMenuStrip(item1.DropDownItems, frm);
                 }
             }
         }
+
+        // Método auxiliar para obtener etiquetas de texto desde fuera de la clase
         public static string ObtenerEtiqueta(string NombreControl)
         {
-            return Lenguaje.ObtenerInstancia().ObtenerTexto(NombreControl);
+            return ObtenerInstancia().ObtenerTexto(NombreControl);
         }
-
-        public void CambiarIdioma()
-        {
-
-        }
-
-
-
-
-
-
-
-
-
-
     }
 }
+

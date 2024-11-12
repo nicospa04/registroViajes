@@ -71,7 +71,6 @@
   <ItemGroup>
     <Compile Include="BaseDeDatos.cs" />
     <Compile Include="DALBitacora.cs" />
-    <Compile Include="DALEventos.cs" />
     <Compile Include="Destino.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="ICrud.cs" />

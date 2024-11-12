@@ -29,7 +29,7 @@ namespace DAL
             string query = "USE SistemaViajes;" +
                "INSERT INTO Viaje (id_usuario, id_empresa, id_destino, transporte, cant_adulto, cant_niños, costo, fecha_inicio, fecha_vuelta)" +
                "VALUES" +
-               $"({obj.id_usuario},{obj.id_empresa}, {obj.id_destino}, '{obj.transporte}', {obj.cant_adulto}, {obj.cant_niños}, {obj.costo}, '{obj.fecha_inicio.ToString()}','{obj.fecha_vuelta.ToString()}');";
+               $"({obj.id_usuario},{obj.id_empresa}, {obj.id_fecha}, '{obj.transporte}', {obj.costo}, '{obj.fecha_inicio.ToString()}','{obj.fecha_vuelta.ToString()}');";
 
             try
             {
@@ -96,14 +96,12 @@ namespace DAL
                             int id_viaje = !lector.IsDBNull(lector.GetOrdinal("id_viaje")) ? lector.GetInt32(lector.GetOrdinal("id_viaje")) : 0;
                             int id_usuario= !lector.IsDBNull(lector.GetOrdinal("id_usuario")) ? lector.GetInt32(lector.GetOrdinal("id_usuario")) : 0;
                             int id_empresa = !lector.IsDBNull(lector.GetOrdinal("id_empresa")) ? lector.GetInt32(lector.GetOrdinal("id_empresa")) : 0;
-                            int id_destino = !lector.IsDBNull(lector.GetOrdinal("id_destino")) ? lector.GetInt32(lector.GetOrdinal("id_destino")) : 0;
+                            int id_fecha = !lector.IsDBNull(lector.GetOrdinal("id_fecha")) ? lector.GetInt32(lector.GetOrdinal("id_fecha")) : 0;
                             string transporte = !lector.IsDBNull(lector.GetOrdinal("transporte")) ? lector.GetString(lector.GetOrdinal("transporte")) : string.Empty;
-                            int cant_adulto = !lector.IsDBNull(lector.GetOrdinal("cant_adulto")) ? lector.GetInt32(lector.GetOrdinal("cant_adulto")) : 0;
-                            int cant_niño = !lector.IsDBNull(lector.GetOrdinal("cant_niños")) ? lector.GetInt32(lector.GetOrdinal("cant_niños")) : 0;
                             decimal costo = !lector.IsDBNull(lector.GetOrdinal("costo")) ? lector.GetDecimal(lector.GetOrdinal("costo")) : 0;
                             DateTime fecha_inicio = !lector.IsDBNull(lector.GetOrdinal("fecha_inicio")) ? lector.GetDateTime(lector.GetOrdinal("fecha_inicio")) : DateTime.Now;
                             DateTime fecha_vuelta = !lector.IsDBNull(lector.GetOrdinal("fecha_vuelta")) ? lector.GetDateTime(lector.GetOrdinal("fecha_vuelta")) : DateTime.Now;
-                            BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_destino, transporte, cant_adulto, cant_niño, costo, fecha_inicio, fecha_vuelta);
+                            BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_fecha, transporte, costo, fecha_inicio, fecha_vuelta);
                             list.Add(viaje);
                         }
                     }
@@ -137,14 +135,12 @@ namespace DAL
                 {
                     int  id_viaje = Convert.ToInt32(reader["id_viaje"]);
                     int id_empresa = Convert.ToInt32(reader["id_empresa"]);
-                    int id_destino = Convert.ToInt32(reader["id_destino"]);
+                    int id_fecha= Convert.ToInt32(reader["id_fecha"]);
                     string transporte = reader["transporte"].ToString();
-                    int cant_adulto = Convert.ToInt32(reader["cant_adulto"]);
-                    int cant_niños = Convert.ToInt32(reader["cant_niños"]);
                     decimal costo = Convert.ToDecimal(reader["costo"]);
                     DateTime fecha_inicio = Convert.ToDateTime(reader["fecha_inicio"]);
                     DateTime fecha_vuelta = Convert.ToDateTime(reader["fecha_vuelta"]);
-                    BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_destino, transporte, cant_adulto, cant_niños, costo, fecha_inicio, fecha_vuelta);
+                    BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_fecha, transporte, costo, fecha_inicio, fecha_vuelta);
                     listaViajes.Add(viaje);
                 }
                 return listaViajes;

@@ -21,6 +21,68 @@ namespace DAL
             hasher = new PasswordHasher();
         }
 
+        public string devolverNombrePorId(string id)
+        {
+            string query = $"USE SistemaViajes; SELECT nombre FROM Usuario WHERE id_usuario = {id}";
+            DAL.BaseDeDatos db = new DAL.BaseDeDatos();
+            // Consulta SQL solo para obtener el salt y el hash
+            try
+            {
+                bool result = db.Conectar();
+                if (!result) throw new Exception("Error al conectarse a la base de datos");
+                using (SqlCommand command = new SqlCommand(query, db.Connection))
+                {
+                    using (SqlDataReader lector = command.ExecuteReader())
+                    {
+                        if (lector.Read())
+                        {
+                            string nombre = !lector.IsDBNull(0) ? lector.GetString(0) : "not found";
+                            return nombre;
+                        }
+                    }
+                }
+                db.Desconectar();
+                return "not found";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return null;
+            }
+        }
+
+        public string devolverApellidoPorId(string id)
+        {
+            string query = $"USE SistemaViajes; SELECT apellido FROM Usuario WHERE id_usuario = {id}";
+            DAL.BaseDeDatos db = new DAL.BaseDeDatos();
+            // Consulta SQL solo para obtener el salt y el hash
+            try
+            {
+                bool result = db.Conectar();
+                if (!result) throw new Exception("Error al conectarse a la base de datos");
+                using (SqlCommand command = new SqlCommand(query, db.Connection))
+                {
+                    using (SqlDataReader lector = command.ExecuteReader())
+                    {
+                        if (lector.Read())
+                        {
+                            string apellido = !lector.IsDBNull(0) ? lector.GetString(0) : "not found";
+                            return apellido;
+                        }
+                    }
+                }
+                db.Desconectar();
+                return "not found";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return null;
+            }
+        }
+
         public List<Permiso> ObtenerPermisosUsuario(int idUsuario)
         {
             List<Permiso> permisos = new List<Permiso>();

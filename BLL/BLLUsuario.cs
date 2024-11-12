@@ -54,8 +54,14 @@ namespace BLL
             return dal.encontrarIdUsuarioPorUsuario(user);
         }
 
-        
-
+        public string devolverNombrePorId(string id)
+        {
+            return dal.devolverNombrePorId(id);
+        }
+        public string devolverApellidoPorId(string id)
+        {
+            return dal.devolverApellidoPorId(id);
+        }
 
     }
 }

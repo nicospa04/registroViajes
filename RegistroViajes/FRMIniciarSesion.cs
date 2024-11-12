@@ -84,11 +84,11 @@ namespace RegistroViajes
             Close();
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
-        {
-            FRMRegistrarCliente fRMRegistrarCliente = new FRMRegistrarCliente();
-            fRMRegistrarCliente.ShowDialog();
-        }
+        //private void btnRegistrar_Click(object sender, EventArgs e)
+        //{
+        //    FRMRegistrarCliente fRMRegistrarCliente = new FRMRegistrarCliente();
+        //    fRMRegistrarCliente.ShowDialog();
+        //}
 
       
 

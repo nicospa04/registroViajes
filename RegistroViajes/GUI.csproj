@@ -81,17 +81,17 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Bitácora.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Bitácora.Designer.cs">
+      <DependentUpon>Bitácora.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FRMBitacora.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMBitacora.Designer.cs">
-      <DependentUpon>FRMBitacora.cs</DependentUpon>
     </Compile>
     <Compile Include="FRMCambiarIdioma.cs">
       <SubType>Form</SubType>
@@ -104,12 +104,6 @@
     </Compile>
     <Compile Include="FRMCancelarViaje.Designer.cs">
       <DependentUpon>FRMCancelarViaje.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FRMCancelarViajeCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FRMCancelarViajeCliente.Designer.cs">
-      <DependentUpon>FRMCancelarViajeCliente.cs</DependentUpon>
     </Compile>
     <Compile Include="FRMCerrarSesión.cs">
       <SubType>Form</SubType>
@@ -155,20 +149,17 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Bitácora.resx">
+      <DependentUpon>Bitácora.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRMBitacora.resx">
-      <DependentUpon>FRMBitacora.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMCambiarIdioma.resx">
       <DependentUpon>FRMCambiarIdioma.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMCancelarViaje.resx">
       <DependentUpon>FRMCancelarViaje.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FRMCancelarViajeCliente.resx">
-      <DependentUpon>FRMCancelarViajeCliente.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMCerrarSesión.resx">
       <DependentUpon>FRMCerrarSesión.cs</DependentUpon>

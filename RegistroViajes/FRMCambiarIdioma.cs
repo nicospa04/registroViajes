@@ -8,8 +8,6 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BLL;
-
-//using iTextSharp.text.xml;
 using Servicios;
 
 namespace RegistroViajes
@@ -63,7 +61,7 @@ namespace RegistroViajes
 
         private void FRMCambiarIdioma_Load(object sender, EventArgs e)
         {
-            //ActualizarIdioma();
+            ActualizarIdioma();
         }
     }
 }

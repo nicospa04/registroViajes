@@ -76,20 +76,16 @@ namespace RegistroViajes
                     string idEmpresa = fila.Cells["id_empresa"].Value.ToString();
                     empresa = bllEmpresa.devolverNombrePorId(idEmpresa);
                 }
-                string destino = fila.Cells["id_destino"].Value.ToString();
+                string fecha = fila.Cells["id_fecha"].Value.ToString();
                 string transporte = fila.Cells["transporte"].Value.ToString();
-                int cant_niños = int.Parse(fila.Cells["cant_niños"].Value.ToString());
-                int cant_adultos = int.Parse(fila.Cells["cant_adulto"].Value.ToString());
                 DateTime fecha_inicio = DateTime.Parse(fila.Cells["fecha_inicio"].Value.ToString());
                 DateTime fecha_fin = DateTime.Parse(fila.Cells["fecha_vuelta"].Value.ToString());
 
 
                 textBox1.Text = titular;
                 comboBox1.Text = empresa;
-                comboBox4.Text = destino;
+                comboBox4.Text = fecha;
                 comboBox2.Text = transporte;
-                numericUpDown2.Value = cant_niños;
-                numericUpDown1.Value = cant_adultos;
                 dateTimePicker2.Value = fecha_inicio;
                 dateTimePicker1.Value = fecha_fin;
 

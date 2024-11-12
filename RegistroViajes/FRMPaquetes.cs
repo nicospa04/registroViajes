@@ -24,8 +24,6 @@ namespace RegistroViajes
         {
             InitializeComponent();
             Lenguaje.ObtenerInstancia().Agregar(this);
-
-
             paquetes = bll.leerEntidades();
             dataGridView1.DataSource = paquetes;
 
@@ -33,7 +31,6 @@ namespace RegistroViajes
         public void ActualizarIdioma()
         {
             Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
-
         }
 
 
@@ -46,8 +43,6 @@ namespace RegistroViajes
         private void FRMPaquetes_Load_1(object sender, EventArgs e)
         {
             ActualizarIdioma();
- 
-
         }
 
         private void label2_Click(object sender, EventArgs e)
