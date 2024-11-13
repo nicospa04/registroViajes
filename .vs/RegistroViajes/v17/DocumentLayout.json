@@ -1,10 +1,18 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\",
+  "WorkspaceRootPath": "C:\\Users\\nicol\\Desktop\\Estudios\\UAI\\Desarrollo y arquitectura de software\\registroViajes\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\admin\\desktop\\valentin facultad uai\\desarrollo y arquitectura de software\\git\\registroviajes\\dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\nicol\\desktop\\estudios\\uai\\desarrollo y arquitectura de software\\registroviajes\\dal\\asiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\asiento.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\nicol\\desktop\\estudios\\uai\\desarrollo y arquitectura de software\\registroviajes\\dal\\dalfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\dalfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\nicol\\desktop\\estudios\\uai\\desarrollo y arquitectura de software\\registroviajes\\dal\\destino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\destino.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -19,14 +27,40 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "BaseDeDatos.cs",
-              "DocumentMoniker": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\DAL\\BaseDeDatos.cs",
-              "RelativeDocumentMoniker": "DAL\\BaseDeDatos.cs",
-              "ToolTip": "C:\\Users\\Admin\\Desktop\\Valentin Facultad UAI\\Desarrollo y Arquitectura de Software\\GIT\\registroViajes\\DAL\\BaseDeDatos.cs",
-              "RelativeToolTip": "DAL\\BaseDeDatos.cs",
-              "ViewState": "AQIAAEUBAAAAAAAAAAAAANgAAAAAAAAA",
+              "Title": "Asiento.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\Estudios\\UAI\\Desarrollo y arquitectura de software\\registroViajes\\DAL\\Asiento.cs",
+              "RelativeDocumentMoniker": "DAL\\Asiento.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\Estudios\\UAI\\Desarrollo y arquitectura de software\\registroViajes\\DAL\\Asiento.cs",
+              "RelativeToolTip": "DAL\\Asiento.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAAwB0AAAA3AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-11T00:16:10.484Z",
+              "WhenOpened": "2024-11-13T20:43:15.064Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Destino.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\Estudios\\UAI\\Desarrollo y arquitectura de software\\registroViajes\\DAL\\Destino.cs",
+              "RelativeDocumentMoniker": "DAL\\Destino.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\Estudios\\UAI\\Desarrollo y arquitectura de software\\registroViajes\\DAL\\Destino.cs",
+              "RelativeToolTip": "DAL\\Destino.cs",
+              "ViewState": "AgIAACcAAAAAAAAAAAAowDwAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T19:32:51.185Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "DALFecha.cs",
+              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\Estudios\\UAI\\Desarrollo y arquitectura de software\\registroViajes\\DAL\\DALFecha.cs",
+              "RelativeDocumentMoniker": "DAL\\DALFecha.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\Estudios\\UAI\\Desarrollo y arquitectura de software\\registroViajes\\DAL\\DALFecha.cs",
+              "RelativeToolTip": "DAL\\DALFecha.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAA9wFYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-13T19:21:04.019Z",
               "EditorCaption": ""
             }
           ]

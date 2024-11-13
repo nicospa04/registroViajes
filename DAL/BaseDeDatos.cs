@@ -10,7 +10,7 @@ namespace DAL
     {
         public class BaseDeDatos
         {
-            public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
+            public static string dataSource = "compuReLoca";
             public static string dbName = "SistemaViajes";
             public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
@@ -159,7 +159,7 @@ namespace DAL
                         "id_asiento INT PRIMARY KEY IDENTITY(1,1)," +
                         "id_fecha INT NOT NULL," +
                         "num_asiento INT," +
-                        "estado BIT DEFAULT 0," +
+                        "esta_disponible BIT DEFAULT 0," +
                         "FOREIGN KEY (id_fecha) REFERENCES Fecha(id_fecha));");
 
                     ejecutarQuery("USE SistemaViajes; CREATE TABLE Viaje(" +
@@ -176,18 +176,24 @@ namespace DAL
                         "FOREIGN KEY (id_fecha) REFERENCES Fecha(id_fecha)" +
                         ");");
 
-                    ejecutarQuery("USE SistemaViajes; CREATE TABLE Paquete(" +
-                        "id_paquete INT PRIMARY KEY IDENTITY(1,1)," +
-                        "id_fecha INT," +
-                        "precio DECIMAL(18, 2)," +
-                        "cupo_personas INT," +
-                        "nombre VARCHAR(100) NOT NULL," +
-                        "descripcion TEXT," +
-                        "FOREIGN KEY (id_fecha) REFERENCES Fecha(id_fecha)" +
-                        ");");
+                ejecutarQuery("USE SistemaViajes; CREATE TABLE Paquete(" +
+                                "id_paquete INT PRIMARY KEY IDENTITY(1,1)," +
+                                "nombre VARCHAR(100)," +
+                                "precio DECIMAL," +
+                                "descripcion TEXT," +
+                                "cantidad_max_asientos INT NOT NULL" +
+                                ");");
+
+                ejecutarQuery("USE SistemaViajes; CREATE TABLE PaqueteAsiento(" +
+                    "id_paquete_asiento INT PRIMARY KEY IDENTITY(1,1)," +
+                    "id_paquete INT," +
+                    "id_asiento INT," +
+                    "FOREIGN KEY (id_paquete) REFERENCES Paquete(id_paquete)," +
+                    "FOREIGN KEY (id_asiento) REFERENCES Asiento(id_asiento)" +
+                    ");");
 
 
-                    scriptDatos();
+                    //scriptDatos();
                 }
             }
 

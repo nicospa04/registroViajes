@@ -75,9 +75,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asiento.cs" />
     <Compile Include="BEBitacora.cs" />
     <Compile Include="Destino.cs" />
     <Compile Include="Empresa.cs" />
+    <Compile Include="Fecha.cs" />
     <Compile Include="Paquete.cs" />
     <Compile Include="Transporte.cs" />
     <Compile Include="Usuario.cs" />
