@@ -1,8 +1,10 @@
 ﻿using BE;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -19,23 +21,56 @@ namespace DAL
         {
             throw new NotImplementedException();
         }
-
         public Servicios.Resultado<BEBitacora> crearEntidad(BEBitacora obj)
         {
-            throw new NotImplementedException();
-        }
+            bool resulta = db.Conectar();
+            if (!resulta) throw new Exception("Error al conectarse a la base de datos");
+            Servicios.Resultado<BEBitacora> resultado = new Servicios.Resultado<BEBitacora>();
+            string queryToCreateUser = "USE SistemaViajes;" +
+                "INSERT INTO Bitacora (id_usuario, operacion, fecha, actor, criticidad)" +
+                "VALUES" +
+                $"('{obj.id_usuario}','{obj.operacion}', '{obj.fecha.ToString("yyyy-MM-dd")}', '{obj.actor}', '{obj.criticidad}');";
+            try
+            {
+                bool result = db.ejecutarQuery(queryToCreateUser);
+                if (!result) throw new Exception("Error al registrar movimiento en la Bitácora");
 
+                resultado.resultado = true;
+                resultado.mensaje = "Movimiento registrado en la Bitácora exitosamente";
+                resultado.entidad = obj;
+            }
+            catch (Exception ex)
+            {
+                resultado.resultado = false;
+                resultado.mensaje = ex.Message;
+                resultado.entidad = null;
+            }
+            finally
+            {
+                try
+                {
+                    if (db.Connection != null && db.Connection.State == ConnectionState.Open)
+                    {
+                        bool resulta2 = db.Desconectar();
+                        if (!resulta2) throw new Exception("Error al desconectarse de la base de datos");
+                    }
+                }
+                catch (Exception ex)
+                {
+                    resultado.resultado = false;
+                    resultado.mensaje = "Error al desconectar la base de datos: " + ex.Message;
+                }
+            }
+            return resultado;
+        }
         public Servicios.Resultado<BEBitacora> eliminarEntidad(BEBitacora obj)
         {
             throw new NotImplementedException();
         }
-
         public List<BEBitacora> leerEntidades()
         {
             List<BEBitacora> list = new List<BEBitacora>();
-            // Crear e inicializar la instancia de la base de datos
             BaseDeDatos db = new BaseDeDatos();
-            // Especificar las columnas necesarias en lugar de usar *
             string sqlQuery = "USE SistemaViajes; SELECT * FROM Bitacora";
             try
             {

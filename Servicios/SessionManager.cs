@@ -13,7 +13,6 @@ namespace Servicios
         private static Usuario _user = null;
         private static bool inicióSesion = false;
         private SessionManager() { }
-
         public static SessionManager ObtenerInstancia()
         {
             if (Instancia == null)
@@ -22,7 +21,6 @@ namespace Servicios
             }
             return Instancia;
         }
-
         public void IniciarSesion(Usuario userNuevo)
         {
             if (Instancia != null)
@@ -33,12 +31,11 @@ namespace Servicios
             }
 
         }
-
         public static bool verificarInicioSesion (){
             return inicióSesion;
         }
-
-
+        public Usuario UsuarioActual => _user;
+        public int IdUsuarioActual => _user?.id_usuario ?? 0;
         public void CerrarSesion()
         {
             if (Instancia != null)
@@ -46,14 +43,11 @@ namespace Servicios
                 _user = null;
                 inicióSesion = false;
             }
-            //_user = null;
         }
-
         public Usuario Usuario
         {
             get { return _user;}
         }
-
         public static Usuario Obtenerdatosuser()
         {
             return _user;

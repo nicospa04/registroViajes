@@ -35,7 +35,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(62, 125);
+            this.button1.Location = new System.Drawing.Point(75, 131);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 23);
             this.button1.TabIndex = 1;
@@ -46,7 +46,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(43, 53);
+            this.label1.Location = new System.Drawing.Point(56, 59);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(41, 13);
             this.label1.TabIndex = 4;
@@ -58,7 +58,7 @@
             this.box.Items.AddRange(new object[] {
             "Español",
             "Inglés"});
-            this.box.Location = new System.Drawing.Point(46, 82);
+            this.box.Location = new System.Drawing.Point(59, 88);
             this.box.Name = "box";
             this.box.Size = new System.Drawing.Size(141, 21);
             this.box.TabIndex = 0;

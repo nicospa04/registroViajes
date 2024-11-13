@@ -12,7 +12,6 @@ namespace BLL
     public class BLLBitacora : IEntidad<BEBitacora>
     {
         DALBitacora dal = new DALBitacora();
-
         public List<BEBitacora> leerEntidades()
         {
             return dal.leerEntidades();
@@ -21,12 +20,10 @@ namespace BLL
         {
             return dal.crearEntidad(obj);
         }
-
         public Servicios.Resultado<BEBitacora> eliminarEntidad(BEBitacora obj)
         {
             return dal.eliminarEntidad(obj);
         }
-
         public Servicios.Resultado<BEBitacora> actualizarEntidad(BEBitacora obj)
         {
             return dal.actualizarEntidad(obj);

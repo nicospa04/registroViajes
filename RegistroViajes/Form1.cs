@@ -12,15 +12,11 @@ using FontAwesome.Sharp;
 using BLL;
 using Servicios;
 
-
- 
-
 namespace RegistroViajes
 {
     public partial class Form1 : Form, IObserver
     {
         private static Form formactivo = null;
-
         public Form1()
         {
             InitializeComponent();
@@ -30,11 +26,9 @@ namespace RegistroViajes
             Lenguaje.ObtenerInstancia().IdiomaActual = "Español";
             modifmenu();
         }
-
-        //BLLUsuario BLLUser = new BLLUsuario();
         private void AbrirForm(Form formu)
         {
-            if(formactivo!=null)
+            if (formactivo != null)
             {
                 formactivo.Close();
             }
@@ -51,14 +45,11 @@ namespace RegistroViajes
         {
             BLLUsuario bll = new BLLUsuario();
             List<Permiso> permisos = bll.obtenerPermisosUsuario(SessionManager.Obtenerdatosuser().id_usuario);
-
-
             // Primero, oculta todos los formularios del MDI y menús
             foreach (ToolStripMenuItem item in menuStrip1.Items)
             {
                 formManager.HabilitarMenusPorPermisos(item, permisos);
             }
-
             // Después, recorre todos los formularios MDI y aplica los permisos recursivamente
             //formManager.HabilitarFormulariosRecursivos(this, permisos);
         }
@@ -66,7 +57,6 @@ namespace RegistroViajes
         {
 
         }
-
         private void cerraarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
@@ -89,7 +79,7 @@ namespace RegistroViajes
 
         private void iniciarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            
+
         }
 
         private void iconMenuItem6_Click(object sender, EventArgs e)
@@ -101,7 +91,6 @@ namespace RegistroViajes
         {
 
         }
-
         private void iconMenuItem7_Click(object sender, EventArgs e)
         {
             FRMIniciarSesion formu = new FRMIniciarSesion();
@@ -109,36 +98,29 @@ namespace RegistroViajes
             formu.FormBorderStyle = FormBorderStyle.None;
             formu.Dock = DockStyle.Fill;
             this.Controls.Add(formu);
-
             formu.Show();
             formu.inicioSesionCorrecto += AplicarPermisos;
         }
-
         private void toolStripMenuItem1_Click_1(object sender, EventArgs e)
         {
             AbrirForm(new FRMReservarViaje());
         }
-
         private void iconMenuItem8_Click(object sender, EventArgs e)
         {
-            
-        }
 
+        }
         private void toolStripMenuItem2_Click_1(object sender, EventArgs e)
         {
             AbrirForm(new FRMModificarViaje());
         }
-
         private void iconMenuItem3_Click(object sender, EventArgs e)
         {
             AbrirForm(new FRMPaquetes());
         }
-
         private void cancelarToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             AbrirForm(new FRMCancelarViaje());
         }
-
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //DialogResult result = MessageBox.Show("¿Estas seguro de Cerrar Sesión?", "Confirmar Cierre de Sesión", MessageBoxButtons.YesNo);
@@ -150,7 +132,7 @@ namespace RegistroViajes
             //AbrirForm(new FRMIniciarSesion());
             AbrirForm(new FRMCerrarSesión());
         }
-        public void modifmenu() 
+        public void modifmenu()
         {
             iconMenuItem1.Enabled = true;
             iconMenuItem7.Enabled = true;
@@ -162,7 +144,6 @@ namespace RegistroViajes
             iconMenuItem5.Enabled = true;
             iconMenuItem6.Enabled = true;
         }
-
         public void ActualizarIdioma()
         {
             Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
@@ -172,32 +153,26 @@ namespace RegistroViajes
             FRMCambiarIdioma fRM = new FRMCambiarIdioma();
             fRM.ShowDialog();
         }
-
         private void iconMenuItem1_Click(object sender, EventArgs e)
         {
 
         }
-
         private void verViajesRealizadosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirForm(new FRMVerViajesRealizados());
         }
-
         private void registrosToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
-
         private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirForm(new FRMRegistrarCliente());
         }
-
         private void empresasToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
-
         private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirForm(new FRMBitacora());

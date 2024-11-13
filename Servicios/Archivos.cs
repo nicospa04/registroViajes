@@ -13,12 +13,9 @@ namespace Servicios
 {
     public class Archivo
     {
-
         public string DestinoFactura { get; set; }
         public string DestinoBitacora { get; set; }
         public string Conn { get; set; }
-
-
         public Archivo()
         {
             string rutaArchivoConfig = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "destino.txt");
@@ -40,7 +37,6 @@ namespace Servicios
                                 DestinoFactura = vregistro[0];
                                 Conn = vregistro[1];
                                 DestinoBitacora = vregistro[2];
-                                //DestinoBitacora = "C:/Documentos/Eventos/";
                             }
                         }
                     }
@@ -62,14 +58,12 @@ namespace Servicios
                 Console.WriteLine($"Error al leer el archivo de configuración: {ex.Message}");
             }
         }
-
         public bool GenerarArchivo(List<BEBitacora> bitacoras, string idioma)
         {
             try
             {
                 //generar nombre del archivo
                 string fileName = Path.Combine(DestinoBitacora, $"{Generarnombre()}.pdf");
-                //crear doc pdf
                 Document doc = new Document();
                 PdfWriter.GetInstance(doc, new FileStream(fileName, FileMode.Create));
                 doc.Open();
@@ -91,10 +85,9 @@ namespace Servicios
                         doc.Add(new Paragraph("Informe de eventos"));
                         break;
                 }
-                PdfPTable tabla = new PdfPTable(6);
+                PdfPTable tabla = new PdfPTable(5);
                 if (idioma == "Inglés" || idioma == "English" || idioma == "EN")
                 {
-                    tabla.AddCell("ID Binnacle");
                     tabla.AddCell("ID User");
                     tabla.AddCell("Operation");
                     tabla.AddCell("Date");
@@ -103,19 +96,17 @@ namespace Servicios
                 }
                 else
                 {
-                    tabla.AddCell("ID bitacora");
                     tabla.AddCell("ID usuario");
                     tabla.AddCell("Operacion");
                     tabla.AddCell("Fecha");
                     tabla.AddCell("Modulo");
                     tabla.AddCell("Criticidad");
                 }
-
                 foreach (BEBitacora b in bitacoras)
                 {
                     if (b != null)
                     {
-                        tabla.AddCell(b.id_bitacora.ToString());
+                        //tabla.AddCell(b.id_bitacora.ToString());
                         tabla.AddCell(b.id_usuario.ToString());
                         tabla.AddCell(b.operacion);
                         tabla.AddCell(b.fecha.ToString("yyyy-MM-dd HH-mm-ss"));
@@ -123,11 +114,8 @@ namespace Servicios
                         tabla.AddCell(b.criticidad.ToString());
                     }
                 }
-                //agregar tabla al doc
                 doc.Add(tabla);
-                //cerrar el doc
                 doc.Close();
-                //abrir el archivo pdf generado
                 Process.Start(new ProcessStartInfo(fileName) { UseShellExecute = true });
                 return true;
             }
@@ -140,7 +128,6 @@ namespace Servicios
                 throw new Exception("Error de IO al generar el archivo pdf: " + ioex.Message);
             }
         }
-
         public string Generarnombre()
         {
             Random random = new Random();
