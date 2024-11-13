@@ -161,3 +161,7 @@ C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\Servicios\obj\Debug\Se
 C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\Servicios\obj\Debug\Servicios.csproj.CopyComplete
 C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\Servicios\obj\Debug\Servicios.dll
 C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\Servicios\obj\Debug\Servicios.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\itextsharp.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\itextsharp.xml

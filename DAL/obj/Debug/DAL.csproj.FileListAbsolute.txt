@@ -180,3 +180,7 @@ C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\DAL\obj\Debug\DAL.cspr
 C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\DAL\obj\Debug\DAL.csproj.CopyComplete
 C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\DAL\obj\Debug\DAL.dll
 C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\DAL\obj\Debug\DAL.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\bin\Debug\itextsharp.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\bin\Debug\itextsharp.xml

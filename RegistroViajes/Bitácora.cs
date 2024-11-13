@@ -10,11 +10,14 @@ using System.Windows.Forms;
 using BE;
 using BLL;
 using Servicios;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace RegistroViajes
 {
     public partial class FRMBitacora : Form, IObserver
     {
+        private Archivo archivoService;
         public FRMBitacora()
         {
             InitializeComponent();
@@ -22,7 +25,8 @@ namespace RegistroViajes
             List<BEBitacora> bitacora = new List<BEBitacora>();
             BLLBitacora bllbita = new BLLBitacora();
             bitacora = bllbita.leerEntidades();
-            dataGridView1.DataSource = bitacora; 
+            dataGridView1.DataSource = bitacora;
+            archivoService = new Archivo();
         }
         public void ActualizarIdioma()
         {
@@ -78,5 +82,59 @@ namespace RegistroViajes
         {
             limpiar();
         }
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if(comboBox2.Text == "")
+            {
+                MessageBox.Show("Seleccione el Idioma a Imprimir la Bitácora");
+                return;
+            }
+            string idioma = comboBox2.Text == "Español" ? "ES" : "EN";
+            {
+                // Genera la lista de bitácoras que quieres imprimir
+                List<BEBitacora> listaBitacora = ObtenerListaBitacora();
+
+                // Llama al método para generar el archivo PDF
+                bool exito = archivoService.GenerarArchivo(listaBitacora, idioma);
+
+                if (exito)
+                {
+                    MessageBox.Show("Archivo PDF generado y abierto correctamente.");
+                }
+                else
+                {
+                    MessageBox.Show("Error al generar el archivo PDF.");
+                }
+            }
+        }
+        private List<BEBitacora> ObtenerListaBitacora()
+        {
+            List<BEBitacora> listaBitacora = new List<BEBitacora>();
+
+            foreach (DataGridViewRow fila in dataGridView1.Rows)
+            {
+                if (fila.Cells["id_usuario"].Value != null) // Asegúrate de verificar que la fila no esté vacía
+                {
+                    BEBitacora bitacora = new BEBitacora
+                    {
+                        id_usuario = Convert.ToInt32(fila.Cells["id_usuario"].Value),
+                        operacion = fila.Cells["operacion"].Value.ToString(),
+                        fecha = Convert.ToDateTime(fila.Cells["fecha"].Value),
+                        actor = fila.Cells["actor"].Value.ToString(),
+                        criticidad = Convert.ToInt32(fila.Cells["criticidad"].Value)
+                    };
+
+                    listaBitacora.Add(bitacora);
+                }
+            }
+
+            return listaBitacora;
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
 }

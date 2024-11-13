@@ -134,3 +134,7 @@ C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\BE\obj\Debug\BE.csproj
 C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\BE\obj\Debug\BE.csproj.CopyComplete
 C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\BE\obj\Debug\BE.dll
 C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\BE\obj\Debug\BE.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BE\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BE\bin\Debug\itextsharp.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BE\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BE\bin\Debug\itextsharp.xml

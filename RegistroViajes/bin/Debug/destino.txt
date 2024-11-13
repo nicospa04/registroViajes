@@ -1,0 +1,1 @@
+C:/Documentos/Facturas|Data Source=DESKTOP-Q714KGU\\SQLEXPRESS;Initial Catalog=master;Integrated Security=True;|C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\PDFs

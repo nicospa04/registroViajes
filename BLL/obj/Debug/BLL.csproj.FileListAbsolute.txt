@@ -199,3 +199,7 @@ C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\BLL\obj\Debug\BLL.cspr
 C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\BLL\obj\Debug\BLL.csproj.CopyComplete
 C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\BLL\obj\Debug\BLL.dll
 C:\Users\mavru\OneDrive\Escritorio\CLonado\registroViajes\BLL\obj\Debug\BLL.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\itextsharp.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\itextsharp.xml

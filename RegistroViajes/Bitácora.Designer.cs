@@ -46,6 +46,8 @@
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -166,7 +168,7 @@
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(336, 488);
+            this.button1.Location = new System.Drawing.Point(338, 490);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 28);
             this.button1.TabIndex = 14;
@@ -176,7 +178,7 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(473, 488);
+            this.button2.Location = new System.Drawing.Point(475, 490);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 28);
             this.button2.TabIndex = 15;
@@ -185,12 +187,13 @@
             // 
             // button3
             // 
-            this.button3.Location = new System.Drawing.Point(605, 488);
+            this.button3.Location = new System.Drawing.Point(607, 490);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(106, 28);
             this.button3.TabIndex = 16;
             this.button3.Text = "Imprimir";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // comboBox1
             // 
@@ -200,12 +203,35 @@
             this.comboBox1.Size = new System.Drawing.Size(112, 21);
             this.comboBox1.TabIndex = 17;
             // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Español",
+            "Inglés"});
+            this.comboBox2.Location = new System.Drawing.Point(541, 445);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(112, 21);
+            this.comboBox2.TabIndex = 18;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(380, 448);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(155, 13);
+            this.label8.TabIndex = 19;
+            this.label8.Text = "Seleccione idioma para Imprimir";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
             // FRMBitacora
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(1160, 663);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.comboBox2);
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -253,5 +279,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.Label label8;
     }
 }

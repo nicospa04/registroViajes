@@ -32,5 +32,9 @@ namespace BE
             this.actor = actor;
             this.criticidad = criticidad;
         }
+        public BEBitacora()
+        {
+            
+        }
     }
 }
