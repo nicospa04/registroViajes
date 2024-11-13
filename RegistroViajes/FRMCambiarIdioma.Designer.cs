@@ -38,7 +38,7 @@
             this.button1.Location = new System.Drawing.Point(62, 125);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(113, 23);
-            this.button1.TabIndex = 5;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Cambiar Idioma";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -61,7 +61,7 @@
             this.box.Location = new System.Drawing.Point(46, 82);
             this.box.Name = "box";
             this.box.Size = new System.Drawing.Size(141, 21);
-            this.box.TabIndex = 3;
+            this.box.TabIndex = 0;
             // 
             // FRMCambiarIdioma
             // 

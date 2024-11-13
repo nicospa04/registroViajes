@@ -53,7 +53,7 @@ namespace RegistroViajes
             // lblprecio
             // 
             this.lblprecio.AutoSize = true;
-            this.lblprecio.Location = new System.Drawing.Point(203, 485);
+            this.lblprecio.Location = new System.Drawing.Point(203, 483);
             this.lblprecio.Name = "lblprecio";
             this.lblprecio.Size = new System.Drawing.Size(13, 13);
             this.lblprecio.TabIndex = 51;
@@ -85,21 +85,21 @@ namespace RegistroViajes
             this.dateTimePicker2.Location = new System.Drawing.Point(160, 386);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker2.TabIndex = 47;
+            this.dateTimePicker2.TabIndex = 4;
             // 
             // dateTimePicker1
             // 
             this.dateTimePicker1.Location = new System.Drawing.Point(160, 421);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
-            this.dateTimePicker1.TabIndex = 46;
+            this.dateTimePicker1.TabIndex = 5;
             // 
             // textBox1
             // 
             this.textBox1.Location = new System.Drawing.Point(223, 202);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(121, 20);
-            this.textBox1.TabIndex = 40;
+            this.textBox1.TabIndex = 0;
             // 
             // label9
             // 
@@ -169,7 +169,7 @@ namespace RegistroViajes
             this.button1.Location = new System.Drawing.Point(249, 473);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(95, 36);
-            this.button1.TabIndex = 30;
+            this.button1.TabIndex = 6;
             this.button1.Text = "Modificar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -189,7 +189,7 @@ namespace RegistroViajes
             this.comboBox2.Location = new System.Drawing.Point(223, 337);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(121, 21);
-            this.comboBox2.TabIndex = 42;
+            this.comboBox2.TabIndex = 3;
             // 
             // comboBox4
             // 
@@ -197,7 +197,7 @@ namespace RegistroViajes
             this.comboBox4.Location = new System.Drawing.Point(223, 288);
             this.comboBox4.Name = "comboBox4";
             this.comboBox4.Size = new System.Drawing.Size(121, 21);
-            this.comboBox4.TabIndex = 43;
+            this.comboBox4.TabIndex = 2;
             // 
             // comboBox1
             // 
@@ -205,7 +205,7 @@ namespace RegistroViajes
             this.comboBox1.Location = new System.Drawing.Point(223, 245);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(121, 21);
-            this.comboBox1.TabIndex = 41;
+            this.comboBox1.TabIndex = 1;
             // 
             // FRMModificarViaje
             // 

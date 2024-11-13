@@ -31,7 +31,6 @@ namespace RegistroViajes
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label16 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -56,16 +55,6 @@ namespace RegistroViajes
             this.label2.TabIndex = 4;
             this.label2.Click += new System.EventHandler(this.label2_Click);
             // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(24, 486);
-            this.label16.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(0, 13);
-            this.label16.TabIndex = 21;
-            this.label16.Click += new System.EventHandler(this.label16_Click);
-            // 
             // dataGridView1
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -75,7 +64,7 @@ namespace RegistroViajes
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.Size = new System.Drawing.Size(993, 220);
-            this.dataGridView1.TabIndex = 22;
+            this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // FRMPaquetes
@@ -85,21 +74,18 @@ namespace RegistroViajes
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(1322, 818);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.label16);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.label2);
             this.Name = "FRMPaquetes";
             this.Load += new System.EventHandler(this.FRMPaquetes_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label16;
         private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

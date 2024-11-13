@@ -45,7 +45,7 @@ namespace RegistroViajes
             this.btncancelar.Location = new System.Drawing.Point(784, 347);
             this.btncancelar.Name = "btncancelar";
             this.btncancelar.Size = new System.Drawing.Size(91, 42);
-            this.btncancelar.TabIndex = 23;
+            this.btncancelar.TabIndex = 3;
             this.btncancelar.Text = "Volver";
             this.btncancelar.UseVisualStyleBackColor = true;
             this.btncancelar.Click += new System.EventHandler(this.btncancelar_Click);
@@ -55,7 +55,7 @@ namespace RegistroViajes
             this.btniniciar.Location = new System.Drawing.Point(580, 347);
             this.btniniciar.Name = "btniniciar";
             this.btniniciar.Size = new System.Drawing.Size(92, 42);
-            this.btniniciar.TabIndex = 22;
+            this.btniniciar.TabIndex = 2;
             this.btniniciar.Text = "Iniciar sesion";
             this.btniniciar.UseVisualStyleBackColor = true;
             this.btniniciar.Click += new System.EventHandler(this.btniniciar_Click);
@@ -65,14 +65,14 @@ namespace RegistroViajes
             this.txtcontraseña.Location = new System.Drawing.Point(703, 270);
             this.txtcontraseña.Name = "txtcontraseña";
             this.txtcontraseña.Size = new System.Drawing.Size(137, 20);
-            this.txtcontraseña.TabIndex = 21;
+            this.txtcontraseña.TabIndex = 1;
             // 
             // txtusuario
             // 
             this.txtusuario.Location = new System.Drawing.Point(703, 230);
             this.txtusuario.Name = "txtusuario";
             this.txtusuario.Size = new System.Drawing.Size(137, 20);
-            this.txtusuario.TabIndex = 20;
+            this.txtusuario.TabIndex = 0;
             // 
             // label3
             // 

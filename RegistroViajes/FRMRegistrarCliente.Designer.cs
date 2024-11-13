@@ -62,7 +62,7 @@
             this.name.Location = new System.Drawing.Point(180, 205);
             this.name.Name = "name";
             this.name.Size = new System.Drawing.Size(143, 20);
-            this.name.TabIndex = 62;
+            this.name.TabIndex = 1;
             // 
             // label7
             // 
@@ -123,7 +123,7 @@
             this.btnIniciar.Location = new System.Drawing.Point(45, 446);
             this.btnIniciar.Name = "btnIniciar";
             this.btnIniciar.Size = new System.Drawing.Size(95, 36);
-            this.btnIniciar.TabIndex = 52;
+            this.btnIniciar.TabIndex = 7;
             this.btnIniciar.Text = "Registrarse";
             this.btnIniciar.UseVisualStyleBackColor = true;
             this.btnIniciar.Click += new System.EventHandler(this.btnIniciar_Click);
@@ -143,42 +143,42 @@
             this.fechnac.Location = new System.Drawing.Point(147, 387);
             this.fechnac.Name = "fechnac";
             this.fechnac.Size = new System.Drawing.Size(200, 20);
-            this.fechnac.TabIndex = 69;
+            this.fechnac.TabIndex = 6;
             // 
             // pass
             // 
             this.pass.Location = new System.Drawing.Point(180, 352);
             this.pass.Name = "pass";
             this.pass.Size = new System.Drawing.Size(143, 20);
-            this.pass.TabIndex = 73;
+            this.pass.TabIndex = 5;
             // 
             // ap
             // 
             this.ap.Location = new System.Drawing.Point(180, 242);
             this.ap.Name = "ap";
             this.ap.Size = new System.Drawing.Size(143, 20);
-            this.ap.TabIndex = 73;
+            this.ap.TabIndex = 2;
             // 
             // tel
             // 
             this.tel.Location = new System.Drawing.Point(180, 281);
             this.tel.Name = "tel";
             this.tel.Size = new System.Drawing.Size(143, 20);
-            this.tel.TabIndex = 74;
+            this.tel.TabIndex = 3;
             // 
             // gmail
             // 
             this.gmail.Location = new System.Drawing.Point(180, 318);
             this.gmail.Name = "gmail";
             this.gmail.Size = new System.Drawing.Size(143, 20);
-            this.gmail.TabIndex = 75;
+            this.gmail.TabIndex = 4;
             // 
             // btnVolver
             // 
             this.btnVolver.Location = new System.Drawing.Point(205, 446);
             this.btnVolver.Name = "btnVolver";
             this.btnVolver.Size = new System.Drawing.Size(95, 36);
-            this.btnVolver.TabIndex = 77;
+            this.btnVolver.TabIndex = 8;
             this.btnVolver.Text = "Volver";
             this.btnVolver.UseVisualStyleBackColor = true;
             this.btnVolver.Click += new System.EventHandler(this.btnVolver_Click);
@@ -197,7 +197,7 @@
             this.dni.Location = new System.Drawing.Point(180, 171);
             this.dni.Name = "dni";
             this.dni.Size = new System.Drawing.Size(143, 20);
-            this.dni.TabIndex = 79;
+            this.dni.TabIndex = 0;
             // 
             // FRMRegistrarCliente
             // 

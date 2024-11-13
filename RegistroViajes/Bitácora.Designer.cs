@@ -129,7 +129,7 @@
             this.textBox1.Location = new System.Drawing.Point(335, 324);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(115, 20);
-            this.textBox1.TabIndex = 8;
+            this.textBox1.TabIndex = 1;
             // 
             // textBox2
             // 
@@ -171,7 +171,7 @@
             this.button1.Location = new System.Drawing.Point(338, 490);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(106, 28);
-            this.button1.TabIndex = 14;
+            this.button1.TabIndex = 1;
             this.button1.Text = "Limpiar";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
@@ -181,7 +181,7 @@
             this.button2.Location = new System.Drawing.Point(475, 490);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(106, 28);
-            this.button2.TabIndex = 15;
+            this.button2.TabIndex = 2;
             this.button2.Text = "Aplicar";
             this.button2.UseVisualStyleBackColor = true;
             // 
@@ -190,7 +190,7 @@
             this.button3.Location = new System.Drawing.Point(607, 490);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(106, 28);
-            this.button3.TabIndex = 16;
+            this.button3.TabIndex = 3;
             this.button3.Text = "Imprimir";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
@@ -201,7 +201,7 @@
             this.comboBox1.Location = new System.Drawing.Point(798, 370);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(112, 21);
-            this.comboBox1.TabIndex = 17;
+            this.comboBox1.TabIndex = 4;
             // 
             // comboBox2
             // 
@@ -212,7 +212,7 @@
             this.comboBox2.Location = new System.Drawing.Point(541, 445);
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(112, 21);
-            this.comboBox2.TabIndex = 18;
+            this.comboBox2.TabIndex = 0;
             // 
             // label8
             // 
