@@ -87,5 +87,18 @@ namespace RegistroViajes
             bllAsiento.crearAsientosParaFecha(resultado.entidad.id_fecha);
 
         }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var empresa = new BLLEmpresa().leerEntidades().FirstOrDefault(emp => emp.nombre == comboBox1.Text);
+
+            var transportesDeEmpresa = new BLLTransporte().leerEntidades().Select(transporte => transporte).Where(transporte => transporte.id_empresa == empresa.id_empresa);
+
+            comboBox4.Items.Clear();
+            foreach (var transporte in transportesDeEmpresa)
+            {
+                comboBox4.Items.Add(transporte.modelo);
+            }
+        }
     }
 }
