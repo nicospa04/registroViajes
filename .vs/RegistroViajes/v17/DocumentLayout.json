@@ -3,20 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\nicol\\Desktop\\registroViajes\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\nicol\\desktop\\registroviajes\\registroviajes\\crearfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\crearfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\nicol\\desktop\\registroviajes\\registroviajes\\crearfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\crearfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\nicol\\desktop\\registroviajes\\registroviajes\\frmpaquetes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frmpaquetes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\nicol\\desktop\\registroviajes\\registroviajes\\crearfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\crearfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\nicol\\desktop\\registroviajes\\registroviajes\\frmpaquetes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frmpaquetes.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\nicol\\desktop\\registroviajes\\registroviajes\\crearfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\crearfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{496B1F76-8DA0-4F5B-91AD-FA4FD0958F9B}|Servicios\\Servicios.csproj|c:\\users\\nicol\\desktop\\registroviajes\\servicios\\iobserver.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -30,21 +26,8 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 1,
           "Children": [
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FRMPaquetes.cs",
-              "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\registroViajes\\RegistroViajes\\FRMPaquetes.cs",
-              "RelativeDocumentMoniker": "RegistroViajes\\FRMPaquetes.cs",
-              "ToolTip": "C:\\Users\\nicol\\Desktop\\registroViajes\\RegistroViajes\\FRMPaquetes.cs",
-              "RelativeToolTip": "RegistroViajes\\FRMPaquetes.cs",
-              "ViewState": "AgIAAAsAAAAAAAAAAAD4v0wAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-14T15:59:42.479Z",
-              "EditorCaption": ""
-            },
             {
               "$type": "Document",
               "DocumentIndex": 1,
@@ -55,28 +38,29 @@
               "RelativeToolTip": "RegistroViajes\\FRMPaquetes.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T15:59:41.479Z",
+              "IsPinned": true,
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "CrearFecha.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\registroViajes\\RegistroViajes\\CrearFecha.cs",
               "RelativeDocumentMoniker": "RegistroViajes\\CrearFecha.cs",
-              "ToolTip": "C:\\Users\\nicol\\Desktop\\registroViajes\\RegistroViajes\\CrearFecha.cs [Dise\u00F1o]",
-              "RelativeToolTip": "RegistroViajes\\CrearFecha.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\registroViajes\\RegistroViajes\\CrearFecha.cs [Dise\u00F1o]*",
+              "RelativeToolTip": "RegistroViajes\\CrearFecha.cs [Dise\u00F1o]*",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T15:58:07.576Z",
               "EditorCaption": " [Dise\u00F1o]"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "CrearFecha.cs",
               "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\registroViajes\\RegistroViajes\\CrearFecha.cs",
               "RelativeDocumentMoniker": "RegistroViajes\\CrearFecha.cs",
-              "ToolTip": "C:\\Users\\nicol\\Desktop\\registroViajes\\RegistroViajes\\CrearFecha.cs",
-              "RelativeToolTip": "RegistroViajes\\CrearFecha.cs",
+              "ToolTip": "C:\\Users\\nicol\\Desktop\\registroViajes\\RegistroViajes\\CrearFecha.cs*",
+              "RelativeToolTip": "RegistroViajes\\CrearFecha.cs*",
               "ViewState": "AgIAAD4AAAAAAAAAAADwvzoAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-14T15:58:16.979Z",
@@ -84,7 +68,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 3,
               "Title": "IObserver.cs",
               "DocumentMoniker": "C:\\Users\\nicol\\Desktop\\registroViajes\\Servicios\\IObserver.cs",
               "RelativeDocumentMoniker": "Servicios\\IObserver.cs",
