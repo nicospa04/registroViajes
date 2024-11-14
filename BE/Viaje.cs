@@ -14,9 +14,11 @@ namespace BE
         public int id_fecha { get; set; }
         public string transporte { get; set; }
         public decimal costo { get; set; }
-         
 
-        public Viaje(int id_viaje, int id_usuario, int id_empresa, int id_fecha, string transporte, decimal costo)
+        public int num_asiento { get; set; }
+
+
+        public Viaje(int id_viaje, int id_usuario, int id_empresa, int id_fecha, string transporte, decimal costo, int num_asiento)
         {
             this.id_viaje = id_viaje;
             this.id_usuario = id_usuario;
@@ -24,17 +26,19 @@ namespace BE
             this.id_fecha = id_fecha;
             this.transporte = transporte;
             this.costo = costo;
-             
+            this.num_asiento = num_asiento;
+
         }
 
-        public Viaje(int id_usuario, int id_empresa, int id_fecha, string transporte, decimal costo)
+        public Viaje(int id_usuario, int id_empresa, int id_fecha, string transporte, decimal costo, int num_asiento)
         {
             this.id_usuario = id_usuario;
             this.id_empresa = id_empresa;
             this.id_fecha = id_fecha;
             this.transporte = transporte;
             this.costo = costo;
-             
+            this.num_asiento = num_asiento;
+
         }
 
     }

@@ -35,18 +35,21 @@ namespace DAL
             }
             public bool ejecutarQuery(string query)
             {
-                try
-                {
-                    Conectar();
-                    Command = new SqlCommand(query, Connection);
-                    Command.ExecuteNonQuery();
-                    Desconectar();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+            try
+            {
+                Conectar();
+                Command = new SqlCommand(query, Connection);
+                Command.ExecuteNonQuery();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
+            finally
+            {
+                Desconectar();
+            }
             }
             public void scriptInicio()
             {
@@ -159,6 +162,7 @@ namespace DAL
                         "id_fecha INT," +
                         "transporte VARCHAR(100)," +
                         "costo DECIMAL(18, 2)," +
+                        "num_asiento INT," +
                         "FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)," +
                         "FOREIGN KEY (id_empresa) REFERENCES Empresa(id_empresa)," +
                         "FOREIGN KEY (id_fecha) REFERENCES Fecha(id_fecha)" +

@@ -14,7 +14,35 @@ namespace DAL
 
         public Resultado<BE.Asiento> actualizarEntidad(BE.Asiento obj)
         {
-            throw new NotImplementedException();
+            Servicios.Resultado<BE.Asiento> Resultado = new Servicios.Resultado<BE.Asiento>();
+
+
+            string query = "USE SistemaViajes;" +
+                            "GO" +
+                            "UPDATE Asiento" +
+            $"SET esta_disponible = '{obj.esta_disponible}'" +
+            $"WHERE id_asiento = {obj.id_asiento}";
+
+            try
+            {
+                bool resultado = db.ejecutarQuery(query);
+                if (!resultado) throw new Exception("Error al actualizar destino");
+
+                Resultado.resultado = true;
+                Resultado.mensaje = "Empresa actualizada con éxito";
+                return Resultado;
+
+
+            }
+            catch (Exception ex)
+            {
+                db.Desconectar();
+
+                Resultado.resultado = false;
+                Resultado.mensaje = ex.Message;
+                return Resultado;
+
+            }
         }
 
         public Resultado<BE.Asiento> crearEntidad(BE.Asiento obj)
@@ -43,11 +71,13 @@ namespace DAL
             int booleano = obj.esta_disponible ? 1 : 0;
 
             Servicios.Resultado<BE.Asiento> resultado = new Servicios.Resultado<BE.Asiento>();
-            string query = $"USE SistemaViajes; UPDATE Asiento SET esta_disponible = {booleano} WHERE id_asiento = ${obj.id_asiento}";
+            string query = $"USE SistemaViajes; UPDATE Asiento SET esta_disponible = {booleano} WHERE id_asiento = {obj.id_asiento}";
             try
             {
+                db.Connection.Open();
                 using(SqlCommand con = new SqlCommand(query, db.Connection))
                 {
+
                     con.ExecuteReader();
                     resultado.resultado = true;
                     resultado.mensaje = "Asiento marcado como ocupado";
@@ -57,6 +87,10 @@ namespace DAL
             {
                 resultado.resultado = false;
                 resultado.mensaje = ex.Message;
+            }
+            finally
+            {
+                db.Connection.Close();
             }
             return resultado;
 
@@ -85,11 +119,10 @@ namespace DAL
                         {
                             // Manejar posibles valores nulos
                             int id_asiento = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
-                            int id_fecha = !lector.IsDBNull(lector.GetOrdinal("id_fecha ")) ? lector.GetInt32(lector.GetOrdinal("id_fecha ")) : 0;
-                            int num_asiento = !lector.IsDBNull(lector.GetOrdinal("num_asiento ")) ? lector.GetInt32(lector.GetOrdinal("num_asiento ")) : 0;
-                            var resultado_booleano  = !lector.IsDBNull(lector.GetOrdinal("esta_disponible")) ? lector.GetInt32(lector.GetOrdinal("esta_disponible")) : 0;
-                            bool resultado = resultado_booleano == 1 ? true : false;
-                            BE.Asiento objeto = new BE.Asiento(id_asiento, id_fecha, num_asiento, resultado);
+                            int id_fecha = !lector.IsDBNull(lector.GetOrdinal("id_fecha")) ? lector.GetInt32(lector.GetOrdinal("id_fecha")) : 0;
+                            int num_asiento = !lector.IsDBNull(lector.GetOrdinal("num_asiento")) ? lector.GetInt32(lector.GetOrdinal("num_asiento")) : 0;
+                            var resultado_booleano  = !lector.IsDBNull(lector.GetOrdinal("esta_disponible")) ? lector.GetBoolean(lector.GetOrdinal("esta_disponible")) : false;
+                             BE.Asiento objeto = new BE.Asiento(id_asiento, id_fecha, num_asiento, resultado_booleano);
 
                             list.Add(objeto);
                         }

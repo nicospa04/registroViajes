@@ -161,7 +161,7 @@ namespace RegistroViajes
 
             var transporte = new BLLTransporte().leerEntidades().FirstOrDefault(t => t.id_transporte == fecha.id_transporte);
 
-            BE.Viaje viaje = new BE.Viaje(user.id_usuario, empresa.id_empresa, paquete.id_fecha, transporte.modelo, costo);
+          //  BE.Viaje viaje = new BE.Viaje(user.id_usuario, empresa.id_empresa, paquete.id_fecha, transporte.modelo, costo);
         }
     }
 }

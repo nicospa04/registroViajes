@@ -36,14 +36,14 @@
             // 
             // panelAsientos
             // 
-            this.panelAsientos.Location = new System.Drawing.Point(45, 38);
+            this.panelAsientos.Location = new System.Drawing.Point(12, 38);
             this.panelAsientos.Name = "panelAsientos";
-            this.panelAsientos.Size = new System.Drawing.Size(691, 317);
+            this.panelAsientos.Size = new System.Drawing.Size(724, 360);
             this.panelAsientos.TabIndex = 0;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(45, 377);
+            this.button1.Location = new System.Drawing.Point(46, 404);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(99, 34);
             this.button1.TabIndex = 0;
@@ -64,7 +64,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(201, 388);
+            this.label2.Location = new System.Drawing.Point(202, 415);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(35, 13);
             this.label2.TabIndex = 2;

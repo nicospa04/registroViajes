@@ -19,8 +19,13 @@ namespace RegistroViajes
         {
             InitializeComponent();
 
+
             cargarCombos();
             cargarDataGridView();
+
+            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dataGridView1.MultiSelect = false; // Opcional: si deseas permitir solo una fila seleccionada
+
         }
 
         void cargarDataGridView()
@@ -34,7 +39,7 @@ namespace RegistroViajes
         {
             List<BE.Fecha> fechas = new BLLFecha().leerEntidades();
             int id_destino = new BLLDestino().leerEntidades().FirstOrDefault(destino => destino.nombre == comboBox3.SelectedItem.ToString()).id_destino;
-            fechas = fechas.Where(fecha => fecha.id_lugar_destino== id_destino).ToList();
+            fechas = fechas.Where(fecha => fecha.id_lugar_destino == id_destino).ToList();
             int id_empresa = new BLLEmpresa().leerEntidades().FirstOrDefault(empresa => empresa.nombre == comboBox1.SelectedItem.ToString()).id_empresa;
             fechas = fechas.Where(fecha => fecha.id_empresa == id_empresa).ToList();
             int id_transporte = new BLLTransporte().leerEntidades().FirstOrDefault(transporte => transporte.modelo == comboBox2.SelectedItem.ToString()).id_transporte;
@@ -126,13 +131,12 @@ namespace RegistroViajes
 
 
 
-                public void ActualizarIdioma()
+        public void ActualizarIdioma()
         {
             Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            
             BLLBitacora bllbita = new BLLBitacora();
             string operacion = "Registro de Viaje";
             int id_usuario = SessionManager.ObtenerInstancia().IdUsuarioActual;
@@ -157,15 +161,32 @@ namespace RegistroViajes
                 Servicios.Resultado<BEBitacora> resultadobita1 = bllbita.crearEntidad(bitacorita);
             }
 
-            List<BE.Fecha> fechas = new BLLFecha().leerEntidades();
-
-           var fechaElegida = fechas.FirstOrDefault(f => f.fecha_ida.Date == dateTimePicker2.Value.Date && f.fecha_vuelta.Date == dateTimePicker1.Value.Date);
 
 
-            FRMSeleccionAsientos frmSeleccionAsientos = new FRMSeleccionAsientos(fechaElegida.id_fecha);
-            frmSeleccionAsientos.Show();
+            if (dataGridView1.SelectedRows.Count > 0)
+            {
 
+                DataGridViewRow selectedRow = dataGridView1.SelectedRows[0];
+                int idFecha = Convert.ToInt32(selectedRow.Cells["id_fecha"].Value);
+                int idEmpresa = Convert.ToInt32(selectedRow.Cells["id_empresa"].Value);
+                int idLugarOrigen = Convert.ToInt32(selectedRow.Cells["id_lugar_origen"].Value);
+                int idLugarDestino = Convert.ToInt32(selectedRow.Cells["id_lugar_destino"].Value);
+                int idTransporte = Convert.ToInt32(selectedRow.Cells["id_transporte"].Value);
+                DateTime fechaIda = Convert.ToDateTime(selectedRow.Cells["fecha_ida"].Value);
+
+                FRMSeleccionAsientos frmSeleccionAsientos = new FRMSeleccionAsientos(idFecha);
+                frmSeleccionAsientos.Show();
+
+            }
+            else
+            {
+
+            }
+
+
+        
         }
+
         private void FRMReservarViaje_Load(object sender, EventArgs e)
         {
             ActualizarIdioma();

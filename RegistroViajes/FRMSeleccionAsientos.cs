@@ -1,4 +1,5 @@
 ﻿using BLL;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -32,16 +33,19 @@ namespace RegistroViajes
 
             label2.Text = $"Costo: ${costo}";
 
+            var tipoTransporte = new BLL.TipoTransporte().leerEntidades().FirstOrDefault(t => t.id_tipo_transporte == transporte.id_tipo_transporte);
 
-            switch (transporte.modelo)
+
+
+            switch (tipoTransporte.nombre.ToLower().Trim())
             {
-                case "Avión":
+                case "avion":
                     CrearDisposicionAsientos(10, 6); // Ejemplo de disposición para avión
                     break;
-                case "Bus":
+                case "bus":
                     CrearDisposicionAsientos(8, 4); // Ejemplo de disposición para bus
                     break;
-                case "Barco":
+                case "barco":
                     CrearDisposicionAsientos(5, 6); // Ejemplo de disposición para barco
                     break;
             }
@@ -106,12 +110,34 @@ namespace RegistroViajes
             {
                 asientosSeleccionados.Remove(asiento);
                 asientoButton.BackColor = Color.Green; // Cambiar de vuelta a color verde (disponible)
+                var fecha = encontrarFecha();
+                var transporte = encontrarTransporte(fecha.id_transporte);
+
+                var destino = new BLLDestino().leerEntidades().FirstOrDefault(d => d.id_destino == fecha.id_lugar_destino);
+                var empresa = new BLLEmpresa().leerEntidades().FirstOrDefault(ee => ee.id_empresa == fecha.id_empresa);
+
+
+                decimal costo = new BLLViaje().calcularCostoViaje(fecha, empresa, transporte, destino);
+
+                label2.Text = $"Costo: ${costo * asientosSeleccionados.Count}";
             }
             else
             {
                 // Si el asiento no está en la lista de seleccionados, lo selecciona
                 asientosSeleccionados.Add(asiento);
                 asientoButton.BackColor = Color.Yellow; // Cambiar a color amarillo para indicar selección
+
+                var fecha = encontrarFecha();
+                var transporte = encontrarTransporte(fecha.id_transporte);
+
+                var destino = new BLLDestino().leerEntidades().FirstOrDefault(d => d.id_destino == fecha.id_lugar_destino);
+                var empresa = new BLLEmpresa().leerEntidades().FirstOrDefault(ee => ee.id_empresa == fecha.id_empresa);
+ 
+
+                decimal costo = new BLLViaje().calcularCostoViaje(fecha, empresa, transporte, destino);
+
+                label2.Text = $"Costo: ${costo*asientosSeleccionados.Count}";
+
             }
         }
         
@@ -139,13 +165,39 @@ namespace RegistroViajes
         {
             BLLAsiento bllAsiento = new BLLAsiento();
 
+            if(asientosSeleccionados.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar al menos un asiento");
+                return;
+            }
+
+
             foreach (var asiento in asientosSeleccionados)
             {
                 asiento.esta_disponible = false; // Marcar el asiento como ocupado en la entidad
-                Servicios.Resultado<BE.Asiento> resultado = bllAsiento.actualizarEntidad(asiento);
+                Servicios.Resultado<BE.Asiento> resultado = bllAsiento.marcarAsientoOcupado(asiento);
 
                 if (resultado.resultado)
                 {
+
+
+                    int id_usuario = SessionManager.Obtenerdatosuser().id_usuario ;
+                    var fecha = encontrarFecha();
+                    var transporte = encontrarTransporte(fecha.id_transporte);
+
+                    var destino = new BLLDestino().leerEntidades().FirstOrDefault(d => d.id_destino == fecha.id_lugar_destino);
+                    var empresa = new BLLEmpresa().leerEntidades().FirstOrDefault(ee => ee.id_empresa == fecha.id_empresa);
+
+                    var tipo_transporte = new BLL.TipoTransporte().leerEntidades().FirstOrDefault(t => t.id_tipo_transporte == transporte.id_tipo_transporte);
+
+                    decimal costo = new BLLViaje().calcularCostoViaje(fecha, empresa, transporte, destino);
+
+
+                    //int id_usuario, int id_empresa, int id_fecha, string transporte, decimal costo, int num_asiento
+                    var viaje = new BLLViaje().crearEntidad(new BE.Viaje(id_usuario, empresa.id_empresa, fecha.id_fecha,tipo_transporte.nombre, costo, asiento.num_asiento));
+
+
+
                     // Cambiar el color del botón del asiento a rojo en la interfaz
                     foreach (Control control in panelAsientos.Controls)
                     {

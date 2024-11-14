@@ -26,17 +26,30 @@ namespace DAL
 
             Servicios.Resultado < BE.Viaje > resultado = new Servicios.Resultado<BE.Viaje>();
 
-            string query = "USE SistemaViajes;" +
-               "INSERT INTO Viaje (id_usuario, id_empresa, id_fecha, transporte, costo)" +
-               "VALUES" +
-               $"({obj.id_usuario},{obj.id_empresa}, {obj.id_fecha}, '{obj.transporte}', {obj.costo});";
+            string query = "USE SistemaViajes; " +
+               "INSERT INTO Viaje (id_usuario, id_empresa, id_fecha, transporte, costo, num_asiento) " +
+               "VALUES (@id_usuario, @id_empresa, @id_fecha, @transporte, @costo, @num_asiento);";
+
 
             try
             {
-                bool result = db.ejecutarQuery(query);
-                if (!result) throw new Exception("Error al crear destino");
-                resultado.resultado = true;
-                resultado.mensaje = "Viaje creado con éxito";
+
+                db.Connection.Open();
+
+
+                using (SqlCommand command = new SqlCommand(query, db.Connection))
+                {
+                    command.Parameters.AddWithValue("@id_usuario", obj.id_usuario);
+                    command.Parameters.AddWithValue("@id_empresa", obj.id_empresa);
+                    command.Parameters.AddWithValue("@id_fecha", obj.id_fecha);
+                    command.Parameters.AddWithValue("@transporte", obj.transporte);
+                    command.Parameters.AddWithValue("@costo", obj.costo);
+                    command.Parameters.AddWithValue("@num_asiento", obj.num_asiento);
+
+                    bool result = command.ExecuteNonQuery() > 0;
+                    resultado.resultado = result;
+                    resultado.mensaje = result ? "Viaje creado con éxito" : "No se pudo crear el viaje";
+                }
                 return resultado;
             }
             catch (Exception ex)
@@ -46,6 +59,11 @@ namespace DAL
                 db.Desconectar();
                 return resultado;
             }
+            finally
+            {
+                db.Connection.Close();
+            }
+            
         }
 
         public Servicios.Resultado<BE.Viaje> eliminarEntidad(BE.Viaje obj)
@@ -89,17 +107,18 @@ namespace DAL
                 if (!result) throw new Exception("Error al conectarse a la base de datos");
                 using (SqlCommand command = new SqlCommand(sqlQuery, db.Connection))
                 {
-                    using (SqlDataReader lector = command.ExecuteReader())
+                    using (SqlDataReader reader = command.ExecuteReader())
                     {
-                        while (lector.Read())
+                        while (reader.Read())
                         {
-                            int id_viaje = !lector.IsDBNull(lector.GetOrdinal("id_viaje")) ? lector.GetInt32(lector.GetOrdinal("id_viaje")) : 0;
-                            int id_usuario= !lector.IsDBNull(lector.GetOrdinal("id_usuario")) ? lector.GetInt32(lector.GetOrdinal("id_usuario")) : 0;
-                            int id_empresa = !lector.IsDBNull(lector.GetOrdinal("id_empresa")) ? lector.GetInt32(lector.GetOrdinal("id_empresa")) : 0;
-                            int id_fecha = !lector.IsDBNull(lector.GetOrdinal("id_fecha")) ? lector.GetInt32(lector.GetOrdinal("id_fecha")) : 0;
-                            string transporte = !lector.IsDBNull(lector.GetOrdinal("transporte")) ? lector.GetString(lector.GetOrdinal("transporte")) : string.Empty;
-                            decimal costo = !lector.IsDBNull(lector.GetOrdinal("costo")) ? lector.GetDecimal(lector.GetOrdinal("costo")) : 0;
-                            BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_fecha, transporte, costo);
+                            int id_usuario = Convert.ToInt32(reader["id_usuario"]);
+                            int id_viaje = Convert.ToInt32(reader["id_viaje"]);
+                            int id_empresa = Convert.ToInt32(reader["id_empresa"]);
+                            int id_fecha = Convert.ToInt32(reader["id_fecha"]);
+                            string transporte = reader["transporte"].ToString();
+                            decimal costo = Convert.ToDecimal(reader["costo"]);
+                            int num_asiento = Convert.ToInt32(reader["num_asiento"]);
+                            BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_fecha, transporte, costo, num_asiento);
                             list.Add(viaje);
                         }
                     }
@@ -136,9 +155,8 @@ namespace DAL
                     int id_fecha= Convert.ToInt32(reader["id_fecha"]);
                     string transporte = reader["transporte"].ToString();
                     decimal costo = Convert.ToDecimal(reader["costo"]);
-                    DateTime fecha_inicio = Convert.ToDateTime(reader["fecha_inicio"]);
-                    DateTime fecha_vuelta = Convert.ToDateTime(reader["fecha_vuelta"]);
-                    BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_fecha, transporte, costo);
+                    int num_asiento = Convert.ToInt32(reader["num_asiento"]);
+                    BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_fecha, transporte, costo, num_asiento);
                     listaViajes.Add(viaje);
                 }
                 return listaViajes;
