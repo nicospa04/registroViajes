@@ -120,16 +120,13 @@ namespace DAL
                             
                             // Manejar posibles valores nulos
                             int id_paquete = !lector.IsDBNull(lector.GetOrdinal("id_paquete")) ? lector.GetInt32(lector.GetOrdinal("id_paquete")) : 0;
-                            int id_destino = !lector.IsDBNull(lector.GetOrdinal("id_destino")) ? lector.GetInt32(lector.GetOrdinal("id_destino")) : 0;
-                            decimal precio_base = !lector.IsDBNull(lector.GetOrdinal("precio_base")) ? lector.GetDecimal(lector.GetOrdinal("precio_base")) : 0;
-                            int cupo_personas = !lector.IsDBNull(lector.GetOrdinal("cupo_personas")) ? lector.GetInt32(lector.GetOrdinal("cupo_personas")) : 0;
                             string nombre = !lector.IsDBNull(lector.GetOrdinal("nombre")) ? lector.GetString(lector.GetOrdinal("nombre")) : string.Empty;
+                            decimal precio_base = !lector.IsDBNull(lector.GetOrdinal("precio")) ? lector.GetDecimal(lector.GetOrdinal("precio")) : 0;
                             string descripcion = !lector.IsDBNull(lector.GetOrdinal("descripcion")) ? lector.GetString(lector.GetOrdinal("descripcion")) : string.Empty;
-                            DateTime fecha_inicio = !lector.IsDBNull(lector.GetOrdinal("fecha_inicio")) ? lector.GetDateTime(lector.GetOrdinal("fecha_inicio")) : DateTime.Now;
-                            DateTime fecha_vuelta = !lector.IsDBNull(lector.GetOrdinal("fecha_vuelta")) ? lector.GetDateTime(lector.GetOrdinal("fecha_vuelta")) : DateTime.Now;
-
-
-                            BE.Paquete paquete = new BE.Paquete(id_paquete, id_destino, precio_base, cupo_personas, nombre, descripcion, fecha_inicio, fecha_vuelta);
+                            int cant_max_asientos = !lector.IsDBNull(lector.GetOrdinal("cant_max_asientos ")) ? lector.GetInt32(lector.GetOrdinal("cant_max_asientos ")) : 0;
+                            int id_fecha = !lector.IsDBNull(lector.GetOrdinal("id_fecha")) ? lector.GetInt32(lector.GetOrdinal("id_fecha")) : 0;
+                            
+                            BE.Paquete paquete = new BE.Paquete(id_paquete, precio_base, nombre, descripcion, cant_max_asientos, id_fecha);
 
 
                             list.Add(paquete);

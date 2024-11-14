@@ -31,5 +31,15 @@ namespace BLL
         {
            return Dal.leerEntidades();
         }
+
+        public Resultado<List<BE.Asiento>> crearAsientosParaFecha(int id_fecha)
+        {
+            return Dal.crearAsientosParaFecha(id_fecha);
+        }
+
+        public Resultado<BE.Asiento> marcarAsientoOcupado(BE.Asiento obj)
+        {
+            return Dal.marcarAsientoOcupado(obj);
+        }
     }
 }

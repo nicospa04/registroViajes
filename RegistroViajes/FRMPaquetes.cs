@@ -25,9 +25,33 @@ namespace RegistroViajes
             InitializeComponent();
             Lenguaje.ObtenerInstancia().Agregar(this);
             paquetes = bll.leerEntidades();
-            dataGridView1.DataSource = paquetes;
+            agregarColumnaNombreDestino(paquetes); // Agregamos la columna directamente al DataGridView
+            dataGridView1.DataSource = paquetes; //hay que agregar una columna con el nombre del destino en funcion del id_destino en id_fecha
 
         }
+
+        void agregarColumnaNombreDestino(List<BE.Paquete> paquetes)
+        {
+            // Crear una nueva columna para el nombre del destino
+            DataGridViewTextBoxColumn destinoColumn = new DataGridViewTextBoxColumn
+            {
+                Name = "NombreDestino",
+                HeaderText = "Nombre del Destino",
+                ReadOnly = true // Para que no sea editable
+            };
+
+            // Agregar la columna al DataGridView
+            dataGridView1.Columns.Add(destinoColumn);
+
+            // Llenar la columna con los nombres de destino
+            for (int i = 0; i < paquetes.Count; i++)
+            {
+                //var destino = new BLLDestino().leerEntidades().FirstOrDefault(d => d.id_destino == paquetes[i].id_destino);
+             //   dataGridView1.Rows[i].Cells["NombreDestino"].Value = destino?.nombre ?? "Desconocido"; // Asignar el nombre o un valor por defecto si no existe
+            }
+        }
+
+
         public void ActualizarIdioma()
         {
             Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);

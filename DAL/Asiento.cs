@@ -19,7 +19,20 @@ namespace DAL
 
         public Resultado<BE.Asiento> crearEntidad(BE.Asiento obj)
         {
-            throw new NotImplementedException();
+            int disponible = obj.esta_disponible ? 1 : 0;
+            string query = $"USE SistemaViajes; INSERT INTO Asiento (id_fecha, num_asiento, esta_disponible) VALUES (${obj.id_fecha},{obj.num_asiento}, {disponible})";
+            try
+            {
+                using (SqlCommand con = new SqlCommand(query, db.Connection))
+                {
+                    con.ExecuteReader();
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+            return null;
         }
 
         public Resultado<BE.Asiento> eliminarEntidad(BE.Asiento obj)
@@ -52,7 +65,7 @@ namespace DAL
 
         }
 
-            public List<BE.Asiento> leerEntidades()
+        public List<BE.Asiento> leerEntidades()
         {
             List<BE.Asiento> list = new List<BE.Asiento>();
 
@@ -97,6 +110,53 @@ namespace DAL
                 db.Desconectar();
                 return null;
             }
+        }
+
+ 
+
+        public Resultado<List<BE.Asiento>> crearAsientosParaFecha(int id_fecha)
+        {
+            List<BE.Fecha> fechas = new List<BE.Fecha>();
+            List<BE.Asiento> asientosCreados = new List<BE.Asiento>();
+
+            fechas = new DAL.DALFecha().leerEntidades();
+            BE.Fecha fecha = fechas.Find(x => x.id_fecha == id_fecha);
+
+            BE.Transporte transporte = new DAL.Transporte().leerEntidades().Find(x => x.id_transporte == fecha.id_transporte);
+
+            string nombre_transporte = transporte.nombre;
+
+            int columnas = 0;
+            int filas = 0;
+
+            switch (nombre_transporte) 
+            {
+                case "Bus":
+                    columnas = 4;
+                    filas = 8;
+                    break;
+                case "Avion":
+                    columnas = 6;
+                    filas = 10;
+                    break;
+                case "Barco":
+                    columnas = 6;
+                    filas = 5;
+                    break;
+            }
+
+            for (int fila = 0; fila < filas; fila++)
+            {
+                for (int columna = 0; columna < columnas; columna++)
+                {
+                    int numeroAsiento = fila * columnas + columna + 1;
+                    BE.Asiento asiento = new BE.Asiento(0, id_fecha, numeroAsiento, true);
+                    asientosCreados.Add(asiento);
+                    crearEntidad(asiento);
+                }
+            }
+
+            return new Resultado<List<BE.Asiento>> { resultado = true, mensaje = "Asientos creados", entidad = asientosCreados };
         }
     }
 }

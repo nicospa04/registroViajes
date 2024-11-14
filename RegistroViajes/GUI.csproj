@@ -165,6 +165,12 @@
     <Compile Include="FRMVerViajesRealizados.Designer.cs">
       <DependentUpon>FRMVerViajesRealizados.cs</DependentUpon>
     </Compile>
+    <Compile Include="HacerReservaConPaquete.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HacerReservaConPaquete.Designer.cs">
+      <DependentUpon>HacerReservaConPaquete.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bitácora.resx">
@@ -205,6 +211,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMVerViajesRealizados.resx">
       <DependentUpon>FRMVerViajesRealizados.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HacerReservaConPaquete.resx">
+      <DependentUpon>HacerReservaConPaquete.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -81,6 +81,9 @@ namespace RegistroViajes
 
             BLLFecha bllFecha = new BLLFecha();
             Servicios.Resultado<BE.Fecha> resultado = bllFecha.crearEntidad(fecha);
+            BLLAsiento bllAsiento = new BLLAsiento();
+            bllAsiento.crearAsientosParaFecha(resultado.entidad.id_fecha);
+
         }
     }
 }

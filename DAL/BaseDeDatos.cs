@@ -159,8 +159,6 @@ namespace DAL
                         "id_fecha INT," +
                         "transporte VARCHAR(100)," +
                         "costo DECIMAL(18, 2)," +
-                        "fecha_inicio DATETIME NOT NULL," +
-                        "fecha_vuelta DATETIME NOT NULL," +
                         "FOREIGN KEY (id_usuario) REFERENCES Usuario(id_usuario)," +
                         "FOREIGN KEY (id_empresa) REFERENCES Empresa(id_empresa)," +
                         "FOREIGN KEY (id_fecha) REFERENCES Fecha(id_fecha)" +
@@ -171,7 +169,9 @@ namespace DAL
                                 "nombre VARCHAR(100)," +
                                 "precio DECIMAL," +
                                 "descripcion TEXT," +
-                                "cantidad_max_asientos INT NOT NULL" +
+                                "cantidad_max_asientos INT NOT NULL," +
+                                "id_fecha INT NOT NULL," +
+                                "FOREIGN KEY (id_fecha) REFERENCES Fecha(id_fecha)" +
                                 ");");
 
                 ejecutarQuery("USE SistemaViajes; CREATE TABLE PaqueteAsiento(" +

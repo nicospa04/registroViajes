@@ -198,3 +198,36 @@ C:\Users\nicol\Desktop\Estudios\UAI\Desarrollo y arquitectura de software\regist
 C:\Users\nicol\Desktop\Estudios\UAI\Desarrollo y arquitectura de software\registroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
 C:\Users\nicol\Desktop\Estudios\UAI\Desarrollo y arquitectura de software\registroViajes\Servicios\obj\Debug\Servicios.dll
 C:\Users\nicol\Desktop\Estudios\UAI\Desarrollo y arquitectura de software\registroViajes\Servicios\obj\Debug\Servicios.pdb
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\Servicios.dll.config
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\Servicios.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\Servicios.pdb
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\BE.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\itextsharp.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\Microsoft.Bcl.AsyncInterfaces.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Buffers.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Memory.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Text.Encodings.Web.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Text.Json.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Threading.Tasks.Extensions.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.ValueTuple.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\BE.pdb
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\BE.dll.config
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\itextsharp.xml
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\Microsoft.Bcl.AsyncInterfaces.xml
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Buffers.xml
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Memory.xml
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Text.Encodings.Web.xml
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Text.Json.xml
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.Threading.Tasks.Extensions.xml
+C:\Users\nicol\Desktop\registroViajes\Servicios\bin\Debug\System.ValueTuple.xml
+C:\Users\nicol\Desktop\registroViajes\Servicios\obj\Debug\Servicios.csproj.AssemblyReference.cache
+C:\Users\nicol\Desktop\registroViajes\Servicios\obj\Debug\Servicios.csproj.CoreCompileInputs.cache
+C:\Users\nicol\Desktop\registroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
+C:\Users\nicol\Desktop\registroViajes\Servicios\obj\Debug\Servicios.dll
+C:\Users\nicol\Desktop\registroViajes\Servicios\obj\Debug\Servicios.pdb

@@ -27,9 +27,9 @@ namespace DAL
             Servicios.Resultado < BE.Viaje > resultado = new Servicios.Resultado<BE.Viaje>();
 
             string query = "USE SistemaViajes;" +
-               "INSERT INTO Viaje (id_usuario, id_empresa, id_destino, transporte, cant_adulto, cant_niños, costo, fecha_inicio, fecha_vuelta)" +
+               "INSERT INTO Viaje (id_usuario, id_empresa, id_fecha, transporte, costo)" +
                "VALUES" +
-               $"({obj.id_usuario},{obj.id_empresa}, {obj.id_fecha}, '{obj.transporte}', {obj.costo}, '{obj.fecha_inicio.ToString()}','{obj.fecha_vuelta.ToString()}');";
+               $"({obj.id_usuario},{obj.id_empresa}, {obj.id_fecha}, '{obj.transporte}', {obj.costo});";
 
             try
             {
@@ -149,6 +149,22 @@ namespace DAL
             {
                 throw new Exception("Error al obtener los viajes del usuario: " + ex.Message);
             }
+        }
+
+        public decimal calcularCostoViaje(BE.Fecha fecha, BE.Empresa empresa , BE.Transporte transporte, BE.Destino destino ,decimal descuento_por_paquete = 0) 
+        {
+            decimal destinoPrecioBaseToDecimal = Convert.ToDecimal(destino.precio_base);
+            decimal empresaPorcentajeExtraToDecimal = Convert.ToDecimal(empresa.porcentaje_extra);
+
+
+            decimal transporteCosto =  (destinoPrecioBaseToDecimal * transporte.porcentaje_extra) / 100;
+
+            decimal empresaCosto = (destinoPrecioBaseToDecimal * empresaPorcentajeExtraToDecimal) / 100;
+
+
+            decimal costoViaje = destinoPrecioBaseToDecimal + transporteCosto + empresaCosto - descuento_por_paquete;
+
+            return costoViaje;
         }
     }
 }
