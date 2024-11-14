@@ -93,6 +93,12 @@
     <Compile Include="Bitácora.Designer.cs">
       <DependentUpon>Bitácora.cs</DependentUpon>
     </Compile>
+    <Compile Include="CrearFecha.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CrearFecha.Designer.cs">
+      <DependentUpon>CrearFecha.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,6 +153,12 @@
     <Compile Include="FRMReservarViaje.Designer.cs">
       <DependentUpon>FRMReservarViaje.cs</DependentUpon>
     </Compile>
+    <Compile Include="FRMSeleccionAsientos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FRMSeleccionAsientos.Designer.cs">
+      <DependentUpon>FRMSeleccionAsientos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FRMVerViajesRealizados.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -157,6 +169,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Bitácora.resx">
       <DependentUpon>Bitácora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CrearFecha.resx">
+      <DependentUpon>CrearFecha.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -184,6 +199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FRMReservarViaje.resx">
       <DependentUpon>FRMReservarViaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FRMSeleccionAsientos.resx">
+      <DependentUpon>FRMSeleccionAsientos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FRMVerViajesRealizados.resx">
       <DependentUpon>FRMVerViajesRealizados.cs</DependentUpon>

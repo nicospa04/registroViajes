@@ -10,6 +10,8 @@ namespace DAL
 {
     public class Asiento : ICrud<BE.Asiento>
     {
+        DAL.BaseDeDatos db = new DAL.BaseDeDatos();
+
         public Resultado<BE.Asiento> actualizarEntidad(BE.Asiento obj)
         {
             throw new NotImplementedException();
@@ -24,13 +26,37 @@ namespace DAL
         {
             throw new NotImplementedException();
         }
+        public Resultado<BE.Asiento> marcarAsientoOcupado(BE.Asiento obj)
+        {
 
-        public List<BE.Asiento> leerEntidades()
+            int booleano = obj.esta_disponible ? 1 : 0;
+
+            Servicios.Resultado<BE.Asiento> resultado = new Servicios.Resultado<BE.Asiento>();
+            string query = $"USE SistemaViajes; UPDATE Asiento SET esta_disponible = {booleano} WHERE id_asiento = ${obj.id_asiento}";
+            try
+            {
+                using(SqlCommand con = new SqlCommand(query, db.Connection))
+                {
+                    con.ExecuteReader();
+                    resultado.resultado = true;
+                    resultado.mensaje = "Asiento marcado como ocupado";
+                }
+            }
+            catch (Exception ex)
+            {
+                resultado.resultado = false;
+                resultado.mensaje = ex.Message;
+            }
+            return resultado;
+
+
+        }
+
+            public List<BE.Asiento> leerEntidades()
         {
             List<BE.Asiento> list = new List<BE.Asiento>();
 
             // Crear e inicializar la instancia de la base de datos
-            DAL.BaseDeDatos db = new DAL.BaseDeDatos();
 
             // Especificar las columnas necesarias en lugar de usar *
             string sqlQuery = "USE SistemaViajes; SELECT * FROM Asiento";

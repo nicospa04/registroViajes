@@ -42,7 +42,6 @@ namespace RegistroViajes
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
@@ -53,18 +52,18 @@ namespace RegistroViajes
             this.label16 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblprecio
             // 
             this.lblprecio.AutoSize = true;
-            this.lblprecio.Location = new System.Drawing.Point(172, 486);
+            this.lblprecio.Location = new System.Drawing.Point(159, 545);
             this.lblprecio.Name = "lblprecio";
-            this.lblprecio.Size = new System.Drawing.Size(13, 13);
+            this.lblprecio.Size = new System.Drawing.Size(0, 13);
             this.lblprecio.TabIndex = 51;
-            this.lblprecio.Text = "0";
             // 
             // label11
             // 
@@ -83,10 +82,12 @@ namespace RegistroViajes
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(637, 329);
             this.dataGridView1.TabIndex = 48;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // dateTimePicker2
             // 
+            this.dateTimePicker2.Enabled = false;
             this.dateTimePicker2.Location = new System.Drawing.Point(139, 384);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(200, 20);
@@ -94,6 +95,7 @@ namespace RegistroViajes
             // 
             // dateTimePicker1
             // 
+            this.dateTimePicker1.Enabled = false;
             this.dateTimePicker1.Location = new System.Drawing.Point(139, 436);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(200, 20);
@@ -171,15 +173,6 @@ namespace RegistroViajes
             this.label4.TabIndex = 34;
             this.label4.Text = "Cantidad de niños";
             // 
-            // label3
-            // 
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(21, 478);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(170, 32);
-            this.label3.TabIndex = 33;
-            this.label3.Text = "Monto Final";
-            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -200,9 +193,9 @@ namespace RegistroViajes
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(235, 471);
+            this.button1.Location = new System.Drawing.Point(12, 532);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(95, 39);
+            this.button1.Size = new System.Drawing.Size(314, 39);
             this.button1.TabIndex = 5;
             this.button1.Text = "Reservar";
             this.button1.UseVisualStyleBackColor = true;
@@ -273,19 +266,32 @@ namespace RegistroViajes
             this.label12.TabIndex = 60;
             this.label12.Text = "Destinos";
             // 
-            // textBox1
+            // comboBox3
             // 
-            this.textBox1.Location = new System.Drawing.Point(199, 286);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(120, 20);
-            this.textBox1.TabIndex = 1;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Location = new System.Drawing.Point(199, 278);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(120, 21);
+            this.comboBox3.TabIndex = 61;
+            this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(224, 471);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(95, 24);
+            this.button2.TabIndex = 62;
+            this.button2.Text = "Filtrar";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // FRMReservarViaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1025, 522);
-            this.Controls.Add(this.textBox1);
+            this.ClientSize = new System.Drawing.Size(1025, 599);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.label14);
@@ -305,7 +311,6 @@ namespace RegistroViajes
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button1);
@@ -334,7 +339,6 @@ namespace RegistroViajes
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button1;
@@ -345,6 +349,7 @@ namespace RegistroViajes
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.Button button2;
     }
 }
