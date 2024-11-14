@@ -24,8 +24,13 @@ namespace RegistroViajes
             var transporte = encontrarTransporte(fecha.id_transporte);
 
             var destino = new BLLDestino().leerEntidades().FirstOrDefault(d => d.id_destino == fecha.id_lugar_destino);
-
+            var empresa = new BLLEmpresa().leerEntidades().FirstOrDefault(e => e.id_empresa == fecha.id_empresa);
             label1.Text = $"Reserva {destino.nombre} - {transporte.nombre}";
+
+
+            decimal costo = new BLLViaje().calcularCostoViaje(fecha,empresa , transporte , destino);
+
+            label2.Text = $"Costo: ${costo}";
 
 
             switch (transporte.nombre)

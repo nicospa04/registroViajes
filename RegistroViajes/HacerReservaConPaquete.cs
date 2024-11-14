@@ -44,6 +44,8 @@ namespace RegistroViajes
                     break;
             }
 
+            label1.Text = $"Paquete: {paquete.nombre}, costo: ${paquete.precio_base}";
+
         }
 
         private void BtnAsiento_Click(object sender, EventArgs e)
@@ -154,7 +156,12 @@ namespace RegistroViajes
             var fecha = new BLLFecha().leerEntidades().FirstOrDefault(f => f.id_fecha == paquete.id_fecha);
             var empresa = new BLL.BLLEmpresa().leerEntidades().FirstOrDefault(emp => emp.id_empresa == fecha.id_empresa);
 
-            BE.Viaje viaje = new BE.Viaje(0, user.id_usuario, empresa.id_empresa, paquete.id
+
+            decimal costo = paquete.precio_base;
+
+            var transporte = new BLLTransporte().leerEntidades().FirstOrDefault(t => t.id_transporte == fecha.id_transporte);
+
+            BE.Viaje viaje = new BE.Viaje(user.id_usuario, empresa.id_empresa, paquete.id_fecha, transporte.nombre, costo);
         }
     }
 }

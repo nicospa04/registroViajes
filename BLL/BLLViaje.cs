@@ -38,6 +38,10 @@ namespace BLL
             return dal.ObtenerViajesPorUsuarioId(id_usuario);
         }
 
+        public decimal calcularCostoViaje(BE.Fecha fecha, BE.Empresa empresa, BE.Transporte transporte, BE.Destino destino, decimal descuento_por_paquete = 0)
+        {
+            return dal.calcularCostoViaje(fecha, empresa, transporte, destino, descuento_por_paquete);
+        }
 
 
     }
