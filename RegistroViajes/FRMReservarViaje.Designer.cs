@@ -53,7 +53,6 @@ namespace RegistroViajes
             this.label17 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.comboBox3 = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -193,7 +192,7 @@ namespace RegistroViajes
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 532);
+            this.button1.Location = new System.Drawing.Point(19, 503);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(314, 39);
             this.button1.TabIndex = 5;
@@ -275,22 +274,11 @@ namespace RegistroViajes
             this.comboBox3.TabIndex = 61;
             this.comboBox3.SelectedIndexChanged += new System.EventHandler(this.comboBox3_SelectedIndexChanged);
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(224, 471);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(95, 24);
-            this.button2.TabIndex = 62;
-            this.button2.Text = "Filtrar";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // FRMReservarViaje
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1025, 599);
-            this.Controls.Add(this.button2);
             this.Controls.Add(this.comboBox3);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label13);
@@ -350,6 +338,5 @@ namespace RegistroViajes
         private System.Windows.Forms.Label label17;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ComboBox comboBox3;
-        private System.Windows.Forms.Button button2;
     }
 }
