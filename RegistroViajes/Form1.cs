@@ -21,7 +21,7 @@ namespace RegistroViajes
         {
             InitializeComponent();
             BaseDeDatos bd = new BaseDeDatos();
-            bd.scriptInicio();
+         //   bd.scriptInicio();
             Lenguaje.ObtenerInstancia().Agregar(this);
             Lenguaje.ObtenerInstancia().IdiomaActual = "Español";
             modifmenu();
@@ -176,6 +176,11 @@ namespace RegistroViajes
         private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirForm(new FRMBitacora());
+        }
+
+        private void crearFechaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AbrirForm(new CrearFecha());
         }
     }
 }

@@ -124,7 +124,7 @@ namespace DAL
 
             BE.Transporte transporte = new DAL.Transporte().leerEntidades().Find(x => x.id_transporte == fecha.id_transporte);
 
-            string nombre_transporte = transporte.nombre;
+            string nombre_transporte = transporte.modelo;
 
             int columnas = 0;
             int filas = 0;

@@ -16,6 +16,8 @@ namespace RegistroViajes
         public CrearFecha()
         {
             InitializeComponent();
+
+            cargarComboBoxs();
         }
 
         private void CrearFecha_Load(object sender, EventArgs e)
@@ -47,7 +49,7 @@ namespace RegistroViajes
 
             foreach (var transporte in transportes)
             {
-                comboBox4.Items.Add(transporte.nombre);
+                comboBox4.Items.Add(transporte.modelo);
             }
 
 
@@ -67,7 +69,7 @@ namespace RegistroViajes
             BE.Empresa empresa = new BLLEmpresa().leerEntidades().FirstOrDefault(emp => emp.nombre == comboBox1.Text);
             BE.Destino destinoIda = new BLLDestino().leerEntidades().FirstOrDefault(dest => dest.nombre == comboBox2.Text);
             BE.Destino destinoVuelta = new BLLDestino().leerEntidades().FirstOrDefault(dest => dest.nombre == comboBox3.Text);
-            BE.Transporte transporte = new BLLTransporte().leerEntidades().FirstOrDefault(BE => BE.nombre == comboBox4.Text);
+            BE.Transporte transporte = new BLLTransporte().leerEntidades().FirstOrDefault(BE => BE.modelo == comboBox4.Text);
 
             BE.Fecha fecha = new BE.Fecha()
             {

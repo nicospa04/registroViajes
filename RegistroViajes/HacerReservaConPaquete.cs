@@ -31,7 +31,7 @@ namespace RegistroViajes
             var transporte = new BLLTransporte().leerEntidades().FirstOrDefault(t => t.id_transporte
             == fecha.id_transporte);
 
-            switch (transporte.nombre)
+            switch (transporte.modelo)
             {
                 case "Avión":
                     CrearDisposicionAsientos(10, 6); // Ejemplo de disposición para avión
@@ -161,7 +161,7 @@ namespace RegistroViajes
 
             var transporte = new BLLTransporte().leerEntidades().FirstOrDefault(t => t.id_transporte == fecha.id_transporte);
 
-            BE.Viaje viaje = new BE.Viaje(user.id_usuario, empresa.id_empresa, paquete.id_fecha, transporte.nombre, costo);
+            BE.Viaje viaje = new BE.Viaje(user.id_usuario, empresa.id_empresa, paquete.id_fecha, transporte.modelo, costo);
         }
     }
 }

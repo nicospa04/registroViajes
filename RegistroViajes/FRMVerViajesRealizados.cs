@@ -47,9 +47,7 @@ namespace RegistroViajes
                         v.id_empresa,
                         v.id_fecha,
                         v.transporte,
-                        v.costo,
-                        v.fecha_inicio,
-                        v.fecha_vuelta
+                        v.costo
                     }).ToList();
                 }
                 else

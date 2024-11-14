@@ -99,9 +99,7 @@ namespace DAL
                             int id_fecha = !lector.IsDBNull(lector.GetOrdinal("id_fecha")) ? lector.GetInt32(lector.GetOrdinal("id_fecha")) : 0;
                             string transporte = !lector.IsDBNull(lector.GetOrdinal("transporte")) ? lector.GetString(lector.GetOrdinal("transporte")) : string.Empty;
                             decimal costo = !lector.IsDBNull(lector.GetOrdinal("costo")) ? lector.GetDecimal(lector.GetOrdinal("costo")) : 0;
-                            DateTime fecha_inicio = !lector.IsDBNull(lector.GetOrdinal("fecha_inicio")) ? lector.GetDateTime(lector.GetOrdinal("fecha_inicio")) : DateTime.Now;
-                            DateTime fecha_vuelta = !lector.IsDBNull(lector.GetOrdinal("fecha_vuelta")) ? lector.GetDateTime(lector.GetOrdinal("fecha_vuelta")) : DateTime.Now;
-                            BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_fecha, transporte, costo, fecha_inicio, fecha_vuelta);
+                            BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_fecha, transporte, costo);
                             list.Add(viaje);
                         }
                     }
@@ -140,7 +138,7 @@ namespace DAL
                     decimal costo = Convert.ToDecimal(reader["costo"]);
                     DateTime fecha_inicio = Convert.ToDateTime(reader["fecha_inicio"]);
                     DateTime fecha_vuelta = Convert.ToDateTime(reader["fecha_vuelta"]);
-                    BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_fecha, transporte, costo, fecha_inicio, fecha_vuelta);
+                    BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_fecha, transporte, costo);
                     listaViajes.Add(viaje);
                 }
                 return listaViajes;

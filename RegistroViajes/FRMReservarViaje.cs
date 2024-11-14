@@ -37,7 +37,7 @@ namespace RegistroViajes
             fechas = fechas.Where(fecha => fecha.id_lugar_destino== id_destino).ToList();
             int id_empresa = new BLLEmpresa().leerEntidades().FirstOrDefault(empresa => empresa.nombre == comboBox1.SelectedItem.ToString()).id_empresa;
             fechas = fechas.Where(fecha => fecha.id_empresa == id_empresa).ToList();
-            int id_transporte = new BLLTransporte().leerEntidades().FirstOrDefault(transporte => transporte.nombre == comboBox2.SelectedItem.ToString()).id_transporte;
+            int id_transporte = new BLLTransporte().leerEntidades().FirstOrDefault(transporte => transporte.modelo == comboBox2.SelectedItem.ToString()).id_transporte;
             fechas = fechas.Where(fecha => fecha.id_transporte == id_transporte).ToList();
 
             dataGridView1.DataSource = fechas;
@@ -63,7 +63,10 @@ namespace RegistroViajes
             var transportes = new BLLTransporte().leerEntidades();
             foreach (var transporte in transportes)
             {
-                comboBox2.Items.Add(transporte.nombre);
+
+                
+
+                comboBox2.Items.Add($"{transporte.modelo}");
             }
 
             comboBox1.SelectedIndex = 0;

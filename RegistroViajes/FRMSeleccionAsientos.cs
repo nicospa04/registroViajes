@@ -25,7 +25,7 @@ namespace RegistroViajes
 
             var destino = new BLLDestino().leerEntidades().FirstOrDefault(d => d.id_destino == fecha.id_lugar_destino);
             var empresa = new BLLEmpresa().leerEntidades().FirstOrDefault(e => e.id_empresa == fecha.id_empresa);
-            label1.Text = $"Reserva {destino.nombre} - {transporte.nombre}";
+            label1.Text = $"Reserva {destino.nombre} - {transporte.modelo}";
 
 
             decimal costo = new BLLViaje().calcularCostoViaje(fecha,empresa , transporte , destino);
@@ -33,7 +33,7 @@ namespace RegistroViajes
             label2.Text = $"Costo: ${costo}";
 
 
-            switch (transporte.nombre)
+            switch (transporte.modelo)
             {
                 case "Avión":
                     CrearDisposicionAsientos(10, 6); // Ejemplo de disposición para avión

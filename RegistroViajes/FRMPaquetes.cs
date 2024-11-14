@@ -46,8 +46,11 @@ namespace RegistroViajes
             // Llenar la columna con los nombres de destino
             for (int i = 0; i < paquetes.Count; i++)
             {
-                //var destino = new BLLDestino().leerEntidades().FirstOrDefault(d => d.id_destino == paquetes[i].id_destino);
-             //   dataGridView1.Rows[i].Cells["NombreDestino"].Value = destino?.nombre ?? "Desconocido"; // Asignar el nombre o un valor por defecto si no existe
+
+                var fecha = new BLL.BLLFecha().leerEntidades().FirstOrDefault(f => f.id_fecha == paquetes[i].id_fecha);
+
+                var destino = new BLLDestino().leerEntidades().FirstOrDefault(d => d.id_destino == fecha.id_lugar_destino);
+                dataGridView1.Rows[i].Cells["NombreDestino"].Value = destino?.nombre ?? "Desconocido"; // Asignar el nombre o un valor por defecto si no existe
             }
         }
 

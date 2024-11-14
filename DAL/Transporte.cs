@@ -46,10 +46,12 @@ namespace DAL
                         while (lector.Read())
                         {
                             // Manejar posibles valores nulos
-                            int id = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
-                            string nombre = !lector.IsDBNull(lector.GetOrdinal("nombre")) ? lector.GetString(lector.GetOrdinal("nombre")) : string.Empty;
-                            decimal porcentaje_extra = !lector.IsDBNull(lector.GetOrdinal("porcentaje_extra")) ? lector.GetDecimal(lector.GetOrdinal("porcentaje_extra")): 1;
-                            BE.Transporte objeto = new BE.Transporte(id, nombre, porcentaje_extra);
+                            int id_transporte = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
+                            string modelo = !lector.IsDBNull(lector.GetOrdinal("modelo")) ? lector.GetString(lector.GetOrdinal("modelo")) : string.Empty;
+                            decimal porcentaje_extra = !lector.IsDBNull(lector.GetOrdinal("porcentaje_extra")) ? lector.GetDecimal(lector.GetOrdinal("porcentaje_extra")): 0;
+                            int id_tipo_transporte = !lector.IsDBNull(lector.GetOrdinal("id_tipo_transporte")) ? lector.GetInt32(lector.GetOrdinal("id_tipo_transporte")) : 0;
+                            int id_empresa = !lector.IsDBNull(lector.GetOrdinal("id_empresa")) ? lector.GetInt32(lector.GetOrdinal("id_empresa")) : 0;
+                            BE.Transporte objeto = new BE.Transporte(id_transporte, modelo, porcentaje_extra, id_tipo_transporte, id_empresa);
 
                             list.Add(objeto);
                         }
