@@ -18,6 +18,10 @@ namespace RegistroViajes
             InitializeComponent();
 
             cargarComboBoxs();
+            comboBox1.SelectedIndex = 0;
+            comboBox2.SelectedIndex = 0;
+            comboBox3.SelectedIndex = 0;
+            comboBox4.SelectedIndex = 0;
         }
 
         private void CrearFecha_Load(object sender, EventArgs e)
@@ -60,6 +64,13 @@ namespace RegistroViajes
             DateTime fechaIda = dateTimePicker1.Value;
             DateTime fechaVuelta = dateTimePicker2.Value;
 
+
+            if(fechaIda <= DateTime.Now.AddDays(-1))
+            {
+                MessageBox.Show("La fecha de ida no puede ser menor a la fecha actual");
+                return;
+            }
+
             if (fechaIda > fechaVuelta)
             {
                 MessageBox.Show("La fecha de ida no puede ser mayor a la fecha de vuelta");
@@ -70,7 +81,7 @@ namespace RegistroViajes
             BE.Destino destinoIda = new BLLDestino().leerEntidades().FirstOrDefault(dest => dest.nombre == comboBox2.Text);
             BE.Destino destinoVuelta = new BLLDestino().leerEntidades().FirstOrDefault(dest => dest.nombre == comboBox3.Text);
             BE.Transporte transporte = new BLLTransporte().leerEntidades().FirstOrDefault(BE => BE.modelo == comboBox4.Text);
-
+            BE.TipoTransporte tipoTransporte = new BLL.TipoTransporte().leerEntidades().FirstOrDefault(BE => BE.id_tipo_transporte == transporte.id_tipo_transporte);
             BE.Fecha fecha = new BE.Fecha()
             {
                 fecha_ida = fechaIda,
@@ -78,13 +89,19 @@ namespace RegistroViajes
                 id_empresa = empresa.id_empresa,
                 id_lugar_origen = destinoIda.id_destino,
                 id_lugar_destino = destinoVuelta.id_destino,
-                id_transporte = transporte.id_transporte
+                id_transporte = transporte.id_transporte,
+                categoria_tipo = tipoTransporte.nombre
             };
 
             BLLFecha bllFecha = new BLLFecha();
             Servicios.Resultado<BE.Fecha> resultado = bllFecha.crearEntidad(fecha);
             BLLAsiento bllAsiento = new BLLAsiento();
-            bllAsiento.crearAsientosParaFecha(resultado.entidad.id_fecha);
+
+            var fechas = bllFecha.leerEntidades();
+            var fechaCreada = fechas.LastOrDefault(f => f.fecha_ida.Date == fechaIda.Date && f.fecha_vuelta.Date == fechaVuelta.Date);
+
+
+            bllAsiento.crearAsientosParaFecha(fechaCreada.id_fecha);
 
         }
 
@@ -99,6 +116,8 @@ namespace RegistroViajes
             {
                 comboBox4.Items.Add(transporte.modelo);
             }
+
+            comboBox4.SelectedIndex = 0;
         }
     }
 }

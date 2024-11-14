@@ -23,10 +23,8 @@ namespace DAL
             string query = $"USE SistemaViajes; INSERT INTO Asiento (id_fecha, num_asiento, esta_disponible) VALUES (${obj.id_fecha},{obj.num_asiento}, {disponible})";
             try
             {
-                using (SqlCommand con = new SqlCommand(query, db.Connection))
-                {
-                    con.ExecuteReader();
-                }
+                bool result = db.ejecutarQuery(query);
+                if (!result) throw new Exception("Error al crear destino");
             }
             catch (Exception ex)
             {
@@ -121,25 +119,25 @@ namespace DAL
 
             fechas = new DAL.DALFecha().leerEntidades();
             BE.Fecha fecha = fechas.Find(x => x.id_fecha == id_fecha);
+            var transportes = new DAL.Transporte().leerEntidades();
+            BE.Transporte transporte = transportes.Find(x => x.id_transporte == fecha.id_transporte);
 
-            BE.Transporte transporte = new DAL.Transporte().leerEntidades().Find(x => x.id_transporte == fecha.id_transporte);
-
-            string nombre_transporte = transporte.modelo;
+            string nombre_transporte = new DAL.TipoTransporte().leerEntidades().FirstOrDefault(t => t.id_tipo_transporte == transporte.id_transporte).nombre;
 
             int columnas = 0;
             int filas = 0;
 
-            switch (nombre_transporte) 
+            switch (nombre_transporte.ToLower().Trim()) 
             {
-                case "Bus":
+                case "bus":
                     columnas = 4;
                     filas = 8;
                     break;
-                case "Avion":
+                case "avion":
                     columnas = 6;
                     filas = 10;
                     break;
-                case "Barco":
+                case "barco":
                     columnas = 6;
                     filas = 5;
                     break;

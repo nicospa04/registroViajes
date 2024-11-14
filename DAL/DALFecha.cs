@@ -31,13 +31,14 @@ namespace DAL
             string query = "USE SistemaViajes;" +
                  "INSERT INTO Fecha (id_empresa, id_lugar_origen, id_lugar_destino, id_transporte, fecha_ida, fecha_vuelta, categoria_tipo)" +
                  "VALUES" +
-                 $"({obj.id_empresa}, {obj.id_lugar_origen}, {obj.id_lugar_destino}, {obj.id_transporte}, '{obj.fecha_ida.ToString()}', '{obj.fecha_vuelta.ToString()}', '{obj.categoria_tipo}');";
+                 $"({obj.id_empresa}, {obj.id_lugar_origen}, {obj.id_lugar_destino}, {obj.id_transporte}, '{obj.fecha_ida.ToString("yyyy-MM-dd")}', '{obj.fecha_vuelta.ToString("yyyy-MM-dd")}', '{obj.categoria_tipo}');";
 
             try
             {
                 bool result = db.ejecutarQuery(query);
                 if (!result) throw new Exception("Error al crear destino");
 
+                resultado.entidad = obj;
                 resultado.resultado = true;
                 resultado.mensaje = "Destino creado con exito";
                 return resultado;
@@ -108,12 +109,12 @@ namespace DAL
                             // Manejar posibles valores nulos
                             int id_fecha = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
                             int id_empresa = !lector.IsDBNull(lector.GetOrdinal("id_empresa")) ? lector.GetInt32(lector.GetOrdinal("id_empresa")) : 0;
-                            int id_lugar_origen = !lector.IsDBNull(lector.GetOrdinal("id_lugar_origen ")) ? lector.GetInt32(lector.GetOrdinal("id_lugar_origen")) : 0;
-                            int id_lugar_destino = !lector.IsDBNull(lector.GetOrdinal("id_lugar_destino ")) ? lector.GetInt32(lector.GetOrdinal("id_lugar_destino")) : 0;
+                            int id_lugar_origen = !lector.IsDBNull(lector.GetOrdinal("id_lugar_origen")) ? lector.GetInt32(lector.GetOrdinal("id_lugar_origen")) : 0;
+                            int id_lugar_destino = !lector.IsDBNull(lector.GetOrdinal("id_lugar_destino")) ? lector.GetInt32(lector.GetOrdinal("id_lugar_destino")) : 0;
                             DateTime fecha_ida = !lector.IsDBNull(lector.GetOrdinal("fecha_ida")) ? lector.GetDateTime(lector.GetOrdinal("fecha_ida")) : DateTime.Now;
-                            DateTime fecha_vuelta = !lector.IsDBNull(lector.GetOrdinal("fecha_vuelta")) ? lector.GetDateTime(lector.GetOrdinal("fecha_vuelta")) : DateTime.Now; ;
-                            string categoria_tipo = !lector.IsDBNull(lector.GetOrdinal("categoria_tipo ")) ? lector.GetString(lector.GetOrdinal("categoria_tipo")) : string.Empty;
-                            int id_transporte = !lector.IsDBNull(lector.GetOrdinal("categoria_tipo")) ? lector.GetOrdinal("id_transporte") : 0; 
+                            DateTime fecha_vuelta = !lector.IsDBNull(lector.GetOrdinal("fecha_vuelta")) ? lector.GetDateTime(lector.GetOrdinal("fecha_vuelta")) : DateTime.Now;
+                            string categoria_tipo = !lector.IsDBNull(lector.GetOrdinal("categoria_tipo")) ? lector.GetString(lector.GetOrdinal("categoria_tipo")) : string.Empty;
+                            int id_transporte = !lector.IsDBNull(lector.GetOrdinal("id_transporte")) ? lector.GetInt32(lector.GetOrdinal("id_transporte")) : 0; 
                             BE.Fecha objeto = new BE.Fecha(id_fecha, id_empresa, id_lugar_origen, id_lugar_destino, id_transporte ,fecha_ida, fecha_vuelta, categoria_tipo);
                             list.Add(objeto);
                         }
