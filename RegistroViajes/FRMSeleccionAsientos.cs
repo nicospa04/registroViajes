@@ -14,7 +14,7 @@ using System.Windows.Forms;
 
 namespace RegistroViajes
 {
-    public partial class FRMSeleccionAsientos : Form,IObserver
+    public partial class FRMSeleccionAsientos : Form 
     {
         int id_fecha;
         private List<BE.Asiento> asientosSeleccionados = new List<BE.Asiento>(); // Lista temporal de asientos seleccionados
@@ -164,7 +164,7 @@ namespace RegistroViajes
 
         private void FRMSeleccionAsientos_Load(object sender, EventArgs e)
         {
-            ActualizarIdioma();
+            //ActualizarIdioma();
         }
 
         private void button1_Click(object sender, EventArgs e)
