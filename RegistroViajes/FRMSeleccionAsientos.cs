@@ -14,10 +14,14 @@ using System.Windows.Forms;
 
 namespace RegistroViajes
 {
-    public partial class FRMSeleccionAsientos : Form
+    public partial class FRMSeleccionAsientos : Form,IObserver
     {
         int id_fecha;
         private List<BE.Asiento> asientosSeleccionados = new List<BE.Asiento>(); // Lista temporal de asientos seleccionados
+        public void ActualizarIdioma()
+        {
+            Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
+        }
 
         public FRMSeleccionAsientos(int id_fecha)
         {
@@ -160,7 +164,7 @@ namespace RegistroViajes
 
         private void FRMSeleccionAsientos_Load(object sender, EventArgs e)
         {
-
+            ActualizarIdioma();
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -197,17 +201,15 @@ namespace RegistroViajes
 
                     //int id_usuario, int id_empresa, int id_fecha, string transporte, decimal costo, int num_asiento
                     var viaje = new BLLViaje().crearEntidad(new BE.Viaje(id_usuario, empresa.id_empresa, fecha.id_fecha,tipo_transporte.nombre, costo, asiento.num_asiento));
-
                     BLLBitacora bllbita = new BLLBitacora();
-                    string operacion = "Reserva Asientos";
+                    string operacion = "Registro de Viaje";
                     int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
                     DateTime fecha1 = DateTime.Now;
-                    int criticidad = 5;
-
+                    int criticidad = 3;
                     string actor;
-                    if (id_usuario1 == 3)
+                    if (id_usuario == 3)
                         actor = "ADMIN";
-                    else if (id_usuario1 == 2)
+                    else if (id_usuario == 2)
                         actor = "EMPLEADO";
                     else
                         actor = "USUARIO";
@@ -232,6 +234,7 @@ namespace RegistroViajes
 
             asientosSeleccionados.Clear();
             MessageBox.Show("Asientos reservados con éxito.");
+            MessageBox.Show("SE HA RESERVADO UN VIAJE");
         }
     }
 }

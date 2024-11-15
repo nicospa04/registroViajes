@@ -13,7 +13,7 @@ using Servicios;
 
 namespace RegistroViajes
 {
-    public partial class CrearFecha : Form
+    public partial class CrearFecha : Form,IObserver
     {
         public CrearFecha()
         {
@@ -25,10 +25,13 @@ namespace RegistroViajes
             comboBox3.SelectedIndex = 0;
             comboBox4.SelectedIndex = 0;
         }
-
+        public void ActualizarIdioma()
+        {
+            Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
+        }
         private void CrearFecha_Load(object sender, EventArgs e)
         {
-
+            ActualizarIdioma();
         }
 
         void cargarComboBoxs()
@@ -105,7 +108,7 @@ namespace RegistroViajes
 
             bllAsiento.crearAsientosParaFecha(fechaCreada.id_fecha);
             BLLBitacora bllbita = new BLLBitacora();
-            string operacion = "Crear Fechas";
+            string operacion = "Crear Fecha Viaje";
             int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
             DateTime fecha1 = DateTime.Now;
             int criticidad = 11;

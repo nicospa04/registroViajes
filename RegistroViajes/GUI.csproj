@@ -45,6 +45,9 @@
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
     <Reference Include="System" />
@@ -87,11 +90,23 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="BackUp.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="BackUp.Designer.cs">
+      <DependentUpon>BackUp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Bitácora.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Bitácora.Designer.cs">
       <DependentUpon>Bitácora.cs</DependentUpon>
+    </Compile>
+    <Compile Include="CPerfil.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CPerfil.Designer.cs">
+      <DependentUpon>CPerfil.cs</DependentUpon>
     </Compile>
     <Compile Include="CrearFecha.cs">
       <SubType>Form</SubType>
@@ -179,8 +194,14 @@
     <Compile Include="VerPerfil.Designer.cs">
       <DependentUpon>VerPerfil.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="BackUp.resx">
+      <DependentUpon>BackUp.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Bitácora.resx">
       <DependentUpon>Bitácora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="CPerfil.resx">
+      <DependentUpon>CPerfil.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CrearFecha.resx">
       <DependentUpon>CrearFecha.cs</DependentUpon>

@@ -137,24 +137,6 @@ namespace RegistroViajes
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            BLLBitacora bllbita = new BLLBitacora();
-            string operacion = "Registro de Viaje";
-            int id_usuario = SessionManager.ObtenerInstancia().IdUsuarioActual;
-            DateTime fecha = DateTime.Now;
-            int criticidad = 3;
-            string actor;
-            if (id_usuario == 3)
-                actor = "ADMIN";
-            else if (id_usuario == 2)
-                actor = "EMPLEADO";
-            else
-                actor = "USUARIO";
-
-            BEBitacora bitacorita = new BEBitacora(id_usuario, operacion, fecha, actor, criticidad);
-            bllbita.crearEntidad(bitacorita);
-
-
-
             if (dataGridView1.SelectedRows.Count > 0)
             {
 

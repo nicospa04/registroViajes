@@ -52,7 +52,9 @@
             this.iconMenuItem5 = new FontAwesome.Sharp.IconMenuItem();
             this.iconMenuItem6 = new FontAwesome.Sharp.IconMenuItem();
             this.menuStrip2 = new System.Windows.Forms.MenuStrip();
-            this.aToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.perfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.backUpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.crearPerfilesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -79,8 +81,7 @@
             this.iconMenuItem4,
             this.registrosToolStripMenuItem,
             this.iconMenuItem5,
-            this.iconMenuItem6,
-            this.aToolStripMenuItem});
+            this.iconMenuItem6});
             this.menuStrip1.Location = new System.Drawing.Point(0, 68);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
@@ -142,28 +143,28 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem1.Text = "Reservar";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
             this.toolStripMenuItem2.Text = "Modificar";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click_1);
             // 
             // cancelarToolStripMenuItem
             // 
             this.cancelarToolStripMenuItem.Name = "cancelarToolStripMenuItem";
-            this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.cancelarToolStripMenuItem.Text = "Cancelar";
             this.cancelarToolStripMenuItem.Click += new System.EventHandler(this.cancelarToolStripMenuItem_Click_1);
             // 
             // verViajesRealizadosToolStripMenuItem
             // 
             this.verViajesRealizadosToolStripMenuItem.Name = "verViajesRealizadosToolStripMenuItem";
-            this.verViajesRealizadosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
+            this.verViajesRealizadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.verViajesRealizadosToolStripMenuItem.Text = "Ver viajes realizados";
             this.verViajesRealizadosToolStripMenuItem.Click += new System.EventHandler(this.verViajesRealizadosToolStripMenuItem_Click);
             // 
@@ -185,7 +186,7 @@
             // reservarPaqueteToolStripMenuItem
             // 
             this.reservarPaqueteToolStripMenuItem.Name = "reservarPaqueteToolStripMenuItem";
-            this.reservarPaqueteToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.reservarPaqueteToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.reservarPaqueteToolStripMenuItem.Text = "Reservar Paquete";
             this.reservarPaqueteToolStripMenuItem.Click += new System.EventHandler(this.reservarPaqueteToolStripMenuItem_Click);
             // 
@@ -200,14 +201,17 @@
             // crearFechaToolStripMenuItem
             // 
             this.crearFechaToolStripMenuItem.Name = "crearFechaToolStripMenuItem";
-            this.crearFechaToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.crearFechaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearFechaToolStripMenuItem.Text = "Crear fecha";
             this.crearFechaToolStripMenuItem.Click += new System.EventHandler(this.crearFechaToolStripMenuItem_Click);
             // 
             // iconMenuItem4
             // 
             this.iconMenuItem4.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.bitacoraToolStripMenuItem});
+            this.bitacoraToolStripMenuItem,
+            this.perfilesToolStripMenuItem,
+            this.backUpToolStripMenuItem,
+            this.crearPerfilesToolStripMenuItem});
             this.iconMenuItem4.IconChar = FontAwesome.Sharp.IconChar.ToggleOff;
             this.iconMenuItem4.IconColor = System.Drawing.Color.Black;
             this.iconMenuItem4.IconFont = FontAwesome.Sharp.IconFont.Auto;
@@ -221,7 +225,7 @@
             // bitacoraToolStripMenuItem
             // 
             this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
-            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
+            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.bitacoraToolStripMenuItem.Text = "Bitacora";
             this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
             // 
@@ -304,12 +308,26 @@
             this.menuStrip2.Text = "menuStrip2";
             this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
             // 
-            // aToolStripMenuItem
+            // perfilesToolStripMenuItem
             // 
-            this.aToolStripMenuItem.Name = "aToolStripMenuItem";
-            this.aToolStripMenuItem.Size = new System.Drawing.Size(25, 49);
-            this.aToolStripMenuItem.Text = "a";
-            this.aToolStripMenuItem.Click += new System.EventHandler(this.aToolStripMenuItem_Click);
+            this.perfilesToolStripMenuItem.Name = "perfilesToolStripMenuItem";
+            this.perfilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.perfilesToolStripMenuItem.Text = "Perfiles";
+            this.perfilesToolStripMenuItem.Click += new System.EventHandler(this.perfilesToolStripMenuItem_Click);
+            // 
+            // backUpToolStripMenuItem
+            // 
+            this.backUpToolStripMenuItem.Name = "backUpToolStripMenuItem";
+            this.backUpToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.backUpToolStripMenuItem.Text = "Back Up y Restore";
+            this.backUpToolStripMenuItem.Click += new System.EventHandler(this.backUpToolStripMenuItem_Click);
+            // 
+            // crearPerfilesToolStripMenuItem
+            // 
+            this.crearPerfilesToolStripMenuItem.Name = "crearPerfilesToolStripMenuItem";
+            this.crearPerfilesToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.crearPerfilesToolStripMenuItem.Text = "Crear Perfiles";
+            this.crearPerfilesToolStripMenuItem.Click += new System.EventHandler(this.crearPerfilesToolStripMenuItem_Click);
             // 
             // Form1
             // 
@@ -356,7 +374,9 @@
         private System.Windows.Forms.ToolStripMenuItem fechasToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem crearFechaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem reservarPaqueteToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem aToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem perfilesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem backUpToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem crearPerfilesToolStripMenuItem;
     }
 }
 

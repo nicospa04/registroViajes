@@ -10,7 +10,7 @@ namespace DAL
     {
         public class BaseDeDatos
         {
-            public static string dataSource = "COMPURELOCA";
+            public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
             public static string dbName = "SistemaViajes";
             public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
             public SqlConnection Connection = new SqlConnection(conexionMaster);
@@ -221,45 +221,6 @@ namespace DAL
                 "('Nueva York', 'La ciudad que nunca duerme, llena de rascacielos y vida urbana.', 1200.00)," +
                 "('Bariloche', 'Destino turístico en la Patagonia argentina, famoso por sus paisajes naturales.', 800.00);");
 
-            // Insertar datos en la tabla tipo_transporte
-            ejecutarQuery("USE SistemaViajes; INSERT INTO tipo_transporte(nombre) " +
-                "VALUES ('avion'),('bus'),('barco');");
-
-            // Insertar datos en la tabla Transporte
-            ejecutarQuery("USE SistemaViajes; INSERT INTO Transporte (porcentaje_extra, modelo, id_tipo_transporte, id_empresa) " +
-                "VALUES " +
-                "(1.15, 'Boeing 747', 1, 1)," +    // 1 = Avión
-                "(1.25, 'Crucero Marítimo', 3, 2)," + // 3 = Barco
-                "(1.10, 'Colectivo de Turismo', 2, 1);"); // 2 = Bus
-
-  
-
-     
-
-            // Insertar datos en la tabla Viaje
-            ejecutarQuery("USE SistemaViajes; INSERT INTO Viaje (id_usuario, id_empresa, id_fecha, transporte, costo) " +
-                "VALUES " +
-                "(1, 1, 1, 'Avión', 3000.00)," +
-                "(2, 2, 2, 'Barco', 4000.00)," +
-                "(1, 2, 3, 'Bus', 2400.00);");
-
-            // Insertar datos en la tabla Paquete
-            ejecutarQuery("USE SistemaViajes; INSERT INTO Paquete (id_fecha, precio, cantidad_max_asientos, nombre, descripcion) " +
-                "VALUES " +
-                "(1, 1500.00, 2, 'Romance en París', 'Paquete especial para parejas, incluye visitas guiadas y cenas románticas.')," +
-                "(2, 2000.00, 4, 'Nueva York Express', 'Paquete para conocer lo esencial de Nueva York en 5 días.')," +
-                "(3, 1200.00, 5, 'Aventura en Bariloche', 'Paquete de aventura que incluye excursiones, caminatas y deportes de invierno.');");
-
-            //// Insertar datos en la tabla PaqueteAsiento
-            //ejecutarQuery("USE SistemaViajes; INSERT INTO PaqueteAsiento (id_paquete, id_asiento) " +
-            //    "VALUES " +
-            //    "(1, 1)," +
-            //    "(1, 2)," +
-            //    "(2, 4)," +
-            //    "(2, 5)," +
-            //    "(3, 6)," +
-            //    "(3, 7);");
-
             // Insertar datos en la tabla PermisosComp
             ejecutarQuery("USE SistemaViajes; INSERT INTO PermisosComp (nombre, nombreformulario, isperfil) " +
                 "VALUES" +
@@ -282,9 +243,13 @@ namespace DAL
                 "('CamIdio', 'iconMenuItem5', 0)," +
                 "('Exit', 'iconMenuItem6', 0)," +
                 "('Config', 'iconMenuItem4', 0)," +
-                "('Bitacora', 'bitacoraToolStripMenuItem', 0)," +
                 "('Fechas', 'fechasToolStripMenuItem', 0)," +
-                "('CrearFech', 'crearFechaToolStripMenuItem', 0);");
+                "('Bitacora', 'bitacoraToolStripMenuItem', 0)," +
+                "('CrearFech', 'crearFechaToolStripMenuItem', 0)," +
+                "('SelecPaq', 'reservarPaqueteToolStripMenuItem', 0)," +
+                "('Perfiles', 'perfilesToolStripMenuItem', 0)," + 
+                "('BakUP', 'backUpToolStripMenuItem', 0)," +
+                "('CrePerf', 'crearPerfilesToolStripMenuItem', 0);");
 
             // Insertar datos en la tabla PermisoPermiso
             ejecutarQuery("USE SistemaViajes; INSERT INTO PermisoPermiso (id_permisopadre, id_permisohijo) " +
@@ -336,6 +301,14 @@ namespace DAL
                 "(3, 22)," +
                 "(2, 22)," +
                 "(1, 22)," +
+                "(3, 23)," +
+                "(2, 23)," +
+                "(1, 23)," +
+                "(3, 24)," +
+                "(3, 25)," +
+                "(2, 24)," +
+                "(2, 19)," +
+                "(3, 26)," +
                 "(2, 17);");
 
             // Insertar datos en la tabla UsuarioPermiso
@@ -344,6 +317,46 @@ namespace DAL
                 "(3, 3), " +
                 "(2, 2), " +
                 "(1, 1);");
+
+            // Insertar datos en la tabla tipo_transporte
+            ejecutarQuery("USE SistemaViajes; INSERT INTO tipo_transporte(nombre) " +
+                "VALUES ('avion'),('bus'),('barco');");
+
+            // Insertar datos en la tabla Transporte
+            ejecutarQuery("USE SistemaViajes; INSERT INTO Transporte (porcentaje_extra, modelo, id_tipo_transporte, id_empresa) " +
+                "VALUES " +
+                "(1.15, 'Boeing 747', 1, 1)," +    // 1 = Avión
+                "(1.25, 'Crucero Marítimo', 3, 2)," + // 3 = Barco
+                "(1.10, 'Colectivo de Turismo', 2, 1);"); // 2 = Bus
+
+            // Insertar datos en la tabla tipo_transporte
+            ejecutarQuery("USE SistemaViajes; INSERT INTO tipo_transporte(nombre) " +
+                "VALUES ('avion'),('bus'),('barco');");
+
+            // Insertar datos en la tabla Transporte
+            ejecutarQuery("USE SistemaViajes; INSERT INTO Transporte (porcentaje_extra, modelo, id_tipo_transporte, id_empresa) " +
+                "VALUES " +
+                "(1.15, 'Boeing 747', 1, 1)," +    // 1 = Avión
+                "(1.25, 'Crucero Marítimo', 3, 2)," + // 3 = Barco
+                "(1.10, 'Colectivo de Turismo', 2, 1);"); // 2 = Bus
+
+
+            // Insertar datos en la tabla Paquete
+            ejecutarQuery("USE SistemaViajes; INSERT INTO Paquete (id_fecha, precio, cantidad_max_asientos, nombre, descripcion) " +
+                "VALUES " +
+                "(1, 1500.00, 2, 'Romance en París', 'Paquete especial para parejas, incluye visitas guiadas y cenas románticas.')," +
+                "(2, 2000.00, 4, 'Nueva York Express', 'Paquete para conocer lo esencial de Nueva York en 5 días.')," +
+                "(3, 1200.00, 5, 'Aventura en Bariloche', 'Paquete de aventura que incluye excursiones, caminatas y deportes de invierno.');");
+
+            //// Insertar datos en la tabla PaqueteAsiento
+            //ejecutarQuery("USE SistemaViajes; INSERT INTO PaqueteAsiento (id_paquete, id_asiento) " +
+            //    "VALUES " +
+            //    "(1, 1)," +
+            //    "(1, 2)," +
+            //    "(2, 4)," +
+            //    "(2, 5)," +
+            //    "(3, 6)," +
+            //    "(3, 7);");
         }
 
     }

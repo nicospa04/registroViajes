@@ -205,7 +205,7 @@ namespace RegistroViajes
             this.label10.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.label10.Location = new System.Drawing.Point(345, -22);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(724, 603);
+            this.label10.Size = new System.Drawing.Size(724, 648);
             this.label10.TabIndex = 49;
             this.label10.Text = "label10";
             this.label10.Click += new System.EventHandler(this.label10_Click);

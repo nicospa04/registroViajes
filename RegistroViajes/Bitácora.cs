@@ -12,6 +12,13 @@ using BLL;
 using Servicios;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System.Runtime.Serialization.Formatters.Binary;
+using System.Xml.Serialization;
+using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Xml;
+using System.IO;
+using Newtonsoft.Json;
 
 namespace RegistroViajes
 {
@@ -74,6 +81,8 @@ namespace RegistroViajes
             comboBox3.SelectedIndex = -1;
             comboBox4.SelectedIndex = -1;
             comboBox5.SelectedIndex = -1;
+            listBox1.Items.Clear();
+            listBox2.Items.Clear();
             List<BEBitacora> bitacora = new List<BEBitacora>();
             BLLBitacora bllbita = new BLLBitacora();
             bitacora = bllbita.leerEntidades();
@@ -100,6 +109,22 @@ namespace RegistroViajes
                 if (exito)
                 {
                     MessageBox.Show("Archivo PDF generado y abierto correctamente.");
+                    BLLBitacora bllbita = new BLLBitacora();
+                    string operacion = "Imprimir";
+                    int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+                    DateTime fecha1 = DateTime.Now;
+                    int criticidad = 21;
+
+                    string actor;
+                    if (id_usuario1 == 3)
+                        actor = "ADMIN";
+                    else if (id_usuario1 == 2)
+                        actor = "EMPLEADO";
+                    else
+                        actor = "USUARIO";
+
+                    BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+                    bllbita.crearEntidad(bitacorita);
                 }
                 else
                 {
@@ -156,6 +181,128 @@ namespace RegistroViajes
         private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                BEBitacora persona = new BEBitacora
+                {
+                    id_usuario = int.Parse(comboBox3.Text),
+                    operacion = comboBox1.Text,
+                    actor = comboBox4.Text,
+                    fecha = dateTimePicker1.Value,
+                    criticidad = int.Parse(comboBox5.Text),
+                };
+
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
+                {
+                    saveFileDialog.Filter = "JSON Files|*.json";
+                    //saveFileDialog.Title = "Guardar Bitácora en JSON";
+                    if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        SerializarJSON(persona, saveFileDialog.FileName);
+                        MostrarArchivoSerializado(saveFileDialog.FileName);
+                        //MessageBox.Show("Bitácora serializada en formato JSON con éxito.");
+                        BLLBitacora bllbita = new BLLBitacora();
+                        string operacion = "Serializado";
+                        int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+                        DateTime fecha1 = DateTime.Now;
+                        int criticidad = 19;
+
+                        string actor;
+                        if (id_usuario1 == 3)
+                            actor = "ADMIN";
+                        else if (id_usuario1 == 2)
+                            actor = "EMPLEADO";
+                        else
+                            actor = "USUARIO";
+
+                        BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+                        bllbita.crearEntidad(bitacorita);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al serializar: " + ex.Message);
+            }
+        }
+        private void SerializarJSON(BEBitacora persona, string path)
+        {
+            string jsonString = JsonConvert.SerializeObject(persona, Newtonsoft.Json.Formatting.Indented);
+            File.WriteAllText(path, jsonString);
+        }
+        private void MostrarArchivoSerializado(string path)
+        {
+            listBox1.Items.Clear();
+
+            string[] lineas = File.ReadAllLines(path);
+
+            foreach (string linea in lineas)
+            {
+                listBox1.Items.Add(linea);
+            }
+        }
+
+        private BEBitacora DeserializarJSON(string path)
+        {
+            string jsonString = File.ReadAllText(path);
+            return JsonConvert.DeserializeObject<BEBitacora>(jsonString);
+        }
+        private void MostrarDatosDeserializados(BEBitacora persona)
+        {
+            listBox2.Items.Clear();
+
+            listBox2.Items.Add($"ID USUARIO: {persona.id_usuario}");
+            listBox2.Items.Add($"EVENTO: {persona.operacion}");
+            listBox2.Items.Add($"ACTOR: {persona.actor}");
+            listBox2.Items.Add($"FECHA: {persona.fecha}");
+            listBox2.Items.Add($"CRITICIDAD: {persona.criticidad}");
+        }
+
+        private void button5_Click_1(object sender, EventArgs e)
+        {
+            try
+            {
+                using (OpenFileDialog openFileDialog = new OpenFileDialog())
+                {
+                    openFileDialog.Filter = "JSON Files|*.json";
+                    //openFileDialog.Title = "Abrir archivo JSON de Bitácora";
+                    if (openFileDialog.ShowDialog() == DialogResult.OK)
+                    {
+                        listBox2.Items.Clear();
+                        BEBitacora persona = DeserializarJSON(openFileDialog.FileName);
+                        MostrarDatosDeserializados(persona);
+                        BLLBitacora bllbita = new BLLBitacora();
+                        string operacion = "Deserializado";
+                        int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+                        DateTime fecha1 = DateTime.Now;
+                        int criticidad = 20;
+
+                        string actor;
+                        if (id_usuario1 == 3)
+                            actor = "ADMIN";
+                        else if (id_usuario1 == 2)
+                            actor = "EMPLEADO";
+                        else
+                            actor = "USUARIO";
+
+                        BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+                        bllbita.crearEntidad(bitacorita);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al deserializar: " + ex.Message);
+            }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }

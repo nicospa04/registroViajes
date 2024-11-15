@@ -22,7 +22,7 @@ namespace RegistroViajes
         {
             InitializeComponent();
             BaseDeDatos bd = new BaseDeDatos();
-            //bd.scriptInicio();
+            bd.scriptInicio();
             Lenguaje.ObtenerInstancia().Agregar(this);
             Lenguaje.ObtenerInstancia().IdiomaActual = "Español";
             modifmenu();
@@ -187,7 +187,8 @@ namespace RegistroViajes
         }
         private void bitacoraToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AbrirForm(new FRMBitacora());
+            FRMBitacora frm = new FRMBitacora();
+            frm.ShowDialog();
         }
 
         private void crearFechaToolStripMenuItem_Click(object sender, EventArgs e)
@@ -212,7 +213,25 @@ namespace RegistroViajes
 
         private void aToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            //VerPerfil formu = new VerPerfil();
+            //AbrirForm(formu);
+        }
+
+        private void perfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
             VerPerfil formu = new VerPerfil();
+            AbrirForm(formu);
+        }
+
+        private void backUpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            BackUp formu = new BackUp();
+            AbrirForm(formu);
+        }
+
+        private void crearPerfilesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            CPerfil formu = new CPerfil();
             AbrirForm(formu);
         }
     }

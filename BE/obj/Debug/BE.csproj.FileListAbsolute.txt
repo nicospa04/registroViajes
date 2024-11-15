@@ -198,3 +198,5 @@ C:\Users\nicol\Desktop\registroViajes\BE\obj\Debug\BE.csproj.CoreCompileInputs.c
 C:\Users\nicol\Desktop\registroViajes\BE\obj\Debug\BE.csproj.Up2Date
 C:\Users\nicol\Desktop\registroViajes\BE\obj\Debug\BE.dll
 C:\Users\nicol\Desktop\registroViajes\BE\obj\Debug\BE.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BE\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BE\bin\Debug\Newtonsoft.Json.xml

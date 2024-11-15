@@ -1,4 +1,6 @@
-﻿using Servicios;
+﻿using BE;
+using BLL;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -12,7 +14,7 @@ using System.Windows.Forms;
 
 namespace RegistroViajes
 {
-    public partial class VerPerfil : Form
+    public partial class VerPerfil : Form, IObserver
     {
         public VerPerfil()
         {
@@ -23,16 +25,18 @@ namespace RegistroViajes
             textBox1.Text = user.nombre;
 
             textBox2.Text = user.telefono;
-
-
+        }
+        public void ActualizarIdioma()
+        {
+            Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
         }
 
         private void VerPerfil_Load(object sender, EventArgs e)
         {
-
+            ActualizarIdioma();
         }
 
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)  // FALLA DESENCRIPTADO
         {
             PasswordHasher passwordHasher = new PasswordHasher();
 
@@ -43,6 +47,22 @@ namespace RegistroViajes
             if (checkBox1.Checked)
             {
                 textBox2.Text = tele;
+                BLLBitacora bllbita = new BLLBitacora();
+                string operacion = "Desencriptado";
+                int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+                DateTime fecha1 = DateTime.Now;
+                int criticidad = 15;
+
+                string actor;
+                if (id_usuario1 == 3)
+                    actor = "ADMIN";
+                else if (id_usuario1 == 2)
+                    actor = "EMPLEADO";
+                else
+                    actor = "USUARIO";
+
+                BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+                bllbita.crearEntidad(bitacorita);
             }
 
 

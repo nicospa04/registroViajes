@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 namespace BE
 {
+    [Serializable]
     public class BEBitacora
     {
         public int id_bitacora { get; set; }

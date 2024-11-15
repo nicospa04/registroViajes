@@ -380,3 +380,8 @@ C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Softwa
 C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMSeleccionAsientos.resources
 C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.HacerReservaConPaquete.resources
 C:\Users\nicol\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.VerPerfil.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.VerPerfil.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.BackUp.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.CPerfil.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\bin\Debug\Newtonsoft.Json.xml

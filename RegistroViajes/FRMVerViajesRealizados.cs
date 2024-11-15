@@ -31,7 +31,7 @@ namespace RegistroViajes
         {
             Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
         }
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)  //A ESTO LE FALTA EL SCRIPT DE LA BASE DE DATOS
         {
             int idUsuario;
             bool user = int.TryParse(txtDni.Text, out idUsuario);
@@ -45,10 +45,12 @@ namespace RegistroViajes
                     dataGridView1.DataSource = viajes.Select(v => new
                     {
                         v.id_viaje,
+                        v.id_usuario,
                         v.id_empresa,
                         v.id_fecha,
                         v.transporte,
-                        v.costo
+                        v.costo,
+                        v.num_asiento
                     }).ToList();
                     BLLBitacora bllbita = new BLLBitacora();
                     string operacion = "Ver Viajes";

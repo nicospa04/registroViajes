@@ -13,7 +13,7 @@ using System.Windows.Forms;
 
 namespace RegistroViajes
 {
-    public partial class HacerReservaConPaquete : Form
+    public partial class HacerReservaConPaquete : Form, IObserver
     {
         int id_paquete;
         private List<BE.Asiento> asientosSeleccionados = new List<BE.Asiento>(); // Lista temporal de asientos seleccionados
@@ -23,7 +23,10 @@ namespace RegistroViajes
             InitializeComponent();
             this.id_paquete = id_paquete;
         }
-
+        public void ActualizarIdioma()
+        {
+            Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
+        }
         void cargarPaquete()
         {
             var paquete = new BLLPaquete().leerEntidades().FirstOrDefault(p => p.id_paquete == id_paquete);
@@ -132,7 +135,7 @@ namespace RegistroViajes
 
         private void HacerReservaConPaquete_Load(object sender, EventArgs e)
         {
-
+            ActualizarIdioma();
         }
 
         private void button1_Click(object sender, EventArgs e)

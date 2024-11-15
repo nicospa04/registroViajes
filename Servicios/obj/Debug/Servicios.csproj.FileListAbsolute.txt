@@ -231,3 +231,5 @@ C:\Users\nicol\Desktop\registroViajes\Servicios\obj\Debug\Servicios.csproj.CoreC
 C:\Users\nicol\Desktop\registroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
 C:\Users\nicol\Desktop\registroViajes\Servicios\obj\Debug\Servicios.dll
 C:\Users\nicol\Desktop\registroViajes\Servicios\obj\Debug\Servicios.pdb
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\Newtonsoft.Json.xml

@@ -281,3 +281,5 @@ C:\Users\nicol\Desktop\registroViajes\BLL\bin\Debug\System.Text.Json.xml
 C:\Users\nicol\Desktop\registroViajes\BLL\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\nicol\Desktop\registroViajes\BLL\bin\Debug\System.ValueTuple.xml
 C:\Users\nicol\Desktop\registroViajes\BLL\obj\Debug\BLL.csproj.Up2Date
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\BLL\bin\Debug\Newtonsoft.Json.xml
