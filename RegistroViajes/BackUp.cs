@@ -144,12 +144,15 @@ namespace RegistroViajes
                     using (SqlCommand cmd = new SqlCommand(query, conn))
                     {
                         cmd.ExecuteNonQuery();
+                        MessageBox.Show("Se restauró");
                     }
 
                     using (SqlCommand setMultiUser = new SqlCommand("ALTER DATABASE SistemaViajes SET MULTI_USER;", conn))
                     {
                         setMultiUser.ExecuteNonQuery();
                     }
+
+               
                 }
             }
             catch (Exception ex)
