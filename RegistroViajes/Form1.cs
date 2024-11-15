@@ -204,5 +204,16 @@ namespace RegistroViajes
         {
             //AbrirForm(new HacerReservaConPaquete());
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void aToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            VerPerfil formu = new VerPerfil();
+            AbrirForm(formu);
+        }
     }
 }

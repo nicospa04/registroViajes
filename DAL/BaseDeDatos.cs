@@ -62,9 +62,9 @@ namespace DAL
                         "id_usuario INT PRIMARY KEY IDENTITY(1,1)," +
                         "dni VARCHAR(20) NOT NULL," +
                         "nombre VARCHAR(50) NOT NULL," +
-                        "contraseña VARCHAR(50) NOT NULL," +
+                        "contraseña VARCHAR(100) NOT NULL," +
                         "apellido VARCHAR(50) NOT NULL," +
-                        "telefono VARCHAR(20)," +
+                        "telefono VARCHAR(100)," +
                         "email VARCHAR(100) NOT NULL," +
                         "fecha_nacimiento DATE," +
                         "id_familia INT," +
@@ -193,13 +193,13 @@ namespace DAL
         {
             PasswordHasher hasher = new PasswordHasher();
             // Generar salt y hash para el usuario Juan
-            string saltJuan = new Random().NextDouble().ToString();
+            string saltJuan = new Random().Next(1000).ToString();
             string hashJuan = hasher.HashPassword("abc1", saltJuan);
             // Generar salt y hash para el usuario María
-            string saltMaria = new Random().NextDouble().ToString();
+            string saltMaria = new Random().Next(1000).ToString();
             string hashMaria = hasher.HashPassword("abc2", saltMaria);
             // Generar salt y hash para el usuario Carlos
-            string saltCarlos = new Random().NextDouble().ToString();
+            string saltCarlos = new Random().Next(1000).ToString();
             string hashCarlos = hasher.HashPassword("abc3", saltCarlos);
             // Insertar datos en la tabla Usuario con salt y contraseña hasheada
             ejecutarQuery($"USE SistemaViajes; INSERT INTO Usuario (dni, nombre, apellido, contraseña, telefono, email, fecha_nacimiento, id_familia, salt, idioma) " +

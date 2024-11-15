@@ -288,13 +288,13 @@ namespace DAL
 
             Servicios.Resultado<BE.Usuario> resultado = new Servicios.Resultado<BE.Usuario>();
 
-            string salt = new Random().NextDouble().ToString();
+            string salt = new Random().Next(1000).ToString();
             string hashedPassword = hasher.HashPassword(obj.contraseña, salt);
             string hashedPhoneNumber = hasher.HashPassword(obj.telefono, salt);
             string queryToCreateUser = "USE SistemaViajes;" +
                 "INSERT INTO Usuario (dni, nombre, contraseña, apellido, telefono, email, fecha_nacimiento, id_familia, salt, idioma)" +
                 "VALUES" +
-                $"('{obj.dni}','{obj.nombre}', '{hashedPassword}', '{obj.apellido}', '{hashedPhoneNumber}', '{obj.mail}', '{obj.fechaNacimiento.ToString("yyyy-MM-dd")}', '{obj.id_familia}', '{salt}', '{obj.idioma}');";
+                $"('{obj.dni}','{obj.nombre}', '{hashedPassword}', '{obj.apellido}', '{hashedPhoneNumber}', '{obj.mail}', '{obj.fechaNacimiento.ToString("yyyy-MM-dd")}', {obj.id_familia}, '{salt}', '{obj.idioma}');";
 
             string queryToSearchUser = $"USE SistemaViajes; SELECT * FROM Usuario WHERE email = '{obj.mail}'";
 
@@ -539,7 +539,6 @@ namespace DAL
                             // Recuperar el hash y el salt almacenados
                             string saltAlmacenado = !lector.IsDBNull(9) ? lector.GetString(9) : "";
                             // Verificar la contraseña ingresada
-                                
                             string contraseñaDesencriptada = hasher.Decrypt(hashAlmacenado, saltAlmacenado);
 
                             bool esContraseñaValida = contraseñaDesencriptada == contraseña;

@@ -38,17 +38,14 @@ namespace RegistroViajes
 
             var user = SessionManager.Obtenerdatosuser();
 
-            string saltedPhoneNumber = user.salt + user.telefono;
+            string tele = new PasswordHasher().Decrypt(user.telefono, user.salt);
 
-
-            using (SHA256 sha256 = SHA256.Create())
+            if (checkBox1.Checked)
             {
-                byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(saltedPhoneNumber));
-                 
-
-                // Comparar el hash generado con el hash almacenado
-                textBox2.Text = Convert.ToBase64String(hashedBytes);
+                textBox2.Text = tele;
             }
+
+
         }
     }
 }
