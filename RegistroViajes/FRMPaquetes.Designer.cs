@@ -63,6 +63,7 @@ namespace RegistroViajes
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(970, 212);
             this.dataGridView1.TabIndex = 5;
+            this.dataGridView1.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentDoubleClick);
             // 
             // FRMPaquetes
             // 

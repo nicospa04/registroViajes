@@ -135,11 +135,14 @@ namespace RegistroViajes
 
         private void HacerReservaConPaquete_Load(object sender, EventArgs e)
         {
-            ActualizarIdioma();
+            //ActualizarIdioma();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
+
+
+
             if(asientosSeleccionados.Count == 0)
             {
                 MessageBox.Show("Debe seleccionar al menos un asiento.");
@@ -148,6 +151,13 @@ namespace RegistroViajes
 
             var paquete = new BLLPaquete().leerEntidades().FirstOrDefault(p => p.id_paquete == id_paquete);
             
+            if(asientosSeleccionados.Count > paquete.cant_max_personas)
+            {
+                MessageBox.Show("No puede seleccionar mas cantidad de asientos de las que ofrece el paquete");
+                return;
+            }
+
+
             foreach(var a in asientosSeleccionados)
             {
                 BLLAsiento bllAsiento = new BLLAsiento();
@@ -168,21 +178,23 @@ namespace RegistroViajes
 
                 BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
                 bllbita.crearEntidad(bitacorita);
+
+                BLL.BLLViaje bllViaje = new BLL.BLLViaje();
+
+                var user = Servicios.SessionManager.Obtenerdatosuser();
+
+                var fecha = new BLLFecha().leerEntidades().FirstOrDefault(f => f.id_fecha == paquete.id_fecha);
+                var empresa = new BLL.BLLEmpresa().leerEntidades().FirstOrDefault(emp => emp.id_empresa == fecha.id_empresa);
+
+
+                decimal costo = paquete.precio_base;
+
+                var transporte = new BLLTransporte().leerEntidades().FirstOrDefault(t => t.id_transporte == fecha.id_transporte);
+
+                 BE.Viaje viaje = new BE.Viaje(0,user.id_usuario, empresa.id_empresa, paquete.id_fecha, transporte.modelo, costo, a.num_asiento);
+                   bllViaje.crearEntidad(viaje);
             }
 
-            BLL.BLLViaje bllViaje = new BLL.BLLViaje();
-
-            var user = Servicios.SessionManager.Obtenerdatosuser();
-
-            var fecha = new BLLFecha().leerEntidades().FirstOrDefault(f => f.id_fecha == paquete.id_fecha);
-            var empresa = new BLL.BLLEmpresa().leerEntidades().FirstOrDefault(emp => emp.id_empresa == fecha.id_empresa);
-
-
-            decimal costo = paquete.precio_base;
-
-            var transporte = new BLLTransporte().leerEntidades().FirstOrDefault(t => t.id_transporte == fecha.id_transporte);
-
-          //  BE.Viaje viaje = new BE.Viaje(user.id_usuario, empresa.id_empresa, paquete.id_fecha, transporte.modelo, costo);
         }
     }
 }

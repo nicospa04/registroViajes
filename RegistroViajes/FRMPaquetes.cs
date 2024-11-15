@@ -101,5 +101,22 @@ namespace RegistroViajes
         {
 
         }
+
+        private void dataGridView1_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar que el índice de la fila es válido (evitar errores si se hace clic en una celda fuera de la tabla)
+            if (e.RowIndex >= 0)
+            {
+                // Acceder a la fila seleccionada
+                DataGridViewRow filaSeleccionada = dataGridView1.Rows[e.RowIndex];
+
+                // Obtener el valor de una celda en la fila seleccionada, por ejemplo, la celda en la primera columna
+                int id_paquete = Convert.ToInt32(filaSeleccionada.Cells["id_paquete"].Value);
+
+                HacerReservaConPaquete a = new HacerReservaConPaquete(id_paquete);
+                a.Show();
+
+            }
+        }
     }
 }
