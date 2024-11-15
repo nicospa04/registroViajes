@@ -233,3 +233,9 @@ C:\Users\nicol\Desktop\registroViajes\Servicios\obj\Debug\Servicios.dll
 C:\Users\nicol\Desktop\registroViajes\Servicios\obj\Debug\Servicios.pdb
 C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\Servicios\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\itextsharp.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\itextsharp.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\Servicios\bin\Debug\Newtonsoft.Json.xml

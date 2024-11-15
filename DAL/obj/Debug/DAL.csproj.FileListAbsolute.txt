@@ -258,3 +258,9 @@ C:\Users\nicol\Desktop\registroViajes\DAL\bin\Debug\System.ValueTuple.xml
 C:\Users\nicol\Desktop\registroViajes\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\DAL\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\DAL\bin\Debug\itextsharp.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Navegador\Desktop\vvg\registroViajes\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\DAL\bin\Debug\itextsharp.xml
+C:\Users\Navegador\Desktop\vvg\registroViajes\DAL\bin\Debug\Newtonsoft.Json.xml

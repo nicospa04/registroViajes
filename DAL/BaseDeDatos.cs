@@ -10,7 +10,7 @@ namespace DAL
     {
         public class BaseDeDatos
         {
-            public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
+            public static string dataSource = "090L3PC17-79134";
             public static string dbName = "SistemaViajes";
             public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
             public SqlConnection Connection = new SqlConnection(conexionMaster);
@@ -296,11 +296,11 @@ namespace DAL
                 "(2, 16)," +
                 "(2, 18)," +
                 "(3, 21)," +
-                "(2, 21)," +
-                "(1, 21)," +
+                "(2, 26)," +
                 "(3, 22)," +
                 "(2, 22)," +
                 "(1, 22)," +
+                "(1, 20)," +
                 "(3, 23)," +
                 "(2, 23)," +
                 "(1, 23)," +
@@ -309,6 +309,7 @@ namespace DAL
                 "(2, 24)," +
                 "(2, 19)," +
                 "(3, 26)," +
+                "(2, 26)," +
                 "(2, 17);");
 
             // Insertar datos en la tabla UsuarioPermiso
