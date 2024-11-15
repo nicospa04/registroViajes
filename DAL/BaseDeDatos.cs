@@ -193,14 +193,14 @@ namespace DAL
         {
             PasswordHasher hasher = new PasswordHasher();
             // Generar salt y hash para el usuario Juan
-            string saltJuan;
-            string hashJuan = hasher.HashPassword("abc1", out saltJuan);
+            string saltJuan = new Random().NextDouble().ToString();
+            string hashJuan = hasher.HashPassword("abc1", saltJuan);
             // Generar salt y hash para el usuario María
-            string saltMaria;
-            string hashMaria = hasher.HashPassword("abc2", out saltMaria);
+            string saltMaria = new Random().NextDouble().ToString();
+            string hashMaria = hasher.HashPassword("abc2", saltMaria);
             // Generar salt y hash para el usuario Carlos
-            string saltCarlos;
-            string hashCarlos = hasher.HashPassword("abc3", out saltCarlos);
+            string saltCarlos = new Random().NextDouble().ToString();
+            string hashCarlos = hasher.HashPassword("abc3", saltCarlos);
             // Insertar datos en la tabla Usuario con salt y contraseña hasheada
             ejecutarQuery($"USE SistemaViajes; INSERT INTO Usuario (dni, nombre, apellido, contraseña, telefono, email, fecha_nacimiento, id_familia, salt, idioma) " +
                 "VALUES " +

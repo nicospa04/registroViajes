@@ -539,7 +539,11 @@ namespace DAL
                             // Recuperar el hash y el salt almacenados
                             string saltAlmacenado = !lector.IsDBNull(9) ? lector.GetString(9) : "";
                             // Verificar la contraseña ingresada
-                            bool esContraseñaValida = hasher.VerifyPassword(contraseña, saltAlmacenado, hashAlmacenado);
+                                
+                            string contraseñaDesencriptada = hasher.Decrypt(hashAlmacenado, saltAlmacenado);
+
+                            bool esContraseñaValida = contraseñaDesencriptada == contraseña;
+
                             if (!esContraseñaValida)
                             {
                                 throw new Exception("Contraseña incorrecta");
