@@ -247,7 +247,6 @@ C:\Users\nicol\OneDrive\Escritorio\registroViajes\RegistroViajes\bin\Debug\Syste
 C:\Users\nicol\OneDrive\Escritorio\registroViajes\RegistroViajes\bin\Debug\System.ValueTuple.xml
 C:\Users\nicol\OneDrive\Escritorio\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCancelarViajeCliente.resources
 C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMBitacora.resources
-C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMCancelarViajeCliente.resources
 C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMVerViajesRealizados.resources
 C:\Users\Navegador\Desktop\vvg\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMBitacora.resources
 C:\Users\Navegador\Desktop\vvg\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMVerViajesRealizados.resources
@@ -461,3 +460,16 @@ C:\Users\Navegador\Desktop\ultimo\registroViajes\RegistroViajes\obj\Debug\GUI.cs
 C:\Users\Navegador\Desktop\ultimo\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.Up2Date
 C:\Users\Navegador\Desktop\ultimo\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.exe
 C:\Users\Navegador\Desktop\ultimo\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.pdb
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\bin\Debug\itextsharp.dll
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\bin\Debug\itextsharp.xml
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.BackUp.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.ControlUsuario.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.CPerfil.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.CrearFecha.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMSeleccionAsientos.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.HacerReservaConPaquete.resources
+C:\Users\Navegador\Desktop\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.VerPerfil.resources

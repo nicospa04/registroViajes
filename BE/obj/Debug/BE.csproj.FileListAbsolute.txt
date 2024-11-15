@@ -238,3 +238,9 @@ C:\Users\Navegador\Desktop\ultimo\registroViajes\BE\obj\Debug\BE.csproj.CoreComp
 C:\Users\Navegador\Desktop\ultimo\registroViajes\BE\obj\Debug\BE.csproj.Up2Date
 C:\Users\Navegador\Desktop\ultimo\registroViajes\BE\obj\Debug\BE.dll
 C:\Users\Navegador\Desktop\ultimo\registroViajes\BE\obj\Debug\BE.pdb
+C:\Users\Navegador\Desktop\registroViajes\BE\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Navegador\Desktop\registroViajes\BE\bin\Debug\itextsharp.dll
+C:\Users\Navegador\Desktop\registroViajes\BE\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Navegador\Desktop\registroViajes\BE\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Navegador\Desktop\registroViajes\BE\bin\Debug\itextsharp.xml
+C:\Users\Navegador\Desktop\registroViajes\BE\bin\Debug\Newtonsoft.Json.xml

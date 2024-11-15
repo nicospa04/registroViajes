@@ -330,3 +330,9 @@ C:\Users\Navegador\Desktop\ultimo\registroViajes\BLL\obj\Debug\BLL.csproj.CoreCo
 C:\Users\Navegador\Desktop\ultimo\registroViajes\BLL\obj\Debug\BLL.csproj.Up2Date
 C:\Users\Navegador\Desktop\ultimo\registroViajes\BLL\obj\Debug\BLL.dll
 C:\Users\Navegador\Desktop\ultimo\registroViajes\BLL\obj\Debug\BLL.pdb
+C:\Users\Navegador\Desktop\registroViajes\BLL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Navegador\Desktop\registroViajes\BLL\bin\Debug\itextsharp.dll
+C:\Users\Navegador\Desktop\registroViajes\BLL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Navegador\Desktop\registroViajes\BLL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Navegador\Desktop\registroViajes\BLL\bin\Debug\itextsharp.xml
+C:\Users\Navegador\Desktop\registroViajes\BLL\bin\Debug\Newtonsoft.Json.xml

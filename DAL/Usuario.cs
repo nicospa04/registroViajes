@@ -283,10 +283,10 @@ namespace DAL
 
         public Servicios.Resultado<BE.Usuario> crearEntidad(BE.Usuario obj)
         {
-            bool resulta = db.Conectar();
-            if (!resulta) throw new Exception("Error al conectarse a la base de datos");
+            db.Connection.Open();
 
             Servicios.Resultado<BE.Usuario> resultado = new Servicios.Resultado<BE.Usuario>();
+            var trans = db.Connection.BeginTransaction();
 
             string salt = new Random().Next(1000).ToString();
             string hashedPassword = hasher.HashPassword(obj.contraseña, salt);
@@ -300,7 +300,9 @@ namespace DAL
 
             try
             {
+
                 SqlCommand cmd = new SqlCommand(queryToSearchUser, db.Connection);
+                cmd.Transaction = trans;
                 SqlDataReader reader = cmd.ExecuteReader();
                 if (reader.HasRows)
                 {
@@ -309,49 +311,45 @@ namespace DAL
                 }
                 reader.Close();
 
+
+                SqlCommand cmd2 = new SqlCommand(queryToCreateUser, db.Connection);
+                cmd2.Transaction = trans;
+                SqlDataReader reader2 = cmd2.ExecuteReader();
+                reader2.Close();
+
+                trans.Commit();
+
+
+                string findUser = $"USE SistemaViajes; SELECT * FROM Usuario WHERE contraseña = '{hashedPassword}';";
+
+                SqlCommand cmd3 = new SqlCommand(findUser, db.Connection);
+                cmd3.Transaction = trans;
+                using (SqlDataReader reader3 = cmd3.ExecuteReader())
+                {
+                    while (reader3.Read())
+                    {
+                        int id_usaurio = reader3.GetInt32(0);
+                        resultado.mensaje = id_usaurio.ToString();
+                        resultado.entidad = null;
+                        resultado.resultado = true;
+                        return resultado;
+                    }
+                }
+
+
             }
             catch (Exception ex)
             {
                 resultado.resultado = false;
                 resultado.mensaje = ex.Message;
                 resultado.entidad = null;
-                return resultado;
-            }
 
-            try
-            {
-                bool result = db.ejecutarQuery(queryToCreateUser);
-                if (!result) throw new Exception("Error al registrar usuario");
-
-                resultado.resultado = true;
-                resultado.mensaje = "Usuario creado exitosamente";
-
-                var usuarios = leerEntidades();
-
-                resultado.entidad = usuarios.Last();
-            }
-            catch (Exception ex)
-            {
-                resultado.resultado = false;
-                resultado.mensaje = ex.Message;
-                resultado.entidad = null;
+                trans.Rollback();
             }
             finally
             {
                 // Asegúrate de cerrar la conexión de forma segura
-                try
-                {
-                    if (db.Connection != null && db.Connection.State == ConnectionState.Open)
-                    {
-                        bool resulta2 = db.Desconectar();
-                        if (!resulta2) throw new Exception("Error al desconectarse de la base de datos");
-                    }
-                }
-                catch (Exception ex)
-                {
-                    resultado.resultado = false;
-                    resultado.mensaje = "Error al desconectar la base de datos: " + ex.Message;
-                }
+                db.Connection.Close();
             }
 
             return resultado;

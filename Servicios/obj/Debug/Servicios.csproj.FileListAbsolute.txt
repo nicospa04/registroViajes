@@ -274,3 +274,9 @@ C:\Users\Navegador\Desktop\ultimo\registroViajes\Servicios\obj\Debug\Servicios.c
 C:\Users\Navegador\Desktop\ultimo\registroViajes\Servicios\obj\Debug\Servicios.csproj.Up2Date
 C:\Users\Navegador\Desktop\ultimo\registroViajes\Servicios\obj\Debug\Servicios.dll
 C:\Users\Navegador\Desktop\ultimo\registroViajes\Servicios\obj\Debug\Servicios.pdb
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\itextsharp.dll
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\itextsharp.xml
+C:\Users\Navegador\Desktop\registroViajes\Servicios\bin\Debug\Newtonsoft.Json.xml

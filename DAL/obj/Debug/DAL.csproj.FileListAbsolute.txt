@@ -302,3 +302,9 @@ C:\Users\Navegador\Desktop\ultimo\registroViajes\DAL\obj\Debug\DAL.csproj.CoreCo
 C:\Users\Navegador\Desktop\ultimo\registroViajes\DAL\obj\Debug\DAL.csproj.Up2Date
 C:\Users\Navegador\Desktop\ultimo\registroViajes\DAL\obj\Debug\DAL.dll
 C:\Users\Navegador\Desktop\ultimo\registroViajes\DAL\obj\Debug\DAL.pdb
+C:\Users\Navegador\Desktop\registroViajes\DAL\bin\Debug\BouncyCastle.Cryptography.dll
+C:\Users\Navegador\Desktop\registroViajes\DAL\bin\Debug\itextsharp.dll
+C:\Users\Navegador\Desktop\registroViajes\DAL\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Navegador\Desktop\registroViajes\DAL\bin\Debug\BouncyCastle.Cryptography.xml
+C:\Users\Navegador\Desktop\registroViajes\DAL\bin\Debug\itextsharp.xml
+C:\Users\Navegador\Desktop\registroViajes\DAL\bin\Debug\Newtonsoft.Json.xml

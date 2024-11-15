@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
@@ -36,6 +37,25 @@ namespace RegistroViajes
         }
         private void btnIniciar_Click(object sender, EventArgs e)
         {
+            string emailPattern = @"^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$";
+            string dniPattern = @"^\d{2}\.\d{3}\.\d{3}$";
+
+
+            bool isValid = Regex.IsMatch(gmail.Text, emailPattern);
+            bool isValid2 = Regex.IsMatch(this.dni.Text, dniPattern);
+
+            if (!isValid)
+            {
+                MessageBox.Show("Debe ingresar un mail válido");
+                return;
+            }
+
+            if (!isValid2)
+            {
+                MessageBox.Show("Debe ingresar un dni válido");
+                return;
+            }
+
             if (!checkBox1.Checked && !checkBox2.Checked && !checkBox3.Checked)
             {
                 MessageBox.Show("Debe marcar una opcion");
@@ -81,7 +101,7 @@ namespace RegistroViajes
             BLLUsuario bllUser = new BLLUsuario();
             Servicios.Resultado<BE.Usuario> resultado = bllUser.crearEntidad(user);
 
-            string dataSource = "COMPURELOCA";
+            string dataSource = "090L3PC16-80598";
             string dbName = "SistemaViajes";
             string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
             SqlConnection Connection = new SqlConnection(conexionMaster);
@@ -101,11 +121,11 @@ namespace RegistroViajes
 
             try
             {
-                string query = $"USE SistemaViajes; INSERT INTO UsuarioPermiso (id_usuario, id_permiso) VALUES ({resultado.entidad.id_usuario}, {id_permiso})";
+                string query = $"USE SistemaViajes; INSERT INTO UsuarioPermiso (id_usuario, id_permiso) VALUES ({resultado.mensaje}, {id_permiso})";
 
                 Connection.Open();
-                
-                using(SqlCommand cmd = new SqlCommand(query, Connection))
+
+                using (SqlCommand cmd = new SqlCommand(query, Connection))
                 {
                     cmd.ExecuteNonQuery();
                 }
@@ -119,7 +139,7 @@ namespace RegistroViajes
             finally
             {
                 Connection.Close();
-            }   
+            }
 
 
 
@@ -128,7 +148,7 @@ namespace RegistroViajes
                 MessageBox.Show(resultado.mensaje);
                 return;
             }
-            MessageBox.Show(resultado.mensaje);
+            MessageBox.Show("Usuario creado con exito");
             BLLBitacora bllbita = new BLLBitacora();
             string operacion = "Registro de Usuario";
             int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
