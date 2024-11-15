@@ -80,6 +80,14 @@ namespace RegistroViajes
         private void FRMIniciarSesion_Load(object sender, EventArgs e)
         {
             ActualizarIdioma();
+
+            controlUsuario1.txt1 = txtusuario;
+            controlUsuario1.txt2 = txtcontraseña;
+        }
+
+        private void controlUsuario1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

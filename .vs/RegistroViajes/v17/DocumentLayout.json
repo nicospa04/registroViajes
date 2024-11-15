@@ -1,22 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\",
+  "WorkspaceRootPath": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\navegador\\desktop\\ultimo\\registroviajes\\registroviajes\\frminiciarsesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\frminiciarsesion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\navegador\\desktop\\vvg\\registroviajes\\registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\form1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\RegistroViajes\\bin\\Debug\\Espa\u00F1ol.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RegistroViajes\\bin\\Debug\\Espa\u00F1ol.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\RegistroViajes\\bin\\Debug\\Ingl\u00E9s.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\RegistroViajes\\bin\\Debug\\Ingl\u00E9s.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
       "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RegistroViajes\\bin\\Debug\\Ingl\u00E9s.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\RegistroViajes\\bin\\Debug\\Espa\u00F1ol.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:RegistroViajes\\bin\\Debug\\Espa\u00F1ol.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\navegador\\desktop\\ultimo\\registroviajes\\dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,17 +26,17 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "BaseDeDatos.cs",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\DAL\\BaseDeDatos.cs",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\DAL\\BaseDeDatos.cs",
               "RelativeDocumentMoniker": "DAL\\BaseDeDatos.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\DAL\\BaseDeDatos.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\DAL\\BaseDeDatos.cs",
               "RelativeToolTip": "DAL\\BaseDeDatos.cs",
-              "ViewState": "AgIAACABAAAAAAAAAAAAACUBAAAcAAAAAAAAAA==",
+              "ViewState": "AgIAAMUAAAAAAAAAAAAAANAAAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-15T05:11:36.216Z",
               "IsPinned": true,
@@ -44,26 +44,27 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 1,
               "Title": "Espa\u00F1ol.json",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\RegistroViajes\\bin\\Debug\\Espa\u00F1ol.json",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\RegistroViajes\\bin\\Debug\\Espa\u00F1ol.json",
               "RelativeDocumentMoniker": "RegistroViajes\\bin\\Debug\\Espa\u00F1ol.json",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\RegistroViajes\\bin\\Debug\\Espa\u00F1ol.json",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\RegistroViajes\\bin\\Debug\\Espa\u00F1ol.json",
               "RelativeToolTip": "RegistroViajes\\bin\\Debug\\Espa\u00F1ol.json",
-              "ViewState": "AQIAAD8AAAAAAAAAAAAAAFcAAAABAAAA",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAqwFoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-11-15T04:55:34.702Z",
-              "IsPinned": true
+              "IsPinned": true,
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
               "Title": "Ingl\u00E9s.json",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\RegistroViajes\\bin\\Debug\\Ingl\u00E9s.json",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\RegistroViajes\\bin\\Debug\\Ingl\u00E9s.json",
               "RelativeDocumentMoniker": "RegistroViajes\\bin\\Debug\\Ingl\u00E9s.json",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\RegistroViajes\\bin\\Debug\\Ingl\u00E9s.json",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\RegistroViajes\\bin\\Debug\\Ingl\u00E9s.json",
               "RelativeToolTip": "RegistroViajes\\bin\\Debug\\Ingl\u00E9s.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAIQAAAAnAAAAAAAAAA==",
+              "ViewState": "AgIAACMAAAAAAAAAAAAYwDoAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
               "WhenOpened": "2024-11-15T05:00:09.451Z",
               "IsPinned": true,
@@ -71,14 +72,14 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form1.cs [Dise\u00F1o]",
-              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\RegistroViajes\\Form1.cs",
-              "RelativeDocumentMoniker": "RegistroViajes\\Form1.cs",
-              "ToolTip": "C:\\Users\\Navegador\\Desktop\\vvg\\registroViajes\\RegistroViajes\\Form1.cs [Dise\u00F1o]",
-              "RelativeToolTip": "RegistroViajes\\Form1.cs [Dise\u00F1o]",
+              "DocumentIndex": 0,
+              "Title": "FRMIniciarSesion.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\RegistroViajes\\FRMIniciarSesion.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\FRMIniciarSesion.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\RegistroViajes\\FRMIniciarSesion.cs [Dise\u00F1o]",
+              "RelativeToolTip": "RegistroViajes\\FRMIniciarSesion.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-11-15T12:23:34.011Z",
+              "WhenOpened": "2024-11-15T13:07:50.267Z",
               "EditorCaption": " [Dise\u00F1o]"
             }
           ]

@@ -52,8 +52,11 @@
   "FRMIniciarSesion.label2": "Gmail",
   "FRMIniciarSesion.label3": "Password",
   "FRMIniciarSesion.btniniciar": "Log In",
+  "FRMIniciarSesion.controlUsuario1": "Clear Fields",
   "FRMIniciarSesion.btncancelar": "Exit",
   "FRMIniciarSesion.btnRegistrar": "Sign In",
+
+  "controlUsuario1.button1": "Clear Fields",
 
   "FRMSeleccionarAsientos.Text": "Select Travel Seats",
   "FRMSeleccionarAsientos.button1": "Make Reservation",

@@ -102,6 +102,12 @@
     <Compile Include="Bitácora.Designer.cs">
       <DependentUpon>Bitácora.cs</DependentUpon>
     </Compile>
+    <Compile Include="ControlUsuario.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ControlUsuario.Designer.cs">
+      <DependentUpon>ControlUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="CPerfil.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -199,6 +205,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Bitácora.resx">
       <DependentUpon>Bitácora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ControlUsuario.resx">
+      <DependentUpon>ControlUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="CPerfil.resx">
       <DependentUpon>CPerfil.cs</DependentUpon>

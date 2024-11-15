@@ -39,6 +39,7 @@
   "FRMIniciarSesion.label3": "Contrasena",
   "FRMIniciarSesion.btniniciar": "Iniciar Sesion",
   "FRMIniciarSesion.btncancelar": "Volver",
+  "FRMIniciarSesion.controlUsuario1": "Limpiar Campos",
   "FRMIniciarSesion.btnRegistrar": "Registrarse",
 
   "FRMCerrarSesión.Text": "Cerrar Sesión",
@@ -87,6 +88,8 @@
   "FRMBitacora.button5": "Deserializar",
   "FRMBitacora.button6": "Volver",
   "FRMBitacora.label8": "Seleccione idioma para Imprimir:",
+
+  "controlUsuario1.button1": "Limpiar Campos",
 
   "BackUp.Text": "Respaldo y Restaurar",
   "BackUp.label1": "Respaldo:",

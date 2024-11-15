@@ -37,6 +37,7 @@ namespace RegistroViajes
             this.label2 = new System.Windows.Forms.Label();
             this.iconPictureBox1 = new FontAwesome.Sharp.IconPictureBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.controlUsuario1 = new RegistroViajes.ControlUsuario();
             ((System.ComponentModel.ISupportInitialize)(this.iconPictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -118,11 +119,22 @@ namespace RegistroViajes
             this.label1.TabIndex = 16;
             this.label1.Text = "label1";
             // 
+            // controlUsuario1
+            // 
+            this.controlUsuario1.Location = new System.Drawing.Point(686, 398);
+            this.controlUsuario1.Name = "controlUsuario1";
+            this.controlUsuario1.Size = new System.Drawing.Size(77, 48);
+            this.controlUsuario1.TabIndex = 20;
+            this.controlUsuario1.txt1 = null;
+            this.controlUsuario1.txt2 = null;
+            this.controlUsuario1.Load += new System.EventHandler(this.controlUsuario1_Load);
+            // 
             // FRMIniciarSesion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(953, 528);
+            this.Controls.Add(this.controlUsuario1);
             this.Controls.Add(this.btncancelar);
             this.Controls.Add(this.btniniciar);
             this.Controls.Add(this.txtcontraseña);
@@ -151,5 +163,6 @@ namespace RegistroViajes
         private System.Windows.Forms.Label label2;
         private FontAwesome.Sharp.IconPictureBox iconPictureBox1;
         private System.Windows.Forms.Label label1;
+        private ControlUsuario controlUsuario1;
     }
 }
