@@ -1,45 +1,64 @@
 ﻿using System;
+using System.IO;
+using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
 
 public class PasswordHasher
 {
-    // Método para generar el hash de una contraseña con un salt
-    public string HashPassword(string password, out string salt)
+    // Método para generar elHashPassword hash de una contraseña con un salt
+    
+    public   string HashPassword(string plainText, string key)
     {
-        // Generar un salt aleatorio
-        byte[] saltBytes = new byte[16];
-        using (var rng = new RNGCryptoServiceProvider())
-        {
-            rng.GetBytes(saltBytes);
-        }
-        salt = Convert.ToBase64String(saltBytes);
+        byte[] encrypted;
 
-        // Combinar el salt y la contraseña antes de hashear
-        string saltedPassword = salt + password;
-
-        // Crear el hash usando SHA-256
-        using (SHA256 sha256 = SHA256.Create())
+        // Crear una instancia de AES con la clave y un IV
+        using (Aes aes = Aes.Create())
         {
-            byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(saltedPassword));
-            return Convert.ToBase64String(hashedBytes);
+            aes.Key = Encoding.UTF8.GetBytes(key);
+            aes.IV = aes.Key.Take(16).ToArray(); // Usamos los primeros 16 bytes de la clave como IV (recomendable usar un IV diferente en producción)
+
+            ICryptoTransform encryptor = aes.CreateEncryptor(aes.Key, aes.IV);
+
+            using (MemoryStream ms = new MemoryStream())
+            {
+                using (CryptoStream cs = new CryptoStream(ms, encryptor, CryptoStreamMode.Write))
+                {
+                    using (StreamWriter sw = new StreamWriter(cs))
+                    {
+                        sw.Write(plainText);
+                    }
+                    encrypted = ms.ToArray();
+                }
+            }
         }
+        return Convert.ToBase64String(encrypted);
     }
 
     // Método para verificar la contraseña
-    public bool VerifyPassword(string password, string salt, string hashedPassword)
+    public   string Decrypt(string cipherText, string key)
     {
-        // Combinar el salt y la contraseña ingresada
-        string saltedPassword = salt + password;
+        string decrypted;
 
-        // Crear el hash de la contraseña ingresada con el salt recuperado
-        using (SHA256 sha256 = SHA256.Create())
+        // Crear una instancia de AES con la clave y el mismo IV utilizado para encriptar
+        using (Aes aes = Aes.Create())
         {
-            byte[] hashedBytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(saltedPassword));
-            string hashedInputPassword = Convert.ToBase64String(hashedBytes);
+            aes.Key = Encoding.UTF8.GetBytes(key);
+            aes.IV = aes.Key.Take(16).ToArray();
 
-            // Comparar el hash generado con el hash almacenado
-            return hashedInputPassword == hashedPassword;
+            ICryptoTransform decryptor = aes.CreateDecryptor(aes.Key, aes.IV);
+
+            using (MemoryStream ms = new MemoryStream(Convert.FromBase64String(cipherText)))
+            {
+                using (CryptoStream cs = new CryptoStream(ms, decryptor, CryptoStreamMode.Read))
+                {
+                    using (StreamReader sr = new StreamReader(cs))
+                    {
+                        decrypted = sr.ReadToEnd();
+                    }
+                }
+            }
         }
+        return decrypted;
     }
 }

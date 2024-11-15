@@ -254,16 +254,16 @@ namespace DAL
                         {
                             // Manejar posibles valores nulos
                             int id_usuario = !lector.IsDBNull(0) ? lector.GetInt32(0) : 0;
-                            string dni = !lector.IsDBNull(1) ? lector.GetString(1) : "";
-                            string nombre = !lector.IsDBNull(2) ? lector.GetString(2) : "";
-                            string contraseña = !lector.IsDBNull(3) ? lector.GetString(3) : "";
-                            string apellido = !lector.IsDBNull(4) ? lector.GetString(4) : string.Empty;
-                            string telefono = !lector.IsDBNull(5) ? lector.GetString(5) : string.Empty;
-                            string email = !lector.IsDBNull(6) ? lector.GetString(6) : "";
-                            DateTime fecha_nacimiento = !lector.IsDBNull(7) ? lector.GetDateTime(7) : DateTime.Now;
-                            string salt = !lector.IsDBNull(9) ? lector.GetString(9) : string.Empty;
-                            string idioma = !lector.IsDBNull(8) ? lector.GetString(8) : string.Empty;
-                            int id_familia = !lector.IsDBNull(10) ? lector.GetInt32(10) : 0;
+                            string dni = !lector.IsDBNull(lector.GetOrdinal("dni")) ? lector.GetString(lector.GetOrdinal("dni")) : "";
+                            string nombre = !lector.IsDBNull(lector.GetOrdinal("nombre")) ? lector.GetString(lector.GetOrdinal("nombre")) : "";
+                            string contraseña = !lector.IsDBNull(lector.GetOrdinal("contraseña")) ? lector.GetString(lector.GetOrdinal("contraseña")) : "";
+                            string apellido = !lector.IsDBNull(lector.GetOrdinal("apellido")) ? lector.GetString(lector.GetOrdinal("apellido")) : string.Empty;
+                            string telefono = !lector.IsDBNull(lector.GetOrdinal("telefono")) ? lector.GetString(lector.GetOrdinal("telefono")) : string.Empty;
+                            string email = !lector.IsDBNull(lector.GetOrdinal("email")) ? lector.GetString(lector.GetOrdinal("email")) : "";
+                            DateTime fecha_nacimiento = !lector.IsDBNull(lector.GetOrdinal("fecha_nacimiento")) ? lector.GetDateTime(lector.GetOrdinal("fecha_nacimiento")) : DateTime.Now;
+                            string salt = !lector.IsDBNull(lector.GetOrdinal("salt")) ? lector.GetString(lector.GetOrdinal("salt")) : string.Empty;
+                            string idioma = !lector.IsDBNull(lector.GetOrdinal("idioma")) ? lector.GetString(lector.GetOrdinal("idioma")) : string.Empty;
+                            int id_familia = !lector.IsDBNull(lector.GetOrdinal("id_familia")) ? lector.GetInt32(lector.GetOrdinal("id_familia")) : 0;
                             BE.Usuario usuario = new BE.Usuario(id_usuario, dni, nombre, apellido, telefono, email, contraseña, fecha_nacimiento, id_familia, salt, idioma);
                             list.Add(usuario);
                         }
@@ -288,13 +288,13 @@ namespace DAL
 
             Servicios.Resultado<BE.Usuario> resultado = new Servicios.Resultado<BE.Usuario>();
 
-            string salt;
-            string hashedPassword = hasher.HashPassword(obj.contraseña, out salt);
-
+            string salt = new Random().NextDouble().ToString();
+            string hashedPassword = hasher.HashPassword(obj.contraseña, salt);
+            string hashedPhoneNumber = hasher.HashPassword(obj.telefono, salt);
             string queryToCreateUser = "USE SistemaViajes;" +
                 "INSERT INTO Usuario (dni, nombre, contraseña, apellido, telefono, email, fecha_nacimiento, id_familia, salt, idioma)" +
                 "VALUES" +
-                $"('{obj.dni}','{obj.nombre}', '{hashedPassword}', '{obj.apellido}', '{obj.telefono}', '{obj.mail}', '{obj.fechaNacimiento.ToString("yyyy-MM-dd")}', '{obj.id_familia}', '{salt}', '{obj.idioma}');";
+                $"('{obj.dni}','{obj.nombre}', '{hashedPassword}', '{obj.apellido}', '{hashedPhoneNumber}', '{obj.mail}', '{obj.fechaNacimiento.ToString("yyyy-MM-dd")}', '{obj.id_familia}', '{salt}', '{obj.idioma}');";
 
             string queryToSearchUser = $"USE SistemaViajes; SELECT * FROM Usuario WHERE email = '{obj.mail}'";
 
@@ -325,7 +325,10 @@ namespace DAL
 
                 resultado.resultado = true;
                 resultado.mensaje = "Usuario creado exitosamente";
-                resultado.entidad = obj;
+
+                var usuarios = leerEntidades();
+
+                resultado.entidad = usuarios.Last();
             }
             catch (Exception ex)
             {

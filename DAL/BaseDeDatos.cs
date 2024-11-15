@@ -10,7 +10,7 @@ namespace DAL
     {
         public class BaseDeDatos
         {
-            public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
+            public static string dataSource = "COMPURELOCA";
             public static string dbName = "SistemaViajes";
             public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
             public SqlConnection Connection = new SqlConnection(conexionMaster);
@@ -232,23 +232,9 @@ namespace DAL
                 "(1.25, 'Crucero Marítimo', 3, 2)," + // 3 = Barco
                 "(1.10, 'Colectivo de Turismo', 2, 1);"); // 2 = Bus
 
-            // Insertar datos en la tabla Fecha (trayectos específicos)
-            //ejecutarQuery("USE SistemaViajes; INSERT INTO Fecha (id_empresa, id_lugar_origen, id_lugar_destino, id_transporte, fecha_ida, fecha_vuelta, categoria_tipo) " +
-            //    "VALUES " +
-            //    "(1, 1, 2, 1, '2024-09-01 10:00:00', '2024-09-10 18:00:00', 'Avión')," +
-            //    "(2, 3, 2, 2, '2024-10-05 08:00:00', '2024-10-12 20:00:00', 'Barco')," +
-            //    "(1, 2, 3, 3, '2024-12-20 12:00:00', '2024-12-30 16:00:00', 'Bus');");
+  
 
-            // Insertar datos en la tabla Asiento
-            //ejecutarQuery("USE SistemaViajes; INSERT INTO Asiento (id_fecha, num_asiento, esta_disponible) " +
-            //    "VALUES " +
-            //    "(1, 1, 0)," +
-            //    "(1, 2, 1)," +
-            //    "(1, 3, 0)," +
-            //    "(2, 1, 0)," +
-            //    "(2, 2, 1)," +
-            //    "(3, 1, 0)," +
-            //    "(3, 2, 1);");
+     
 
             // Insertar datos en la tabla Viaje
             ejecutarQuery("USE SistemaViajes; INSERT INTO Viaje (id_usuario, id_empresa, id_fecha, transporte, costo) " +
@@ -258,11 +244,11 @@ namespace DAL
                 "(1, 2, 3, 'Bus', 2400.00);");
 
             // Insertar datos en la tabla Paquete
-            //ejecutarQuery("USE SistemaViajes; INSERT INTO Paquete (id_fecha, precio, cantidad_max_asientos, nombre, descripcion) " +
-            //    "VALUES " +
-            //    "(1, 1500.00, 2, 'Romance en París', 'Paquete especial para parejas, incluye visitas guiadas y cenas románticas.')," +
-            //    "(2, 2000.00, 4, 'Nueva York Express', 'Paquete para conocer lo esencial de Nueva York en 5 días.')," +
-            //    "(3, 1200.00, 5, 'Aventura en Bariloche', 'Paquete de aventura que incluye excursiones, caminatas y deportes de invierno.');");
+            ejecutarQuery("USE SistemaViajes; INSERT INTO Paquete (id_fecha, precio, cantidad_max_asientos, nombre, descripcion) " +
+                "VALUES " +
+                "(1, 1500.00, 2, 'Romance en París', 'Paquete especial para parejas, incluye visitas guiadas y cenas románticas.')," +
+                "(2, 2000.00, 4, 'Nueva York Express', 'Paquete para conocer lo esencial de Nueva York en 5 días.')," +
+                "(3, 1200.00, 5, 'Aventura en Bariloche', 'Paquete de aventura que incluye excursiones, caminatas y deportes de invierno.');");
 
             //// Insertar datos en la tabla PaqueteAsiento
             //ejecutarQuery("USE SistemaViajes; INSERT INTO PaqueteAsiento (id_paquete, id_asiento) " +
