@@ -3,6 +3,14 @@
   "WorkspaceRootPath": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\navegador\\desktop\\ultimo\\registroviajes\\registroviajes\\crearfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\crearfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|c:\\users\\navegador\\desktop\\ultimo\\registroviajes\\registroviajes\\crearfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{929641D7-3D14-463F-83C0-00DFD727D64B}|RegistroViajes\\GUI.csproj|solutionrelative:registroviajes\\crearfecha.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|c:\\users\\navegador\\desktop\\ultimo\\registroviajes\\dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{34D52DD4-91DB-4DC1-BD6E-1C2205806AB5}|DAL\\DAL.csproj|solutionrelative:dal\\basededatos.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -14,21 +22,46 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "BaseDeDatos.cs",
               "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\DAL\\BaseDeDatos.cs",
               "RelativeDocumentMoniker": "DAL\\BaseDeDatos.cs",
               "ToolTip": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\DAL\\BaseDeDatos.cs",
               "RelativeToolTip": "DAL\\BaseDeDatos.cs",
-              "ViewState": "AgIAALsAAAAAAAAAAAAYwMcAAABGAAAAAAAAAA==",
+              "ViewState": "AgIAALsAAAAAAAAAAAAYwNAAAABtAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-11-15T13:16:22.688Z",
               "IsPinned": true,
               "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "CrearFecha.cs",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\RegistroViajes\\CrearFecha.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\CrearFecha.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\RegistroViajes\\CrearFecha.cs",
+              "RelativeToolTip": "RegistroViajes\\CrearFecha.cs",
+              "ViewState": "AgIAAFwAAAAAAAAAAAAYwHoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T14:17:45.329Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CrearFecha.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\RegistroViajes\\CrearFecha.cs",
+              "RelativeDocumentMoniker": "RegistroViajes\\CrearFecha.cs",
+              "ToolTip": "C:\\Users\\Navegador\\Desktop\\ultimo\\registroViajes\\RegistroViajes\\CrearFecha.cs [Dise\u00F1o]",
+              "RelativeToolTip": "RegistroViajes\\CrearFecha.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-11-15T14:17:43.612Z",
+              "EditorCaption": " [Dise\u00F1o]"
             }
           ]
         }

@@ -123,6 +123,7 @@ namespace RegistroViajes
 
             BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
             bllbita.crearEntidad(bitacorita);
+            MessageBox.Show("Se ha Creado una Fecha para Viajes");
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
