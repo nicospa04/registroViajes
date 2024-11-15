@@ -99,8 +99,8 @@ namespace RegistroViajes
                     string comandoBackup = $"BACKUP DATABASE SistemaViajes TO DISK='{rutaCompleta}'";
 
 
-                     string dataSource = "090L3PC16-80598";
-            string dbName = "SistemaViajes";
+                     string dataSource = "090L3PC17-79134";
+            //string dbName = "SistemaViajes";
               string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
           
 
@@ -118,8 +118,8 @@ namespace RegistroViajes
         private void button2_Click(object sender, EventArgs e)
         {
 
-            string dataSource = "090L3PC16-80598";
-            string dbName = "SistemaViajes";
+            string dataSource = "090L3PC17-79134";
+            //string dbName = "SistemaViajes";
             string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 
 

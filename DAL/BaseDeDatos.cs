@@ -10,7 +10,7 @@ namespace DAL
     {
         public class BaseDeDatos
         {
-            public static string dataSource = "090L3PC16-80598";
+            public static string dataSource = "090L3PC17-79134";
             public static string dbName = "SistemaViajes";
             public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
             public SqlConnection Connection = new SqlConnection(conexionMaster);
@@ -299,8 +299,6 @@ namespace DAL
                 "(2, 26)," +
                 "(3, 22)," +
                 "(2, 22)," +
-                "(1, 22)," +
-                "(1, 20)," +
                 "(3, 23)," +
                 "(2, 23)," +
                 "(1, 23)," +
@@ -308,6 +306,7 @@ namespace DAL
                 "(3, 25)," +
                 "(2, 24)," +
                 "(2, 19)," +
+                "(2, 20)," +
                 "(3, 26)," +
                 "(2, 26)," +
                 "(2, 17);");
