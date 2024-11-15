@@ -10,6 +10,7 @@
   "Form1.cancelarToolStripMenuItem": "Cancelar",
   "Form1.verViajesRealizadosToolStripMenuItem": "Ver Viajes Realizados",
   "Form1.iconMenuItem3": "Paquetes",
+  "Form1.reservarPaqueteToolStripMenuItem": "Crear Paquetes",
   "Form1.iconMenuItem4": "Configuracion",
   "Form1.bitacoraToolStripMenuItem": "Bitacora",
   "Form1.iconMenuItem5": "Idioma",

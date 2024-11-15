@@ -10,6 +10,7 @@
   "Form1.cancelarToolStripMenuItem": "Cancel",
   "Form1.verViajesRealizadosToolStripMenuItem": "See Trips Made",
   "Form1.iconMenuItem3": "Packages",
+  "Form1.reservarPaqueteToolStripMenuItem": "Create Packages",
   "Form1.iconMenuItem4": "Configuration",
   "Form1.bitacoraToolStripMenuItem": "Event Log",
   "Form1.iconMenuItem5": "Languaje",
