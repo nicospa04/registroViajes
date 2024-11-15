@@ -21,7 +21,7 @@ namespace RegistroViajes
         {
             InitializeComponent();
             BaseDeDatos bd = new BaseDeDatos();
-         //   bd.scriptInicio();
+            bd.scriptInicio();
             Lenguaje.ObtenerInstancia().Agregar(this);
             Lenguaje.ObtenerInstancia().IdiomaActual = "Español";
             modifmenu();
@@ -123,14 +123,8 @@ namespace RegistroViajes
         }
         private void cerrarSesionToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //DialogResult result = MessageBox.Show("¿Estas seguro de Cerrar Sesión?", "Confirmar Cierre de Sesión", MessageBoxButtons.YesNo);
-            //if(result == DialogResult.Yes)
-            //{
-            //    SessionManager.ObtenerInstancia().CerrarSesion();
-            //    modifmenu();
-            //}
-            //AbrirForm(new FRMIniciarSesion());
-            AbrirForm(new FRMCerrarSesión());
+            FRMCerrarSesión formCerrarSesion = new FRMCerrarSesión(this);
+            AbrirForm(formCerrarSesion);
         }
         public void modifmenu()
         {

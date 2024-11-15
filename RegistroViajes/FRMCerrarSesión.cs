@@ -1,25 +1,26 @@
 ﻿using BE;
 using BLL;
-using FontAwesome.Sharp;
 using Servicios;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using System;
 
 namespace RegistroViajes
 {
     public partial class FRMCerrarSesión : Form
     {
-        public FRMCerrarSesión()
+        private Form1 formularioPrincipal;
+
+        private void FRMCerrarSesion_Load(object sender, EventArgs e)
+        {
+            // Puedes agregar aquí el código que desees ejecutar cuando se cargue el formulario
+        }
+
+        public FRMCerrarSesión(Form1 formPrincipal)
         {
             InitializeComponent();
+            formularioPrincipal = formPrincipal; // Asigna el formulario principal
         }
+
         private void button1_Click(object sender, EventArgs e)
         {
             if (SessionManager.ObtenerInstancia().Usuario != null)
@@ -29,49 +30,35 @@ namespace RegistroViajes
                 int id_usuario = SessionManager.ObtenerInstancia().IdUsuarioActual;
                 DateTime fecha = DateTime.Now;
                 int criticidad = 2;
+
+                string actor;
                 if (id_usuario == 3)
-                {
-                    string actor3 = "ADMIN";
-                    BEBitacora bitacorita = new BEBitacora(id_usuario, operacion, fecha, actor3, criticidad);
-                    Servicios.Resultado<BEBitacora> resultadobita3 = bllbita.crearEntidad(bitacorita);
-                }
+                    actor = "ADMIN";
                 else if (id_usuario == 2)
-                {
-                    string actor2 = "EMPLEADO";
-                    BEBitacora bitacorita = new BEBitacora(id_usuario, operacion, fecha, actor2, criticidad);
-                    Servicios.Resultado<BEBitacora> resultadobita2 = bllbita.crearEntidad(bitacorita);
-                }
+                    actor = "EMPLEADO";
                 else
-                {
-                    string actor1 = "USUARIO";
-                    BEBitacora bitacorita = new BEBitacora(id_usuario, operacion, fecha, actor1, criticidad);
-                    Servicios.Resultado<BEBitacora> resultadobita1 = bllbita.crearEntidad(bitacorita);
-                }
+                    actor = "USUARIO";
+
+                BEBitacora bitacorita = new BEBitacora(id_usuario, operacion, fecha, actor, criticidad);
+                bllbita.crearEntidad(bitacorita);
+
+                // Cierra la sesión y modifica los permisos del menú en el formulario principal
                 SessionManager.ObtenerInstancia().CerrarSesion();
-                MessageBox.Show("Se ha cerrado la Sesion Correctamente");
+                formularioPrincipal.modifmenu(); // Llama a modifmenu en el formulario principal
+
+                MessageBox.Show("Se ha cerrado la Sesión Correctamente");
             }
             else
             {
-                MessageBox.Show("No se ha iniciado sesion anteriormente");
+                MessageBox.Show("No se ha iniciado sesión anteriormente");
             }
             this.Hide();
-            //CUANDO SE CIERRA SESION, LOS PERMISOS DEL FORMULARIO PRINCIPAL QUEDAN CON LOS PERMISOS DEL ÚLTIMO QUE INICIÓ SESIÓN
         }
-        //private void FRMCerrarSesion_FormClosing(object sender, FormClosingEventArgs e)
-        //{
-        //    if (e.CloseReason == CloseReason.UserClosing)
-        //    {
-        //        e.Cancel = true;
-        //        Hide();
-        //    }
-        //}
-        private void FRMCerrarSesión_Load(object sender, EventArgs e)
-        {
 
-        }
         private void button2_Click(object sender, EventArgs e)
         {
             Close();
         }
     }
 }
+

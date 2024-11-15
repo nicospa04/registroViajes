@@ -60,9 +60,9 @@ namespace RegistroViajes
                 textBox1.Text = nombreuser;
                 textBox2.Text = apellidouser;
                 comboBox1.Text = operacion;
-                textBox3.Text = user.ToString();
-                textBox4.Text = actor;
-                textBox5.Text = criticidad.ToString();
+                comboBox3.Text = user.ToString();
+                comboBox4.Text = actor;
+                comboBox5.Text = criticidad.ToString();
                 dateTimePicker1.Value = fecha;
             }
         }
@@ -70,9 +70,14 @@ namespace RegistroViajes
         {
             textBox1.Text = "";
             textBox2.Text = "";
-            textBox3.Text = "";
-            textBox4.Text = "";
-            textBox5.Text = "";
+            comboBox1.SelectedIndex = -1;
+            comboBox3.SelectedIndex = -1;
+            comboBox4.SelectedIndex = -1;
+            comboBox5.SelectedIndex = -1;
+            List<BEBitacora> bitacora = new List<BEBitacora>();
+            BLLBitacora bllbita = new BLLBitacora();
+            bitacora = bllbita.leerEntidades();
+            dataGridView1.DataSource = bitacora;
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -125,6 +130,27 @@ namespace RegistroViajes
         private void label8_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // Obtener los valores de los ComboBox
+            int? idUsuario = string.IsNullOrEmpty(comboBox3.Text) ? (int?)null : int.Parse(comboBox3.Text);
+            string operacion = string.IsNullOrEmpty(comboBox1.Text) ? null : comboBox1.Text;
+            string actor = string.IsNullOrEmpty(comboBox4.Text) ? null : comboBox4.Text;
+            int? criticidad = string.IsNullOrEmpty(comboBox5.Text) ? (int?)null : int.Parse(comboBox5.Text);
+
+            // Filtrar los datos según los criterios seleccionados
+            List<BEBitacora> bitacoraFiltrada = ObtenerListaBitacora()
+                .Where(b =>
+                    (!idUsuario.HasValue || b.id_usuario == idUsuario) &&
+                    (string.IsNullOrEmpty(operacion) || b.operacion == operacion) &&
+                    (string.IsNullOrEmpty(actor) || b.actor == actor) &&
+                    (!criticidad.HasValue || b.criticidad == criticidad)
+                )
+                .ToList();
+            // Actualizar el DataGridView con los datos filtrados
+            dataGridView1.DataSource = bitacoraFiltrada;
         }
     }
 }

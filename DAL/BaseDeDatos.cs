@@ -10,7 +10,7 @@ namespace DAL
     {
         public class BaseDeDatos
         {
-            public static string dataSource = "compuReLoca";
+            public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
             public static string dbName = "SistemaViajes";
             public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
             public SqlConnection Connection = new SqlConnection(conexionMaster);

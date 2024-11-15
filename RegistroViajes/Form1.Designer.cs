@@ -48,9 +48,9 @@
             this.paquetesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.iconMenuItem5 = new FontAwesome.Sharp.IconMenuItem();
             this.iconMenuItem6 = new FontAwesome.Sharp.IconMenuItem();
-            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.fechasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.crearFechaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip2 = new System.Windows.Forms.MenuStrip();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,11 +73,11 @@
             this.iconMenuItem1,
             this.iconMenuItem2,
             this.iconMenuItem3,
+            this.fechasToolStripMenuItem,
             this.iconMenuItem4,
             this.registrosToolStripMenuItem,
             this.iconMenuItem5,
-            this.iconMenuItem6,
-            this.fechasToolStripMenuItem});
+            this.iconMenuItem6});
             this.menuStrip1.Location = new System.Drawing.Point(0, 68);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
@@ -138,28 +138,28 @@
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(177, 22);
             this.toolStripMenuItem1.Text = "Reservar";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click_1);
             // 
             // toolStripMenuItem2
             // 
             this.toolStripMenuItem2.Name = "toolStripMenuItem2";
-            this.toolStripMenuItem2.Size = new System.Drawing.Size(180, 22);
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(177, 22);
             this.toolStripMenuItem2.Text = "Modificar";
             this.toolStripMenuItem2.Click += new System.EventHandler(this.toolStripMenuItem2_Click_1);
             // 
             // cancelarToolStripMenuItem
             // 
             this.cancelarToolStripMenuItem.Name = "cancelarToolStripMenuItem";
-            this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.cancelarToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.cancelarToolStripMenuItem.Text = "Cancelar";
             this.cancelarToolStripMenuItem.Click += new System.EventHandler(this.cancelarToolStripMenuItem_Click_1);
             // 
             // verViajesRealizadosToolStripMenuItem
             // 
             this.verViajesRealizadosToolStripMenuItem.Name = "verViajesRealizadosToolStripMenuItem";
-            this.verViajesRealizadosToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.verViajesRealizadosToolStripMenuItem.Size = new System.Drawing.Size(177, 22);
             this.verViajesRealizadosToolStripMenuItem.Text = "Ver viajes realizados";
             this.verViajesRealizadosToolStripMenuItem.Click += new System.EventHandler(this.verViajesRealizadosToolStripMenuItem_Click);
             // 
@@ -193,7 +193,7 @@
             // bitacoraToolStripMenuItem
             // 
             this.bitacoraToolStripMenuItem.Name = "bitacoraToolStripMenuItem";
-            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.bitacoraToolStripMenuItem.Size = new System.Drawing.Size(117, 22);
             this.bitacoraToolStripMenuItem.Text = "Bitacora";
             this.bitacoraToolStripMenuItem.Click += new System.EventHandler(this.bitacoraToolStripMenuItem_Click);
             // 
@@ -261,20 +261,6 @@
             this.iconMenuItem6.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageAboveText;
             this.iconMenuItem6.Click += new System.EventHandler(this.iconMenuItem6_Click);
             // 
-            // menuStrip2
-            // 
-            this.menuStrip2.AutoSize = false;
-            this.menuStrip2.BackColor = System.Drawing.SystemColors.Control;
-            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
-            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip2.Name = "menuStrip2";
-            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
-            this.menuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.menuStrip2.Size = new System.Drawing.Size(1021, 68);
-            this.menuStrip2.TabIndex = 4;
-            this.menuStrip2.Text = "menuStrip2";
-            this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
-            // 
             // fechasToolStripMenuItem
             // 
             this.fechasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -289,6 +275,20 @@
             this.crearFechaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.crearFechaToolStripMenuItem.Text = "Crear fecha";
             this.crearFechaToolStripMenuItem.Click += new System.EventHandler(this.crearFechaToolStripMenuItem_Click);
+            // 
+            // menuStrip2
+            // 
+            this.menuStrip2.AutoSize = false;
+            this.menuStrip2.BackColor = System.Drawing.SystemColors.Control;
+            this.menuStrip2.ImageScalingSize = new System.Drawing.Size(24, 24);
+            this.menuStrip2.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip2.Name = "menuStrip2";
+            this.menuStrip2.Padding = new System.Windows.Forms.Padding(4, 1, 0, 1);
+            this.menuStrip2.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.menuStrip2.Size = new System.Drawing.Size(1021, 68);
+            this.menuStrip2.TabIndex = 4;
+            this.menuStrip2.Text = "menuStrip2";
+            this.menuStrip2.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip2_ItemClicked);
             // 
             // Form1
             // 

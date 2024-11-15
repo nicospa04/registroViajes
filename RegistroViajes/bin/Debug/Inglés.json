@@ -18,6 +18,8 @@
   "Form1.empresasToolStripMenuItem": "Companies",
   "Form1.destinosToolStripMenuItem": "Destinations",
   "Form1.paquetesToolStripMenuItem": "Packages",
+  "Form1.fechasToolStripMenuItem": "Dates",
+  "Form1.crearFechaToolStripMenuItem": "Create Dates",
   "Form1.iconMenuItem6": "Exit",
 
   "FRMCerrarSesión.Text": "Log Out",
@@ -84,7 +86,7 @@
   "FRMBitacora.label6": "Events:",
   "FRMBitacora.label7": "Criticality:",
   "FRMBitacora.button1": "Clean",
-  "FRMBitacora.button2": "Apply",
+  "FRMBitacora.button2": "Filter",
   "FRMBitacora.button3": "Print",
   "FRMBitacora.label8": "Select language to print:",
 

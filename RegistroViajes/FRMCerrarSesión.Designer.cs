@@ -73,7 +73,7 @@
             this.Controls.Add(this.button1);
             this.Name = "FRMCerrarSesión";
             this.Text = "FRMCerrarSesión";
-            this.Load += new System.EventHandler(this.FRMCerrarSesión_Load);
+            this.Load += new System.EventHandler(this.FRMCerrarSesion_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

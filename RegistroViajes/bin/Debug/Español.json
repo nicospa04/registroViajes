@@ -18,6 +18,8 @@
   "Form1.empresasToolStripMenuItem": "Empresas",
   "Form1.destinosToolStripMenuItem": "Destinos",
   "Form1.paquetesToolStripMenuItem": "Paquetes",
+  "Form1.fechasToolStripMenuItem": "Fechas",
+  "Form1.crearFechaToolStripMenuItem": "Crear Fechas",
   "Form1.iconMenuItem6": "Salir",
 
   "FRMIniciarSesion.Text": "Iniciar Sesion",
@@ -65,7 +67,7 @@
   "FRMBitacora.label6": "Evento:",
   "FRMBitacora.label7": "Criticidad:",
   "FRMBitacora.button1": "Limpiar",
-  "FRMBitacora.button2": "Aplicar",
+  "FRMBitacora.button2": "Filtrar",
   "FRMBitacora.button3": "Imprimir",
   "FRMBitacora.label8": "Seleccione idioma para Imprimir:",
 

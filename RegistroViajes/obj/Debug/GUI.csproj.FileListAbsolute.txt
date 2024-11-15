@@ -376,3 +376,6 @@ C:\Users\nicol\Desktop\registroViajes\RegistroViajes\bin\Debug\System.Text.Json.
 C:\Users\nicol\Desktop\registroViajes\RegistroViajes\bin\Debug\System.Threading.Tasks.Extensions.xml
 C:\Users\nicol\Desktop\registroViajes\RegistroViajes\bin\Debug\System.ValueTuple.xml
 C:\Users\nicol\Desktop\registroViajes\RegistroViajes\obj\Debug\GUI.csproj.Up2Date
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.CrearFecha.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.FRMSeleccionAsientos.resources
+C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.HacerReservaConPaquete.resources
