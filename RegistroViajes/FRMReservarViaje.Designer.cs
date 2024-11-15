@@ -112,7 +112,7 @@ namespace RegistroViajes
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(199, 238);
+            this.comboBox1.Location = new System.Drawing.Point(199, 221);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(120, 21);
             this.comboBox1.TabIndex = 0;
@@ -192,7 +192,7 @@ namespace RegistroViajes
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(19, 503);
+            this.button1.Location = new System.Drawing.Point(19, 480);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(314, 39);
             this.button1.TabIndex = 5;
@@ -231,7 +231,7 @@ namespace RegistroViajes
             // label15
             // 
             this.label15.AutoSize = true;
-            this.label15.Location = new System.Drawing.Point(16, 241);
+            this.label15.Location = new System.Drawing.Point(16, 224);
             this.label15.Name = "label15";
             this.label15.Size = new System.Drawing.Size(48, 13);
             this.label15.TabIndex = 57;
@@ -240,7 +240,7 @@ namespace RegistroViajes
             // label16
             // 
             this.label16.AutoSize = true;
-            this.label16.Location = new System.Drawing.Point(16, 286);
+            this.label16.Location = new System.Drawing.Point(16, 276);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(43, 13);
             this.label16.TabIndex = 56;
@@ -268,7 +268,7 @@ namespace RegistroViajes
             // comboBox3
             // 
             this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(199, 278);
+            this.comboBox3.Location = new System.Drawing.Point(199, 273);
             this.comboBox3.Name = "comboBox3";
             this.comboBox3.Size = new System.Drawing.Size(120, 21);
             this.comboBox3.TabIndex = 61;

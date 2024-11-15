@@ -296,6 +296,7 @@ namespace DAL
                 "('CamIdio', 'iconMenuItem5', 0)," +
                 "('Exit', 'iconMenuItem6', 0)," +
                 "('Config', 'iconMenuItem4', 0)," +
+                "('Fechas', 'fechasToolStripMenuItem', 0)," +
                 "('Bitacora', 'bitacoraToolStripMenuItem', 0);");
 
             // Insertar datos en la tabla PermisoPermiso
@@ -342,6 +343,9 @@ namespace DAL
                 "(2, 15)," +
                 "(2, 16)," +
                 "(2, 18)," +
+                "(3, 21)," +
+                "(2, 21)," +
+                "(1, 21)," +
                 "(2, 17);");
 
             // Insertar datos en la tabla UsuarioPermiso

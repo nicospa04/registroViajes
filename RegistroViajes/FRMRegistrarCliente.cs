@@ -62,27 +62,20 @@ namespace RegistroViajes
             MessageBox.Show(resultado.mensaje);
             BLLBitacora bllbita = new BLLBitacora();
             string operacion = "Registro de Usuario";
-            int id_usuario = SessionManager.ObtenerInstancia().IdUsuarioActual;
-            DateTime fecha = DateTime.Now;
-            int criticidad = 3;
-            if (id_usuario == 3)
-            {
-                string actor3 = "ADMIN";
-                BEBitacora bitacorita = new BEBitacora(id_usuario, operacion, fecha, actor3, criticidad);
-                Servicios.Resultado<BEBitacora> resultadobita3 = bllbita.crearEntidad(bitacorita);
-            }
-            else if (id_usuario == 2)
-            {
-                string actor2 = "EMPLEADO";
-                BEBitacora bitacorita = new BEBitacora(id_usuario, operacion, fecha, actor2, criticidad);
-                Servicios.Resultado<BEBitacora> resultadobita2 = bllbita.crearEntidad(bitacorita);
-            }
+            int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+            DateTime fecha1 = DateTime.Now;
+            int criticidad = 7;
+
+            string actor;
+            if (id_usuario1 == 3)
+                actor = "ADMIN";
+            else if (id_usuario1 == 2)
+                actor = "EMPLEADO";
             else
-            {
-                string actor1 = "USUARIO";
-                BEBitacora bitacorita = new BEBitacora(id_usuario, operacion, fecha, actor1, criticidad);
-                Servicios.Resultado<BEBitacora> resultadobita1 = bllbita.crearEntidad(bitacorita);
-            }
+                actor = "USUARIO";
+
+            BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+            bllbita.crearEntidad(bitacorita);
         }
         private void FRMRegistrarCliente_Load(object sender, EventArgs e)
         {

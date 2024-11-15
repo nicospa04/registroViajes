@@ -152,5 +152,10 @@ namespace RegistroViajes
             // Actualizar el DataGridView con los datos filtrados
             dataGridView1.DataSource = bitacoraFiltrada;
         }
+
+        private void comboBox5_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

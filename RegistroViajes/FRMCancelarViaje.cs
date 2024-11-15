@@ -1,4 +1,6 @@
-﻿using BLL;
+﻿using BE;
+using BLL;
+using DAL;
 using Servicios;
 using System;
 using System.Collections.Generic;
@@ -177,6 +179,22 @@ namespace RegistroViajes
             viajes = bllviaje.leerEntidades();
             BE.Viaje viaje = viajes.FirstOrDefault(x => x.id_viaje == id_viajeee);
             bllviaje.eliminarEntidad(viaje);
+            BLLBitacora bllbita = new BLLBitacora();
+            string operacion = "Cancelación de Viaje";
+            int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+            DateTime fecha1 = DateTime.Now;
+            int criticidad = 8;
+
+            string actor;
+            if (id_usuario1 == 3)
+                actor = "ADMIN";
+            else if (id_usuario1 == 2)
+                actor = "EMPLEADO";
+            else
+                actor = "USUARIO";
+
+            BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+            bllbita.crearEntidad(bitacorita);
         }
 
         private void textBox2_TextChanged(object sender, EventArgs e)

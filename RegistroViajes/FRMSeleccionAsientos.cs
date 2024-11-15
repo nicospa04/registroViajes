@@ -1,4 +1,6 @@
-﻿using BLL;
+﻿using BE;
+using BLL;
+using DAL;
 using Servicios;
 using System;
 using System.Collections.Generic;
@@ -196,7 +198,22 @@ namespace RegistroViajes
                     //int id_usuario, int id_empresa, int id_fecha, string transporte, decimal costo, int num_asiento
                     var viaje = new BLLViaje().crearEntidad(new BE.Viaje(id_usuario, empresa.id_empresa, fecha.id_fecha,tipo_transporte.nombre, costo, asiento.num_asiento));
 
+                    BLLBitacora bllbita = new BLLBitacora();
+                    string operacion = "Reserva Asientos";
+                    int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+                    DateTime fecha1 = DateTime.Now;
+                    int criticidad = 5;
 
+                    string actor;
+                    if (id_usuario1 == 3)
+                        actor = "ADMIN";
+                    else if (id_usuario1 == 2)
+                        actor = "EMPLEADO";
+                    else
+                        actor = "USUARIO";
+
+                    BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+                    bllbita.crearEntidad(bitacorita);
 
                     // Cambiar el color del botón del asiento a rojo en la interfaz
                     foreach (Control control in panelAsientos.Controls)

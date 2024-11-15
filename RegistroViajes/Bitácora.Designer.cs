@@ -181,7 +181,16 @@
             this.comboBox1.Items.AddRange(new object[] {
             "Inicio de Sesión",
             "Cierre de Sesión",
-            "Cambio de Idioma"});
+            "Cambio de Idioma",
+            "Reserva Asientos",
+            "Registro de Viaje",
+            "Modificación de Viaje",
+            "Registro de Usuario",
+            "Cancelación de Viaje",
+            "Ver Viajes",
+            "Reserva Asiento Paquete",
+            "Crear Fechas",
+            "EXIT"});
             this.comboBox1.Location = new System.Drawing.Point(798, 370);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(112, 21);
@@ -239,16 +248,23 @@
             // 
             this.comboBox5.FormattingEnabled = true;
             this.comboBox5.Items.AddRange(new object[] {
+            "0",
             "1",
             "2",
             "3",
             "4",
             "5",
-            "6"});
+            "6",
+            "7",
+            "8",
+            "9",
+            "10",
+            "11"});
             this.comboBox5.Location = new System.Drawing.Point(798, 439);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(112, 21);
             this.comboBox5.TabIndex = 22;
+            this.comboBox5.SelectedIndexChanged += new System.EventHandler(this.comboBox5_SelectedIndexChanged);
             // 
             // FRMBitacora
             // 

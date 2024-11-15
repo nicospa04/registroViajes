@@ -36,12 +36,12 @@
 
   "FRMReservarViaje.Text": "Reservar Viajes",
   "FRMReservarViaje.label11": "Reservar Viajes",
-  "FRMReservarViaje.label20": "Titular",
   "FRMReservarViaje.label15": "Empresa",
   "FRMReservarViaje.label16": "Destino",
   "FRMReservarViaje.label17": "Transporte",
   "FRMReservarViaje.label13": "Fecha de Inicio",
   "FRMReservarViaje.label14": "Fecha de Vuelta",
+  "FRMRservarViaje.label12": "Destinos",
   "FRMReservarViaje.label3": "Monto Final",
   "FRMReservarViaje.lblprecio": "0",
   "FRMReservarViaje.button1": "Reservar",

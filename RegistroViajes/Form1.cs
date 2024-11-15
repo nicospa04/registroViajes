@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using FontAwesome.Sharp;
 using BLL;
 using Servicios;
+using BE;
 
 namespace RegistroViajes
 {
@@ -84,6 +85,22 @@ namespace RegistroViajes
 
         private void iconMenuItem6_Click(object sender, EventArgs e)
         {
+            BLLBitacora bllbita = new BLLBitacora();
+            string operacion = "EXIT";
+            int id_usuario = SessionManager.ObtenerInstancia().IdUsuarioActual;
+            DateTime fecha = DateTime.Now;
+            int criticidad = 0;
+
+            string actor;
+            if (id_usuario == 3)
+                actor = "ADMIN";
+            else if (id_usuario == 2)
+                actor = "EMPLEADO";
+            else
+                actor = "USUARIO";
+
+            BEBitacora bitacorita = new BEBitacora(id_usuario, operacion, fecha, actor, criticidad);
+            bllbita.crearEntidad(bitacorita);
             Application.Exit();
         }
 
@@ -136,6 +153,7 @@ namespace RegistroViajes
             iconMenuItem4.Enabled = false;
             registrosToolStripMenuItem.Enabled = false;
             iconMenuItem5.Enabled = true;
+            fechasToolStripMenuItem.Enabled = false;
             iconMenuItem6.Enabled = true;
         }
         public void ActualizarIdioma()
@@ -175,6 +193,16 @@ namespace RegistroViajes
         private void crearFechaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             AbrirForm(new CrearFecha());
+        }
+
+        private void paquetesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void reservarPaqueteToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //AbrirForm(new HacerReservaConPaquete());
         }
     }
 }

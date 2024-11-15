@@ -36,12 +36,12 @@
 
   "FRMReservarViaje.Text": "Book Trips",
   "FRMReservarViaje.label11": "Book Trips",
-  "FRMReservarViaje.label12": "Holder",
   "FRMReservarViaje.label15": "Company",
   "FRMReservarViaje.label16": "Destinatation",
   "FRMReservarViaje.label17": "Transport",
   "FRMReservarViaje.label13": "Start Date",
   "FRMReservarViaje.label14": "Return Date",
+  "FRMReservarViaje.label12": "Destinations",
   "FRMReservarViaje.label3": "Final Amount",
   "FRMReservarViaje.button1": "Reserve",
 

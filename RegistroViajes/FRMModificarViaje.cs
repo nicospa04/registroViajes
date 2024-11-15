@@ -1,4 +1,6 @@
-﻿using BLL;
+﻿using BE;
+using BLL;
+using DAL;
 using Servicios;
 using System;
 using System.Collections.Generic;
@@ -115,7 +117,22 @@ namespace RegistroViajes
 
         private void button1_Click(object sender, EventArgs e)
         {
+            BLLBitacora bllbita = new BLLBitacora();
+            string operacion = "Modificación de Viaje";
+            int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+            DateTime fecha1 = DateTime.Now;
+            int criticidad = 6;
 
+            string actor;
+            if (id_usuario1 == 3)
+                actor = "ADMIN";
+            else if (id_usuario1 == 2)
+                actor = "EMPLEADO";
+            else
+                actor = "USUARIO";
+
+            BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+            bllbita.crearEntidad(bitacorita);
         }
     }
 }

@@ -7,7 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using BE;
 using BLL;
+using Servicios;
 
 namespace RegistroViajes
 {
@@ -102,7 +104,22 @@ namespace RegistroViajes
 
 
             bllAsiento.crearAsientosParaFecha(fechaCreada.id_fecha);
+            BLLBitacora bllbita = new BLLBitacora();
+            string operacion = "Crear Fechas";
+            int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+            DateTime fecha1 = DateTime.Now;
+            int criticidad = 11;
 
+            string actor;
+            if (id_usuario1 == 3)
+                actor = "ADMIN";
+            else if (id_usuario1 == 2)
+                actor = "EMPLEADO";
+            else
+                actor = "USUARIO";
+
+            BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+            bllbita.crearEntidad(bitacorita);
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
