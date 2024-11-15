@@ -296,8 +296,9 @@ namespace DAL
                 "('CamIdio', 'iconMenuItem5', 0)," +
                 "('Exit', 'iconMenuItem6', 0)," +
                 "('Config', 'iconMenuItem4', 0)," +
+                "('Bitacora', 'bitacoraToolStripMenuItem', 0)," +
                 "('Fechas', 'fechasToolStripMenuItem', 0)," +
-                "('Bitacora', 'bitacoraToolStripMenuItem', 0);");
+                "('CrearFech', 'crearFechaToolStripMenuItem', 0);");
 
             // Insertar datos en la tabla PermisoPermiso
             ejecutarQuery("USE SistemaViajes; INSERT INTO PermisoPermiso (id_permisopadre, id_permisohijo) " +
@@ -346,6 +347,9 @@ namespace DAL
                 "(3, 21)," +
                 "(2, 21)," +
                 "(1, 21)," +
+                "(3, 22)," +
+                "(2, 22)," +
+                "(1, 22)," +
                 "(2, 17);");
 
             // Insertar datos en la tabla UsuarioPermiso
