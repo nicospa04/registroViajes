@@ -101,7 +101,7 @@ namespace RegistroViajes
             BLLUsuario bllUser = new BLLUsuario();
             Servicios.Resultado<BE.Usuario> resultado = bllUser.crearEntidad(user);
 
-            string dataSource = "090L3PC17-79134";
+            string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
             //string dbName = "SistemaViajes";
             string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
             SqlConnection Connection = new SqlConnection(conexionMaster);

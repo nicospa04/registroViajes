@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -139,32 +140,49 @@ namespace DAL
         public List<BE.Viaje> ObtenerViajesPorUsuarioId(int id_usuario)
         {
             List<BE.Viaje> listaViajes = new List<BE.Viaje>();
-            DAL.BaseDeDatos db = new DAL.BaseDeDatos();
-            try
+
+            string connectionString = "Server=DESKTOP-Q714KGU\\SQLEXPRESS;Database=SistemaViajes;Trusted_Connection=True;";
+            using (SqlConnection connection = new SqlConnection(connectionString))
             {
-                bool result = db.Conectar();
-                if (!result) throw new Exception("Error al conectarse a la base de datos"); 
-                string query = "USE SistemaViajes; SELECT * FROM Viaje WHERE id_usuario = @id_usuario";
-                SqlCommand command = new SqlCommand(query, db.Connection);
-                command.Parameters.AddWithValue("@id_usuario", id_usuario);
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
+                using (SqlCommand command = new SqlCommand("ObtenerViajesPorUsuario", connection))
                 {
-                    int  id_viaje = Convert.ToInt32(reader["id_viaje"]);
-                    int id_empresa = Convert.ToInt32(reader["id_empresa"]);
-                    int id_fecha= Convert.ToInt32(reader["id_fecha"]);
-                    string transporte = reader["transporte"].ToString();
-                    decimal costo = Convert.ToDecimal(reader["costo"]);
-                    int num_asiento = Convert.ToInt32(reader["num_asiento"]);
-                    BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_fecha, transporte, costo, num_asiento);
-                    listaViajes.Add(viaje);
+                    command.CommandType = CommandType.StoredProcedure;
+
+                    command.Parameters.Add(new SqlParameter("@id_usuario", id_usuario));
+
+                    try
+                    {
+                        // Abrir la conexión
+                        connection.Open();
+                        SqlDataReader reader = command.ExecuteReader();
+
+                        // Leer los resultados del procedimiento almacenado
+                        while (reader.Read())
+                        {
+                            int id_viaje = Convert.ToInt32(reader["id_viaje"]);
+                            int id_empresa = Convert.ToInt32(reader["id_empresa"]);
+                            int id_fecha = Convert.ToInt32(reader["id_fecha"]);
+                            string transporte = reader["transporte"].ToString();
+                            decimal costo = Convert.ToDecimal(reader["costo"]);
+                            int num_asiento = Convert.ToInt32(reader["num_asiento"]);
+
+                            // Crear un objeto Viaje con los datos obtenidos
+                            BE.Viaje viaje = new BE.Viaje(id_viaje, id_usuario, id_empresa, id_fecha, transporte, costo, num_asiento);
+
+                            // Agregar el viaje a la lista
+                            listaViajes.Add(viaje);
+                        }
+                    }
+                    catch (Exception ex)
+                    {
+                        // Manejar los errores que puedan ocurrir
+                        throw new Exception("Error al obtener los viajes del usuario: " + ex.Message);
+                    }
                 }
-                return listaViajes;
             }
-            catch (Exception ex)
-            {
-                throw new Exception("Error al obtener los viajes del usuario: " + ex.Message);
-            }
+
+            // Retornar la lista de viajes
+            return listaViajes;
         }
 
         public decimal calcularCostoViaje(BE.Fecha fecha, BE.Empresa empresa , BE.Transporte transporte, BE.Destino destino ,decimal descuento_por_paquete = 0) 
