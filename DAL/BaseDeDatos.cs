@@ -35,21 +35,21 @@ namespace DAL
             }
             public bool ejecutarQuery(string query)
             {
-            try
-            {
-                Conectar();
-                Command = new SqlCommand(query, Connection);
-                Command.ExecuteNonQuery();
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-            finally
-            {
-                Desconectar();
-            }
+                try
+                {
+                    Conectar();
+                    Command = new SqlCommand(query, Connection);
+                    Command.ExecuteNonQuery();
+                    return true;
+                }
+                catch
+                {
+                    return false;
+                }
+                finally
+                {
+                    Desconectar();
+                }
             }
             public void scriptInicio()
             {
