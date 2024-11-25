@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using BE;
 using BLL;
+using Org.BouncyCastle.Crypto;
 using Servicios;
 
 namespace RegistroViajes
@@ -39,48 +40,38 @@ namespace RegistroViajes
         {
             string emailPattern = @"^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$";
             string dniPattern = @"^\d{2}\.\d{3}\.\d{3}$";
-
-
             bool isValid = Regex.IsMatch(gmail.Text, emailPattern);
             bool isValid2 = Regex.IsMatch(this.dni.Text, dniPattern);
-
             if (!isValid)
             {
                 MessageBox.Show("Debe ingresar un mail válido");
                 return;
             }
-
             if (!isValid2)
             {
                 MessageBox.Show("Debe ingresar un dni válido");
                 return;
             }
-
             if (!checkBox1.Checked && !checkBox2.Checked && !checkBox3.Checked)
             {
                 MessageBox.Show("Debe marcar una opcion");
                 return;
             }
-
             if (checkBox1.Checked)
             {
                 checkBox2.Checked = false;
                 checkBox3.Checked = false;
             }
-
             if (checkBox2.Checked)
             {
                 checkBox1.Checked = false;
                 checkBox3.Checked = false;
             }
-
             if (checkBox3.Checked)
             {
                 checkBox1.Checked = false;
                 checkBox2.Checked = false;
             }
-
-
             string dni = this.dni.Text;
             string nombre = name.Text;
             string apellido = ap.Text;
@@ -89,48 +80,35 @@ namespace RegistroViajes
             string contaseña = pass.Text;
             DateTime fechaNacimiento = fechnac.Value;
             int familia = 1;
-            //ALT "YA EXISTE UN USUARIO CON ESE DNI"
-
-            //if(dni.Length != 8 || nombre.Length < 15 || apellido.Length < 15 || telefono.Length < 12 || contaseña.Length < 6 /*|| fechaNacimiento == DateTime.Now*/)
-            //{
-            //    MessageBox.Show("Complete bien todos los campos");
-            //    return;
-            //}
             string idioma = "ES";
             BE.Usuario user = new BE.Usuario(dni, nombre, apellido, telefono, mail, contaseña, fechaNacimiento, familia, idioma);
             BLLUsuario bllUser = new BLLUsuario();
             Servicios.Resultado<BE.Usuario> resultado = bllUser.crearEntidad(user);
-
             string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
             //string dbName = "SistemaViajes";
-            string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
+            string conexionMaster = $"Data source={dataSource};Initial Catalog=SistemaViajes;Integrated Security=True;";
             SqlConnection Connection = new SqlConnection(conexionMaster);
-
-
             int id_permiso = 0;
-
             if (checkBox1.Checked)
             { id_permiso = 1; }
-
             if (checkBox2.Checked)
             { id_permiso = 2; }
-
             if (checkBox3.Checked)
             { id_permiso = 3; }
+            int nuevoIdUsuario = bllUser.obtenerIDUsuario(user);
 
 
             try
             {
-                string query = $"USE SistemaViajes; INSERT INTO UsuarioPermiso (id_usuario, id_permiso) VALUES ({resultado.mensaje}, {id_permiso})";
-
+                string query = $"USE SistemaViajes; INSERT INTO UsuarioPermiso (id_usuario, id_permiso) VALUES ({nuevoIdUsuario}, {id_permiso})";
                 Connection.Open();
-
                 using (SqlCommand cmd = new SqlCommand(query, Connection))
                 {
-                    cmd.ExecuteNonQuery();
+                   
+                        cmd.Parameters.AddWithValue("@IdUsuario", nuevoIdUsuario);
+                        cmd.Parameters.AddWithValue("@IdPermiso", id_permiso);
+                        cmd.ExecuteNonQuery();
                 }
-
-
             }
             catch
             {
@@ -140,9 +118,6 @@ namespace RegistroViajes
             {
                 Connection.Close();
             }
-
-
-
             if (!resultado.resultado)
             {
                 MessageBox.Show(resultado.mensaje);
@@ -154,7 +129,6 @@ namespace RegistroViajes
             int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
             DateTime fecha1 = DateTime.Now;
             int criticidad = 7;
-
             string actor;
             if (id_usuario1 == 3)
                 actor = "ADMIN";
