@@ -99,6 +99,7 @@
             this.button3.TabIndex = 6;
             this.button3.Text = "Volver Inicio";
             this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // btnSeleccionarBackUp
             // 

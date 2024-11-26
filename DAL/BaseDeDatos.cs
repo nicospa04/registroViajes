@@ -191,22 +191,11 @@ namespace DAL
 
         void scriptDatos()
         {
-            PasswordHasher hasher = new PasswordHasher();
-            // Generar salt y hash para el usuario Juan
-            string saltJuan = new Random().Next(1000).ToString();
-            string hashJuan = hasher.HashPassword("abc1", saltJuan);
-            // Generar salt y hash para el usuario María
-            string saltMaria = new Random().Next(1000).ToString();
-            string hashMaria = hasher.HashPassword("abc2", saltMaria);
-            // Generar salt y hash para el usuario Carlos
-            string saltCarlos = new Random().Next(1000).ToString();
-            string hashCarlos = hasher.HashPassword("abc3", saltCarlos);
-            // Insertar datos en la tabla Usuario con salt y contraseña hasheada
             ejecutarQuery($"USE SistemaViajes; INSERT INTO Usuario (dni, nombre, apellido, contraseña, telefono, email, fecha_nacimiento, id_familia, salt, idioma) " +
-                "VALUES " +
-                $"('12345678', 'Juan', 'Pérez', '{hashJuan}', '555-1234', 'juan.perez@example.com', '1985-04-23', 1, '{saltJuan}', 'ES')," +
-                $"('87654321', 'María', 'González', '{hashMaria}', '555-5678', 'maria.gonzalez@example.com', '1990-09-12', 1, '{saltMaria}', 'ES')," +
-                $"('13579111', 'Carlos', 'Martínez', '{hashCarlos}', '555-6789', 'carlos.martinez@example.com', '1978-02-15', 3, '{saltCarlos}', 'EN');");
+                "VALUES " +                                                                                                                                   //contraseñas:
+                $"('22.333.444', 'Vickk', 'Rru', 'Dm/gakWTk4RcWz+DrJ35SA==', 'ApwTbZxVn7trr+UEGwe6cg==', 'vicky@gmail.com', '2024-11-26', 1, '256', 'ES')," +  //vicky
+                $"('45.984.456', 'Valentin', 'Giraldes', 'DjZdD/7Aksao6E0lKeym8g==', 'lMPxDzCF7FEwOYwHAShO6Q==', 'valen@gmail.com', '2004-08-26', 1, '39', 'ES')," +  //valen
+                $"('11.222.333', 'Osvaldito', 'Tortuela', 'TzWs/rdzRwjfqD9U4JUyPg==', 'yrZmzNHobW80xov8sPcGLQ==', 'puto@gmail.com', '2024-11-26', 1, '667', 'EN');");  //puto
 
             // Insertar datos en la tabla Empresa
             ejecutarQuery("USE SistemaViajes; INSERT INTO Empresa (nombre, descripcion, porcentaje_extra) " +
@@ -349,16 +338,6 @@ namespace DAL
                 "(1, 1500.00, 2, 'Romance en París', 'Paquete especial para parejas, incluye visitas guiadas y cenas románticas.')," +
                 "(2, 2000.00, 4, 'Nueva York Express', 'Paquete para conocer lo esencial de Nueva York en 5 días.')," +
                 "(3, 1200.00, 5, 'Aventura en Bariloche', 'Paquete de aventura que incluye excursiones, caminatas y deportes de invierno.');");
-
-            //// Insertar datos en la tabla PaqueteAsiento
-            //ejecutarQuery("USE SistemaViajes; INSERT INTO PaqueteAsiento (id_paquete, id_asiento) " +
-            //    "VALUES " +
-            //    "(1, 1)," +
-            //    "(1, 2)," +
-            //    "(2, 4)," +
-            //    "(2, 5)," +
-            //    "(3, 6)," +
-            //    "(3, 7);");
         }
 
     }

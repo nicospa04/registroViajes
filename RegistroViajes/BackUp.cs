@@ -94,24 +94,18 @@ namespace RegistroViajes
         {
             if(textBox1.Text != string.Empty)
             {
-                   string nombreArchivo = $"MiSistema.BCK_{DateTime.Now:ddMMyy_HHmm}.bak";
+                   string nombreArchivo = $"BCK_{DateTime.Now:ddMMyy_HHmm}.bak";
                     string rutaCompleta = System.IO.Path.Combine(textBox1.Text, nombreArchivo);
                     string comandoBackup = $"BACKUP DATABASE SistemaViajes TO DISK='{rutaCompleta}'";
-
-
                      string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
-            //string dbName = "SistemaViajes";
-              string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
-          
-
+              string conexionMaster = $"Data source={dataSource};Initial Catalog=SistemaViajes;Integrated Security=True;";          
                     using (SqlConnection conn = new SqlConnection(conexionMaster))
                     {
                         SqlCommand cmd = new SqlCommand(comandoBackup, conn);
                         conn.Open();
                         cmd.ExecuteNonQuery();
                         conn.Close();
-                    }
-                 
+                    }               
             }
         }
 
@@ -130,7 +124,7 @@ namespace RegistroViajes
                 {
                     conn.Open();
 
-                    using (SqlCommand setMaster = new SqlCommand("USE master;", conn))
+                    using (SqlCommand setMaster = new SqlCommand("USE SistemaViajes;", conn))
                     {
                         setMaster.ExecuteNonQuery();
                     }
@@ -159,6 +153,11 @@ namespace RegistroViajes
             {
                 MessageBox.Show($"Error al restaurar la base de datos: {ex.Message}");
             }
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            Close();
         }
     }
 }
