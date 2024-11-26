@@ -39,9 +39,7 @@ namespace RegistroViajes
         private void checkBox1_CheckedChanged(object sender, EventArgs e)  // FALLA DESENCRIPTADO
         {
             PasswordHasher passwordHasher = new PasswordHasher();
-
             var user = SessionManager.Obtenerdatosuser();
-
             string tele = new PasswordHasher().Decrypt(user.telefono, user.salt);
 
             if (checkBox1.Checked)
@@ -64,8 +62,10 @@ namespace RegistroViajes
                 BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
                 bllbita.crearEntidad(bitacorita);
             }
-
-
+            else
+            {
+                textBox2.Text = user.telefono;
+            }
         }
     }
 }

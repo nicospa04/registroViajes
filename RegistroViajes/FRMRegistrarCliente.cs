@@ -96,15 +96,12 @@ namespace RegistroViajes
             if (checkBox3.Checked)
             { id_permiso = 3; }
             int nuevoIdUsuario = bllUser.obtenerIDUsuario(user);
-
-
             try
             {
                 string query = $"USE SistemaViajes; INSERT INTO UsuarioPermiso (id_usuario, id_permiso) VALUES ({nuevoIdUsuario}, {id_permiso})";
                 Connection.Open();
                 using (SqlCommand cmd = new SqlCommand(query, Connection))
                 {
-                   
                         cmd.Parameters.AddWithValue("@IdUsuario", nuevoIdUsuario);
                         cmd.Parameters.AddWithValue("@IdPermiso", id_permiso);
                         cmd.ExecuteNonQuery();
@@ -117,11 +114,6 @@ namespace RegistroViajes
             finally
             {
                 Connection.Close();
-            }
-            if (!resultado.resultado)
-            {
-                MessageBox.Show(resultado.mensaje);
-                return;
             }
             MessageBox.Show("Usuario creado con exito");
             BLLBitacora bllbita = new BLLBitacora();
