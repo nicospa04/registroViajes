@@ -83,6 +83,7 @@
     <Compile Include="BLLDestino.cs" />
     <Compile Include="BLLEmpresa.cs" />
     <Compile Include="BLLFecha.cs" />
+    <Compile Include="BLLPerfil.cs" />
     <Compile Include="BLLTransporte.cs" />
     <Compile Include="IEntidad.cs" />
     <Compile Include="BLLPaquete.cs" />

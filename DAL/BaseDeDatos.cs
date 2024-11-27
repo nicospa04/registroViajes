@@ -12,7 +12,7 @@ namespace DAL
         {
             public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
             public static string dbName = "SistemaViajes";
-            public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
+            public static string conexionMaster = $"Data source={dataSource};Initial Catalog=SistemaViajes;Integrated Security=True;";
             public SqlConnection Connection = new SqlConnection(conexionMaster);
             public SqlCommand Command = new SqlCommand();
             public bool Conectar()

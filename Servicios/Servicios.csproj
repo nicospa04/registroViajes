@@ -81,13 +81,16 @@
   <ItemGroup>
     <Compile Include="Archivos.cs" />
     <Compile Include="Bitacora.cs" />
+    <Compile Include="Componente.cs" />
     <Compile Include="FormHelper.cs" />
     <Compile Include="FormManager.cs" />
     <Compile Include="ISubjetc.cs" />
     <Compile Include="IObserver.cs" />
     <Compile Include="Lenguaje.cs" />
     <Compile Include="PasswordHasher.cs" />
+    <Compile Include="Perfil.cs" />
     <Compile Include="Permiso.cs" />
+    <Compile Include="Permisos.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Resultado.cs" />
     <Compile Include="SessionManager.cs" />
