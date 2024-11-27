@@ -20,7 +20,7 @@ namespace RegistroViajes
         {
             InitializeComponent();
             cargarcb();
-            INICIO = new Servicios.Perfil();
+            INICIO = new Servicios.Perfil("BASE");
             CargarTreeView();
         }
 
@@ -34,75 +34,15 @@ namespace RegistroViajes
             TreeNode rootNode = CrearNodo(INICIO, "BASE"); //Nodo BASE.
             treeView1.Nodes.Add(rootNode); //agg como nodo lo creado de base arriba (ALMACEN).
         }
-        private void CargarTreeView2()
-        {
-            TreeNode rootNode = CrearNodo2(INICIO, "BASE"); //Nodo BASE.
-            treeView1.Nodes.Add(rootNode); //agg como nodo lo creado de base arriba (ALMACEN).
-        }
-        private void CargarTreeView3()
-        {
-            TreeNode rootNode = CrearNodo3(INICIO, "BASE");
-            treeView1.Nodes.Add(rootNode);
-            treeView1.ExpandAll();
-        }
         private TreeNode CrearNodo(Componente componente, string nombre)
         {
-            TreeNode node = new TreeNode(nombre) //crea nodo (componente).
+            var node = new TreeNode(nombre) { Tag = componente };
+            foreach (var hijo in componente.ObtenerHijos() ?? Enumerable.Empty<Componente>())
             {
-                Tag = componente
-            };
-            if (componente.ObtenerHijos() != null) //se fija si hay hijos dentro de un componente.
-            {
-                foreach (var hijo in componente.ObtenerHijos()) //recorre.
-                {
-                    string nombreHijo = hijo is Servicios.Perfil ? "Perfil" : $"Permiso";
-                    node.Nodes.Add(CrearNodo(hijo, nombreHijo)); //llama recursivamente al método para agg un hijo
-                }                                                   // dentro del componente.
+                string nombreHijo = hijo is Servicios.Perfil ? "Perfil" : "Permiso";
+                node.Nodes.Add(CrearNodo(hijo, nombreHijo));
             }
             return node;
-        }
-        private TreeNode CrearNodo2(Componente componente, string nombre)
-        {
-            string nombreperf = comboBox3.SelectedItem.ToString();
-            TreeNode node = new TreeNode(nombre) //crea nodo (componente).
-            {
-                Tag = componente
-            };
-            if (componente.ObtenerHijos() != null) //se fija si hay hijos dentro de un componente.
-            {
-                foreach (var hijo in componente.ObtenerHijos()) //recorre.
-                {
-                    string nombreHijo = hijo is Servicios.Perfil ? nombreperf : "Permiso";
-                    node.Nodes.Add(CrearNodo2(hijo, nombreHijo)); //llama recursivamente al método para agg un hijo
-                }                                                   // dentro del componente.
-            }
-            return node;
-        }
-        private TreeNode CrearNodo3(Componente componente, string nombre)
-        {
-            // Obtener los valores seleccionados de los ComboBox
-            string nombrePerfil = comboBox3.SelectedItem?.ToString(); // Obtiene el perfil seleccionado
-            string nombrePermiso = comboBox1.SelectedItem?.ToString(); // Obtiene el permiso seleccionado
-
-            // Crea el nodo base con el nombre especificado y asocia el componente como su "Tag"
-            TreeNode node = new TreeNode(nombre)
-            {
-                Tag = componente
-            };
-
-            // Verifica si el componente tiene hijos
-            if (componente.ObtenerHijos() != null)
-            {
-                // Recorre cada hijo del componente y los agrega al nodo actual
-                foreach (var hijo in componente.ObtenerHijos())
-                {
-                    // Define el nombre del hijo basado en el tipo de componente
-                    string nombreHijo = hijo is Servicios.Perfil ? nombrePerfil : nombrePermiso;
-                    node.Nodes.Add(CrearNodo3(hijo, nombreHijo)); // Llama recursivamente al método para agregar los hijos
-                }
-            }
-
-            return node; // Retorna el nodo creado
         }
         private void CPerfil_Load(object sender, EventArgs e)
         {
@@ -115,21 +55,35 @@ namespace RegistroViajes
             comboBox3.Items.Clear();
             comboBox1.Items.Clear();
             comboBox2.Items.Clear();
-            foreach (string L in bllp.cargarCBPerfil())
+            //perfiles
+            List<BEPerfil> listaPerfiles = bllp.cargarCBPerfil();
+            List<string> nombres = listaPerfiles.Select(p => p.nombre).ToList();
+            List<Servicios.Perfil> listaDePerfiles = new List<Servicios.Perfil>();
+            foreach (string nombre in nombres)
             {
-                comboBox3.Items.Add(L);
+                listaDePerfiles.Add(new Servicios.Perfil(nombre));
             }
-            foreach (string L in bllp.cargarCBPermisos())
+            foreach (var perfil in listaDePerfiles)
             {
-                comboBox1.Items.Add(L);
+                comboBox3.Items.Add(perfil);
             }
-            //foreach (string L in BLLM.CargarCMBIDHijo())
-            //{
-            //    CmbIDHijo.Items.Add(L);
-            //}
+            comboBox3.DisplayMember = "Nombre";
+            //permisos
+            List<BEPerfil> listaPERFILES = bllp.cargarCBPermisos();
+            List<string> nombresperm = listaPERFILES.Select(p => p.nombre).ToList();
+            List<Servicios.Perfil> listaDePermisos = new List<Servicios.Perfil>();
+            foreach (string permiso in nombresperm)
+            {
+                listaDePermisos.Add(new Servicios.Perfil(permiso));
+            }
+            foreach (var permisos in listaDePermisos)
+            {
+                comboBox1.Items.Add(permisos);
+            }
+            comboBox1.DisplayMember = "Nombre";
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e) //agregar perfil
         {
             string nombre = textBox1.Text;
             string permiso = "iconMenuItem2";
@@ -139,7 +93,7 @@ namespace RegistroViajes
             cargarcb();
             MessageBox.Show("Se ha Agregado un PERFIL");
             BLLBitacora bllbita = new BLLBitacora();
-            string operacion = "Crear Perfil";
+            string operacion = "Agregado Nuevo Perfil";
             int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
             DateTime fecha1 = DateTime.Now;
             int criticidad = 16;
@@ -156,92 +110,155 @@ namespace RegistroViajes
             bllbita.crearEntidad(bitacorita);
         }
 
-        private void button3_Click(object sender, EventArgs e)
+        private void button3_Click(object sender, EventArgs e)  //agregar Permisos
         {
-            if (treeView1.SelectedNode?.Tag is Componente componenteSeleccionado) // Verifica si el nodo seleccionado es un Componente
+            if (treeView1.SelectedNode?.Tag is Servicios.Perfil perfilSeleccionado)
             {
-                // Obtener el permiso seleccionado desde ComboBox1
-                string permisoSeleccionado = comboBox1.SelectedItem?.ToString();
-
-                // Crear una nueva instancia de Permiso para evitar que se modifiquen permisos existentes
-                Servicios.Permisos nuevoPermiso = new Servicios.Permisos(permisoSeleccionado); // Crear un nuevo permiso con el nombre seleccionado
-
-                // Verifica si el nodo seleccionado tiene hijos
-                if (componenteSeleccionado.ObtenerHijos() != null && componenteSeleccionado.ObtenerHijos().Count > 0)
+                if (treeView1.SelectedNode != treeView1.Nodes[0]) 
                 {
-                    // Agrega el nuevo permiso sin modificar los permisos anteriores
-                    componenteSeleccionado.AgregarHijo(nuevoPermiso); // Se crea un nuevo hijo para el nodo seleccionado
+                    if (comboBox1.SelectedItem is Servicios.Perfil permisoSeleccionado)
+                    {
+                        string permisoNombre = permisoSeleccionado.Nombre; 
+                        Servicios.Permisos nuevoPermiso = new Servicios.Permisos(permisoNombre);
+                        perfilSeleccionado.AgregarHijo(nuevoPermiso);
+                        TreeNode nodoPermiso = CrearNodo(nuevoPermiso, nuevoPermiso.Nombre);
+                        treeView1.SelectedNode.Nodes.Add(nodoPermiso);
+                        treeView1.SelectedNode.Expand();
+                        MessageBox.Show($"Se ha agregado el permiso: {permisoSeleccionado.Nombre} al perfil: {perfilSeleccionado.Nombre}.");
+                        BLLBitacora bllbita = new BLLBitacora();
+                        string operacion = "Agregado Permiso a Perfil";
+                        int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+                        DateTime fecha1 = DateTime.Now;
+                        int criticidad = 17;
+
+                        string actor;
+                        if (id_usuario1 == 3)
+                            actor = "ADMIN";
+                        else if (id_usuario1 == 2)
+                            actor = "EMPLEADO";
+                        else
+                            actor = "USUARIO";
+
+                        BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+                        bllbita.crearEntidad(bitacorita);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Seleccione un permiso válido para agregar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
                 }
                 else
                 {
-                    // Si el nodo no tiene hijos, simplemente agrega el permiso
-                    componenteSeleccionado.AgregarHijo(nuevoPermiso);
+                    MessageBox.Show("No se puede agregar un permiso al nodo raíz.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-
-                // Reconstruye el árbol para reflejar los cambios
-                treeView1.Nodes.Clear(); // Limpia los nodos actuales
-                CargarTreeView3(); // Vuelve a cargar el árbol con los cambios realizados
             }
             else
             {
-                MessageBox.Show("Seleccione un nodo para agregar el Permiso.");
+                MessageBox.Show("Seleccione un perfil para agregar el permiso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-
-            BLLBitacora bllbita = new BLLBitacora();
-            string operacion = "Agregar Permiso";
-            int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
-            DateTime fecha1 = DateTime.Now;
-            int criticidad = 17;
-
-            string actor;
-            if (id_usuario1 == 3)
-                actor = "ADMIN";
-            else if (id_usuario1 == 2)
-                actor = "EMPLEADO";
-            else
-                actor = "USUARIO";
-
-            BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
-            bllbita.crearEntidad(bitacorita);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+
+        private void button2_Click(object sender, EventArgs e) //eliminar
         {
-            BLLBitacora bllbita = new BLLBitacora();
-            string operacion = "Eliminar Perfil";
-            int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
-            DateTime fecha1 = DateTime.Now;
-            int criticidad = 18;
+            TreeNode nodoSeleccionado = treeView1.SelectedNode;
+            if (nodoSeleccionado != null)
+            {
+                if (nodoSeleccionado.Tag is Servicios.Perfil)
+                {
+                    var confirmResult = MessageBox.Show("¿Estás seguro de que deseas eliminar este perfil y toda su rama?",
+                                                         "Confirmar eliminación",
+                                                         MessageBoxButtons.YesNo);
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        nodoSeleccionado.Remove();
+                        BLLBitacora bllbita = new BLLBitacora();
+                        string operacion = "Eliminar Perfil";
+                        int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+                        DateTime fecha1 = DateTime.Now;
+                        int criticidad = 18;
 
-            string actor;
-            if (id_usuario1 == 3)
-                actor = "ADMIN";
-            else if (id_usuario1 == 2)
-                actor = "EMPLEADO";
+                        string actor;
+                        if (id_usuario1 == 3)
+                            actor = "ADMIN";
+                        else if (id_usuario1 == 2)
+                            actor = "EMPLEADO";
+                        else
+                            actor = "USUARIO";
+
+                        BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+                        bllbita.crearEntidad(bitacorita);
+                    }
+                }
+                else if (nodoSeleccionado == treeView1.Nodes[0]) // Verificar si es el nodo raíz
+                {
+                    var confirmResult = MessageBox.Show("¿Estás seguro de que deseas eliminar TODO y dejar solo el nodo raíz?",
+                                                         "Confirmar eliminación",
+                                                         MessageBoxButtons.YesNo);
+
+                    if (confirmResult == DialogResult.Yes)
+                    {
+                        treeView1.Nodes.Clear();
+                        treeView1.Nodes.Add(CrearNodo(INICIO, "BASE"));
+                        nodoSeleccionado.Remove();
+                        BLLBitacora bllbita = new BLLBitacora();
+                        string operacion = "Eliminar PERFILES";
+                        int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+                        DateTime fecha1 = DateTime.Now;
+                        int criticidad = 22;
+
+                        string actor;
+                        if (id_usuario1 == 3)
+                            actor = "ADMIN";
+                        else if (id_usuario1 == 2)
+                            actor = "EMPLEADO";
+                        else
+                            actor = "USUARIO";
+
+                        BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+                        bllbita.crearEntidad(bitacorita);
+                    }
+                }
+            }
             else
-                actor = "USUARIO";
-
-            BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
-            bllbita.crearEntidad(bitacorita);
+            {
+                MessageBox.Show("Por favor, selecciona un nodo para eliminar.");
+            }
         }
 
         private void comboBox3_SelectedIndexChanged(object sender, EventArgs e)
         {
-            //verif();
+          
         }
 
-        private void button4_Click(object sender, EventArgs e)
+        private void button4_Click(object sender, EventArgs e) //seleciconar perfil
         {
-            if (treeView1.SelectedNode?.Tag is Componente componenteSeleccionado) //selec nodo y mira que tipo de componente es,
-            {                                                                   //si es un producto o caja.
-                Servicios.Perfil newperfil = new Servicios.Perfil();
-                componenteSeleccionado.AgregarHijo(newperfil); //agg caja a componente (Caja).
-                treeView1.Nodes.Clear();
-                CargarTreeView2();
+            if (comboBox3.SelectedItem is Servicios.Perfil perfilSeleccionado)
+            {
+                TreeNode nodoSeleccionado = treeView1.SelectedNode;
+                if (nodoSeleccionado != null && nodoSeleccionado.Tag is Servicios.Perfil perfilNodo)
+                {
+                    if (perfilNodo is Servicios.Perfil)
+                    {
+                        TreeNode nodoPerfil = CrearNodo(perfilSeleccionado, perfilSeleccionado.Nombre);
+                        nodoSeleccionado.Nodes.Add(nodoPerfil);
+                        nodoSeleccionado.Expand();
+                        perfilNodo.AgregarHijo(perfilSeleccionado);
+                        MessageBox.Show($"Se ha agregado el perfil: {perfilSeleccionado.Nombre} bajo el nodo {perfilNodo.Nombre}.");
+                    }
+                    else
+                    {
+                        MessageBox.Show("No puede agregar un perfil debajo de un nodo de tipo Permiso.");
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Seleccione un nodo de tipo perfil para agregar el nuevo perfil.");
+                }
             }
             else
             {
-                MessageBox.Show("Seleccione un nodo para agregar el Perfil.");
+                MessageBox.Show("Seleccione un perfil válido.");
             }
         }
     }

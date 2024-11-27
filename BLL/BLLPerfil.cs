@@ -19,11 +19,11 @@ namespace BLL
         {
             return dal.aggPerfil(obj);
         }
-        public List<string> cargarCBPerfil()
+        public List<BEPerfil> cargarCBPerfil()
         {
             return dal.cargarCBPerfil();
         }
-        public List<string> cargarCBPermisos()
+        public List<BEPerfil> cargarCBPermisos()
         {
             return dal.cargarCBPermisos();
         }

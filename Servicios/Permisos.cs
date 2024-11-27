@@ -6,15 +6,13 @@ using System.Threading.Tasks;
 
 namespace Servicios
 {
-    public class Permisos: Componente
+    public class Permisos : Componente
     {
-        public Permisos(string permisoSeleccionado)
+        public string Nombre { get; set; } // Nombre del permiso
+        public Permisos(string nombre)
         {
-            PermisoSeleccionado = permisoSeleccionado;
+            Nombre = nombre;
         }
-
-        public string PermisoSeleccionado { get; }
-
         public override void AgregarHijo(Componente c) { }
         public override List<Componente> ObtenerHijos() { return null; }
         public override void QuitarHijo(Componente c) { }

@@ -200,12 +200,13 @@
             "Back Up",
             "Restore",
             "Desencriptado",
-            "Crear Perfil",
+            "Agregado Nuevo Perfil",
             "Eliminar Perfil",
-            "Agregar Permiso",
+            "Agregado Permiso a Perfil",
             "Serializado",
             "Deserializado",
-            "Imprimir"});
+            "Imprimir",
+            "Eliminar PERFILES"});
             this.comboBox1.Location = new System.Drawing.Point(745, 255);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(112, 21);
@@ -284,7 +285,8 @@
             "18",
             "19",
             "20",
-            "21"});
+            "21",
+            "22"});
             this.comboBox5.Location = new System.Drawing.Point(745, 324);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(112, 21);

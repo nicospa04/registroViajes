@@ -50,52 +50,72 @@ namespace DAL
             }
             return resultado;
         }
-        public List<string> cargarCBPerfil()
+        public List<BEPerfil> cargarCBPerfil()
         {
             db.Connection.Open();
-            List<string> Lista = new List<string>();
-            DataSet dataSet = new DataSet();
-            string query= "USE SistemaViajes; Select * from PermisosComp where isperfil =1";
+            List<BEPerfil> listaNombres = new List<BEPerfil>(); // Mantener la lista de objetos BEPerfil
+            string query = "USE SistemaViajes; SELECT * FROM PermisosComp WHERE isperfil = 1";
+
             try
             {
-                SqlDataAdapter Adapter = new SqlDataAdapter(query, db.Connection);
-                SqlCommandBuilder builder = new SqlCommandBuilder(Adapter);
-                Adapter.Fill(dataSet);
-                foreach (DataRow L in dataSet.Tables[0].Rows)
+                SqlCommand command = new SqlCommand(query, db.Connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    Lista.Add(L["nombre"].ToString());
+                    // Crear objeto BEPerfil usando el constructor existente
+                    BEPerfil perfil = new BEPerfil(
+                        reader["nombre"]?.ToString(),
+                        reader["nombreformulario"]?.ToString(),
+                        reader["isperfil"] != DBNull.Value && Convert.ToBoolean(reader["isperfil"])
+                    );
+
+                    // Agregar el objeto BEPerfil a la lista
+                    listaNombres.Add(perfil);
                 }
-                return Lista;
+
+                reader.Close();
+                return listaNombres; // Retorna la lista de objetos BEPerfil
             }
             catch (Exception ex)
             {
-                throw new Exception();
+                throw new Exception("Error al cargar perfiles desde la base de datos.", ex);
             }
             finally
             {
                 db.Desconectar();
             }
         }
-        public List<string> cargarCBPermisos()
+        public List<BEPerfil> cargarCBPermisos()
         {
             db.Connection.Open();
-            List<string> Lista = new List<string>();
-            DataSet dataSet = new DataSet();
-            string query = "USE SistemaViajes; Select * from PermisosComp where isperfil =0";
+            List<BEPerfil> listaNombres = new List<BEPerfil>(); // Mantener la lista de objetos BEPerfil
+            string query = "USE SistemaViajes; SELECT * FROM PermisosComp WHERE isperfil = 0";
+
             try
             {
-                SqlDataAdapter Adapter = new SqlDataAdapter(query, db.Connection);
-                SqlCommandBuilder builder = new SqlCommandBuilder(Adapter);
-                Adapter.Fill(dataSet);
-                foreach (DataRow L in dataSet.Tables[0].Rows)
+                SqlCommand command = new SqlCommand(query, db.Connection);
+                SqlDataReader reader = command.ExecuteReader();
+
+                while (reader.Read())
                 {
-                    Lista.Add(L["nombre"].ToString());
+                    // Crear objeto BEPerfil usando el constructor existente
+                    BEPerfil perfil = new BEPerfil(
+                        reader["nombre"]?.ToString(),
+                        reader["nombreformulario"]?.ToString(),
+                        reader["isperfil"] != DBNull.Value && Convert.ToBoolean(reader["isperfil"])
+                    );
+
+                    // Agregar el objeto BEPerfil a la lista
+                    listaNombres.Add(perfil);
                 }
-                return Lista;
+
+                reader.Close();
+                return listaNombres; // Retorna la lista de objetos BEPerfil
             }
             catch (Exception ex)
             {
-                throw new Exception();
+                throw new Exception("Error al cargar perfiles desde la base de datos.", ex);
             }
             finally
             {
