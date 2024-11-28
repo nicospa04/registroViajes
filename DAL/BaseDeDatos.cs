@@ -12,7 +12,7 @@ namespace DAL
         {
             public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
             public static string dbName = "SistemaViajes";
-            public static string conexionMaster = $"Data source={dataSource};Initial Catalog=SistemaViajes;Integrated Security=True;";
+            public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
             public SqlConnection Connection = new SqlConnection(conexionMaster);
             public SqlCommand Command = new SqlCommand();
             public bool Conectar()
@@ -216,29 +216,29 @@ namespace DAL
                 "('Cliente', 'iconMenuItem2', 1), " +
                 "('Empleado', 'iconMenuItem2', 1), " +
                 "('Admin', 'iconMenuItem2', 1), " +
-                "('Viaje', 'toolStripMenuItem1', 0), " +
-                "('Cancelar', 'cancelarToolStripMenuItem', 0), " +
-                "('Paquetes', 'iconMenuItem3', 0)," +
+                "('ReservarViaje', 'toolStripMenuItem1', 0), " +
+                "('CancelarViaje', 'cancelarToolStripMenuItem', 0), " +
+                "('MenuPaquetes', 'iconMenuItem3', 0)," +
                 "('ModificarViaje', 'toolStripMenuItem2', 0)," +
                 "('VerViajes', 'verViajesRealizadosToolStripMenuItem', 0)," +
-                "('Reg', 'registrosToolStripMenuItem', 0)," +
+                "('MenuReg', 'registrosToolStripMenuItem', 0)," +
                 "('RegUser', 'usuariosToolStripMenuItem', 0)," +
                 "('RegEmp', 'empresasToolStripMenuItem', 0)," +
                 "('RegDest', 'destinosToolStripMenuItem', 0)," +
                 "('RegPaque', 'paquetesToolStripMenuItem', 0)," +
-                "('Sesion', 'iconMenuItem1', 0)," +
+                "('MenuSesion', 'iconMenuItem1', 0)," +
                 "('IniSes', 'iconMenuItem7', 0)," +
                 "('CerSes', 'cerrarSesionToolStripMenuItem', 0)," +
-                "('CamIdio', 'iconMenuItem5', 0)," +
-                "('Exit', 'iconMenuItem6', 0)," +
-                "('Config', 'iconMenuItem4', 0)," +
-                "('Fechas', 'fechasToolStripMenuItem', 0)," +
+                "('MenuCamIdiom', 'iconMenuItem5', 0)," +
+                "('MenuExit', 'iconMenuItem6', 0)," +
+                "('MenuConfig', 'iconMenuItem4', 0)," +
+                "('MenuFechas', 'fechasToolStripMenuItem', 0)," +
                 "('Bitacora', 'bitacoraToolStripMenuItem', 0)," +
-                "('CrearFech', 'crearFechaToolStripMenuItem', 0)," +
-                "('SelecPaq', 'reservarPaqueteToolStripMenuItem', 0)," +
-                "('Perfiles', 'perfilesToolStripMenuItem', 0)," + 
-                "('BakUP', 'backUpToolStripMenuItem', 0)," +
-                "('CrePerf', 'crearPerfilesToolStripMenuItem', 0);");
+                "('CrearFecha', 'crearFechaToolStripMenuItem', 0)," +
+                "('SelecPaquete', 'reservarPaqueteToolStripMenuItem', 0)," +
+                "('Desencriptar', 'perfilesToolStripMenuItem', 0)," +
+                "('BackUp', 'backUpToolStripMenuItem', 0)," +
+                "('CrearPerfil', 'crearPerfilesToolStripMenuItem', 0);");
 
             // Insertar datos en la tabla PermisoPermiso
             ejecutarQuery("USE SistemaViajes; INSERT INTO PermisoPermiso (id_permisopadre, id_permisohijo) " +

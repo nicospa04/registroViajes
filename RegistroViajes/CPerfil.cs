@@ -125,6 +125,9 @@ namespace RegistroViajes
                         treeView1.SelectedNode.Nodes.Add(nodoPermiso);
                         treeView1.SelectedNode.Expand();
                         MessageBox.Show($"Se ha agregado el permiso: {permisoSeleccionado.Nombre} al perfil: {perfilSeleccionado.Nombre}.");
+
+
+
                         BLLBitacora bllbita = new BLLBitacora();
                         string operacion = "Agregado Permiso a Perfil";
                         int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
@@ -144,17 +147,17 @@ namespace RegistroViajes
                     }
                     else
                     {
-                        MessageBox.Show("Seleccione un permiso válido para agregar.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Seleccione un permiso válido para agregar.", "Error", MessageBoxButtons.OK);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("No se puede agregar un permiso al nodo raíz.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("No se puede agregar un permiso al nodo raíz.", "Error", MessageBoxButtons.OK);
                 }
             }
             else
             {
-                MessageBox.Show("Seleccione un perfil para agregar el permiso.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Seleccione un perfil para agregar el permiso.", "Error", MessageBoxButtons.OK);
             }
         }
 
