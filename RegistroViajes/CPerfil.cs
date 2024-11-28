@@ -25,6 +25,7 @@ namespace RegistroViajes
         }
 
         BLLPerfil bllp = new BLLPerfil();
+        BLLPermisos bllper = new BLLPermisos();
         public void ActualizarIdioma()
         {
             Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
@@ -110,45 +111,76 @@ namespace RegistroViajes
             bllbita.crearEntidad(bitacorita);
         }
 
+        private int ObtenerIdPorNombre(string nombrePerfil)
+        {
+            List<BEPerfil> listaPerfiles = bllp.cargarCBPerfil();
+            BEPerfil perfilEncontrado = listaPerfiles.FirstOrDefault(p =>
+                p.nombre != null &&
+                p.nombre.Trim().Equals(nombrePerfil.Trim(), StringComparison.OrdinalIgnoreCase));
+            if (perfilEncontrado == null)
+            {
+                MessageBox.Show("No se encontró un perfil con ese nombre.");
+                return -1;
+            }
+            return perfilEncontrado.id_permiso;
+        }
+        private int obtenerIdporPermiso(string nombrePermiso)
+        {
+            List<BEPerfil> listaPermisos = bllp.cargarCBPermisos();
+            BEPerfil permisoEncontrado = listaPermisos.FirstOrDefault(p =>
+                p.nombre != null &&
+                p.nombre.Equals(nombrePermiso, StringComparison.OrdinalIgnoreCase));
+            if (permisoEncontrado == null)
+            {
+                Console.WriteLine("No se encontró un permiso con ese nombre.");
+                return -1;
+            }
+            return permisoEncontrado.id_permiso;
+        }
         private void button3_Click(object sender, EventArgs e)  //agregar Permisos
         {
             if (treeView1.SelectedNode?.Tag is Servicios.Perfil perfilSeleccionado)
             {
                 if (treeView1.SelectedNode != treeView1.Nodes[0]) 
                 {
-                    if (comboBox1.SelectedItem is Servicios.Perfil permisoSeleccionado)
-                    {
-                        string permisoNombre = permisoSeleccionado.Nombre; 
-                        Servicios.Permisos nuevoPermiso = new Servicios.Permisos(permisoNombre);
-                        perfilSeleccionado.AgregarHijo(nuevoPermiso);
-                        TreeNode nodoPermiso = CrearNodo(nuevoPermiso, nuevoPermiso.Nombre);
-                        treeView1.SelectedNode.Nodes.Add(nodoPermiso);
-                        treeView1.SelectedNode.Expand();
-                        MessageBox.Show($"Se ha agregado el permiso: {permisoSeleccionado.Nombre} al perfil: {perfilSeleccionado.Nombre}.");
+                    
+                        if (comboBox1.SelectedItem is Servicios.Perfil permisoSeleccionado)
+                        {
+                            string permisoNombre = permisoSeleccionado.Nombre;
+                            Servicios.Permisos nuevoPermiso = new Servicios.Permisos(permisoNombre);
+                            perfilSeleccionado.AgregarHijo(nuevoPermiso);
+                            TreeNode nodoPermiso = CrearNodo(nuevoPermiso, nuevoPermiso.Nombre);
+                            treeView1.SelectedNode.Nodes.Add(nodoPermiso);
+                            treeView1.SelectedNode.Expand();
 
+                            int idPerfil = ObtenerIdPorNombre(perfilSeleccionado.Nombre);
+                            int idPermiso = obtenerIdporPermiso(permisoSeleccionado.Nombre);
 
+                            BEPermisos permisAo = new BEPermisos(idPerfil, idPermiso);
+                            Servicios.Resultado<BEPermisos> result = bllper.aggPermisos(permisAo);
+                            MessageBox.Show($"Se ha Agregado el Permiso {permisoSeleccionado.Nombre}, al Perfil {perfilSeleccionado.Nombre}");
 
-                        BLLBitacora bllbita = new BLLBitacora();
-                        string operacion = "Agregado Permiso a Perfil";
-                        int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
-                        DateTime fecha1 = DateTime.Now;
-                        int criticidad = 17;
+                            BLLBitacora bllbita = new BLLBitacora();
+                            string operacion = "Agregado Permiso a Perfil";
+                            int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+                            DateTime fecha1 = DateTime.Now;
+                            int criticidad = 17;
 
-                        string actor;
-                        if (id_usuario1 == 3)
-                            actor = "ADMIN";
-                        else if (id_usuario1 == 2)
-                            actor = "EMPLEADO";
+                            string actor;
+                            if (id_usuario1 == 3)
+                                actor = "ADMIN";
+                            else if (id_usuario1 == 2)
+                                actor = "EMPLEADO";
+                            else
+                                actor = "USUARIO";
+
+                            BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+                            bllbita.crearEntidad(bitacorita);
+                        }
                         else
-                            actor = "USUARIO";
-
-                        BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
-                        bllbita.crearEntidad(bitacorita);
-                    }
-                    else
-                    {
-                        MessageBox.Show("Seleccione un permiso válido para agregar.", "Error", MessageBoxButtons.OK);
-                    }
+                        {
+                            MessageBox.Show("Seleccione un permiso válido para agregar.", "Error", MessageBoxButtons.OK);
+                        }
                 }
                 else
                 {
@@ -160,8 +192,6 @@ namespace RegistroViajes
                 MessageBox.Show("Seleccione un perfil para agregar el permiso.", "Error", MessageBoxButtons.OK);
             }
         }
-
-
         private void button2_Click(object sender, EventArgs e) //eliminar
         {
             TreeNode nodoSeleccionado = treeView1.SelectedNode;

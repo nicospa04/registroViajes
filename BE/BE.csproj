@@ -81,6 +81,7 @@
     <Compile Include="Asiento.cs" />
     <Compile Include="BEBitacora.cs" />
     <Compile Include="BEPerfil.cs" />
+    <Compile Include="BEPermisos.cs" />
     <Compile Include="Destino.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="Fecha.cs" />

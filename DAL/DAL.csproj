@@ -83,6 +83,7 @@
     <Compile Include="DALBitacora.cs" />
     <Compile Include="DALFecha.cs" />
     <Compile Include="DALPerfil.cs" />
+    <Compile Include="DALPermisos.cs" />
     <Compile Include="Destino.cs" />
     <Compile Include="Empresa.cs" />
     <Compile Include="ICrud.cs" />

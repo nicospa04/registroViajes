@@ -17,6 +17,7 @@ namespace DAL
         {
             db = new BaseDeDatos();
         }
+
         public Servicios.Resultado<BEPerfil> aggPerfil(BEPerfil obj)
         {
             db.Connection.Open();
@@ -65,6 +66,7 @@ namespace DAL
                 {
                     // Crear objeto BEPerfil usando el constructor existente
                     BEPerfil perfil = new BEPerfil(
+                        Convert.ToInt32(reader["id_permiso"]),
                         reader["nombre"]?.ToString(),
                         reader["nombreformulario"]?.ToString(),
                         reader["isperfil"] != DBNull.Value && Convert.ToBoolean(reader["isperfil"])
@@ -101,6 +103,7 @@ namespace DAL
                 {
                     // Crear objeto BEPerfil usando el constructor existente
                     BEPerfil perfil = new BEPerfil(
+                        Convert.ToInt32(reader["id_permiso"]),
                         reader["nombre"]?.ToString(),
                         reader["nombreformulario"]?.ToString(),
                         reader["isperfil"] != DBNull.Value && Convert.ToBoolean(reader["isperfil"])
