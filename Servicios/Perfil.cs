@@ -10,7 +10,8 @@ namespace Servicios
 {
     public class Perfil : Componente
     {
-        public string Nombre { get; set; } // Propiedad para el nombre del perfil
+        public string Nombre { get; set; } 
+        public string Permisos { get; set; }
         private List<Componente> Hijos = new List<Componente>();
         public Perfil(string nombre)
         {

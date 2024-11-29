@@ -141,7 +141,7 @@ namespace DAL
         {
             List<BE.Viaje> listaViajes = new List<BE.Viaje>();
 
-            string connectionString = "Server=090L3PC28-71055;Database=SistemaViajes;Trusted_Connection=True;";
+            string connectionString = "Server=DESKTOP-Q714KGU\\SQLEXPRESS;Database=SistemaViajes;Trusted_Connection=True;";
             using (SqlConnection connection = new SqlConnection(connectionString))
             {
                 using (SqlCommand command = new SqlCommand("ObtenerViajesPorUsuario", connection))

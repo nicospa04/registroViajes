@@ -10,7 +10,9 @@ namespace BE
     {
         public int id_permisopadre { get; set; }
         public int id_permisohijo { get; set; }
+        public string nombrepadre { get; set; }
 
+        public string nombrehijo { get; set; }
         public BEPermisos(int idp, int idh)
         {
             this.id_permisopadre = idp;

@@ -16,6 +16,37 @@ namespace DAL
             db = new BaseDeDatos();
         }
 
+        public List<BEPermisos> listapermisos()
+        {
+            db.Connection.Open();
+            List<BEPermisos> lista = new List<BEPermisos>();
+            string query = "USE SistemaViajes; SELECT * FROM PermisoPermiso";
+            try
+            {
+                SqlCommand command = new SqlCommand(query, db.Connection);
+                SqlDataReader reader = command.ExecuteReader();
+                while (reader.Read())
+                {
+                    BEPermisos perfil = new BEPermisos(
+                        Convert.ToInt32(reader["id_permisopadre"]),
+                        Convert.ToInt32(reader["id_permisohijo"])
+                    );
+                    lista.Add(perfil);
+                }
+
+                reader.Close();
+                return lista;
+            }
+            catch (Exception ex)
+            {
+                throw new Exception();
+            }
+            finally
+            {
+                db.Desconectar();
+            }
+        }
+
         public Servicios.Resultado<BEPermisos> aggPermisos(BEPermisos obj)
         {
             db.Connection.Open();

@@ -264,7 +264,37 @@ namespace RegistroViajes
           
         }
 
-        private void button4_Click(object sender, EventArgs e) //seleciconar perfil
+        private List<BEPermisos> ObtenerPermisosHijosPorNombrePadre(string nombre)
+        {
+            List<BEPerfil> listaPerfiles = bllp.cargarCBPerfil(); // Lista de perfiles.
+            BEPerfil perfilPadre = listaPerfiles
+                .FirstOrDefault(p => p.nombre != null &&
+                                     p.nombre.Trim().Equals(nombre.Trim(), StringComparison.OrdinalIgnoreCase));
+            int idPermisoPadre = perfilPadre.id_permiso;
+
+            List<BEPermisos> listaPermisos = bllper.listapermisos(); 
+            List<BEPermisos> permisosHijos = listaPermisos
+                .Where(p => p.id_permisopadre == idPermisoPadre) 
+                .ToList();
+
+            return permisosHijos;
+        }
+
+        private List<string> ObtenerNombresPorIdsHIJOS(List<BEPermisos> permisosHijos)
+        {
+            List<BEPerfil> listaPerfiles = bllp.cargarCBPermisos();
+            List<string> nombresPermisos = permisosHijos
+                .Join(listaPerfiles, 
+                      permiso => permiso.id_permisohijo, 
+                      perfil => perfil.id_permiso, 
+                      (permiso, perfil) => perfil.nombre)
+                .Where(nombre => !string.IsNullOrEmpty(nombre))
+                .ToList();
+
+            return nombresPermisos;
+        }
+
+        private void button4_Click(object sender, EventArgs e) // Seleccionar perfil
         {
             if (comboBox3.SelectedItem is Servicios.Perfil perfilSeleccionado)
             {
@@ -277,6 +307,26 @@ namespace RegistroViajes
                         nodoSeleccionado.Nodes.Add(nodoPerfil);
                         nodoSeleccionado.Expand();
                         perfilNodo.AgregarHijo(perfilSeleccionado);
+
+                        List<BEPermisos> permisosHijos = ObtenerPermisosHijosPorNombrePadre(perfilSeleccionado.Nombre);
+                        if (permisosHijos.Any())
+                        {
+                            List<string> nombresPermisosHijos = ObtenerNombresPorIdsHIJOS(permisosHijos);
+
+                            foreach (string nombrePermiso in nombresPermisosHijos)
+                            {
+                                TreeNode nodoPermiso = new TreeNode(nombrePermiso)
+                                {
+                                    Tag = nombrePermiso
+                                };
+                                nodoPerfil.Nodes.Add(nodoPermiso);
+                            }
+                        }
+                        else
+                        {
+                            MessageBox.Show("Este perfil no tiene permisos asociados.");
+                        }
+
                         MessageBox.Show($"Se ha agregado el perfil: {perfilSeleccionado.Nombre} bajo el nodo {perfilNodo.Nombre}.");
                     }
                     else
@@ -294,21 +344,7 @@ namespace RegistroViajes
                 MessageBox.Show("Seleccione un perfil válido.");
             }
         }
-        private static Form formactivo = null;
-        private void AbrirForm(Form formu)
-        {
-            if (formactivo != null)
-            {
-                formactivo.Close();
-            }
-            formactivo = formu;
-            formu.TopLevel = false;
-            formu.FormBorderStyle = FormBorderStyle.None;
-            formu.Dock = DockStyle.Fill;
 
-            this.Controls.Add(formu);
-            formu.Show();
-        }
         private void button6_Click(object sender, EventArgs e)
         {
             CFamilias frm = new CFamilias();

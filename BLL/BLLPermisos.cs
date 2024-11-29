@@ -21,6 +21,9 @@ namespace BLL
         {
             return dal.aggPermisos(obj);
         }
-
+        public List<BEPermisos> listapermisos()
+        {
+            return dal.listapermisos();
+        }
     }
 }
