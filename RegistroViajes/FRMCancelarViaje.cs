@@ -184,14 +184,9 @@ namespace RegistroViajes
             int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
             DateTime fecha1 = DateTime.Now;
             int criticidad = 8;
-
-            string actor;
-            if (id_usuario1 == 3)
-                actor = "ADMIN";
-            else if (id_usuario1 == 2)
-                actor = "EMPLEADO";
-            else
-                actor = "USUARIO";
+            BLLUsuario BLLUser = new BLLUsuario();
+            int idpermi = BLLUser.DevolverIdPermisoPorId(id_usuario1);
+            string actor = BLLUser.obtenernamepermisoporID(idpermi.ToString());
 
             BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
             bllbita.crearEntidad(bitacorita);

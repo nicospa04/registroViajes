@@ -98,6 +98,18 @@ namespace RegistroViajes
             }
             changeperfil();
             leerdata();
+            BLLBitacora bllbita = new BLLBitacora();
+            string operacion = "Agregar Perfil a Usuario";
+            int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
+            DateTime fecha1 = DateTime.Now;
+            int criticidad = 23;
+
+            BLLUsuario BLLUser = new BLLUsuario();
+            int idpermi = BLLUser.DevolverIdPermisoPorId(id_usuario1);
+            string actor = BLLUser.obtenernamepermisoporID(idpermi.ToString());
+
+            BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha1, actor, criticidad);
+            bllbita.crearEntidad(bitacorita);
         }
         private void changeperfil()
         {

@@ -206,7 +206,8 @@
             "Serializado",
             "Deserializado",
             "Imprimir",
-            "Eliminar PERFILES"});
+            "Eliminar PERFILES",
+            "Agregar Perfil a Usuario"});
             this.comboBox1.Location = new System.Drawing.Point(745, 255);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(112, 21);
@@ -286,7 +287,8 @@
             "19",
             "20",
             "21",
-            "22"});
+            "22",
+            "23"});
             this.comboBox5.Location = new System.Drawing.Point(745, 324);
             this.comboBox5.Name = "comboBox5";
             this.comboBox5.Size = new System.Drawing.Size(112, 21);

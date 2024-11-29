@@ -6,19 +6,23 @@ using System;
 
 namespace RegistroViajes
 {
-    public partial class FRMCerrarSesión : Form
+    public partial class FRMCerrarSesión : Form,IObserver
     {
         private Form1 formularioPrincipal;
 
         private void FRMCerrarSesion_Load(object sender, EventArgs e)
         {
-            // Puedes agregar aquí el código que desees ejecutar cuando se cargue el formulario
+            ActualizarIdioma();
         }
-
+        public void ActualizarIdioma()
+        {
+            Lenguaje.ObtenerInstancia().CambiarIdiomaControles(this);
+        }
         public FRMCerrarSesión(Form1 formPrincipal)
         {
             InitializeComponent();
             formularioPrincipal = formPrincipal; // Asigna el formulario principal
+            Lenguaje.ObtenerInstancia().Agregar(this);
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -27,19 +31,14 @@ namespace RegistroViajes
             {
                 BLLBitacora bllbita = new BLLBitacora();
                 string operacion = "Cierre de Sesión";
-                int id_usuario = SessionManager.ObtenerInstancia().IdUsuarioActual;
+                int id_usuario1 = SessionManager.ObtenerInstancia().IdUsuarioActual;
                 DateTime fecha = DateTime.Now;
                 int criticidad = 2;
+                BLLUsuario BLLUser = new BLLUsuario();
+                int idpermi = BLLUser.DevolverIdPermisoPorId(id_usuario1);
+                string actor = BLLUser.obtenernamepermisoporID(idpermi.ToString());
 
-                string actor;
-                if (id_usuario == 3)
-                    actor = "ADMIN";
-                else if (id_usuario == 2)
-                    actor = "EMPLEADO";
-                else
-                    actor = "USUARIO";
-
-                BEBitacora bitacorita = new BEBitacora(id_usuario, operacion, fecha, actor, criticidad);
+                BEBitacora bitacorita = new BEBitacora(id_usuario1, operacion, fecha, actor, criticidad);
                 bllbita.crearEntidad(bitacorita);
 
                 // Cierra la sesión y modifica los permisos del menú en el formulario principal
