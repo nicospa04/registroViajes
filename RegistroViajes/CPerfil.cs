@@ -294,5 +294,25 @@ namespace RegistroViajes
                 MessageBox.Show("Seleccione un perfil válido.");
             }
         }
+        private static Form formactivo = null;
+        private void AbrirForm(Form formu)
+        {
+            if (formactivo != null)
+            {
+                formactivo.Close();
+            }
+            formactivo = formu;
+            formu.TopLevel = false;
+            formu.FormBorderStyle = FormBorderStyle.None;
+            formu.Dock = DockStyle.Fill;
+
+            this.Controls.Add(formu);
+            formu.Show();
+        }
+        private void button6_Click(object sender, EventArgs e)
+        {
+            CFamilias frm = new CFamilias();
+            frm.ShowDialog();
+        }
     }
 }

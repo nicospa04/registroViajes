@@ -97,7 +97,7 @@ namespace RegistroViajes
                    string nombreArchivo = $"BCK_{DateTime.Now:ddMMyy_HHmm}.bak";
                     string rutaCompleta = System.IO.Path.Combine(textBox1.Text, nombreArchivo);
                     string comandoBackup = $"BACKUP DATABASE SistemaViajes TO DISK='{rutaCompleta}'";
-                     string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
+                     string dataSource = "090L3PC28-71055"; 
               string conexionMaster = $"Data source={dataSource};Initial Catalog=SistemaViajes;Integrated Security=True;";          
                     using (SqlConnection conn = new SqlConnection(conexionMaster))
                     {
@@ -112,7 +112,7 @@ namespace RegistroViajes
         private void button2_Click(object sender, EventArgs e)
         {
 
-            string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
+            string dataSource = "090L3PC28-71055";
             //string dbName = "SistemaViajes";
             string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
 

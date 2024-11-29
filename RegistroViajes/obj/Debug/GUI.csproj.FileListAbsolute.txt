@@ -540,3 +540,5 @@ C:\Users\Admin\Downloads\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.
 C:\Users\Admin\Downloads\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.pdb
 C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.CFamilias.resources
 C:\Users\Admin\Desktop\Valentin Facultad UAI\Desarrollo y Arquitectura de Software\GIT\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.ControlUsuario.resources
+C:\Users\Navegador\Desktop\vvg\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.CFamilias.resources
+C:\Users\Navegador\Desktop\vvg\registroViajes\RegistroViajes\obj\Debug\RegistroViajes.ControlUsuario.resources

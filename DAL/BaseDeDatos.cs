@@ -10,7 +10,7 @@ namespace DAL
     {
         public class BaseDeDatos
         {
-            public static string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
+            public static string dataSource = "090L3PC28-71055";
             public static string dbName = "SistemaViajes";
             public static string conexionMaster = $"Data source={dataSource};Initial Catalog=master;Integrated Security=True;";
             public SqlConnection Connection = new SqlConnection(conexionMaster);
@@ -193,9 +193,9 @@ namespace DAL
         {
             ejecutarQuery($"USE SistemaViajes; INSERT INTO Usuario (dni, nombre, apellido, contraseña, telefono, email, fecha_nacimiento, id_familia, salt, idioma) " +
                 "VALUES " +                                                                                                                                   //contraseñas:
-                $"('22.333.444', 'Vickk', 'Rru', 'Dm/gakWTk4RcWz+DrJ35SA==', 'ApwTbZxVn7trr+UEGwe6cg==', 'vicky@gmail.com', '2024-11-26', 1, '256', 'ES')," +  //vicky
-                $"('45.984.456', 'Valentin', 'Giraldes', 'DjZdD/7Aksao6E0lKeym8g==', 'lMPxDzCF7FEwOYwHAShO6Q==', 'valen@gmail.com', '2004-08-26', 1, '39', 'ES')," +  //valen
-                $"('11.222.333', 'Osvaldito', 'Tortuela', 'TzWs/rdzRwjfqD9U4JUyPg==', 'yrZmzNHobW80xov8sPcGLQ==', 'puto@gmail.com', '2024-11-26', 1, '667', 'EN');");  //puto
+                $"('22.333.444', 'Vickk', 'Rru', 'Dm/gakWTk4RcWz+DrJ35SA==', 'ApwTbZxVn7trr+UEGwe6cg==', 'vicky@gmail.com', '2024-11-26', 1, '256', 'ES')," +  //vicky //cliente
+                $"('45.984.456', 'Valentin', 'Giraldes', 'DjZdD/7Aksao6E0lKeym8g==', 'lMPxDzCF7FEwOYwHAShO6Q==', 'valen@gmail.com', '2004-08-26', 1, '39', 'ES')," +  //valen  //empleado
+                $"('55.666.777', 'Nicolas', 'Spagnolo', 'Xc+kIThHkb8o0TwkWoE2mw==', 'e+F4/sgxP3/Nm8+Bjgrcdw==', 'nico@gmail.com', '2024-11-29', 1, '12', 'EN');");  //nico  //admin
 
             // Insertar datos en la tabla Empresa
             ejecutarQuery("USE SistemaViajes; INSERT INTO Empresa (nombre, descripcion, porcentaje_extra) " +

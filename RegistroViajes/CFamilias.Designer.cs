@@ -44,7 +44,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(87, 241);
+            this.label1.Location = new System.Drawing.Point(48, 74);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(108, 13);
             this.label1.TabIndex = 64;
@@ -52,14 +52,14 @@
             // 
             // TXTFamilia
             // 
-            this.TXTFamilia.Location = new System.Drawing.Point(87, 261);
+            this.TXTFamilia.Location = new System.Drawing.Point(48, 94);
             this.TXTFamilia.Name = "TXTFamilia";
             this.TXTFamilia.Size = new System.Drawing.Size(129, 20);
             this.TXTFamilia.TabIndex = 63;
             // 
             // BTNCrearFamilia
             // 
-            this.BTNCrearFamilia.Location = new System.Drawing.Point(87, 286);
+            this.BTNCrearFamilia.Location = new System.Drawing.Point(48, 119);
             this.BTNCrearFamilia.Name = "BTNCrearFamilia";
             this.BTNCrearFamilia.Size = new System.Drawing.Size(129, 31);
             this.BTNCrearFamilia.TabIndex = 62;
@@ -68,7 +68,7 @@
             // 
             // BTNEliminarFamilia
             // 
-            this.BTNEliminarFamilia.Location = new System.Drawing.Point(87, 323);
+            this.BTNEliminarFamilia.Location = new System.Drawing.Point(48, 156);
             this.BTNEliminarFamilia.Name = "BTNEliminarFamilia";
             this.BTNEliminarFamilia.Size = new System.Drawing.Size(129, 31);
             this.BTNEliminarFamilia.TabIndex = 61;
@@ -77,7 +77,7 @@
             // 
             // BTNAgregarPermiso
             // 
-            this.BTNAgregarPermiso.Location = new System.Drawing.Point(527, 276);
+            this.BTNAgregarPermiso.Location = new System.Drawing.Point(488, 109);
             this.BTNAgregarPermiso.Name = "BTNAgregarPermiso";
             this.BTNAgregarPermiso.Size = new System.Drawing.Size(129, 23);
             this.BTNAgregarPermiso.TabIndex = 60;
@@ -86,7 +86,7 @@
             // 
             // treeView1
             // 
-            this.treeView1.Location = new System.Drawing.Point(263, 201);
+            this.treeView1.Location = new System.Drawing.Point(224, 34);
             this.treeView1.Name = "treeView1";
             this.treeView1.Size = new System.Drawing.Size(214, 212);
             this.treeView1.TabIndex = 59;
@@ -94,7 +94,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(524, 233);
+            this.label3.Location = new System.Drawing.Point(485, 66);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(49, 13);
             this.label3.TabIndex = 58;
@@ -103,7 +103,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(524, 313);
+            this.label2.Location = new System.Drawing.Point(485, 146);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(44, 13);
             this.label2.TabIndex = 57;
@@ -112,7 +112,7 @@
             // CBPermisos
             // 
             this.CBPermisos.FormattingEnabled = true;
-            this.CBPermisos.Location = new System.Drawing.Point(527, 249);
+            this.CBPermisos.Location = new System.Drawing.Point(488, 82);
             this.CBPermisos.Name = "CBPermisos";
             this.CBPermisos.Size = new System.Drawing.Size(129, 21);
             this.CBPermisos.TabIndex = 56;
@@ -120,14 +120,14 @@
             // CBFamilias
             // 
             this.CBFamilias.FormattingEnabled = true;
-            this.CBFamilias.Location = new System.Drawing.Point(527, 329);
+            this.CBFamilias.Location = new System.Drawing.Point(488, 162);
             this.CBFamilias.Name = "CBFamilias";
             this.CBFamilias.Size = new System.Drawing.Size(129, 21);
             this.CBFamilias.TabIndex = 55;
             // 
             // BTNAplicar
             // 
-            this.BTNAplicar.Location = new System.Drawing.Point(527, 356);
+            this.BTNAplicar.Location = new System.Drawing.Point(488, 189);
             this.BTNAplicar.Name = "BTNAplicar";
             this.BTNAplicar.Size = new System.Drawing.Size(129, 23);
             this.BTNAplicar.TabIndex = 54;
@@ -139,7 +139,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(693, 299);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.TXTFamilia);
             this.Controls.Add(this.BTNCrearFamilia);
