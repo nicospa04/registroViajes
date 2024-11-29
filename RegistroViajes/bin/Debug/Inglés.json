@@ -35,6 +35,13 @@
   "CFamilias.BTNAgregarPermiso": "Add Permissions",
   "CFamilias.BTNAplicar": "Apply",
 
+  "CUsuarios.Text": "User Control",
+  "CUsuarios.button5": "Add Profile",
+  "CUsuarios.label2": "User ID:",
+  "CUsuarios.label1": "Username:",
+  "CUsuarios.label3": "Profiles:",
+  "CUsuarios.label4": "Current Profile:",
+
   "CPerfil.Text": "Create Profiles",
   "CPerfil.label1": "Profile Name:",
   "CPerfil.label2": "Permissions:",
@@ -46,6 +53,7 @@
   "CPerfil.label3": "Families:",
   "CPerfil.button5": "Add Families",
   "CPerfil.button6": "Setting up families",
+  "CPerfil.button7": "Settings Users",
 
   "FRMCerrarSesión.Text": "Log Out",
   "FRMCerrarSesión.label1": "Do you want to close the current session?",

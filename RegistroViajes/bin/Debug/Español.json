@@ -35,6 +35,13 @@
   "CFamilias.BTNAgregarPermiso": "Agregar Permiso",
   "CFamilias.BTNAplicar": "Aplicar",
 
+  "CUsuarios.Text": "Control de Usuarios",
+  "CUsuarios.button5": "Agregar Perfil",
+  "CUsuarios.label2": "ID del Usuario:",
+  "CUsuarios.label1": "Nombre del Usuario:",
+  "CUsuarios.label3": "Perfiles:",
+  "CUsuarios.label4": "Perfil Actual:",
+
   "CPerfil.Text": "Crear Perfiles",
   "CPerfil.label1": "Nombre del Perfil:",
   "CPerfil.label2": "Permisos:",
@@ -46,6 +53,7 @@
   "CPerfil.label3": "Familias:",
   "CPerfil.button5": "Agregar Familias",
   "CPerfil.button6": "Configurar Familias",
+  "CPerfil.button7": "Configurar Usuarios",
 
   "FRMIniciarSesion.Text": "Iniciar Sesion",
   "FRMIniciarSesion.label2": "Gmail",

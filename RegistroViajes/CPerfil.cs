@@ -271,12 +271,10 @@ namespace RegistroViajes
                 .FirstOrDefault(p => p.nombre != null &&
                                      p.nombre.Trim().Equals(nombre.Trim(), StringComparison.OrdinalIgnoreCase));
             int idPermisoPadre = perfilPadre.id_permiso;
-
             List<BEPermisos> listaPermisos = bllper.listapermisos(); 
             List<BEPermisos> permisosHijos = listaPermisos
                 .Where(p => p.id_permisopadre == idPermisoPadre) 
                 .ToList();
-
             return permisosHijos;
         }
 
@@ -290,7 +288,6 @@ namespace RegistroViajes
                       (permiso, perfil) => perfil.nombre)
                 .Where(nombre => !string.IsNullOrEmpty(nombre))
                 .ToList();
-
             return nombresPermisos;
         }
 
@@ -349,6 +346,12 @@ namespace RegistroViajes
         {
             CFamilias frm = new CFamilias();
             frm.ShowDialog();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            CUsuarios cUsuarios = new CUsuarios();
+            cUsuarios.ShowDialog();
         }
     }
 }

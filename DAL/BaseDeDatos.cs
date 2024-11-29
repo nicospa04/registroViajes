@@ -194,8 +194,8 @@ namespace DAL
             ejecutarQuery($"USE SistemaViajes; INSERT INTO Usuario (dni, nombre, apellido, contraseña, telefono, email, fecha_nacimiento, id_familia, salt, idioma) " +
                 "VALUES " +                                                                                                                                   //contraseñas:
                 $"('22.333.444', 'Vickk', 'Rru', 'Dm/gakWTk4RcWz+DrJ35SA==', 'ApwTbZxVn7trr+UEGwe6cg==', 'vicky@gmail.com', '2024-11-26', 1, '256', 'ES')," +  //vicky //cliente
-                $"('45.984.456', 'Valentin', 'Giraldes', 'DjZdD/7Aksao6E0lKeym8g==', 'lMPxDzCF7FEwOYwHAShO6Q==', 'valen@gmail.com', '2004-08-26', 1, '39', 'ES')," +  //valen  //empleado
-                $"('55.666.777', 'Nicolas', 'Spagnolo', 'Xc+kIThHkb8o0TwkWoE2mw==', 'e+F4/sgxP3/Nm8+Bjgrcdw==', 'nico@gmail.com', '2024-11-29', 1, '12', 'EN');");  //nico  //admin
+                $"('45.984.456', 'Valentin', 'Giraldes', 'DjZdD/7Aksao6E0lKeym8g==', 'lMPxDzCF7FEwOYwHAShO6Q==', 'valen@gmail.com', '2004-08-26', 2, '39', 'ES')," +  //valen  //empleado
+                $"('55.666.777', 'Nicolas', 'Spagnolo', 'Xc+kIThHkb8o0TwkWoE2mw==', 'e+F4/sgxP3/Nm8+Bjgrcdw==', 'nico@gmail.com', '2024-11-29', 3, '12', 'EN');");  //nico  //admin
 
             // Insertar datos en la tabla Empresa
             ejecutarQuery("USE SistemaViajes; INSERT INTO Empresa (nombre, descripcion, porcentaje_extra) " +

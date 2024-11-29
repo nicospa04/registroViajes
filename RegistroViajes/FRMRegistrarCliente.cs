@@ -19,10 +19,12 @@ namespace RegistroViajes
     public partial class FRMRegistrarCliente : Form, IObserver
     {
         BLLUsuario BLLUser = new BLLUsuario();
+        BLLPerfil bllp = new BLLPerfil();
         public FRMRegistrarCliente()
         {
             InitializeComponent();
             Lenguaje.ObtenerInstancia().Agregar(this);
+            hh();
         }
         public void ActualizarIdioma()
         {
@@ -36,6 +38,14 @@ namespace RegistroViajes
         {
             this.Close();
         }
+        private void hh()
+        {
+            List<BEPerfil> listaPerfiles = bllp.cargarCBPerfil();
+            comboBox1.DataSource = listaPerfiles;
+            comboBox1.DisplayMember = "nombre";
+            comboBox1.ValueMember = "id_permiso";
+        }
+
         private void btnIniciar_Click(object sender, EventArgs e)
         {
             string emailPattern = @"^[\w\.-]+@[a-zA-Z\d\.-]+\.[a-zA-Z]{2,}$";
@@ -52,26 +62,6 @@ namespace RegistroViajes
                 MessageBox.Show("Debe ingresar un dni válido");
                 return;
             }
-            if (!checkBox1.Checked && !checkBox2.Checked && !checkBox3.Checked)
-            {
-                MessageBox.Show("Debe marcar una opcion");
-                return;
-            }
-            if (checkBox1.Checked)
-            {
-                checkBox2.Checked = false;
-                checkBox3.Checked = false;
-            }
-            if (checkBox2.Checked)
-            {
-                checkBox1.Checked = false;
-                checkBox3.Checked = false;
-            }
-            if (checkBox3.Checked)
-            {
-                checkBox1.Checked = false;
-                checkBox2.Checked = false;
-            }
             string dni = this.dni.Text;
             string nombre = name.Text;
             string apellido = ap.Text;
@@ -79,31 +69,25 @@ namespace RegistroViajes
             string mail = gmail.Text;
             string contaseña = pass.Text;
             DateTime fechaNacimiento = fechnac.Value;
-            int familia = 1;
+            int rol = (int)comboBox1.SelectedValue;
             string idioma = "ES";
-            BE.Usuario user = new BE.Usuario(dni, nombre, apellido, telefono, mail, contaseña, fechaNacimiento, familia, idioma);
+            BE.Usuario user = new BE.Usuario(dni, nombre, apellido, telefono, mail, contaseña, fechaNacimiento, rol, idioma);
             BLLUsuario bllUser = new BLLUsuario();
             Servicios.Resultado<BE.Usuario> resultado = bllUser.crearEntidad(user);
             string dataSource = "DESKTOP-Q714KGU\\SQLEXPRESS";
             //string dbName = "SistemaViajes";
             string conexionMaster = $"Data source={dataSource};Initial Catalog=SistemaViajes;Integrated Security=True;";
             SqlConnection Connection = new SqlConnection(conexionMaster);
-            int id_permiso = 0;
-            if (checkBox1.Checked)
-            { id_permiso = 1; }
-            if (checkBox2.Checked)
-            { id_permiso = 2; }
-            if (checkBox3.Checked)
-            { id_permiso = 3; }
+
             int nuevoIdUsuario = bllUser.obtenerIDUsuario(user);
             try
             {
-                string query = $"USE SistemaViajes; INSERT INTO UsuarioPermiso (id_usuario, id_permiso) VALUES ({nuevoIdUsuario}, {id_permiso})";
+                string query = $"USE SistemaViajes; INSERT INTO UsuarioPermiso (id_usuario, id_permiso) VALUES ({nuevoIdUsuario}, {rol})";
                 Connection.Open();
                 using (SqlCommand cmd = new SqlCommand(query, Connection))
                 {
                         cmd.Parameters.AddWithValue("@IdUsuario", nuevoIdUsuario);
-                        cmd.Parameters.AddWithValue("@IdPermiso", id_permiso);
+                        cmd.Parameters.AddWithValue("@IdPermiso", rol);
                         cmd.ExecuteNonQuery();
                 }
             }
@@ -135,24 +119,6 @@ namespace RegistroViajes
         private void FRMRegistrarCliente_Load(object sender, EventArgs e)
         {
             ActualizarIdioma();
-        }
-
-        private void checkBox1_CheckedChanged(object sender, EventArgs e)
-        {
-            checkBox2.Checked = false;
-            checkBox3.Checked = false;
-        }
-
-        private void checkBox2_CheckedChanged(object sender, EventArgs e)
-        {
-            checkBox1.Checked = false;
-            checkBox3.Checked = false;
-        }
-
-        private void checkBox3_CheckedChanged(object sender, EventArgs e)
-        {
-            checkBox1.Checked = false;
-            checkBox2.Checked = false;
         }
     }
 }

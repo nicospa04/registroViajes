@@ -77,9 +77,13 @@ namespace RegistroViajes
         {
             Close();
         }
+        
         private void FRMIniciarSesion_Load(object sender, EventArgs e)
         {
             ActualizarIdioma();
+
+            txtusuario.Text = "nico@gmail.com";
+            txtcontraseña.Text = "nico";
 
             controlUsuario1.txt1 = txtusuario;
             controlUsuario1.txt2 = txtcontraseña;

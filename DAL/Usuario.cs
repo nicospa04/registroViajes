@@ -20,7 +20,36 @@ namespace DAL
             db = new BaseDeDatos();
             hasher = new PasswordHasher();
         }
-
+        public string obtenernamepermisoporID(string id)
+        {
+            string query = $"USE SistemaViajes; SELECT nombre FROM PermisosComp WHERE id_permiso = {id}";
+            DAL.BaseDeDatos db = new DAL.BaseDeDatos();
+            // Consulta SQL solo para obtener el salt y el hash
+            try
+            {
+                bool result = db.Conectar();
+                if (!result) throw new Exception("Error al conectarse a la base de datos");
+                using (SqlCommand command = new SqlCommand(query, db.Connection))
+                {
+                    using (SqlDataReader lector = command.ExecuteReader())
+                    {
+                        if (lector.Read())
+                        {
+                            string nombre = !lector.IsDBNull(0) ? lector.GetString(0) : "not found";
+                            return nombre;
+                        }
+                    }
+                }
+                db.Desconectar();
+                return "not found";
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine(ex.ToString());
+                db.Desconectar();
+                return null;
+            }
+        }
         public string devolverNombrePorId(string id)
         {
             string query = $"USE SistemaViajes; SELECT nombre FROM Usuario WHERE id_usuario = {id}";
@@ -51,6 +80,37 @@ namespace DAL
                 return null;
             }
         }
+        public int DevolverIdPermisoPorId(int id)
+        {
+            string query = $"USE SistemaViajes; SELECT id_familia FROM Usuario WHERE id_usuario = @IdUsuario";
+            DAL.BaseDeDatos db = new DAL.BaseDeDatos();
+            try
+            {
+                bool result = db.Conectar();
+                if (!result) throw new Exception("Error al conectarse a la base de datos");
+                using (SqlCommand command = new SqlCommand(query, db.Connection))
+                {
+                    command.Parameters.AddWithValue("@IdUsuario", id);
+                    using (SqlDataReader lector = command.ExecuteReader())
+                    {
+                        if (lector.Read())
+                        {
+                            return !lector.IsDBNull(0) ? lector.GetInt32(0) : -1;
+                        }
+                    }
+                }
+                return -1;
+            }
+            catch (Exception ex)
+            {
+                return -1;
+            }
+            finally
+            {
+                db.Desconectar();
+            }
+        }
+
 
         public string devolverApellidoPorId(string id)
         {
@@ -292,7 +352,7 @@ namespace DAL
             string queryToCreateUser = "USE SistemaViajes;" +
                 "INSERT INTO Usuario (dni, nombre, contraseña, apellido, telefono, email, fecha_nacimiento, id_familia, salt, idioma)" +
                 "VALUES" +
-                $"('{obj.dni}','{obj.nombre}', '{hashedPassword}', '{obj.apellido}', '{hashedPhoneNumber}', '{obj.mail}', '{obj.fechaNacimiento.ToString("yyyy-MM-dd")}', {obj.id_familia}, '{salt}', '{obj.idioma}');";
+                $"('{obj.dni}','{obj.nombre}', '{hashedPassword}', '{obj.apellido}', '{hashedPhoneNumber}', '{obj.mail}', '{obj.fechaNacimiento.ToString("yyyy-MM-dd")}', {obj.id_perfil}, '{salt}', '{obj.idioma}');";
             string queryToSearchUser = $"USE SistemaViajes; SELECT * FROM Usuario WHERE email = '{obj.mail}'";
             try
             {
@@ -369,7 +429,7 @@ namespace DAL
             Servicios.Resultado < BE.Usuario > Resultado = new Servicios.Resultado<BE.Usuario>();
             string query = "USE SistemaViajes;" +      
                            "UPDATE Usuario" +
-           $"SET nombre = '{obj.nombre}', contraseña = '{obj.contraseña}', id_familia = {obj.id_familia}" +
+           $"SET nombre = '{obj.nombre}', contraseña = '{obj.contraseña}', id_familia = {obj.id_perfil}" +
            $"WHERE id_usuario = {obj.id_usuario}";
             try
             {

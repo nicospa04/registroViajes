@@ -14,11 +14,19 @@ namespace BLL
         DAL.Usuario dal;
         public BLLUsuario()
         {
-            dal = new DAL.Usuario();    
+            dal = new DAL.Usuario();
         }
         public List<BE.Usuario> leerEntidades()
         {
             return dal.leerEntidades();
+        }
+        public int DevolverIdPermisoPorId(int id)
+        {
+            return dal.DevolverIdPermisoPorId((int)id);
+        }
+        public string obtenernamepermisoporID(string id)
+        {
+            return dal.obtenernamepermisoporID(id);
         }
         public Servicios.Resultado<BE.Usuario> recuperarUsuario(string email, string contraseña)
         {
